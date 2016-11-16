@@ -1,0 +1,856 @@
+﻿﻿name: smart_android_flow
+states:
+  smart_android_init:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_android_init_2
+
+  smart_android_init_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_android_init_3
+
+  smart_android_init_3:
+    type: message_text
+    properties:
+      text: 'Další důležitou volbou je cena vašeho telefonu. Systém Android je rozšířený na&nbsp;telefonech všech cenových kategorií, můžete si tedy zvolit cenové rozpětí, které vám bude vyhovovat.'
+
+  smart_price_1:
+    type: message_text
+    properties:
+      text: 'Nejevnější modely se pohybují do cen okolo 2 500 Kč.'
+      delay: 3000
+
+  smart_price_2:
+    type: message_text
+    properties:
+      text: 'Nižší střední třída mobilních telefonů se drží v cenovém rozpětí mezi 2 500 Kč a 5 000 Kč. '
+      delay: 2500
+
+  smart_price_3:
+    type: message_text
+    properties:
+      text: 'Pokud hledáte výkonný model za přijatelnou cenu, doporučujeme kategorii mezi 5 000 Kč a 10 000 Kč.'
+      delay: 3500
+
+  smart_price_4:
+    type: message_text
+    properties:
+      text: 'Pokud vás zajímají ty nejluxusnější modely z naší nabídky, neváhejte zvolit kategorii 10 000+ Kč.'
+      delay: 3500
+
+  smart_price_5:
+    type: message_text
+    properties:
+      text: 'Prosím, zvolte jednu z nabídnutých kategorií, nebo si vytvořte vlastní'
+      delay: 3500
+
+  smart_price_6:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'do 2500 Kč'
+          next_state: smart_price_1_context
+          type: Main
+        - label: '2500 - 5000 Kč'
+          next_state: smart_price_2_context
+          type: Main
+        - label: '5000 - 10 000 Kč'
+          next_state: smart_price_3_context
+          type: Main
+        - label: 'Nad 10 000 Kč'
+          next_state: smart_price_4_context
+          type: Main
+        - label: 'PŘESKOČIT'
+          next_state: smart_android_brand
+    transitions:
+        next_state: smart_select_price
+
+  smart_price_1_context:
+    type: change_context
+    properties:
+        update_keys:
+           price: '2500'
+           trait_price: 'price_to'
+    transitions:
+        next_state: smart_check_price
+
+  smart_price_2_context:
+    type: change_context
+    properties:
+        update_keys:
+           price_from: '2500'
+           price_to: '5000'
+           trait_price: 'price_from_to'
+    transitions:
+        next_state: smart_check_price
+
+  smart_price_3_context:
+    type: change_context
+    properties:
+        update_keys:
+           price_from: '5000'
+           price_to: '10000'
+           trait_price: 'price_from_to'
+    transitions:
+        next_state: smart_check_price
+
+  smart_price_4_context:
+    type: change_context
+    properties:
+        update_keys:
+           price: '10000'
+           trait_price: 'price_from'
+    transitions:
+        next_state: smart_check_price
+
+  smart_select_price:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: smart_check_price
+
+
+  smart_check_price:
+    type: conditional_exists
+    properties:
+      key: '{{price}}'
+    transitions:
+      exists: smart_price_cond1
+      notexists: smart_check_price_from
+
+  smart_check_price_from:
+    type: conditional_exists
+    properties:
+      key: '{{price_from}}'
+    transitions:
+      exists: smart_price_cond1
+      notexists: smart_check_price_to
+
+  smart_check_price_to:
+    type: conditional_exists
+    properties:
+      key: '{{price_to}}'
+    transitions:
+      exists: smart_price_cond1
+      notexists: smart_price_error
+
+  smart_price_cond1:
+    type: conditional_equal
+    properties:
+      value1: '{{trait_price}}'
+      value2: 'price_from'
+    transitions:
+      equal: smart_price_out1
+      notequal: smart_price_cond2
+
+  smart_price_cond2:
+    type: conditional_equal
+    properties:
+      value1: '{{trait_price}}'
+      value2: 'price_to'
+    transitions:
+      equal: smart_price_out2
+      notequal: smart_price_cond3
+
+  smart_price_cond3:
+    type: conditional_equal
+    properties:
+      value1: '{{trait_price}}'
+      value2: 'price_from_to'
+    transitions:
+      equal: smart_price_out3
+      notequal: smart_price_cond4
+
+  smart_price_cond4:
+    type: conditional_equal
+    properties:
+      value1: '{{trait_price}}'
+      value2: 'price_around'
+    transitions:
+      equal: smart_price_out4
+      notequal: smart_android_brand
+
+  smart_price_out1:
+    type: message_text
+    properties:
+      text: 'Hledám telefony v cenové kategorii od&nbsp;{{price}}&nbsp;Kč'
+      delay: 1000
+    transitions:
+      next_state: smart_android_brand
+
+  smart_price_out2:
+    type: message_text
+    properties:
+      text: 'Hledám telefony v cenové kategorii do&nbsp;{{price}}&nbsp;Kč'
+      delay: 1000
+    transitions:
+      next_state: smart_android_brand
+
+  smart_price_out3:
+    type: message_text
+    properties:
+      text: 'Hledám telefony v cenové kategorii od&nbsp;{{price_from}}&nbsp;do&nbsp;{{price_to}}&nbsp;Kč'
+      delay: 1000
+    transitions:
+      next_state: smart_android_brand
+
+  smart_price_out4:
+    type: message_text
+    properties:
+      text: 'Hledám telefony v cenové kategorii kolem&nbsp;{{price}}&nbsp;Kč'
+      delay: 1000
+    transitions:
+      next_state: smart_android_brand
+
+
+  smart_price_error:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Omlouvám se, ale nerozuměl jsem vám. Jaké cenové rozpětí chcete zvolit?'
+        - 'Promiňte, ale nerozuměl jsem. Jaké cenové rozpětí chcete zvolit?'
+      delay: 1000
+    transitions:
+      next_state: smart_select_price
+
+  smart_android_brand:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_android_brandt2
+
+  smart_android_brandt2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_android_brandt3
+
+  smart_android_brandt3:
+    type: message_text
+    properties:
+      text: 'Pokud hledáte telefon od&nbsp;specifického výrobce, vyberte&nbsp;si z&nbsp;nabídky níže, nebo napište vlastního. Pokud si výrobcem nejste jisti, můžete tuto volbu <b>PŘESKOČIT</b>'
+      delay: 2000
+
+  smart_android_select_brand_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'Samsung'
+          next_state: smart_android_select_brand_samsung
+          type: Main
+        - label: 'HTC'
+          next_state: smart_android_select_brand_htc
+          type: Main
+        - label: 'HUAWEI'
+          next_state: smart_android_select_brand_huawei
+          type: Main
+        - label: 'LG'
+          next_state: smart_android_select_brand_lg
+          type: Main
+        - label: 'SONY'
+          next_state: smart_android_select_brand_sony
+          type: Main
+        - label: 'PŘESKOČIT'
+          next_state: smart_android_params
+
+  smart_android_select_brand:
+    type: input_user
+    properties:
+      entities:
+        brand: phone_brands
+      require_match: true
+    transitions:
+      match: smart_android_params
+      notmatch: error_select_brand
+
+  smart_android_select_brand_samsung:
+    type: change_context
+    properties:
+        update_keys:
+           brand: 'samsung'
+    transitions:
+        next_state: smart_android_params
+
+  smart_android_select_brand_htc:
+    type: change_context
+    properties:
+        update_keys:
+           brand: 'HTC'
+    transitions:
+        next_state: smart_android_params
+
+  smart_android_select_brand_huawei:
+    type: change_context
+    properties:
+        update_keys:
+           brand: 'huawei'
+    transitions:
+        next_state: smart_android_params
+
+  smart_android_select_brand_lg:
+    type: change_context
+    properties:
+        update_keys:
+           brand: 'LG'
+    transitions:
+        next_state: smart_android_params
+
+  smart_android_select_brand_sony:
+    type: change_context
+    properties:
+        update_keys:
+           brand: 'Sony'
+    transitions:
+        next_state: smart_android_params
+
+  error_select_brand:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Promiňte, ale tu značku neznám. Prosím zkuste to znovu, případně zvolte přeskořit volbu výrobce.'
+    transitions:
+      next_state: smart_android_select_brand_buttons
+
+  smart_android_params:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_android_paramst2
+
+  smart_android_paramst2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_android_paramst3
+
+  smart_android_paramst3:
+    type: message_text
+    properties:
+      text: 'Nyní se zaměříme na parametry telefonu.'
+
+  smart_android_params_2:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_android_params_2t2
+
+  smart_android_params_2t2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_android_params_2t3
+
+  smart_android_params_2t3:
+    type: message_text
+    properties:
+      text: 'Prosím zvolte, který z parametrů chcete specifikovat. Volbou <b>NÁVRH&nbsp;TELEFONŮ</b> ukončíte výběr parametrů a přejdete k výsledkům.'
+      delay: 1000
+
+  smart_android_params_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'ÚHLOPŘÍČKA DISPLEJE'
+          next_state: smart_android_display
+        - label: 'PROCESOR'
+          next_state: smart_android_processor
+        - label: 'OPERAČNÍ PAMĚŤ'
+          next_state: smart_android_ram
+        - label: 'VELIKOST ÚLOŽIŠTĚ TELEFONU'
+          next_state: smart_android_memory
+        - label: 'ROZLIŠENÍ TELEFONU'
+          next_state: smart_android_resolution
+        - label: 'NAVRHNOUT TELEFONY'
+          next_state: smart_android_recommend
+          type: Main
+
+  smart_android_select_param:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_param
+
+  error_select_param:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jeden z&nbsp;nabídky parametrů a&nbsp;upřesněte jeho hodnoty. Pokud už jste nastavili všechny požadované parametry, zvolte NAVRHNOUT&nbsp;TELEFONY'
+    transitions:
+      next_state: smart_android_params_3_buttons
+
+
+  smart_android_param_check_display:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'display'
+    transitions:
+      equal: smart_android_display
+      notequal: smart_android_param_check_processor
+
+  smart_android_param_check_processor:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'processor'
+    transitions:
+      equal: smart_android_processor
+      notequal: smart_android_param_check_ram
+
+  smart_android_param_check_ram:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'ram'
+    transitions:
+      equal: smart_android_ram
+      notequal: smart_android_param_check_memory
+
+  smart_android_param_check_memory:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'space'
+    transitions:
+      equal: smart_android_memory
+      notequal: smart_android_param_check_resolution
+
+  smart_android_param_check_resolution:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'resolution'
+    transitions:
+      equal: smart_android_resolution
+      notequal: smart_android_param_check_recommend
+
+  smart_android_param_check_recommend:
+    type: conditional_equal
+    properties:
+      value1: '{{parameter}}'
+      value2: 'recommend'
+    transitions:
+      equal: smart_android_recommend
+      notequal: error_select_param
+
+  smart_android_display:
+    type: message_text
+    properties:
+      text: 'Prosím vyberte preferovanou velikost displeje:'
+
+  smart_android_display_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'MALÝ (DO 3.4 PALCŮ)'
+          next_state: smart_android_display_small
+          type: Main
+        - label: 'VELKÝ (3.4 - 5 PALCŮ)'
+          next_state: smart_android_display_big
+          type: Main
+        - label: 'EXTRA VELKÝ (5+ PALCŮ)'
+          next_state: smart_android_display_extra_big
+          type: Main
+        - label: 'NA DISPLEJI MI NEZÁLEŽÍ'
+          next_state: smart_android_display_dont_care
+        - label: 'Řekni mi víc'
+          next_state: smart_android_display_2
+
+
+  smart_android_display_select:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_display
+
+  smart_android_display_2:
+    type: message_text
+    properties:
+      text: 'Displej je zpravidla dotykový a&nbsp;velikost jeho úhlopříčky se&nbsp;uvádí v&nbsp;palcích. Palec se značí značkou " a odpovídá 2,54 cm. Například čtyřpalcový displej je velký asi jako kreditní karta.'
+    transitions:
+      next_state: smart_android_display
+
+
+  smart_android_display_small:
+    type: change_context
+    properties:
+        update_keys:
+           display_size: '3.4'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_display_big:
+    type: change_context
+    properties:
+        update_keys:
+           display_size: '3.4 - 5'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_display_extra_big:
+    type: change_context
+    properties:
+        update_keys:
+           display_size: '5+'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_display_dont_care:
+    type: change_context
+    properties:
+        update_keys:
+           display_size: 'any'
+    transitions:
+        next_state: smart_android_params_2
+
+
+  error_select_display:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jednu z nabízených možností'
+    transitions:
+      next_state: smart_android_display_3_buttons
+
+  smart_android_processor:
+    type: message_text
+    properties:
+      text: 'Pro rychlý chod telefonu je třeba výkonný procesor. Čím více GHz (gigahertz&nbsp;-&nbsp;jednotka, v&nbsp;níž se rychlost procesoru udává) a&nbsp;čím více jader procesor má, tím rychlejší bude.'
+    transitions:
+      next_state: smart_android_processor_3_buttons
+
+  smart_android_processor_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'SILNÝ PROCESOR ( > 1.5 GHz)'
+          next_state: smart_android_processor_select_strong
+          type: Main
+        - label: 'PROCESOR MĚ NEZAJÍMÁ'
+          next_state: smart_android_processor_select_any
+
+
+  smart_android_processor_select:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_processor
+
+  smart_android_processor_select_strong:
+    type: change_context
+    properties:
+        update_keys:
+           processor: 'strong'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_processor_select_any:
+    type: change_context
+    properties:
+        update_keys:
+           processor: 'any'
+    transitions:
+        next_state: smart_android_params_2
+
+
+  error_select_processor:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jednu z nabízených možností'
+    transitions:
+      next_state: smart_android_processor_3_buttons
+
+
+
+
+  smart_android_ram:
+    type: message_text
+    properties:
+      text: 'Operační paměť je paměť, ve které jsou uložena data a&nbsp;programy, se kterými se právě pracuje.'
+
+  smart_android_ram_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'CHCI VELKOU OPERAČNÍ PAMĚTÍ (2+ GB)'
+          next_state: smart_android_ram_select_2gb
+          type: Main
+        - label: 'OPERAČNÍ PAMĚŤ MĚ NEZAJÍMÁ'
+          next_state: smart_android_ram_select_any
+        - label: 'Řekni mi víc'
+          next_state: smart_android_ram_2
+
+  smart_android_ram_select:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_ram
+
+  smart_android_ram_2:
+    type: message_text
+    properties:
+      text: 'Telefon s velkou operační pamětí zvládne mít spuštěných více aplikací najednou a&nbsp;bude fungovat stále stejně plynule. Standardem se&nbsp;začíná stávat 1GB&nbsp;RAM, výkonnější telefony pak nabídnou 2&nbsp;až&nbsp;3&nbsp;GB operační paměti.'
+    transitions:
+      next_state: smart_android_ram
+
+  smart_android_ram_select_2gb:
+    type: change_context
+    properties:
+        update_keys:
+           ram: '2 gb'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_ram_select_any:
+    type: change_context
+    properties:
+        update_keys:
+           ram: 'any'
+    transitions:
+        next_state: smart_android_params_2
+
+  error_select_ram:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jednu z nabízených možností'
+    transitions:
+      next_state: smart_android_ram_3_buttons
+
+
+  smart_android_memory:
+    type: message_text
+    properties:
+      text: 'Prosím vyberte preferovanou možnost:'
+
+
+  smart_android_memory_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'NAD 8 GB'
+          next_state: smart_android_memory_select_small
+          type: Main
+        - label: 'NAD 16 GB'
+          next_state: smart_android_memory_select_big
+          type: Main
+        - label: 'TELEFON S PODPOROU PAMĚŤOVÝCH KARET'
+          next_state: smart_android_memory_select_card
+          type: Main
+        - label: 'PAMĚŤ TELEFONU MĚ NEZAJÍMÁ'
+          next_state: smart_android_memory_select_any
+        - label: 'Řekni mi víc'
+          next_state: smart_android_memory_1
+
+
+  smart_android_memory_select:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_memory
+
+  smart_android_memory_1:
+    type: message_text
+    properties:
+      text: 'Paměť telefonu se udává v&nbsp;GB (gigabytech). Čím vyšší hodnota, tím více hudby, filmů, fotografií, her a&nbsp;aplikací se vám do&nbsp;telefonu vejde. 8 GB jde doporučit jako základ pro chytré telefony. Pokud více fotografujete, hrajete hry atp., sáhněte raději po větší kapacitě.'
+
+  smart_android_memory_2:
+    type: message_text
+    properties:
+      text: 'Řešením je také koupě telefonu s&nbsp;podporou paměťových karet. Ty mohou mít kapacitu až několika desítek GB a&nbsp;stojí běžně pár set korun. Snadno tak rozšíříte základní paměť telefonu.'
+      delay: 2500
+    transitions:
+      next_state: smart_android_memory
+
+  smart_android_memory_select_small:
+    type: change_context
+    properties:
+        update_keys:
+           memory: '8 - 16 GB'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_memory_select_big:
+    type: change_context
+    properties:
+        update_keys:
+           memory: '16+ GB'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_memory_select_card:
+    type: change_context
+    properties:
+        update_keys:
+           memory: 'memory card'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_memory_select_any:
+    type: change_context
+    properties:
+        update_keys:
+           memory: 'any'
+    transitions:
+        next_state: smart_android_params_2
+
+  error_select_memory:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jednu z nabízených možností'
+    transitions:
+      next_state: smart_android_memory_3_buttons
+
+
+
+  smart_android_resolution:
+    type: message_text
+    properties:
+      text: 'Prosím vyberte preferované rozlišení displeje:'
+
+
+  smart_android_resolution_3_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: '1280 x 720 bodů'
+          next_state: smart_android_resolution_select_small
+          type: Main
+        - label: '1920 X 1080 bodů'
+          next_state: smart_android_resolution_select_big
+          type: Main
+        - label: 'ROZLIŠENÍ TELEFONU MNE NEZAJÍMÁ'
+          next_state: smart_android_resolution_select_any
+        - label: 'Řekni mi víc'
+          next_state: smart_android_resolution_2
+
+  smart_android_resolution_select:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: error_select_resolution
+
+  smart_android_resolution_2:
+    type: message_text
+    properties:
+      text: 'Rozlišení displeje je udáváno maximálním počtem pixelů (bodů), které se&nbsp;zobrazí na&nbsp;obrazovce telefonu. Čím vyšší, tím bude obraz ostřejší. U&nbsp;telefonů se standardním displejem byste měli poždovat rozlišení alespoň 1280 x 720 bodů.'
+    transitions:
+      next_state: smart_android_resolution
+
+  smart_android_resolution_select_small:
+    type: change_context
+    properties:
+        update_keys:
+           resolution: '1280 x 720'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_resolution_select_big:
+    type: change_context
+    properties:
+        update_keys:
+           resolution: '1920 X 1080'
+    transitions:
+        next_state: smart_android_params_2
+
+  smart_android_resolution_select_any:
+    type: change_context
+    properties:
+        update_keys:
+           resolution: 'any'
+    transitions:
+        next_state: smart_android_params_2
+
+  error_select_resolution:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Prosím vyberte jednu z nabízených možností'
+    transitions:
+      next_state: smart_android_resolution_3_buttons
+
+  smart_android_recommend:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_android_recommendt2
+
+  smart_android_recommendt2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_android_recommendt3
+
+  smart_android_recommendt3:
+    type: message_text
+    properties:
+      text: 'Děkujeme za využití našeho assistenta. Níže se nyní zobrazí navržené telefony.'
+
+
+  smart_android_recommend_2:
+    type: SuggestPhonesZbozi
+    properties:
+
+  smart_android_recommend_3:
+    type: message_text
+    properties:
+      text: 'Navržené telefony seřazené dle popularity'
+      delay: 1000
+
+  smart_android_recommend_cond_1:
+    type: conditional_exists # used to determine if selected key exists in current context
+    properties:
+      key: '{{suggested_phones_1}}' # context key to check
+    transitions:
+      exists: smart_android_recommend_out # transition for when key exists
+      notexists: no_matches #  transition for when the key doesn't exist
+
+
+  end_demo:
+    type: message_text
+    properties:
+      text: 'Pro koupi jednoho z&nbsp;vybraných telefonů prosím klikněte na&nbsp;jeho profil, nebo na&nbsp;tlačitko koupit. Pokud chcete spustit průvodce znovu, prosím zvolte začit od&nbsp;začátku. Pokud jste s&nbsp;naší službou spokojeni, neváhejte a&nbsp;zvolte možnost sdílet s&nbsp;přáteli.'
+      delay: 1000
+    transitions:
+      next_state: end_buttons
+
+  smart_android_recommend_out:
+    type: Carousel
+
+  end_buttons:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'Koupit'
+          next_state: end_buttons
+        - label: 'Začít od začátku'
+          next_state: init
+        - label: 'Sdílet s přáteli'
+          next_state: end_buttons

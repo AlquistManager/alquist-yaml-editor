@@ -1,0 +1,241 @@
+﻿name: main_flow
+states:
+  intro:
+    type: message_text
+    properties:
+      text: 'Nejprve je nutné rozhodnout se, jaký typ mobilního telefonu Vám bude vyhovovat.'
+      delay: 1500
+
+  intro2:
+    type: message_text
+    properties:
+      text: 'Telefony s omezenými funkcemi, ale nízkou cenou najdete v kategorii <b>LEVNÁ VARIANTA</b>.'
+      delay: 1500
+
+  intro3:
+    type: message_text
+    properties:
+      text: 'Pro nejnovější smartphony zvolte <b>CHYTRÝ TELEFON</b>.'
+      delay: 1500
+
+  intro4:
+    type: message_text
+    properties:
+      text: 'Pro starší generace jsou k dispozici telefony <b>PRO SENIORY</b>.'
+      delay: 1500
+
+  intro5:
+    type: message_text
+    properties:
+      text: 'Pokud si nejste jistí, kterou kategorii zvolit, můžete vybrat možnost <b>PROCHÁZET VŠE</b>.'
+      delay: 1500
+
+  select_type_button:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: 'LEVNÁ VARIANTA'
+          next_state: simple_intro_context
+          type: Main
+        - label: 'CHYTRÝ TELEFON'
+          next_state: smart_intro_context
+          type: Main
+        - label: 'PRO SENIORY'
+          next_state: senior_intro_context
+          type: Main
+        - label: 'VŠECHNY TELEFONY'
+          next_state: all_intro_context
+          type: Main
+        - label: 'Více o kategoriích'
+          next_state: simple_info
+
+  select_type:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: select_type_test
+
+  select_type_test:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: select_type_test_2
+
+  select_type_test_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: type_check_simple
+
+  simple_intro_context:
+    type: change_context
+    properties:
+        update_keys:
+           phone_type: 'simple'
+    transitions:
+        next_state: simple_intro_context_test
+
+  simple_intro_context_test:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: simple_intro_context_test_2
+
+  simple_intro_context_test_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: simple_intro
+
+  simple_info:
+    type: message_text
+    properties:
+      text: 'Dnešní nejlevnější telefony mají pouze ty nejzákladnější funkce. V&nbsp;<b>LEVNÉ VARIANTĚ</b> jsou telefony bez operačního systému, možnosti doinstalování aplikací nebo GPS. Často jsou tlačítkové.'
+    transitions:
+      next_state: smart_info
+
+  smart_intro_context:
+    type: change_context
+    properties:
+        update_keys:
+           phone_type: 'smart'
+    transitions:
+        next_state: smart_intro_context_test
+
+  smart_intro_context_test:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: smart_intro_context_test_2
+
+  smart_intro_context_test_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: smart_intro
+
+  smart_info:
+    type: message_text
+    properties:
+      text: 'Pokud chcete svůj mobilní telefon využívat skutečně naplno, sáhněte po&nbsp;<b>CHYTRÉM TELEFONU</b>. Chytré telefony jsou nejběžnějším typem telefonu. Nejčatěji jsou vybaveny operačním systémem Android, iOS nebo Windows&nbsp;Phone. Umožňují doinstalování aplikací a&nbsp;pohodlné brouzdání internetem.'
+      delay: 5000
+    transitions:
+      next_state: senior_info
+
+  senior_intro_context:
+    type: change_context
+    properties:
+        update_keys:
+           phone_type: 'senior'
+    transitions:
+        next_state: senior_intro_context_test
+
+  senior_intro_context_test:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: senior_intro_context_test_2
+
+  senior_intro_context_test_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: senior_intro
+
+  senior_info:
+    type: message_text
+    properties:
+      text: 'Pro starší generace jsou k&nbsp;dispozici <b>TELEFONY PRO SENIORY</b>. Telefony pro seniory vynikají hlavně velkými ovládacími prvky, čitelným textem a&nbsp;vysokou hlasitostí.'
+      delay: 7000
+    transitions:
+      next_state: all_info
+
+
+  all_intro_context:
+    type: change_context
+    properties:
+        update_keys:
+           phone_type: 'all'
+    transitions:
+        next_state: all_intro_context_test
+
+  all_intro_context_test:
+    type: CountPhonesZbozi
+    properties:
+    transitions:
+      next_state: all_intro_context_test_2
+
+  all_intro_context_test_2:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_count}}'
+      value2: '0'
+    transitions:
+      equal: no_matches
+      notequal: all_intro
+
+  all_info:
+    type: message_text
+    properties:
+      text: 'Zvolíte-li možnost <b>PROCHÁZET VŠE</b>, pomohu vám vybrat telefon napříč všemi kategoriemi'
+      delay: 5000
+    transitions:
+      next_state: select_type_button
+
+  error_phone_type:
+    type: message_text_random
+    properties:
+      responses:
+        - 'Omlouvám se, ale nerozuměl jsem vám. Jaký druh telefonu sháníte?'
+        - 'Promiňte, ale nerozuměl jsem. Jaký druh telefonu sháníte?'
+    transitions:
+      next_state: select_type_button
+
+  type_check_simple:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_type}}'
+      value2: 'simple'
+    transitions:
+      equal: simple_intro
+      notequal: type_check_senior
+
+  type_check_senior:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_type}}'
+      value2: 'senior'
+    transitions:
+      equal: senior_intro
+      notequal: type_check_smart
+
+  type_check_smart:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_type}}'
+      value2: 'smart'
+    transitions:
+      equal: smart_intro
+      notequal: type_check_all
+
+  type_check_all:
+    type: conditional_equal
+    properties:
+      value1: '{{phone_type}}'
+      value2: 'all'
+    transitions:
+      equal: all_intro
+      notequal: error_phone_type
