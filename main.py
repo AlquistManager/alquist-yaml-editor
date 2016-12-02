@@ -9,29 +9,40 @@ botName = "demo_tel"
 
 states = state_dict[botName]["states"].keys()
 
-print(states)
-
 next_state = state_dict[botName]["states"]["init"]["transitions"]["next_state"]
 
-
 id = 1
-nodes = {"init": {"id":id, "level":1}}
+nodes = {"init": {"id": id, "level": 1}}
 current_state = "init"
 edges = []
 
-#recursive method for graph construction
+count = 0
+
+
+# recursive method for graph construction
 def findNextState(current_state, next_state):
     if next_state in nodes.keys():
         edges.append((nodes[current_state]["id"], nodes[next_state]["id"]))
         return
     global id
     id += 1
-    nodes[next_state] = {"id":id, "level":nodes[current_state]["level"] + 1}
+    level = nodes[current_state]["level"] + 1
+
+    nodes[next_state] = {"id": id, "level": level}
 
     edges.append((nodes[current_state]["id"], nodes[next_state]["id"]))
+
     current_state = next_state
 
     transitions = state_dict[botName]["states"][current_state]["transitions"]
+    properties = state_dict[botName]["states"][current_state]["properties"]
+
+    if "buttons" in properties.keys():
+        for button in properties["buttons"]:
+            if "next_state" in button.keys():
+                next_state = button["next_state"]
+                if next_state != "":
+                        findNextState(current_state, next_state)
 
     if "next_state" in transitions.keys():
         next_state = transitions["next_state"]
@@ -72,6 +83,7 @@ def clearGraph():
 
 
 # writes nodes and edges of graph to javascript file
+'''
 def writeNodesAndEdges(nodes, edges):
     file = open("graph.js", "r+")
 
@@ -84,8 +96,14 @@ def writeNodesAndEdges(nodes, edges):
         if "var nodes" in line:
             file.write(line)
 
+            #sorted_nodes = sorted(nodes.items(), key=lambda nodes: nodes[1]["level"])
+
+            #print(sorted_nodes)
+
             for n in nodes:  # {id: 1, label: 'Node 1'},
-                file.write("{id: %d, label: \'%s\', level: %d},\n" % (nodes[n]["id"], n, nodes[n]["level"]))
+                #file.write("{id: %d, label: \'%s\'},\n" % (nodes[n]["id"], n))
+                file.write("{id: %d, label: \'%s\', level: %d, y: %d},\n" % (nodes[n]["id"], n, nodes[n]["level"], nodes[n]["level"]*100))
+                #file.write("{id: %d, label: \'%s\', level: %d},\n" % (n[1]["id"], n[0], n[1]["level"]))
         elif "var edges" in line:
             file.write(line)
             for e in edges:
@@ -94,11 +112,46 @@ def writeNodesAndEdges(nodes, edges):
             file.write(line)
     file.truncate()
     file.close()
+    '''
+
+def writeNodesAndEdgesJSON(nodes, edges):
+    file = open("graph.json", "w")
+
+    file.write("{\n  \"nodes\": [\n")
+
+    i = 0
+    for n in nodes:
+        i += 1
+        file.write("{\"id\": \"%d\", \"name\": \"%s\", \"level\": \"%d\"}" % (nodes[n]["id"], n, nodes[n]["level"]))
+        if i == len(nodes):
+            file.write("\n")
+        else:
+            file.write(",\n")
+
+    file.write("  ],\n\"links\": [\n")
+
+
+    i = 0
+    for e in edges:
+        i += 1
+        file.write("{\"source\": \"%d\", \"target\": \"%d\"}" % (e[0], e[1]))
+        if i == len(edges):
+            file.write("\n")
+        else:
+            file.write(",\n")
+
+    file.write("  ]\n}")
+
+    file.truncate()
+    file.close()
 
 
 findNextState(current_state, next_state)
 clearGraph()
-writeNodesAndEdges(nodes, edges)
+#writeNodesAndEdges(nodes, edges)
+writeNodesAndEdgesJSON(nodes, edges)
 
-print(nodes)
-print(edges)
+print(len(nodes))
+print(len(edges))
+# print(nodes)
+# print(edges)
