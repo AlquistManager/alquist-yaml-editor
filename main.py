@@ -54,7 +54,7 @@ def findNextState(current_state, next_state):
                 findNextState(current_state, state)
 
 
-# delete nodes and edges in javascript file
+#delete nodes and edges in javascript file
 def clearGraph():
     writing = True
     file = open("graph.js", "r+")
@@ -82,8 +82,7 @@ def clearGraph():
     file.close()
 
 
-# writes nodes and edges of graph to javascript file
-'''
+# writes nodes and edges of graph to a javascript file for vis.js
 def writeNodesAndEdges(nodes, edges):
     file = open("graph.js", "r+")
 
@@ -101,8 +100,8 @@ def writeNodesAndEdges(nodes, edges):
             #print(sorted_nodes)
 
             for n in nodes:  # {id: 1, label: 'Node 1'},
-                #file.write("{id: %d, label: \'%s\'},\n" % (nodes[n]["id"], n))
-                file.write("{id: %d, label: \'%s\', level: %d, y: %d},\n" % (nodes[n]["id"], n, nodes[n]["level"], nodes[n]["level"]*100))
+                file.write("{id: %d, label: \'%s\'},\n" % (nodes[n]["id"], n))
+                #file.write("{id: %d, label: \'%s\', level: %d, y: %d},\n" % (nodes[n]["id"], n, nodes[n]["level"], nodes[n]["level"]*100))
                 #file.write("{id: %d, label: \'%s\', level: %d},\n" % (n[1]["id"], n[0], n[1]["level"]))
         elif "var edges" in line:
             file.write(line)
@@ -112,8 +111,8 @@ def writeNodesAndEdges(nodes, edges):
             file.write(line)
     file.truncate()
     file.close()
-    '''
 
+#creates JSON file for D3
 def writeNodesAndEdgesJSON(nodes, edges):
     file = open("graph.json", "w")
 
@@ -145,13 +144,35 @@ def writeNodesAndEdgesJSON(nodes, edges):
     file.truncate()
     file.close()
 
+#creates a file to be displayed by viz.js
+def writeGraphVizJs(nodes, edges):
+    file = open("graph_viz.txt", "w")
+    file.write("digraph {\n")
+
+    for e in edges:
+        file.write("%s -> %s;\n" % (findNodeNameById(e[0]), findNodeNameById(e[1])))
+
+    file.write("}")
+
+    file.truncate()
+    file.close()
+
+#searches for a node by its ID
+def findNodeNameById(id):
+    for n in nodes:
+        if nodes[n]["id"] == id:
+            return n
+
+
 
 findNextState(current_state, next_state)
 clearGraph()
-#writeNodesAndEdges(nodes, edges)
+writeNodesAndEdges(nodes, edges)
 writeNodesAndEdgesJSON(nodes, edges)
+writeGraphVizJs(nodes, edges)
 
 print(len(nodes))
 print(len(edges))
+#print(state_dict[botName]["states"]["select_type_test_2"]["transitions"])
 # print(nodes)
 # print(edges)

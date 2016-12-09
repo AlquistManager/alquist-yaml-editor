@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script type="text/javascript" src="viz.js"></script>
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="svg-pan-zoom.min.js"></script>
+
+        <style type="text/css">
+        #mynetwork {
+            width: 1000px;
+            height: 800px;
+            border: 5px solid lightgray;
+        }
+
+            ellipse{
+                stroke-width: 1px;
+            }
+    </style>
+
+
+</head>
+<body>
+
+<div id="graph_main"></div>
+
+<script type="text/javascript">
+
+    var elem = document.getElementById("graph_main");
+
+    jQuery.ajaxSetup({async:false});
+    $.get("graph_viz.txt", function(response) {
+     elem.innerHTML += Viz(response, "svg");
+    }, 'text');
+    jQuery.ajaxSetup({async:true});
+
+
+    var nodes = document.getElementsByClassName("node");
+
+    for(i = 0; i < nodes.length; i++){
+        nodes[i].addEventListener('click', function(evt){
+            var text = evt.currentTarget.firstChild.firstChild.data;
+            alert(text);
+        });
+
+        nodes[i].addEventListener('mouseover', function(evt){
+            var ellipse = evt.currentTarget.children[1];
+            ellipse.style.strokeWidth = "5px";
+            console.log('mouse over');
+        });
+
+        nodes[i].addEventListener('mouseout', function(evt){
+            var ellipse = evt.currentTarget.children[1];
+            ellipse.style.strokeWidth = "1px";
+            console.log('mouse over');
+        });
+    }
+
+    //elem.firstElementChild.setAttribute("transform", "scale(0.2)");
+
+    var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled:true, minZoom: 0.1, maxZoom: 20});
+
+</script>
+
+
+</body>
+</html>
