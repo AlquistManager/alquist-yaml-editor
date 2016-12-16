@@ -26,19 +26,27 @@
 
     var elem = document.getElementById("graph_main");
 
+    var texts;
+
     jQuery.ajaxSetup({async:false});
     $.get("graph_viz.txt", function(response) {
      elem.innerHTML += Viz(response, "svg");
     }, 'text');
     jQuery.ajaxSetup({async:true});
 
+    $.get("graph_viz_node_texts.txt", function(response) {
+     texts = response;
+    }, 'text');
+
+
 
     var nodes = document.getElementsByClassName("node");
 
     for(i = 0; i < nodes.length; i++){
         nodes[i].addEventListener('click', function(evt){
-            var text = evt.currentTarget.firstChild.firstChild.data;
-            alert(text);
+            //var text = evt.currentTarget.firstChild.firstChild.data;
+            var nodeId = evt.currentTarget.id;
+            alert(findText(nodeId));
         });
 
         nodes[i].addEventListener('mouseover', function(evt){
@@ -57,6 +65,19 @@
     //elem.firstElementChild.setAttribute("transform", "scale(0.2)");
 
     var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled:true, minZoom: 0.1, maxZoom: 20});
+
+    function findText(id){
+        var lines = texts.split("\n");
+        for (i = 0; i < lines.length; i++){
+            var line = lines[i];
+            var splitedLine = line.split(":");
+            var lineId = splitedLine[0];
+            if(lineId == id){
+                return splitedLine[1];
+            }
+        }
+        return "";
+    }
 
 </script>
 

@@ -1,5 +1,8 @@
 from yaml_parser.yaml_parser import YamlParser
 from loaded_states import state_dict, intent_transitions
+import collections
+import io
+
 
 YamlParser()
 
@@ -12,12 +15,14 @@ states = state_dict[botName]["states"].keys()
 next_state = state_dict[botName]["states"]["init"]["transitions"]["next_state"]
 
 id = 1
-nodes = {"init": {"id": id, "level": 1}}
+#nodes = {"init": {"id": id, "level": 1}}
+nodes = collections.OrderedDict({"init": {"id": id,
+                                          "level": 1,
+                                          "responses": state_dict[botName]["states"]["init"]["properties"]["responses"]}})
 current_state = "init"
 edges = []
 
 count = 0
-
 
 # recursive method for graph construction
 def findNextState(current_state, next_state):
@@ -37,6 +42,18 @@ def findNextState(current_state, next_state):
     transitions = state_dict[botName]["states"][current_state]["transitions"]
     properties = state_dict[botName]["states"][current_state]["properties"]
 
+    global count
+
+    nodes[current_state]["responses"] = []
+    if "responses" in properties.keys():
+        for res in properties["responses"]:
+            nodes[current_state]["responses"].append(res)
+        count += 1
+
+    if "text" in properties.keys():
+        nodes[current_state]["responses"].append(properties["text"])
+        count += 1
+
     if "buttons" in properties.keys():
         for button in properties["buttons"]:
             if "next_state" in button.keys():
@@ -54,7 +71,7 @@ def findNextState(current_state, next_state):
                 findNextState(current_state, state)
 
 
-#delete nodes and edges in javascript file
+#delete nodes and edges in vis.js javascript file
 def clearGraph():
     writing = True
     file = open("graph.js", "r+")
@@ -149,6 +166,10 @@ def writeGraphVizJs(nodes, edges):
     file = open("graph_viz.txt", "w")
     file.write("digraph {\n")
 
+    for n in nodes:
+        file.write("%s [id = %s]\n" % (n, nodes[n]["id"]));
+    file.write("\n");
+
     for e in edges:
         file.write("%s -> %s;\n" % (findNodeNameById(e[0]), findNodeNameById(e[1])))
 
@@ -156,6 +177,22 @@ def writeGraphVizJs(nodes, edges):
 
     file.truncate()
     file.close()
+
+    with io.open("graph_viz_node_texts.txt", "w", encoding="utf-8") as f:
+    #file = open("graph_viz_node_texts.txt", "w")
+        for n in nodes:
+            if "responses" in nodes[n].keys():
+                text = ""
+
+                #for s in nodes[n]["responses"]:
+                for i in range(len(nodes[n]["responses"])):
+                    text += nodes[n]["responses"][i];
+                    #if i != len(nodes[n]["responses"]) - 1:
+                        #text += "\n"
+                f.write("%s: \"%s\"\n" % (nodes[n]["id"], text))
+        f.close()
+
+
 
 #searches for a node by its ID
 def findNodeNameById(id):
@@ -174,5 +211,8 @@ writeGraphVizJs(nodes, edges)
 print(len(nodes))
 print(len(edges))
 #print(state_dict[botName]["states"]["select_type_test_2"]["transitions"])
+#print(state_dict[botName]["states"]["init"]["properties"]["responses"])
+print(state_dict[botName]["states"]["smart_android_init"])
+print(count)
 # print(nodes)
 # print(edges)
