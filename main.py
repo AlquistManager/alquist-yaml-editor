@@ -55,6 +55,18 @@ def findNextState(current_state, next_state):
         count += 1
 
     if "buttons" in properties.keys():
+        buttons = properties["buttons"]
+        for b in buttons:
+            nodes[current_state]["responses"].append(b["label"] + " ")
+        count += 1
+
+    if "checkboxes" in properties.keys():
+        checkboxes = properties["checkboxes"]
+        for c in checkboxes:
+            nodes[current_state]["responses"].append(c["label"] + " ")
+        count += 1
+
+    if "buttons" in properties.keys():
         for button in properties["buttons"]:
             if "next_state" in button.keys():
                 next_state = button["next_state"]
@@ -212,7 +224,7 @@ print(len(nodes))
 print(len(edges))
 #print(state_dict[botName]["states"]["select_type_test_2"]["transitions"])
 #print(state_dict[botName]["states"]["init"]["properties"]["responses"])
-print(state_dict[botName]["states"]["smart_android_init"])
+print(state_dict[botName]["states"])
 print(count)
 # print(nodes)
 # print(edges)
