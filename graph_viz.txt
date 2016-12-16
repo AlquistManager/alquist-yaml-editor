@@ -301,6 +301,20 @@ type_check_senior [id = 299]
 type_check_smart [id = 300]
 type_check_all [id = 301]
 error_phone_type [id = 302]
+smart_android_param_check_resolution [id = 303]
+smart_android_param_check_recommend [id = 304]
+end_demo [id = 305]
+smart_check_os_android [id = 306]
+smart_check_os_ios [id = 307]
+smart_check_os_win [id = 308]
+smart_check_os_all [id = 309]
+senior_price_3_context [id = 310]
+senior_price_1_context [id = 311]
+smart_android_param_check_processor [id = 312]
+smart_android_param_check_ram [id = 313]
+smart_android_param_check_memory [id = 314]
+senior_price_2_context [id = 315]
+smart_android_param_check_display [id = 316]
 
 init -> intro;
 intro -> intro2;
@@ -748,4 +762,28 @@ type_check_smart -> type_check_all;
 type_check_all -> all_intro;
 type_check_all -> error_phone_type;
 error_phone_type -> select_type_button;
+smart_android_param_check_resolution -> smart_android_resolution;
+smart_android_param_check_resolution -> smart_android_param_check_recommend;
+smart_android_param_check_recommend -> smart_android_recommend;
+smart_android_param_check_recommend -> error_select_param;
+end_demo -> end_buttons;
+smart_check_os_android -> smart_android_init;
+smart_check_os_android -> smart_check_os_ios;
+smart_check_os_ios -> smart_ios_init;
+smart_check_os_ios -> smart_check_os_win;
+smart_check_os_win -> smart_win_init;
+smart_check_os_win -> smart_check_os_all;
+smart_check_os_all -> all_intro;
+smart_check_os_all -> error_smart_os;
+senior_price_3_context -> senior_check_price;
+senior_price_1_context -> senior_check_price;
+smart_android_param_check_processor -> smart_android_processor;
+smart_android_param_check_processor -> smart_android_param_check_ram;
+smart_android_param_check_ram -> smart_android_ram;
+smart_android_param_check_ram -> smart_android_param_check_memory;
+smart_android_param_check_memory -> smart_android_memory;
+smart_android_param_check_memory -> smart_android_param_check_resolution;
+senior_price_2_context -> senior_check_price;
+smart_android_param_check_display -> smart_android_display;
+smart_android_param_check_display -> smart_android_param_check_processor;
 }

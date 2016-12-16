@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5473ba94-d1c8-48a7-97ca-1f83ba0d461e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parsing_yaml.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz.txt" afterPath="$PROJECT_DIR$/graph_viz.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz_node_texts.txt" afterPath="$PROJECT_DIR$/graph_viz_node_texts.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_viz_js2.html" afterPath="$PROJECT_DIR$/test_viz_js2.html" />
     </list>
     <ignored path="alquist-graph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/alquist-yaml-editor$sc.coverage" NAME="sc Coverage Results" MODIFIED="1480693039502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/alquist-yaml-editor$neighbours.coverage" NAME="neighbours Coverage Results" MODIFIED="1481205749601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1481887859895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1481901650748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,14 +35,15 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state relative-caret-position="871">
+              <caret line="310" column="18" lean-forward="false" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
-                <element signature="e#2663#3162#0" expanded="false" />
-                <element signature="e#3273#4248#0" expanded="false" />
-                <element signature="e#4322#4985#0" expanded="false" />
-                <element signature="e#6032#6101#0" expanded="false" />
+                <element signature="e#2766#3265#0" expanded="false" />
+                <element signature="e#3376#4355#0" expanded="false" />
+                <element signature="e#4431#5093#0" expanded="false" />
+                <element signature="e#6146#6215#0" expanded="false" />
+                <element signature="e#6283#7361#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,8 +52,8 @@
       <file leaf-file-name="graph_viz_node_texts.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_viz_node_texts.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+            <state relative-caret-position="629">
+              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,8 +62,28 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
-              <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="220">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parsing_yaml.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parsing_yaml.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yaml_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yaml_parser/yaml_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-198">
+              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -68,8 +92,8 @@
       <file leaf-file-name="graph_viz.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_viz.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3395">
-              <caret line="256" column="9" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="9" />
+            <state relative-caret-position="227">
+              <caret line="329" column="28" lean-forward="false" selection-start-line="329" selection-start-column="28" selection-end-line="329" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -112,9 +136,20 @@
       <find>level</find>
       <find>pan</find>
       <find>states</find>
-      <find>count</find>
       <find>button</find>
       <find>label</find>
+      <find>flow</find>
+      <find>smart_android_param_check_recommend</find>
+      <find>smart_android_param_check_dis</find>
+      <find>error_select_param</find>
+      <find>smart_android_param_check_display</find>
+      <find>smart_android_param_check_displ</find>
+      <find>smart_android_</find>
+      <find>smart_android_param_</find>
+      <find>smart_android</find>
+      <find>smart_android_param_check</find>
+      <find>count</find>
+      <find>no_matches_3</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,6 +172,7 @@
         <option value="$PROJECT_DIR$/test_viz_js.html" />
         <option value="$PROJECT_DIR$/graph_viz_node_texts.txt" />
         <option value="$PROJECT_DIR$/test_viz_js2.html" />
+        <option value="$PROJECT_DIR$/parsing_yaml.html" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -177,6 +213,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaml_parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="states" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,13 +560,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15963204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14379802" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2751982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -559,81 +623,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vis-4.17.0/lib/network/Network.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/GitHub/alquist/yaml_parser/yaml_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="106" column="21" lean-forward="false" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/GitHub/alquist/yaml_parser/yaml_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1012">
           <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -673,10 +673,11 @@
           <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -716,10 +717,11 @@
           <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -759,10 +761,11 @@
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,10 +798,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,22 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_viz.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3395">
-          <caret line="256" column="9" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_viz_js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -941,32 +929,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph_viz_node_texts.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+        <state relative-caret-position="629">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="220">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsing_yaml.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yaml_parser/yaml_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/change_context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/cond.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3287">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/states/user_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1109">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_viz.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="329" column="28" lean-forward="false" selection-start-line="329" selection-start-column="28" selection-end-line="329" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state relative-caret-position="871">
+          <caret line="310" column="18" lean-forward="false" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#2663#3162#0" expanded="false" />
-            <element signature="e#3273#4248#0" expanded="false" />
-            <element signature="e#4322#4985#0" expanded="false" />
-            <element signature="e#6032#6101#0" expanded="false" />
+            <element signature="e#2766#3265#0" expanded="false" />
+            <element signature="e#3376#4355#0" expanded="false" />
+            <element signature="e#4431#5093#0" expanded="false" />
+            <element signature="e#6146#6215#0" expanded="false" />
+            <element signature="e#6283#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
