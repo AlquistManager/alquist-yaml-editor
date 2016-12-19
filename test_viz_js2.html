@@ -31,6 +31,8 @@
     var yamlMap = new Map();
     var botName;
 
+    var edges = document.getElementsByClassName("edge");
+
     jQuery.ajaxSetup({async: false});
     $.get("graph_viz.txt", function (response) {
         elem.innerHTML += Viz(response, "svg");
@@ -64,11 +66,32 @@
         nodes[i].addEventListener('mouseover', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "5px";
+
+            for(i = 0; i < edges.length; i++){
+                var nodeName = evt.currentTarget.firstChild.firstChild.data;
+                var title = edges[i].firstElementChild.firstChild.data;
+                var splittedTitle = title.split("->");
+                if(splittedTitle[0] == nodeName || splittedTitle[1] == nodeName){
+                    var path = edges[i].children[1];
+                    path.style.strokeWidth = "5px";
+                }
+            }
+
         });
 
         nodes[i].addEventListener('mouseout', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "1px";
+
+            for(i = 0; i < edges.length; i++){
+                var nodeName = evt.currentTarget.firstChild.firstChild.data;
+                var title = edges[i].firstElementChild.firstChild.data;
+                var splittedTitle = title.split("->");
+                if(splittedTitle[0] == nodeName || splittedTitle[1] == nodeName){
+                    var path = edges[i].children[1];
+                    path.style.strokeWidth = "1px";
+                }
+            }
         });
     }
 
