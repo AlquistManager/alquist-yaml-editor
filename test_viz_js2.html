@@ -4,16 +4,16 @@
     <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="svg-pan-zoom.min.js"></script>
 
-        <style type="text/css">
+    <style type="text/css">
         #mynetwork {
             width: 1000px;
             height: 800px;
             border: 5px solid lightgray;
         }
 
-            ellipse{
-                stroke-width: 1px;
-            }
+        ellipse {
+            stroke-width: 1px;
+        }
     </style>
 
 
@@ -26,35 +26,47 @@
 
     var elem = document.getElementById("graph_main");
 
-    var texts;
+    var statePositions;
+    var fileNames;
+    var yamlMap = new Map();
+    var botName;
 
-    jQuery.ajaxSetup({async:false});
-    $.get("graph_viz.txt", function(response) {
-     elem.innerHTML += Viz(response, "svg");
-    }, 'text');
-    jQuery.ajaxSetup({async:true});
-
-    $.get("graph_viz_node_texts.txt", function(response) {
-     texts = response;
+    jQuery.ajaxSetup({async: false});
+    $.get("graph_viz.txt", function (response) {
+        elem.innerHTML += Viz(response, "svg");
     }, 'text');
 
+    $.get("state_positions.txt", function (response) {
+        statePositions = response;
+        fileNames = findFileNames();
+
+        for (i = 0; i < fileNames.length; i++) {
+            if(fileNames[i] == undefined)continue;
+            $.get("bots/" + botName + "/flows/" + fileNames[i], function (res) {
+                yamlMap.set(fileNames[i], res);
+            }, 'text');
+        }
+    }, 'text');
+
+    jQuery.ajaxSetup({async: true});
 
 
     var nodes = document.getElementsByClassName("node");
 
-    for(i = 0; i < nodes.length; i++){
-        nodes[i].addEventListener('click', function(evt){
-            //var text = evt.currentTarget.firstChild.firstChild.data;
-            var nodeId = evt.currentTarget.id;
-            alert(findText(nodeId));
+    for (i = 0; i < nodes.length; i++) {
+        nodes[i].addEventListener('click', function (evt) {
+            var state = evt.currentTarget.firstChild.firstChild.data;
+            var statePos = findPosition(state).split(" ");
+            var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
+            alert(text);
         });
 
-        nodes[i].addEventListener('mouseover', function(evt){
+        nodes[i].addEventListener('mouseover', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "5px";
         });
 
-        nodes[i].addEventListener('mouseout', function(evt){
+        nodes[i].addEventListener('mouseout', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "1px";
         });
@@ -62,19 +74,43 @@
 
     //elem.firstElementChild.setAttribute("transform", "scale(0.2)");
 
-    var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled:true, minZoom: 0.1, maxZoom: 20});
+    var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled: true, minZoom: 0.1, maxZoom: 20});
 
-    function findText(id){
-        var lines = texts.split("\n");
-        for (i = 0; i < lines.length; i++){
-            var line = lines[i];
-            var splitedLine = line.split(":");
-            var lineId = splitedLine[0];
-            if(lineId == id){
-                return splitedLine[1];
+    function findPosition(state) {
+        var lines = statePositions.split("\n");
+        for (i = 0; i < lines.length; i++) {
+            var line = lines [i];
+            var splittedLine = line.split(" ");
+            if (state == splittedLine[0]) {
+                return line;
             }
         }
-        return "";
+    }
+
+    function findFileNames() {
+        var files = [];
+        var lines = statePositions.split("\n");
+        botName = lines[0];
+        for (i = 1; i < lines.length; i++) {
+            var line = lines [i];
+            var splittedLine = line.split(" ");
+            if (files.indexOf(splittedLine[1]) == -1) {
+                files.push(splittedLine[1]);
+            }
+        }
+        return files;
+    }
+
+    function getYamlCode(file, startLine, endLine) {
+        var code = "";
+        var response = yamlMap.get(file);
+        var lines = response.split("\n");
+        var startL = parseInt(startLine);
+        var endL = parseInt(endLine);
+        for (var i = startL; i < endL; i++) {
+            code += lines[i] + "\n";
+        }
+        return code;
     }
 
 </script>

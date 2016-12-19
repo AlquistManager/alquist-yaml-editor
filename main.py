@@ -181,11 +181,31 @@ def writeNodesAndEdgesJSON(nodes, edges):
 # creates a file to be displayed by viz.js
 def writeGraphVizJs(nodes, edges):
     file = open("graph_viz.txt", "w")
-    file.write("digraph {\n")
+    file.write("digraph G{\n")
 
+
+    clusterNum = 0
+    for f in files:
+        file.write("subgraph cluster_%d {\n" % (clusterNum))
+        for n in nodes:
+            if statePositions[n][0] == f:
+                if n in unreachableNodes:
+                    file.write("%s [id = %s, style=filled, color=red];\n" % (n, nodes[n]["id"]))
+                else:
+                    file.write("%s [id = %s, style=filled, color=white];\n" % (n, nodes[n]["id"]));
+        file.write("label=\"%s\";\n" % (f))
+        file.write("style=filled;")
+        file.write("color=lightgray;")
+        file.write("}\n\n")
+
+        clusterNum += 1
+
+
+    '''
     for n in nodes:
         file.write("%s [id = %s]\n" % (n, nodes[n]["id"]));
     file.write("\n");
+    '''
 
     for e in edges:
         file.write("%s -> %s;\n" % (findNodeNameById(e[0]), findNodeNameById(e[1])))
@@ -194,20 +214,6 @@ def writeGraphVizJs(nodes, edges):
 
     file.truncate()
     file.close()
-
-    with io.open("graph_viz_node_texts.txt", "w", encoding="utf-8") as f:
-        # file = open("graph_viz_node_texts.txt", "w")
-        for n in nodes:
-            if "responses" in nodes[n].keys():
-                text = ""
-
-                # for s in nodes[n]["responses"]:
-                for i in range(len(nodes[n]["responses"])):
-                    text += nodes[n]["responses"][i];
-                    # if i != len(nodes[n]["responses"]) - 1:
-                    # text += "\n"
-                f.write("%s: \"%s\"\n" % (nodes[n]["id"], text))
-        f.close()
 
 
 # searches for a node by its ID
@@ -218,6 +224,7 @@ def findNodeNameById(id):
 
 
 statePositions = {}
+files = []
 posCount = 0
 
 
@@ -225,10 +232,12 @@ def findStatePositions():
     yaml_folder = "bots/" + botName + "/flows/"
     global statePositions
     global posCount
+    global files
 
     for fileName in listdir(yaml_folder):
+        if fileName not in files:
+            files.append(fileName)
         with io.open(yaml_folder + fileName, "r", encoding="utf-8") as file:
-            #print(fileName)
             file.readline()
             line = file.readline()
             lineNum = 1
@@ -243,16 +252,24 @@ def findStatePositions():
                 while line not in ['\n', '\r\n'] and line:
                     line = file.readline()
                     lineNum += 1
-                    #if lineNum > 100:
-                    #    break
-                    #print(line)
-                    #print(lineNum)
                 stateEnd = lineNum
                 if stateStart != stateEnd:
                     statePositions[stateRead] = [fileName, stateStart, stateEnd]
-                    #print(statePositions[stateRead])
                     posCount += 1
 
+def writeStatePositions(statePositions):
+    with io.open("state_positions.txt", "w", encoding="utf-8") as file:
+        file.write(botName + "\n")
+        for state in statePositions:
+            file.write("%s %s %d %d\n" % (state, statePositions[state][0], statePositions[state][1], statePositions[state][2]))
+        file.close()
+
+unreachableNodes = []
+def findUnreachableNodes():
+    global unreachableNodes
+    for state in statePositions:
+        if state not in nodes:
+            unreachableNodes.append(state)
 
 
 
@@ -273,10 +290,13 @@ print(len(edges))
 
 
 findStatePositions()
+findUnreachableNodes()
 
+'''
 for pos in statePositions:
     if pos not in nodes.keys():
         print(pos + " " + statePositions[pos][0])
+'''
 
 
 for pos in statePositions:
@@ -300,7 +320,7 @@ for pos in statePositions:
             for state in transitions.values():
                 findNextState(pos, state)
 
-print(len(nodes))
+#print(len(nodes))
 
 def detectNodesWithoutInputs():
     noInputs = []
@@ -315,8 +335,12 @@ def detectNodesWithoutInputs():
             noInputs.append(n)
     print(noInputs)
 
-detectNodesWithoutInputs()
+#detectNodesWithoutInputs()
 
 writeGraphVizJs(nodes, edges)
+
+writeStatePositions(statePositions)
+
+print(unreachableNodes)
 
 
