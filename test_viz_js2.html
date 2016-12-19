@@ -31,13 +31,14 @@
     var yamlMap = new Map();
     var botName;
 
-    var edges = document.getElementsByClassName("edge");
 
+    //loads graph file
     jQuery.ajaxSetup({async: false});
     $.get("graph_viz.txt", function (response) {
         elem.innerHTML += Viz(response, "svg");
     }, 'text');
 
+    //loads positions of states in yaml files
     $.get("state_positions.txt", function (response) {
         statePositions = response;
         fileNames = findFileNames();
@@ -52,10 +53,11 @@
 
     jQuery.ajaxSetup({async: true});
 
-
     var nodes = document.getElementsByClassName("node");
+    var edges = document.getElementsByClassName("edge");
 
     for (i = 0; i < nodes.length; i++) {
+        //displays part of yaml code after click on node
         nodes[i].addEventListener('click', function (evt) {
             var state = evt.currentTarget.firstChild.firstChild.data;
             var statePos = findPosition(state).split(" ");
@@ -63,6 +65,7 @@
             alert(text);
         });
 
+        //highlights nodes and edges on mouseover
         nodes[i].addEventListener('mouseover', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "5px";
@@ -79,6 +82,7 @@
 
         });
 
+        //stops highlighting
         nodes[i].addEventListener('mouseout', function (evt) {
             var ellipse = evt.currentTarget.children[1];
             ellipse.style.strokeWidth = "1px";
@@ -95,10 +99,9 @@
         });
     }
 
-    //elem.firstElementChild.setAttribute("transform", "scale(0.2)");
-
     var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled: true, minZoom: 0.1, maxZoom: 20});
 
+    //finds line with position information of a state
     function findPosition(state) {
         var lines = statePositions.split("\n");
         for (i = 0; i < lines.length; i++) {
@@ -110,6 +113,7 @@
         }
     }
 
+    //finds file names of yaml files
     function findFileNames() {
         var files = [];
         var lines = statePositions.split("\n");
@@ -124,6 +128,7 @@
         return files;
     }
 
+    //gets yaml code from a chosen file from startLine to endLine
     function getYamlCode(file, startLine, endLine) {
         var code = "";
         var response = yamlMap.get(file);

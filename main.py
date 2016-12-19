@@ -68,8 +68,10 @@ def writeGraphVizJs(nodes, edges):
             if statePositions[n][0] == f:
                 if n in unreachableNodes:
                     file.write("%s [id = %s, style=filled, color=red];\n" % (n, nodes[n]["id"]))
+                elif n is "init":
+                    file.write("%s [id = %s, style=filled, color=yellow];\n" % (n, nodes[n]["id"]))
                 else:
-                    file.write("%s [id = %s, style=filled, color=white];\n" % (n, nodes[n]["id"]));
+                    file.write("%s [id = %s, style=filled, color=white];\n" % (n, nodes[n]["id"]))
         file.write("label=\"%s\";\n" % (f))
         file.write("style=filled;")
         file.write("color=lightgray;")
