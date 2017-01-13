@@ -189,4 +189,4 @@ def createGraph(bot):
     print("Graph edges: %d" % len(edges))
 
 
-#createGraph("demo_tel")
+createGraph("demo_tel")
