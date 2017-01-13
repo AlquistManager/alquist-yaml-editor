@@ -106,7 +106,9 @@
     var fileNames;
     var yamlMap = new Map();
     var botName;
+    var currentFile;
 
+    document.getElementById("text-editor").value="";
 
     Split(['#graph_main', '#editor'], {
     sizes: [70, 30],
@@ -149,10 +151,11 @@
         nodes[i].addEventListener('click', function (evt) {
             var state = evt.currentTarget.firstChild.firstChild.data;
             var statePos = findPosition(state).split(" ");
-            var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
+            //var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
             //alert(text);
             var text2 = getYamlFile(statePos[1]);
             document.getElementById("text-editor").value = text2;
+            currentFile = statePos[1];
         });
 
         //highlights nodes and edges on mouseover
@@ -242,20 +245,35 @@
         return response;
     }
 
-    /*
+
     function toPython(usrdata) {
+
+        var editor_text = document.getElementById("text-editor").value;
+        //console.log("test");
+        /*
         $.ajax({
-            url: "127.0.0.1:8080",
+            url: "http://127.0.0.1:5000/",
             type: "POST",
-            data: {botname: "demo_tel", filename: "something"},
+            data: JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             dataType: "json",
             success: function (data) {
-                <!-- do something here -->
-
+                console.log("data sent");
             }
-        });
+        });*/
+
+        if(editor_text.trim() == "" || currentFile == undefined)return;
+
+        $.post("http://127.0.0.1:5000/",
+            JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
+            function(data, status){
+                console.log("data sent");
+            });
     }
-    $("#button_update").bind('click', toPython(botName));*/
+
+    document.getElementById("button_update").addEventListener("click", function(evt){
+        toPython(botName);
+    });
+    //$("#button_update").bind('click', toPython(botName));
 
 </script>
 

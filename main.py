@@ -4,7 +4,7 @@ import collections
 import io
 from os import listdir
 
-YamlParser()
+#YamlParser()
 
 statePositions = {}
 unreachableNodes = []
@@ -150,6 +150,7 @@ def findUnreachableNodes():
 
 # create a graph for chosen bot
 def createGraph(bot):
+    YamlParser()
     global botName
     botName = bot
 
@@ -175,9 +176,4 @@ def createGraph(bot):
     print("Graph edges: %d" % len(edges))
 
 
-createGraph("demo_tel")
-
-
-
-
-
+#createGraph("demo_tel")
