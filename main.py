@@ -11,9 +11,8 @@ unreachableNodes = []
 files = []
 posCount = 0
 
-botName = "demo_tel"
-
-states = state_dict[botName]["states"].keys()
+botName = None
+states = None
 
 id = 1
 nodes = collections.OrderedDict()
@@ -149,23 +148,36 @@ def findUnreachableNodes():
         if state not in nodes:
             unreachableNodes.append(state)
 
+# create a graph for chosen bot
+def createGraph(bot):
+    global botName
+    botName = bot
 
-print("Bots available: %s" % state_dict.keys())
-print("Creating graph for bot: %s" % botName)
+    global states
+    states = state_dict[botName]["states"].keys()
 
-findNextState(None, "init")
-findStatePositions()
-findUnreachableNodes()
+    print("Bots available: %s" % state_dict.keys())
+    print("Creating graph for bot: %s" % botName)
 
-# adds unreachable nodes to the graph
-for pos in statePositions:
-    if pos not in nodes.keys():
-        findNextState(None, pos)
+    findNextState(None, "init")
+    findStatePositions()
+    findUnreachableNodes()
 
-writeGraphVizJs(nodes, edges)
-writeStatePositions(statePositions)
+    # adds unreachable nodes to the graph
+    for pos in statePositions:
+        if pos not in nodes.keys():
+            findNextState(None, pos)
 
-print("Graph nodes: %d" % len(nodes))
-print("Graph edges: %d" % len(edges))
+    writeGraphVizJs(nodes, edges)
+    writeStatePositions(statePositions)
+
+    print("Graph nodes: %d" % len(nodes))
+    print("Graph edges: %d" % len(edges))
+
+
+createGraph("demo_tel")
+
+
+
 
 
