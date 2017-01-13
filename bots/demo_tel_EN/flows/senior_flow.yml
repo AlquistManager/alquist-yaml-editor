@@ -3,12 +3,12 @@ states:
   senior_intro:
     type: message_text
     properties:
-      text: 'Vybrali jste kategorii telefonů pro seniory. Jedná&nbsp;se&nbsp;o&nbsp;telefony velkými s&nbsp;ovládacími prvky navrženými pro&nbsp;pohodlné užívání, zvětšeným čitelným textem a&nbsp;vysokou hlasitostí.'
+      text: 'Great, you need a SENIOR phone with large buttons, easy to control, read the screen and inteligible sound.'
 
   senior_price:
     type: message_text
     properties:
-      text: 'Prosím vyberte si z&nbsp;cenových kategorií níže, nebo zvolte možnost PŘESKOČIT, pokud pro&nbsp;vás cena není prioritou'
+      text: 'Chose the price range or SKIP if you want to see all afferings.'
       delay: 4000
 
   senior_select_price:
@@ -144,7 +144,7 @@ states:
   senior_price_out1:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii od&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range starting at&nbsp;{{price}}&nbsp;Euro.'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -152,7 +152,7 @@ states:
   senior_price_out2:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii do&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range &nbsp;{{price}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -160,7 +160,7 @@ states:
   senior_price_out3:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii od&nbsp;{{price_from}}&nbsp;do&nbsp;{{price_to}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range between&nbsp;{{price_from}}&nbsp;and&nbsp;{{price_to}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -168,7 +168,7 @@ states:
   senior_price_out4:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii kolem&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range around&nbsp;{{price}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -177,8 +177,8 @@ states:
     type: message_text_random
     properties:
       responses:
-        - 'Omlouvám se, ale nerozuměl jsem vám. Jaké cenové rozpětí chcete zvolit?'
-        - 'Promiňte, ale nerozuměl jsem. Jaké cenové rozpětí chcete zvolit?'
+        - 'I am sorry, but what is the phone price range?'
+        - 'I am sorry, I still do not understand how much you want to spend.'
       delay: 1000
     transitions:
       next_state: senior_select_price

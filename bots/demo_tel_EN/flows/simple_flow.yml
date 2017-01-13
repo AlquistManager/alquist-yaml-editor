@@ -3,12 +3,12 @@ states:
   simple_intro:
     type: message_text
     properties:
-      text: 'Vybrali jste kategorii obyčejných levnějších telefonů. Jedná&nbsp;se&nbsp;o&nbsp;telefony nejčastěji bez&nbsp;operačního systému, s&nbsp;nízkou&nbsp;cenou a&nbsp;omezenými&nbsp;funkcemi'
+      text: 'Great, you need a SIMPLE low-cost phone with limitad functionality.'
 
   simple_price:
     type: message_text
     properties:
-      text: 'Prosím vyberte si z&nbsp;cenových kategorií níže, nebo&nbsp;zvolte možnost <b>PŘESKOČIT</b>, pokud&nbsp;pro&nbsp;vás&nbsp;cena není prioritou'
+      text: 'Chose the price range or SKIP if you want to see all afferings.'
       delay: 3000
 
   simple_select_price:
@@ -144,7 +144,7 @@ states:
   simple_price_out1:
     type: message_text
     properties:
-      text: 'Hledám telefony v&nbsp;cenové kategorii&nbsp;od&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range starting at&nbsp;{{price}}&nbsp;Euro.'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -152,7 +152,7 @@ states:
   simple_price_out2:
     type: message_text
     properties:
-      text: 'Hledám telefony v&nbsp;cenové kategorii do&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range &nbsp;{{price}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -160,7 +160,7 @@ states:
   simple_price_out3:
     type: message_text
     properties:
-      text: 'Hledám telefony v&nbsp;cenové kategorii od&nbsp;{{price_from}}&nbsp;do&nbsp;{{price_to}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range between&nbsp;{{price_from}}&nbsp;and&nbsp;{{price_to}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -168,7 +168,7 @@ states:
   simple_price_out4:
     type: message_text
     properties:
-      text: 'Hledám telefony v&nbsp;cenové kategorii kolem&nbsp;{{price}}&nbsp;Kč'
+      text: 'I am looking for phones in the price range around&nbsp;{{price}}&nbsp;Euro'
       delay: 1000
     transitions:
       next_state: s_price_out_test
@@ -179,8 +179,8 @@ states:
     type: message_text_random
     properties:
       responses:
-        - 'Omlouvám se, ale nerozuměl jsem vám. Jaké cenové rozpětí chcete zvolit?'
-        - 'Promiňte, ale nerozuměl jsem. Jaké cenové rozpětí chcete zvolit?'
+        - 'I am sorry, but what is the phone price range?'
+        - 'I am sorry, I still do not understand how much you want to spend.'
       delay: 1000
     transitions:
       next_state: simple_select_price
@@ -204,32 +204,32 @@ states:
   simple_params:
     type: message_text
     properties:
-      text: 'Nyní se podíváme na další vlasnosti vašeho telefonu.'
+      text: 'You can select some of the phone features.'
       delay: 2000
 
   simple_params2:
     type: message_text
     properties:
-      text: 'Kliknutím na&nbsp;tlačítka níže můžete zvolit požadované vlastnosti. Výběr potvrdíte volbou NAVRHNOUT&nbsp;TELEFONY.'
+      text: 'Check the features and SUBMIT, please.'
       delay: 2000
 
   simple_params_buttons:
     type: message_checkboxes
     properties:
       checkboxes:
-        - label: 'Dotykový displej'
+        - label: 'Touch screen'
           update_keys:
             touchscreen: 'yes'
           type: Main
-        - label: 'Fotoaparát'
+        - label: 'Camera'
           update_keys:
             camera: 'yes'
           type: Main
-        - label: 'Hardwarová klávesnice'
+        - label: 'Keyboard buttons'
           update_keys:
             hw_keyboard: 'yes'
           type: Main
-        - label: 'Přisvětlovací dioda'
+        - label: 'Lght'
           update_keys:
             light: 'yes'
           type: Main
@@ -245,7 +245,7 @@ states:
           update_keys:
             gps: 'yes'
           type: Main
-        - label: 'Dual Sim'
+        - label: 'Dual SIM'
           update_keys:
             dual_sim: 'yes'
           type: Main

@@ -14,17 +14,14 @@ posCount = 0
 botName = "demo_tel"
 
 states = state_dict[botName]["states"].keys()
-next_state = state_dict[botName]["states"]["init"]["transitions"]["next_state"]
 
-#first graph node
 id = 1
-nodes = collections.OrderedDict({"init": {"id": id}})
-current_state = "init"
+nodes = collections.OrderedDict()
 edges = []
 
 # recursive method for graph construction
 def findNextState(current_state, next_state):
-    if next_state in nodes.keys():
+    if current_state is not None and next_state in nodes.keys():
         edges.append((nodes[current_state]["id"], nodes[next_state]["id"]))
         return
     global id
@@ -156,7 +153,7 @@ def findUnreachableNodes():
 print("Bots available: %s" % state_dict.keys())
 print("Creating graph for bot: %s" % botName)
 
-findNextState(current_state, next_state)
+findNextState(None, "init")
 findStatePositions()
 findUnreachableNodes()
 

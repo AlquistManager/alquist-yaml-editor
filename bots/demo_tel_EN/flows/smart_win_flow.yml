@@ -18,61 +18,61 @@ states:
   smart_win_init_3:
     type: message_text
     properties:
-      text: 'Nabídka telefonů s Windows Phone je u nás poměrně úzká, většina modelů pochází od výdobců Microsoft a Nokia.'
+      text: 'The Windows Phone models mostly come from Microsoft or Nokia.'
 
   smart_win_2:
     type: message_text
     properties:
-      text: 'Nejprve určeme cenovou kategorii, ve které se má Váš mobilní telefon pohybovat.'
+      text: 'First decide how much to spend for the phone/ '
       delay: 3000
 
   smart_win_price_1:
     type: message_text
     properties:
-      text: 'Nejevnější modely se pohybují do cen okolo 2 000 Kč.'
+      text: 'The cheapest models start at around 80 Euros.'
       delay: 3000
 
   smart_win_price_2:
     type: message_text
     properties:
-      text: 'Nižší střední třída telefonů s Windows Phone se drží v cenovém rozpětí mezi 2 000 Kč a 5 000 Kč. '
+      text: 'Rge middle class Windows Phone models are priced starting at 90 to 200 Euro. '
       delay: 2500
 
   smart_win_price_3:
     type: message_text
     properties:
-      text: 'Pokud hledáte silný a výkonný model stále za přijatelnou cenu, doporučujeme kategorii mezi 5 000 Kč a 8 000 Kč.'
+      text: 'A powerfull model for a reasonable price goes between  200 and 400 Euros.'
       delay: 3500
 
   smart_win_price_4:
     type: message_text
     properties:
-      text: 'Pokud vás zajímají ty nejluxusnější modely z naší nabídky, neváhejte zvolit kategorii 8 000+ Kč.'
+      text: 'If you want the luxurious you have to be ready to pay more than 400 Euros.'
       delay: 3500
 
   smart_win_price_5:
     type: message_text
     properties:
-      text: 'Prosím, zvolte jednu z nabídnutých kategorií, nebo si vytvořte vlastní'
+      text: 'Select one of the price ranges, please.'
       delay: 3500
 
   smart_win_price_6:
     type: message_buttons
     properties:
       buttons:
-        - label: 'do 2000 Kč'
+        - label: 'eo 80 Euro'
           next_state: smart_win_price_1_context
           type: Main
-        - label: '2000 - 5000 Kč'
+        - label: '80 - 200 Euro'
           next_state: smart_win_price_2_context
           type: Main
-        - label: '5000 - 8 000 Kč'
+        - label: '200 - 400 Euro'
           next_state: smart_win_price_3_context
           type: Main
-        - label: 'Nad 8 000 Kč'
+        - label: 'More than 400 Euro'
           next_state: smart_win_price_4_context
           type: Main
-        - label: 'PŘESKOČIT'
+        - label: 'SKIP'
           next_state: smart_win_size
 
   win_slider_price:
@@ -204,7 +204,7 @@ states:
   smart_win_price_out1:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii od {{price}} Kč'
+      text: 'I am searching phones in a prixe range starting at {{price}} Euro'
       delay: 1000
     transitions:
       next_state: smart_win_price_out5
@@ -212,7 +212,7 @@ states:
   smart_win_price_out2:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii do {{price}} Kč'
+      text: 'I am searching phones in a prixe range below {{price}} Euro'
       delay: 1000
     transitions:
       next_state: smart_win_price_out5
@@ -220,7 +220,7 @@ states:
   smart_win_price_out3:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii od {{price_from}} do {{price_to}} Kč'
+      text: 'I am searching phones in a prixe range between {{price_from}} amd {{price_to}} Euro'
       delay: 1000
     transitions:
       next_state: smart_win_price_out5
@@ -228,7 +228,7 @@ states:
   smart_win_price_out4:
     type: message_text
     properties:
-      text: 'Hledám telefony v cenové kategorii kolem {{price}} Kč'
+      text: 'I am searching phones in a prixe range around {{price}} EUuro'
       delay: 1000
     transitions:
       next_state: smart_win_price_out5
@@ -252,8 +252,8 @@ states:
     type: message_text_random
     properties:
       responses:
-        - 'Omlouvám se, ale nerozuměl jsem vám. Jaké cenové rozpětí chcete zvolit?'
-        - 'Promiňte, ale nerozuměl jsem. Jaké cenové rozpětí chcete zvolit?'
+        - 'I am sorry, I do not understand.'
+        - 'I am sorry, what price range do you select?'
       delay: 1000
     transitions:
       next_state: smart_win_select_price
@@ -261,31 +261,31 @@ states:
   smart_win_size:
     type: message_text
     properties:
-      text: 'Druhým parametrem, na který se zaměříme pro zúžení výběru je velikost displeje.'
+      text: 'To narros the search select the screen size.'
       delay: 1500
 
   smart_win_display_2:
     type: message_text
     properties:
-      text: 'Prosím vyberte preferovanou velikost displeje:'
+      text: 'Select the prefered screen size:'
       delay: 1500
 
   smart_win_display_3_buttons:
     type: message_buttons
     properties:
       buttons:
-        - label: 'MALÝ (DO 3.4 PALCŮ)'
+        - label: 'SMALL (to 3.4")'
           next_state: smart_win_display_small
           type: Main
-        - label: 'VELKÝ (3.4 - 5 PALCŮ)'
+        - label: 'LARGE (3.4 - 5")'
           next_state: smart_win_display_big
           type: Main
-        - label: 'EXTRA VELKÝ (5+ PALCŮ)'
+        - label: 'EXTRA LARGE (5"+)'
           next_state: smart_win_display_extra_big
           type: Main
-        - label: 'NA DISPLEJI MI NEZÁLEŽÍ'
+        - label: 'I DO NOT CARE'
           next_state: smart_win_display_dont_care
-        - label: 'Řekni mi víc'
+        - label: 'Tell me more ...'
           next_state: smart_win_display
 
   smart_win_display_select:
@@ -298,7 +298,7 @@ states:
   smart_win_display:
     type: message_text
     properties:
-      text: 'Displej je zpravidla dotykový a velikost jeho úhlopříčky se uvádí v palcích. Palec se značí značkou " a odpovídá 2,54 cm. Například čtyřpalcový displej je velký asi jako kreditní karta.'
+      text: 'WIN phones use the touch screen and the size is in inches. The 4" screen is approximatelly the same size as the credit card.'
       delay: 1500
     transitions:
       next_state: smart_win_display_2
@@ -340,7 +340,7 @@ states:
     type: message_text_random
     properties:
       responses:
-        - 'Prosím vyberte jednu z nabízených možností'
+        - 'Chose one of the selections, please.'
     transitions:
       next_state: smart_win_display_3_buttons
 
@@ -362,26 +362,26 @@ states:
   smart_win_params_2t2:
     type: message_text
     properties:
-      text: 'Nyní se podíváme na další vlasnosti vašeho telefonu. Prosím vyberte vlastnosti, které považujete za nejdůležitější. Výběr potvrdíte volbou NAVRHNOUT TELEFONY. Pokud si nejste jistí, co který parametr znamená, klepněte na tlačítko s nápovědou.'
+      text: 'Other paramaters. Select what is important for you and then press the SUGGEST PHONES. If not sure about the parameters click the help button.'
 
 
   smart_win_params_3:
     type: message_checkboxes
     properties:
       checkboxes:
-        - label: 'NFC čip'
+        - label: 'NFC'
           update_keys:
             nfc: 'yes'
           type: Main
-        - label: 'Čtečka otisků prstů'
+        - label: 'Fingerprint reader'
           update_keys:
             fingerprint: 'yes'
           type: Main
-        - label: 'LTE připojení'
+        - label: 'LTE connectivity'
           update_keys:
             lte: 'yes'
           type: Main
-        - label: 'Dual Sim'
+        - label: 'Dual SIM'
           update_keys:
             dual_sim: 'yes'
           type: Main

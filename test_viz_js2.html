@@ -93,8 +93,8 @@
 <div id="panes" class="split">
 <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
-        <!--<textarea class="text-editor"></textarea>
-        <button type="button" id="button_update">Update</button>-->
+        <textarea class="text-editor" id="text-editor"></textarea>
+        <button type="button" id="button_update">Update</button>
     </div>
 </div>
 
@@ -109,7 +109,7 @@
 
 
     Split(['#graph_main', '#editor'], {
-    sizes: [80, 20],
+    sizes: [70, 30],
     //minSize: [200,200],
         direction: 'horizontal',
         gutterSize: 8,
@@ -141,13 +141,18 @@
     var nodes = document.getElementsByClassName("node");
     var edges = document.getElementsByClassName("edge");
 
+
+
+
     for (i = 0; i < nodes.length; i++) {
         //displays part of yaml code after click on node
         nodes[i].addEventListener('click', function (evt) {
             var state = evt.currentTarget.firstChild.firstChild.data;
             var statePos = findPosition(state).split(" ");
             var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
-            alert(text);
+            //alert(text);
+            var text2 = getYamlFile(statePos[1]);
+            document.getElementById("text-editor").value = text2;
         });
 
         //highlights nodes and edges on mouseover
@@ -229,6 +234,12 @@
             code += lines[i] + "\n";
         }
         return code;
+    }
+
+    //gets complete yaml file
+    function getYamlFile(file){
+        var response = yamlMap.get(file);
+        return response;
     }
 
     /*
