@@ -118,86 +118,84 @@
         cursor: 'col-resize'
     });
 
+    function loadGraph() {
+        //loads graph file
+        jQuery.ajaxSetup({async: false});
+        $.get("graph_viz.txt", function (response) {
+            elem.innerHTML = Viz(response, "svg");
+        }, 'text');
 
-    //loads graph file
-    jQuery.ajaxSetup({async: false});
-    $.get("graph_viz.txt", function (response) {
-        elem.innerHTML += Viz(response, "svg");
-    }, 'text');
+        //loads positions of states in yaml files
+        $.get("state_positions.txt", function (response) {
+            statePositions = response;
+            fileNames = findFileNames();
 
-    //loads positions of states in yaml files
-    $.get("state_positions.txt", function (response) {
-        statePositions = response;
-        fileNames = findFileNames();
+            for (i = 0; i < fileNames.length; i++) {
+                if (fileNames[i] == undefined)continue;
+                $.get("bots/" + botName + "/flows/" + fileNames[i], function (res) {
+                    yamlMap.set(fileNames[i], res);
+                }, 'text');
+            }
+        }, 'text');
 
-        for (i = 0; i < fileNames.length; i++) {
-            if(fileNames[i] == undefined)continue;
-            $.get("bots/" + botName + "/flows/" + fileNames[i], function (res) {
-                yamlMap.set(fileNames[i], res);
-            }, 'text');
+        jQuery.ajaxSetup({async: true});
+
+        var nodes = document.getElementsByClassName("node");
+        var edges = document.getElementsByClassName("edge");
+
+
+        for (i = 0; i < nodes.length; i++) {
+            //displays part of yaml code after click on node
+            nodes[i].addEventListener('click', function (evt) {
+                var state = evt.currentTarget.firstChild.firstChild.data;
+                var statePos = findPosition(state).split(" ");
+                //var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
+                //alert(text);
+                var text2 = getYamlFile(statePos[1]);
+                document.getElementById("text-editor").value = text2;
+                currentFile = statePos[1];
+            });
+
+            //highlights nodes and edges on mouseover
+            nodes[i].addEventListener('mouseover', function (evt) {
+                var ellipse = evt.currentTarget.children[1];
+                ellipse.style.strokeWidth = "5px";
+
+                for (i = 0; i < edges.length; i++) {
+                    var nodeName = evt.currentTarget.firstChild.firstChild.data;
+                    var title = edges[i].firstElementChild.firstChild.data;
+                    var splittedTitle = title.split("->");
+                    if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                        var path = edges[i].children[1];
+                        path.style.strokeWidth = "5px";
+                    }
+                }
+
+            });
+
+            //stops highlighting
+            nodes[i].addEventListener('mouseout', function (evt) {
+                var ellipse = evt.currentTarget.children[1];
+                ellipse.style.strokeWidth = "1px";
+
+                for (i = 0; i < edges.length; i++) {
+                    var nodeName = evt.currentTarget.firstChild.firstChild.data;
+                    var title = edges[i].firstElementChild.firstChild.data;
+                    var splittedTitle = title.split("->");
+                    if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                        var path = edges[i].children[1];
+                        path.style.strokeWidth = "1px";
+                    }
+                }
+            });
         }
-    }, 'text');
+        var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled: true, minZoom: 0.1, maxZoom: 20});
 
-    jQuery.ajaxSetup({async: true});
-
-    var nodes = document.getElementsByClassName("node");
-    var edges = document.getElementsByClassName("edge");
-
-
-
-
-    for (i = 0; i < nodes.length; i++) {
-        //displays part of yaml code after click on node
-        nodes[i].addEventListener('click', function (evt) {
-            var state = evt.currentTarget.firstChild.firstChild.data;
-            var statePos = findPosition(state).split(" ");
-            //var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
-            //alert(text);
-            var text2 = getYamlFile(statePos[1]);
-            document.getElementById("text-editor").value = text2;
-            currentFile = statePos[1];
-        });
-
-        //highlights nodes and edges on mouseover
-        nodes[i].addEventListener('mouseover', function (evt) {
-            var ellipse = evt.currentTarget.children[1];
-            ellipse.style.strokeWidth = "5px";
-
-            for(i = 0; i < edges.length; i++){
-                var nodeName = evt.currentTarget.firstChild.firstChild.data;
-                var title = edges[i].firstElementChild.firstChild.data;
-                var splittedTitle = title.split("->");
-                if(splittedTitle[0] == nodeName || splittedTitle[1] == nodeName){
-                    var path = edges[i].children[1];
-                    path.style.strokeWidth = "5px";
-                }
-            }
-
-        });
-
-        //stops highlighting
-        nodes[i].addEventListener('mouseout', function (evt) {
-            var ellipse = evt.currentTarget.children[1];
-            ellipse.style.strokeWidth = "1px";
-
-            for(i = 0; i < edges.length; i++){
-                var nodeName = evt.currentTarget.firstChild.firstChild.data;
-                var title = edges[i].firstElementChild.firstChild.data;
-                var splittedTitle = title.split("->");
-                if(splittedTitle[0] == nodeName || splittedTitle[1] == nodeName){
-                    var path = edges[i].children[1];
-                    path.style.strokeWidth = "1px";
-                }
-            }
-        });
+        panZoomGraph.zoom(1.5);
+        panZoomGraph.center();
     }
 
-    var panZoomGraph = svgPanZoom(elem.firstElementChild, {controlIconsEnabled: true, minZoom: 0.1, maxZoom: 20});
-
-    panZoomGraph.zoom(1.5);
-    panZoomGraph.center();
-
-
+    loadGraph();
 
     //finds line with position information of a state
     function findPosition(state) {
@@ -266,7 +264,8 @@
         $.post("http://127.0.0.1:5000/",
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function(data, status){
-                console.log("data sent");
+                loadGraph();
+                console.log(status);
             });
     }
 

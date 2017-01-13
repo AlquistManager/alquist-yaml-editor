@@ -1,4 +1,4 @@
-﻿name: all_flow
+name: all_flow
 states:
   all_intro:
     type: CountPhonesZbozi
@@ -20,4 +20,4 @@ states:
     properties:
       text: 'Další důležitou volbou je cena vašeho telefonu.'
     transitions:
-      next_state: 'smart_price_1'
+      next_state: smart_price_1

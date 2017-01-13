@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5473ba94-d1c8-48a7-97ca-1f83ba0d461e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crossdomain.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/flows/all_flow.yml" afterPath="$PROJECT_DIR$/bots/demo_tel/flows/all_flow.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz.txt" afterPath="$PROJECT_DIR$/graph_viz.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_viz_js2.html" afterPath="$PROJECT_DIR$/test_viz_js2.html" />
     </list>
@@ -23,7 +22,7 @@
     <SUITE FILE_PATH="coverage/alquist-yaml-editor$sc.coverage" NAME="sc Coverage Results" MODIFIED="1480693039502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/alquist-yaml-editor$neighbours.coverage" NAME="neighbours Coverage Results" MODIFIED="1481205749601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/alquist-yaml-editor$server.coverage" NAME="server Coverage Results" MODIFIED="1484304417293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1484312677885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1484318676996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -37,15 +36,15 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
-              <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+            <state relative-caret-position="-235">
+              <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
                 <element signature="e#1566#2722#0" expanded="false" />
                 <element signature="e#2786#2857#0" expanded="false" />
                 <element signature="e#2961#4169#0" expanded="false" />
                 <element signature="e#4270#4560#0" expanded="false" />
-                <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+                <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +53,8 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="249">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -79,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/state_positions.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2785">
-              <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+              <caret line="321" column="0" lean-forward="false" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,8 +87,8 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="263" column="50" lean-forward="false" selection-start-line="263" selection-start-column="50" selection-end-line="263" selection-end-column="50" />
+            <state relative-caret-position="286">
+              <caret line="124" column="27" lean-forward="false" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
               <folding>
                 <element signature="e#1296#1465#2" expanded="true" />
                 <element signature="e#1546#1699#2" expanded="true" />
@@ -122,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/graph_viz.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="673">
-              <caret line="840" column="1" lean-forward="false" selection-start-line="840" selection-start-column="1" selection-end-line="840" selection-end-column="1" />
+              <caret line="835" column="1" lean-forward="false" selection-start-line="835" selection-start-column="1" selection-end-line="835" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -673,7 +672,7 @@
             <element signature="e#2786#2857#0" expanded="false" />
             <element signature="e#2961#4169#0" expanded="false" />
             <element signature="e#4270#4560#0" expanded="false" />
-            <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+            <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
           </folding>
         </state>
       </provider>
@@ -704,7 +703,7 @@
             <element signature="e#2786#2857#0" expanded="false" />
             <element signature="e#2961#4169#0" expanded="false" />
             <element signature="e#4270#4560#0" expanded="false" />
-            <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+            <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
           </folding>
         </state>
       </provider>
@@ -735,7 +734,7 @@
             <element signature="e#2786#2857#0" expanded="false" />
             <element signature="e#2961#4169#0" expanded="false" />
             <element signature="e#4270#4560#0" expanded="false" />
-            <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+            <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
           </folding>
         </state>
       </provider>
@@ -765,7 +764,7 @@
             <element signature="e#2786#2857#0" expanded="false" />
             <element signature="e#2961#4169#0" expanded="false" />
             <element signature="e#4270#4560#0" expanded="false" />
-            <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+            <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
           </folding>
         </state>
       </provider>
@@ -905,20 +904,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsing_yaml.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/test2.html" />
     <entry file="file://$PROJECT_DIR$/state_positions.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2785">
-          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+          <caret line="321" column="0" lean-forward="false" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -926,7 +917,7 @@
     <entry file="file://$PROJECT_DIR$/graph_viz.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
-          <caret line="840" column="1" lean-forward="false" selection-start-line="840" selection-start-column="1" selection-end-line="840" selection-end-column="1" />
+          <caret line="835" column="1" lean-forward="false" selection-start-line="835" selection-start-column="1" selection-end-line="835" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -943,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="249">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -953,23 +944,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="152" column="16" lean-forward="false" selection-start-line="152" selection-start-column="16" selection-end-line="152" selection-end-column="16" />
+        <state relative-caret-position="-235">
+          <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
             <element signature="e#1566#2722#0" expanded="false" />
             <element signature="e#2786#2857#0" expanded="false" />
             <element signature="e#2961#4169#0" expanded="false" />
             <element signature="e#4270#4560#0" expanded="false" />
-            <marker date="1484313699155" expanded="false" signature="4648:4783" ph="..." />
+            <marker date="1484319619687" expanded="false" signature="4648:4783" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsing_yaml.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="263" column="50" lean-forward="false" selection-start-line="263" selection-start-column="50" selection-end-line="263" selection-end-column="50" />
+        <state relative-caret-position="286">
+          <caret line="124" column="27" lean-forward="false" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
           <folding>
             <element signature="e#1296#1465#2" expanded="true" />
             <element signature="e#1546#1699#2" expanded="true" />

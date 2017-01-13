@@ -151,6 +151,19 @@ def findUnreachableNodes():
 # create a graph for chosen bot
 def createGraph(bot):
     YamlParser()
+
+    statePositions.clear()
+    unreachableNodes.clear()
+    files.clear()
+
+    global posCount
+    posCount = 0
+
+    global id
+    id = 1
+    nodes.clear()
+    edges.clear()
+
     global botName
     botName = bot
 
