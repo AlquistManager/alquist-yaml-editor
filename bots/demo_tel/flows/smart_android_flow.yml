@@ -1,4 +1,4 @@
-﻿﻿name: smart_android_flow
+﻿name: smart_android_flow
 states:
   smart_android_init:
     type: CountPhonesZbozi

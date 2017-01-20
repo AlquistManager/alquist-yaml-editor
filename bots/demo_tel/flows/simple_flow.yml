@@ -1,4 +1,4 @@
-﻿name: simple_flow
+name: simple_flow
 states:
   simple_intro:
     type: message_text
