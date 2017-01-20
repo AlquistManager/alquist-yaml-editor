@@ -4,6 +4,10 @@
     <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="svg-pan-zoom.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.2.0/split.min.js"></script>
+    <script type="text/javascript" src="taboverride.min.js"></script>
+
+    <link rel="stylesheet" href="themes/default/style.min.css"/>
+    <script type="text/javascript" src="jstree.min.js"></script>
 
 
     <style type="text/css">
@@ -125,9 +129,10 @@
 </head>
 <body>
 
-<div id="loader"></div>
 
+<div id="loader"></div>
 <div id="panes" style="visibility: hidden;" class="split">
+    <div id="file_tree" class="split split-horizontal file-tree"></div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
@@ -139,6 +144,12 @@
 
     var elem = document.getElementById("graph_main");
 
+    // get a reference to the textarea element
+    var textarea = document.getElementById('text-editor');
+
+    // enable Tab Override for the textarea
+    tabOverride.set(textarea);
+
     var statePositions;
     var fileNames;
     var yamlMap = new Map();
@@ -147,8 +158,8 @@
 
     document.getElementById("text-editor").value = "";
 
-    Split(['#graph_main', '#editor'], {
-        sizes: [70, 30],
+    Split(['#file_tree', '#graph_main', '#editor'], {
+        sizes: [20, 55, 25],
         //minSize: [200,200],
         direction: 'horizontal',
         gutterSize: 8,
@@ -232,6 +243,8 @@
         panZoomGraph.center();
 
         showPage();
+        setSvgSizeToParent();
+
     }
 
     loadGraph();
@@ -305,7 +318,7 @@
 
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
-        $.post("http://127.0.0.1:5000/",
+        $.post("http://127.0.0.1:5000/update",
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function (data, status) {
                 loadGraph();
@@ -317,6 +330,42 @@
         toPython(botName);
     });
 
+    function setSvgSizeToParent() {
+        var newWidth = elem.firstElementChild.parentNode.clientWidth;
+        var newHeight = elem.firstElementChild.parentNode.clientHeight;
+        elem.firstElementChild.setAttribute("width", newWidth);
+        elem.firstElementChild.setAttribute("height", newHeight);
+    }
+
+    var zoomControls = document.getElementById("svg-pan-zoom-controls");
+    var zoomControlsY = elem.firstElementChild.parentNode.clientHeight - 100;
+    zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
+
+    $.post("http://127.0.0.1:5000/", "test",
+        function (data, status) {
+            //loadGraph();
+            console.log(status);
+            con
+        });
+
+    $('#file_tree').jstree({
+        'core': {
+            'data': [
+                'Simple root node',
+                {
+                    'text': 'Root node 2',
+                    'state': {
+                        'opened': true,
+                        'selected': true
+                    },
+                    'children': [
+                        {'text': 'Child 1'},
+                        'Child 2'
+                    ]
+                }
+            ]
+        }
+    });
 
 
 </script>
