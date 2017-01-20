@@ -127,7 +127,7 @@
 
 <div id="loader"></div>
 
-<div id="panes" class="split">
+<div id="panes" style="visibility: hidden;" class="split">
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
@@ -283,10 +283,8 @@
     }
 
     function showPage() {
-        console.log("test1");
         document.getElementById("loader").style.display = "none";
-        document.getElementById("panes").style.display = "block";
-        console.log("test");
+        document.getElementById("panes").style.visibility = "visible";
     }
 
 
