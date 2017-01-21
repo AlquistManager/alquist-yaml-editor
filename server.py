@@ -6,9 +6,13 @@ import io
 import main
 import os
 import urllib
+import sys
 
 app = Flask(__name__)
 
+port = 5000
+if len(sys.argv) > 1:
+    port = sys.argv[1]
 
 @app.route('/update', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
@@ -71,5 +75,5 @@ def recreateGraph(botName):
 app.run(
         debug=False,
         host="0.0.0.0",
-        port="5000"
+        port=port
     )
