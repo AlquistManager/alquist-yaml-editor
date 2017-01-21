@@ -66,3 +66,10 @@ def writeToFile(data):
 def recreateGraph(botName):
     print("recreating graph")
     main.createGraph(botName)
+
+
+app.run(
+        debug=False,
+        host="0.0.0.0",
+        port="5000"
+    )
