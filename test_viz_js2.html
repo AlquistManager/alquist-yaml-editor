@@ -142,6 +142,7 @@
 
 <script type="text/javascript">
 
+    var applicationURL = "http://127.0.0.1:5000/";//"http://thawing-escarpment-24517.herokuapp.com/update"; //127.0.0.1:5000
     var elem = document.getElementById("graph_main");
 
     // get a reference to the textarea element
@@ -168,13 +169,20 @@
 
     function loadGraph() {
         //loads graph file
+        /*jQuery.ajaxSetup({async: false});
+         $.get("graph_viz.txt", function (response) {
+         elem.innerHTML = Viz(response, "svg");
+         }, 'text');*/
+
         jQuery.ajaxSetup({async: false});
-        $.get("graph_viz.txt", function (response) {
-            elem.innerHTML = Viz(response, "svg");
-        }, 'text');
+        $.post(applicationURL + "graph", "getGraph",
+            function (data, status) {
+                elem.innerHTML = Viz(data, "svg");
+                console.log("get graph file: " + status);
+            });
 
         //loads positions of states in yaml files
-        $.get("state_positions.txt", function (response) {
+        /*$.get("state_positions.txt", function (response) {
             statePositions = response;
             fileNames = findFileNames();
 
@@ -184,7 +192,25 @@
                     yamlMap.set(fileNames[i], res);
                 }, 'text');
             }
-        }, 'text');
+        }, 'text');*/
+
+        $.post(applicationURL + "statepos", "getStatePositions",
+            function (data, status) {
+                statePositions = data;
+                fileNames = findFileNames();
+                console.log("get state positions: " + status);
+            });
+
+        for (i = 0; i < fileNames.length; i++) {
+            if (fileNames[i] == undefined)continue;
+            var filepath = "bots/" + botName + "/flows/" + fileNames[i];
+            $.post(applicationURL + "getfile", filepath,
+                function (data, status) {
+                    yamlMap.set(fileNames[i], data);
+                    console.log("get yaml file: " + status);
+                });
+        }
+
 
         jQuery.ajaxSetup({async: true});
 
@@ -197,8 +223,6 @@
             nodes[i].addEventListener('click', function (evt) {
                 var state = evt.currentTarget.firstChild.firstChild.data;
                 var statePos = findPosition(state).split(" ");
-                //var text = getYamlCode(statePos[1], statePos[2], statePos[3]);
-                //alert(text);
                 var text2 = getYamlFile(statePos[1]);
                 document.getElementById("text-editor").value = text2;
                 currentFile = statePos[1];
@@ -304,21 +328,9 @@
     function toPython(usrdata) {
 
         var editor_text = document.getElementById("text-editor").value;
-        //console.log("test");
-        /*
-         $.ajax({
-         url: "http://127.0.0.1:5000/",
-         type: "POST",
-         data: JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
-         dataType: "json",
-         success: function (data) {
-         console.log("data sent");
-         }
-         });*/
-
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
-        $.post("http://127.0.0.1:5000/update",
+        $.post(applicationURL + "update", //127.0.0.1:5000
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function (data, status) {
                 loadGraph();
@@ -340,13 +352,6 @@
     var zoomControls = document.getElementById("svg-pan-zoom-controls");
     var zoomControlsY = elem.firstElementChild.parentNode.clientHeight - 100;
     zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
-
-    $.post("http://thawing-escarpment-24517.herokuapp.com/", "test",
-        function (data, status) {
-            //loadGraph();
-            console.log(status);
-            con
-        });
 
     $('#file_tree').jstree({
         'core': {

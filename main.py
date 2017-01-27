@@ -190,3 +190,26 @@ def createGraph(bot):
 
 
 #createGraph("test_editor")
+
+# returns graph_viz.txt file
+def getGraphFile():
+    with io.open("graph_viz.txt", "r", encoding="utf-8") as file:
+        data = file.read()
+        file.close()
+        return data
+
+# returns state_positions.txt file
+def getStatePositionsFile():
+    with io.open("state_positions.txt", "r", encoding="utf-8") as file:
+        data = file.read()
+        file.close()
+        return data
+
+# returns requested file
+def getYamlFile(filepath):
+    with io.open(filepath, "r", encoding="utf-8") as file:
+        if "bots/" not in filepath:
+            return "Invalid Path"
+        data = file.read()
+        file.close()
+        return data

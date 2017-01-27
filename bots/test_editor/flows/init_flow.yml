@@ -23,9 +23,3 @@ states:
     properties:
       text: 'Nashledanou.'
       delay: 1500
-      
-  state5:
-    type: message_text
-    properties:
-      text: 'Nashledanou.'
-      delay: 1500

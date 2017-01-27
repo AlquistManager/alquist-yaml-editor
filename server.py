@@ -24,40 +24,29 @@ def update():
     return "OK"
 
 
-@app.route('/', methods=['POST', 'GET', 'OPTIONS'])
+@app.route('/graph', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
-def requestFiles():
+def requestGraphFile():
     if request.method == 'POST':
-        r = ['<ul class="jqueryFileTree" style="display: none;">']
         d = request.get_data()
         print(d)
+    return main.getGraphFile()
 
-        r = "<ul>"
-        for f in os.listdir('.'):
-            r += "<il>" + f + "</li>"
+@app.route('/statepos', methods=['POST', 'GET', 'OPTIONS'])
+@crossdomain(origin='*')
+def requestStatePosFile():
+    if request.method == 'POST':
+        d = request.get_data()
+        print(d)
+    return main.getStatePositionsFile()
 
-        r += "</ul>"
-
-
-        '''
-        try:
-            r = ['<ul class="jqueryFileTree" style="display: none;">']
-            d = request.get_data()
-
-            d = urllib.unquote(request.POST.get('dir', 'c:\\temp'))
-            for f in os.listdir(d):
-                ff = os.path.join(d, f)
-                if os.path.isdir(ff):
-                    r.append('<li class="directory collapsed"><a rel="%s/">%s</a></li>' % (ff, f))
-                else:
-                    e = os.path.splitext(f)[1][1:]  # get .ext and remove dot
-                    r.append('<li class="file ext_%s"><a rel="%s">%s</a></li>' % (e, ff, f))
-            r.append('</ul>')
-        except Exception, e:
-            r.append('Could not load directory: %s' % str(e))
-        r.append('</ul>')
-        return HttpResponse(''.join(r))'''
-    return r
+@app.route('/getfile', methods=['POST', 'GET', 'OPTIONS'])
+@crossdomain(origin='*')
+def requestYamlFile():
+    if request.method == 'POST':
+        d = request.get_data()
+        print(d)
+    return main.getYamlFile(str(d,'utf-8'))
 
 
 def writeToFile(data):
