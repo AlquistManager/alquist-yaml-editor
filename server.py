@@ -8,16 +8,19 @@ import json
 import io
 import main
 import os
+import zipfile
 import urllib
 import sys
+import shutil
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'temp'
-ALLOWED_EXTENSIONS = set(['yml', 'yaml'])
+ALLOWED_EXTENSIONS = set(['yml', 'yaml', 'zip'])
 
 port = 5000
 if len(sys.argv) > 1:
     port = sys.argv[1]
+
 
 @app.route('/update', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
@@ -37,6 +40,7 @@ def requestGraphFile():
         print(d)
     return main.getGraphFile()
 
+
 @app.route('/statepos', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
 def requestStatePosFile():
@@ -45,13 +49,15 @@ def requestStatePosFile():
         print(d)
     return main.getStatePositionsFile()
 
+
 @app.route('/getfile', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
 def requestYamlFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.getYamlFile(str(d,'utf-8'))
+    return main.getYamlFile(str(d, 'utf-8'))
+
 
 @app.route('/botnames', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
@@ -60,6 +66,7 @@ def requestBotNames():
         d = request.get_data()
         print(d)
     return main.getBotNames()
+
 
 @app.route('/', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
@@ -81,9 +88,11 @@ def recreateGraph(botName):
     print("recreating graph")
     main.createGraph(botName)
 
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 @crossdomain(origin='*')
@@ -114,8 +123,10 @@ def upload_file():
         createNewProject(botName)
     return "ok"
 
-#creates a new folder for a bot and copies uploaded files there
+
+# creates a new folder for a bot and copies uploaded files there
 def createNewProject(botName):
+
     path = "bots/" + botName + "/flows/"
     if not os.path.exists(path):
         os.makedirs(path)
@@ -123,13 +134,46 @@ def createNewProject(botName):
         copyfile("temp/" + file, path + file)
         os.remove("temp/" + file)
 
-#checks if upload folder exists, creates it not
+    '''
+    path = "bots/" + botName + "/"
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+
+    for item in os.listdir("temp"):  # loop through items in dir
+        print(item)
+        if item.endswith(".zip"):  # check for ".zip" extension
+            file_name = os.path.abspath(item)  # get full path of files
+            print(file_name)
+            zip_ref = zipfile.ZipFile(file_name)  # create zipfile object
+            zip_ref.extractall("temp")  # extract file to dir
+            zip_ref.close()  # close file
+            os.remove(file_name)  # delete zipped file
+
+    copyFolder("", path, 0)
+
+def copyFolder(pathFrom, pathTo, depth):
+    if depth > 2:
+        return
+    for item in os.listdir("temp" + pathFrom):
+        if item is "flows" or "states":
+            try:
+                shutil.copytree("temp/" + pathFrom + item, pathTo + item);
+            except:
+                print("error copying directory")
+        elif os.path.isdir("temp/" + pathFrom + item):
+            copyFolder(pathFrom + item + "/", pathTo, depth + 1)
+            '''
+
+
+# checks if upload folder exists, creates it not
 def checkUploadFolder():
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
 
+
 app.run(
-        debug=False,
-        host="0.0.0.0",
-        port=port
-    )
+    debug=False,
+    host="0.0.0.0",
+    port=port
+)
