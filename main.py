@@ -3,6 +3,7 @@ from loaded_states import state_dict, intent_transitions
 import collections
 import io
 from os import listdir
+from os.path import isfile
 
 #YamlParser()
 
@@ -150,7 +151,7 @@ def findUnreachableNodes():
 
 # create a graph for chosen bot
 def createGraph(bot):
-    YamlParser()
+    YamlParser(bot)
 
     statePositions.clear()
     unreachableNodes.clear()
@@ -213,3 +214,12 @@ def getYamlFile(filepath):
         data = file.read()
         file.close()
         return data
+
+#returns names of bot projects
+def getBotNames():
+    botnames = ""
+    for f in listdir("bots/"):
+        if not isfile("bots/" + f):
+            botnames += f + ";"
+    return botnames
+

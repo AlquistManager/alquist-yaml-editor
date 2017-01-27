@@ -46,6 +46,35 @@ class YamlParser:
                     bot_yaml_folder + " folder doesn't exist. Thus bot " + bot_name + " doesn't have correct folder structure.",
                     file=sys.stderr)
 
+    def __init__(self, bot_name):
+        # clear all content in dictionary with loaded states
+        state_dict.clear()
+
+        # folder, where yaml files are stored
+        bot_yaml_folder = "bots/" + bot_name + "/flows/"
+        bot_states_folder = "bots/" + bot_name + "/states/"
+        try:
+            self.import_custom_states(bot_states_folder, bot_name)
+            # create fields in state_dict and intent_transitions for bot
+            state_dict.update({bot_name: {}})
+            intent_transitions.update({bot_name: {}})
+            # find all .yml and .yaml files
+            files = [f for f in listdir(bot_yaml_folder)
+                     if isfile(join(bot_yaml_folder, f)) if f.endswith(('.yml', '.yaml'))]
+            # load all files
+            for file_name in files:
+                self.load_file(bot_yaml_folder, file_name, bot_name)
+            # check if init state is present
+            self.check_init_state(state_dict.get(bot_name), bot_name)
+            # check if all states from intent_transitions exists
+            self.check_intent_transitions_states_exist(bot_name)
+            # check if all states mentioned in transitions really exist
+            self.check_transition_states_exist(bot_name)
+        except FileNotFoundError:
+            print(
+                bot_yaml_folder + " folder doesn't exist. Thus bot " + bot_name + " doesn't have correct folder structure.",
+                file=sys.stderr)
+
     # load yaml file
     def load_file(self, bot_yaml_folder, file_name, bot_name):
         # add missing slash to directory path

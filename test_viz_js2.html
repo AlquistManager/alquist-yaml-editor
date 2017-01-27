@@ -167,6 +167,10 @@
         cursor: 'col-resize'
     });
 
+    botName = findGetParameter("bot");
+    generateGraphForBot(botName);
+    console.log("generated graph for bot: " + botName);
+
     function loadGraph() {
         //loads graph file
         /*jQuery.ajaxSetup({async: false});
@@ -183,16 +187,16 @@
 
         //loads positions of states in yaml files
         /*$.get("state_positions.txt", function (response) {
-            statePositions = response;
-            fileNames = findFileNames();
+         statePositions = response;
+         fileNames = findFileNames();
 
-            for (i = 0; i < fileNames.length; i++) {
-                if (fileNames[i] == undefined)continue;
-                $.get("bots/" + botName + "/flows/" + fileNames[i], function (res) {
-                    yamlMap.set(fileNames[i], res);
-                }, 'text');
-            }
-        }, 'text');*/
+         for (i = 0; i < fileNames.length; i++) {
+         if (fileNames[i] == undefined)continue;
+         $.get("bots/" + botName + "/flows/" + fileNames[i], function (res) {
+         yamlMap.set(fileNames[i], res);
+         }, 'text');
+         }
+         }, 'text');*/
 
         $.post(applicationURL + "statepos", "getStatePositions",
             function (data, status) {
@@ -324,13 +328,18 @@
         document.getElementById("panes").style.visibility = "visible";
     }
 
+    function generateGraphForBot(botname) {
+        $.post(applicationURL, botname,
+            function (data, status) {
+                console.log("generate graph for bot: " + status);
+            });
+    }
 
     function toPython(usrdata) {
-
         var editor_text = document.getElementById("text-editor").value;
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
-        $.post(applicationURL + "update", //127.0.0.1:5000
+        $.post(applicationURL + "update",
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function (data, status) {
                 loadGraph();
@@ -371,6 +380,17 @@
             ]
         }
     });
+
+    function findGetParameter(parameterName) {
+        var result = null,
+            tmp = [];
+        var items = location.search.substr(1).split("&");
+        for (var index = 0; index < items.length; index++) {
+            tmp = items[index].split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        }
+        return result;
+    }
 
 
 </script>
