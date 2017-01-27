@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5473ba94-d1c8-48a7-97ca-1f83ba0d461e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_select.html" afterPath="$PROJECT_DIR$/project_select.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_viz_js2.html" afterPath="$PROJECT_DIR$/test_viz_js2.html" />
     </list>
     <ignored path="alquist-graph.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-310">
@@ -94,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/state_positions.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="321" column="0" lean-forward="false" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,8 +104,8 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="171" column="55" lean-forward="false" selection-start-line="171" selection-start-column="55" selection-end-line="171" selection-end-column="55" />
+            <state relative-caret-position="260">
+              <caret line="144" column="143" lean-forward="false" selection-start-line="144" selection-start-column="140" selection-end-line="144" selection-end-column="143" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#1;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -112,24 +113,24 @@
                 <element signature="e#1969#2122#2" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#6714#7033#0" expanded="false" />
-                <element signature="e#7157#7796#0" expanded="false" />
-                <element signature="e#7898#8536#0" expanded="false" />
+                <element signature="e#6744#7063#0" expanded="false" />
+                <element signature="e#7187#7826#0" expanded="false" />
+                <element signature="e#7928#8566#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project_select.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="project_select.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project_select.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="56" column="73" lean-forward="false" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
+            <state relative-caret-position="298">
+              <caret line="24" column="80" lean-forward="false" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
               <folding>
-                <marker date="1485531728848" expanded="true" signature="941:1045" ph="{...}" />
-                <marker date="1485531728848" expanded="true" signature="1128:1378" ph="{...}" />
-                <marker date="1485531728848" expanded="true" signature="1161:1372" ph="{...}" />
-                <marker date="1485531728848" expanded="true" signature="1407:1545" ph="{...}" />
+                <marker date="1485534330542" expanded="true" signature="971:1075" ph="{...}" />
+                <marker date="1485534330542" expanded="true" signature="1158:1408" ph="{...}" />
+                <marker date="1485534330542" expanded="true" signature="1191:1402" ph="{...}" />
+                <marker date="1485534330542" expanded="true" signature="1437:1575" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -170,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>smart_android_param_check_recommend</find>
       <find>smart_android_param_check_dis</find>
       <find>error_select_param</find>
       <find>smart_android_param_check_display</find>
@@ -200,6 +200,7 @@
       <find>redire</find>
       <find>files</find>
       <find>isfile</find>
+      <find>127</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,11 +226,11 @@
         <option value="$PROJECT_DIR$/test2.html" />
         <option value="$PROJECT_DIR$/crossdomain.py" />
         <option value="$PROJECT_DIR$/bots/test_editor/flows/init_flow.yml" />
-        <option value="$PROJECT_DIR$/test_viz_js2.html" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/yaml_parser/yaml_parser.py" />
-        <option value="$PROJECT_DIR$/project_select.html" />
         <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/test_viz_js2.html" />
+        <option value="$PROJECT_DIR$/project_select.html" />
       </list>
     </option>
   </component>
@@ -911,7 +912,7 @@
     <entry file="file://$PROJECT_DIR$/state_positions.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="321" column="0" lean-forward="false" selection-start-line="321" selection-start-column="0" selection-end-line="321" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -944,42 +945,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="171" column="55" lean-forward="false" selection-start-line="171" selection-start-column="55" selection-end-line="171" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#1691#1860#2" expanded="true" />
-            <element signature="e#1969#2122#2" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6714#7033#0" expanded="false" />
-            <element signature="e#7157#7796#0" expanded="false" />
-            <element signature="e#7898#8536#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parsing_yaml.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="56" column="73" lean-forward="false" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
-          <folding>
-            <marker date="1485531728848" expanded="true" signature="941:1045" ph="{...}" />
-            <marker date="1485531728848" expanded="true" signature="1128:1378" ph="{...}" />
-            <marker date="1485531728848" expanded="true" signature="1161:1372" ph="{...}" />
-            <marker date="1485531728848" expanded="true" signature="1407:1545" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,6 +973,37 @@
           <caret line="134" column="33" lean-forward="false" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_viz_js2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="144" column="143" lean-forward="false" selection-start-line="144" selection-start-column="140" selection-end-line="144" selection-end-column="143" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#1;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#1691#1860#2" expanded="true" />
+            <element signature="e#1969#2122#2" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#6744#7063#0" expanded="false" />
+            <element signature="e#7187#7826#0" expanded="false" />
+            <element signature="e#7928#8566#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="24" column="80" lean-forward="false" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
+          <folding>
+            <marker date="1485534330542" expanded="true" signature="971:1075" ph="{...}" />
+            <marker date="1485534330542" expanded="true" signature="1158:1408" ph="{...}" />
+            <marker date="1485534330542" expanded="true" signature="1191:1402" ph="{...}" />
+            <marker date="1485534330542" expanded="true" signature="1437:1575" ph="{...}" />
           </folding>
         </state>
       </provider>
