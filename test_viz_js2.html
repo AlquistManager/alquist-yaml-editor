@@ -1,13 +1,13 @@
 <html>
 <head>
-    <script type="text/javascript" src="viz.js"></script>
-    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="svg-pan-zoom.min.js"></script>
+    <script type="text/javascript" src="static/viz.js"></script>
+    <script type="text/javascript" src="static/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="static/svg-pan-zoom.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.2.0/split.min.js"></script>
-    <script type="text/javascript" src="taboverride.min.js"></script>
+    <script type="text/javascript" src="static/taboverride.min.js"></script>
 
-    <link rel="stylesheet" href="themes/default/style.min.css"/>
-    <script type="text/javascript" src="jstree.min.js"></script>
+    <link rel="stylesheet" href="static/themes/default/style.min.css"/>
+    <script type="text/javascript" src="static/jstree.min.js"></script>
 
 
     <style type="text/css">
@@ -142,7 +142,7 @@
 
 <script type="text/javascript">
 
-    var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/update"; //127.0.0.1:5000
+    var applicationURL = "http://127.0.0.1:5000/";//"http://thawing-escarpment-24517.herokuapp.com/"; //127.0.0.1:5000
     var elem = document.getElementById("graph_main");
 
     // get a reference to the textarea element
@@ -160,7 +160,7 @@
     document.getElementById("text-editor").value = "";
 
     Split(['#file_tree', '#graph_main', '#editor'], {
-        sizes: [20, 55, 25],
+        sizes: [20, 55, 24.5],
         //minSize: [200,200],
         direction: 'horizontal',
         gutterSize: 8,
@@ -329,7 +329,7 @@
     }
 
     function generateGraphForBot(botname) {
-        $.post(applicationURL, botname,
+        $.post(applicationURL + "generate", botname,
             function (data, status) {
                 console.log("generate graph for bot: " + status);
             });

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory, send_file
 from flask import request
 from flask import redirect, url_for
 from crossdomain import *
@@ -13,13 +13,41 @@ import urllib
 import sys
 import shutil
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 UPLOAD_FOLDER = 'temp'
 ALLOWED_EXTENSIONS = set(['yml', 'yaml', 'zip'])
+ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
 
 port = 5000
 if len(sys.argv) > 1:
     port = sys.argv[1]
+
+@app.route('/', methods=['POST', 'GET', 'OPTIONS'])
+@crossdomain(origin='*')
+def getIndexPage():
+    '''
+    with io.open("index.html", "r", encoding="utf-8") as file:
+        page = file.read()
+        file.close()
+        return page'''
+    return send_file('index.html')
+
+@app.route('/static/<path:path>')
+def getStaticFiles(path):
+    return send_from_directory('static', path)
+
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def getJsLibraries(path):
+    for extension in ALLOWED_EXTENSIONS_TO_LOAD:
+        if path.endswith(extension):
+            with io.open(path, "r", encoding="utf-8") as file:
+                page = file.read()
+                file.close()
+                return page
+    print("Error: requested " + path)
+    return "Error"
 
 
 @app.route('/update', methods=['POST', 'GET', 'OPTIONS'])
@@ -68,7 +96,7 @@ def requestBotNames():
     return main.getBotNames()
 
 
-@app.route('/', methods=['POST', 'GET', 'OPTIONS'])
+@app.route('/generate', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
 def generateNewGraph():
     if request.method == 'POST':
@@ -170,6 +198,7 @@ def copyFolder(pathFrom, pathTo, depth):
 def checkUploadFolder():
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
+
 
 
 app.run(
