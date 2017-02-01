@@ -11,11 +11,11 @@
 <p>Choose existing project to open:</p>
 <select id="projects"></select>
 <button type="button" onclick="openProject()">Open</button>
-<br>
+<br><br>
 <p>Create a new project:</p>
 <form id="file-form" method="POST" enctype=multipart/form-data>
     Bot name: <input type="text" id="newBotName" name="botname"><br>
-    Add files:
+    Add files (.zip file containing "flows" and "states" folders):
     <input type="file" id="file" name="file" multiple size="50"><br>
     <button type="button" onclick="createProject()">Create Project</button>
 </form>

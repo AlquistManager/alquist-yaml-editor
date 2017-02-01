@@ -4,6 +4,8 @@ import collections
 import io
 from os import listdir
 from os.path import isfile
+import zipfile
+import os
 
 #YamlParser()
 
@@ -74,7 +76,6 @@ def writeGraphVizJs(nodes, edges):
         file.write("color=lightgray;")
         file.write("}\n\n")
         clusterNum += 1
-
 
     '''
     for n in nodes:
@@ -151,8 +152,6 @@ def findUnreachableNodes():
 
 # create a graph for chosen bot
 def createGraph(bot):
-    YamlParser(bot)
-
     statePositions.clear()
     unreachableNodes.clear()
     files.clear()
@@ -164,6 +163,13 @@ def createGraph(bot):
     id = 1
     nodes.clear()
     edges.clear()
+
+    try:
+        YamlParser(bot)
+    except:
+        print("Error parsing yaml file.")
+        writeGraphVizJs(nodes, edges)
+        writeStatePositions(statePositions)
 
     global botName
     botName = bot
@@ -223,3 +229,16 @@ def getBotNames():
             botnames += f + ";"
     return botnames
 
+#returns yaml file names in project in HTML list
+def getYamlNamesHtml(projectname):
+    files = listdir("bots/" + projectname + "/flows")
+    fileHtml = "<ul><li data-jstree='{\"opened\":true,\"selected\":true}'>" + projectname + "<ul>"
+    for i in range(len(files)):
+        fileHtml += "<li>" + files[i] + "</li>"
+    fileHtml += "</ul></li></ul>"
+    return fileHtml
+
+#returns string containing yaml file names of a certain project
+def getYamlNames(projectname):
+    files = listdir("bots/" + projectname + "/flows")
+    return ";".join(files)
