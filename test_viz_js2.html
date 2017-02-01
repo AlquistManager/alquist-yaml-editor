@@ -179,7 +179,7 @@
          }, 'text');*/
 
         jQuery.ajaxSetup({async: false});
-        $.post(applicationURL + "graph", "getGraph",
+        $.post("graph", "getGraph",
             function (data, status) {
                 elem.innerHTML = Viz(data, "svg");
                 console.log("get graph file: " + status);
@@ -198,7 +198,7 @@
          }
          }, 'text');*/
 
-        $.post(applicationURL + "statepos", "getStatePositions",
+        $.post("statepos", "getStatePositions",
             function (data, status) {
                 statePositions = data;
                 fileNames = findFileNames();
@@ -208,7 +208,7 @@
         for (i = 0; i < fileNames.length; i++) {
             if (fileNames[i] == undefined)continue;
             var filepath = "bots/" + botName + "/flows/" + fileNames[i];
-            $.post(applicationURL + "getfile", filepath,
+            $.post("getfile", filepath,
                 function (data, status) {
                     yamlMap.set(fileNames[i], data);
                     console.log("get yaml file: " + status);
@@ -329,7 +329,7 @@
     }
 
     function generateGraphForBot(botname) {
-        $.post(applicationURL + "generate", botname,
+        $.post("generate", botname,
             function (data, status) {
                 console.log("generate graph for bot: " + status);
             });
@@ -339,7 +339,7 @@
         var editor_text = document.getElementById("text-editor").value;
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
-        $.post(applicationURL + "update",
+        $.post("update",
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function (data, status) {
                 loadGraph();

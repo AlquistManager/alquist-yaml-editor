@@ -25,7 +25,7 @@
     var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/";
     var botnames;
     jQuery.ajaxSetup({async: false});
-    $.post(applicationURL + "botnames", "getBotnames",
+    $.post("botnames", "getBotnames", //applicationURL +
         function (data, status) {
             botnames = data.split(";");
             console.log("get bot names: " + status);
@@ -58,7 +58,7 @@
             }
         }
         console.log(request);
-        request.open("POST", applicationURL + "upload");
+        request.open("POST", "upload");
         request.send(new FormData(formElement));
         //jQuery.ajaxSetup({async: true});
 

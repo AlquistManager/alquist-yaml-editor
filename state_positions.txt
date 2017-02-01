@@ -1,4 +1,17 @@
-test_editor
-state3 init_flow.yml 15 20
-init init_flow.yml 3 8
-another init_flow.yml 9 14
+comics
+explosm_set_context explosm_flow.yml 3 10
+explosm_random explosm_flow.yml 55 61
+explosm_choose explosm_flow.yml 19 35
+xkcd_begin xkcd_flow.yml 12 18
+input_exp explosm_flow.yml 36 40
+input comics.yml 23 27
+xkcd_random xkcd_flow.yml 56 62
+xkcd_next xkcd_flow.yml 49 55
+init comics.yml 11 22
+input_xkcd xkcd_flow.yml 37 41
+explosm_next explosm_flow.yml 48 54
+xkcd_choose xkcd_flow.yml 20 36
+xkcd_set_context xkcd_flow.yml 4 11
+xkcd_previous xkcd_flow.yml 42 48
+explosm_previous explosm_flow.yml 41 47
+explosm_begin explosm_flow.yml 11 17

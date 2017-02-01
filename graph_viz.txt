@@ -1,11 +1,55 @@
 digraph G{
 subgraph cluster_0 {
 init [id = 2, style=filled, color=yellow];
-another [id = 3, style=filled, color=white];
-state3 [id = 4, style=filled, color=white];
-label="init_flow.yml";
+input [id = 17, style=filled, color=white];
+label="comics.yml";
 style=filled;color=lightgray;}
 
-init -> another;
-another -> state3;
+subgraph cluster_1 {
+explosm_set_context [id = 10, style=filled, color=white];
+explosm_begin [id = 11, style=filled, color=white];
+explosm_choose [id = 12, style=filled, color=white];
+explosm_previous [id = 13, style=filled, color=white];
+explosm_next [id = 14, style=filled, color=white];
+explosm_random [id = 15, style=filled, color=white];
+input_exp [id = 16, style=filled, color=white];
+label="explosm_flow.yml";
+style=filled;color=lightgray;}
+
+subgraph cluster_2 {
+xkcd_set_context [id = 3, style=filled, color=white];
+xkcd_begin [id = 4, style=filled, color=white];
+xkcd_choose [id = 5, style=filled, color=white];
+xkcd_previous [id = 6, style=filled, color=white];
+xkcd_next [id = 7, style=filled, color=white];
+xkcd_random [id = 8, style=filled, color=white];
+input_xkcd [id = 9, style=filled, color=white];
+label="xkcd_flow.yml";
+style=filled;color=lightgray;}
+
+init -> xkcd_set_context;
+xkcd_set_context -> xkcd_begin;
+xkcd_begin -> xkcd_choose;
+xkcd_choose -> xkcd_previous;
+xkcd_previous -> xkcd_choose;
+xkcd_choose -> xkcd_next;
+xkcd_next -> xkcd_choose;
+xkcd_choose -> xkcd_random;
+xkcd_random -> xkcd_choose;
+xkcd_choose -> init;
+xkcd_choose -> input_xkcd;
+input_xkcd -> xkcd_previous;
+init -> explosm_set_context;
+explosm_set_context -> explosm_begin;
+explosm_begin -> explosm_choose;
+explosm_choose -> explosm_previous;
+explosm_previous -> explosm_choose;
+explosm_choose -> explosm_next;
+explosm_next -> explosm_choose;
+explosm_choose -> explosm_random;
+explosm_random -> explosm_choose;
+explosm_choose -> init;
+explosm_choose -> input_exp;
+input_exp -> explosm_previous;
+init -> input;
 }
