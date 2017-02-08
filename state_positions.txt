@@ -1,9 +1,17 @@
-new_bot
-state4 test.yml 28 33
-state7 test.yml 46 51
-init test.yml 3 8
-state2 test.yml 15 20
-state3 test.yml 22 27
-state1 test.yml 9 14
-state5 test.yml 34 39
-state6 test.yml 40 45
+comics
+init comics.yml 11 22
+input_xkcd xkcd_flow.yml 37 41
+xkcd_next xkcd_flow.yml 49 55
+explosm_next explosm_flow.yml 48 54
+explosm_set_context explosm_flow.yml 3 10
+input_exp explosm_flow.yml 36 40
+xkcd_previous xkcd_flow.yml 42 48
+explosm_random explosm_flow.yml 55 61
+xkcd_begin xkcd_flow.yml 12 18
+xkcd_choose xkcd_flow.yml 20 36
+xkcd_set_context xkcd_flow.yml 4 11
+xkcd_random xkcd_flow.yml 56 62
+explosm_begin explosm_flow.yml 11 17
+explosm_previous explosm_flow.yml 41 47
+explosm_choose explosm_flow.yml 19 35
+input comics.yml 23 27
