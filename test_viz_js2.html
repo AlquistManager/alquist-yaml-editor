@@ -27,6 +27,7 @@
         ellipse {
             stroke-width: 1px;
         }
+
     </style>
 
 
@@ -132,7 +133,11 @@
 
 <div id="loader"></div>
 <div id="panes" style="visibility: hidden;" class="split">
-    <div id="file_tree" class="split split-horizontal file-tree"></div>
+    <div id="file_tree" class="split split-horizontal file-tree">
+        <div id="file_tree_inner"></div>
+        <button id="new_file" onclick="onClickNewFile()">New file</button>
+        <button id="delete_file" onclick="onClickDeleteFile()">Delete file</button>
+    </div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
@@ -143,7 +148,7 @@
 
 <script type="text/javascript">
 
-    var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/"; //127.0.0.1:5000
+    //var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/"; //127.0.0.1:5000
     var elemGraph = document.getElementById("graph_main");
 
     // get a reference to the textarea element
@@ -157,6 +162,7 @@
     var yamlMap = new Map();
     var botName;
     var currentFile;
+    var responseToGenerate;
 
     document.getElementById("text-editor").value = "";
 
@@ -204,8 +210,7 @@
         var edges = document.getElementsByClassName("edge");
 
         if (nodes.length == 0) {
-            elemGraph.innerHtml = "Error parsing yaml file."; //print stack trace TODO
-            console.log("nodes length is 0");
+            elemGraph.innerHTML = "Error parsing Yaml file or emty Yaml file.<br>" + responseToGenerate;
         }
 
         jQuery.ajaxSetup({async: true});
@@ -253,17 +258,29 @@
                 }
             });
         }
-        var panZoomGraph = svgPanZoom(elemGraph.firstElementChild, {
-            controlIconsEnabled: true,
-            minZoom: 0.1,
-            maxZoom: 20
-        });
 
-        panZoomGraph.zoom(1.5);
-        panZoomGraph.center();
+        if (nodes.length != 0) {
+            var panZoomGraph = svgPanZoom(elemGraph.firstElementChild, {
+                controlIconsEnabled: true,
+                minZoom: 0.1,
+                maxZoom: 20
+            });
+
+            //panZoomGraph.zoom(1.5);
+            panZoomGraph.center();
+        }
 
         showPage();
-        setSvgSizeToParent();
+
+        if (nodes.length != 0) {
+            setSvgSizeToParent();
+        }
+
+        var zoomControls = document.getElementById("svg-pan-zoom-controls");
+        if (zoomControls != undefined) {
+            var zoomControlsY = elemGraph.firstElementChild.parentNode.clientHeight - 100;
+            zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
+        }
 
     }
 
@@ -317,6 +334,7 @@
         $.post("generate", botname,
             function (data, status) {
                 console.log("generate graph for bot: " + status);
+                responseToGenerate = data;
             });
     }
 
@@ -343,18 +361,21 @@
         elemGraph.firstElementChild.setAttribute("height", newHeight);
     }
 
-    var zoomControls = document.getElementById("svg-pan-zoom-controls");
-    var zoomControlsY = elemGraph.firstElementChild.parentNode.clientHeight - 100;
-    zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
+    /*
+     var zoomControls = document.getElementById("svg-pan-zoom-controls");
+     if (zoomControls != undefined) {
+     var zoomControlsY = elemGraph.firstElementChild.parentNode.clientHeight - 100;
+     zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
+     }*/
 
 
     function generateFileTree() {
         $.post("filenamesHtml", botName, function (data, status) {
-            document.getElementById("file_tree").innerHTML = data;
-            $('#file_tree').jstree();
+            document.getElementById("file_tree_inner").innerHTML = data;
+            $('#file_tree_inner').jstree();
 
 
-            $('#file_tree')
+            $('#file_tree_inner')
             // listen for event
                 .on('select_node.jstree', function (e, data) {
                     currentFile = data.instance.get_node(data.selected[0]).text;
@@ -379,9 +400,33 @@
         return result;
     }
 
-    function download(){
-        location.href='http://google.com';
+    function download() {
         window.open("download/" + botName, "_self");
+    }
+
+    function onClickNewFile() {
+        var name = prompt("Enter name of the new file:", "");
+        var data = name + ";" + botName;
+
+        $.post("newfile", data,
+            function (data, status) {
+                console.log("create new file: " + status);
+                $('#file_tree_inner').jstree(true).destroy();
+                generateFileTree();
+            });
+    }
+
+    function onClickDeleteFile() {
+        if (currentFile != undefined && currentFile != "") {
+            if (confirm("Delete " + currentFile + "?")) {
+                data = currentFile + ";" + botName;
+                $.post("deletefile", data,
+                    function (data, status) {
+                        $('#file_tree_inner').jstree(true).destroy();
+                        generateFileTree();
+                    });
+            }
+        }
     }
 
 </script>

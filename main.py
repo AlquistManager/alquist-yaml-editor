@@ -4,6 +4,7 @@ import collections
 import io
 from os import listdir
 from os.path import isfile
+import traceback
 import zipfile
 import os
 
@@ -168,8 +169,11 @@ def createGraph(bot):
         YamlParser(bot)
     except:
         print("Error parsing yaml file.")
+        stack_trace = traceback.format_exc()
         writeGraphVizJs(nodes, edges)
-        writeStatePositions(statePositions)
+        if len(nodes) > 0:
+            writeStatePositions(statePositions)
+        return str(stack_trace)
 
     global botName
     botName = bot

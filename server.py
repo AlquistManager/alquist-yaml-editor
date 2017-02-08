@@ -22,10 +22,12 @@ port = 5000
 if len(sys.argv) > 1:
     port = sys.argv[1]
 
+
 @app.route('/', methods=['POST', 'GET', 'OPTIONS'])
 @crossdomain(origin='*')
 def getIndexPage():
     return send_file('index.html')
+
 
 @app.route('/static/<path:path>')
 def getStaticFiles(path):
@@ -99,12 +101,14 @@ def generateNewGraph():
         print(d)
     return main.createGraph(str(d, 'utf-8'))
 
+
 @app.route('/filenamesHtml', methods=['POST'])
 @crossdomain(origin='*')
 def getYamlFileNamesHtml():
     if request.method == 'POST':
         projectName = str(request.get_data(), 'utf-8')
         return main.getYamlNamesHtml(projectName)
+
 
 @app.route('/filenames', methods=['POST'])
 @crossdomain(origin='*')
@@ -142,12 +146,14 @@ def upload_file():
         # check if the post request has the file part
         if 'file' not in request.files:
             print("file not in request files")
+            createEmptyFolderStructure(botName)
             return "file not in request files"
         file = request.files['file']
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
             print("no selected file")
+            createEmptyFolderStructure(botName)
             return "no selected file"
         files = request.files.getlist("file")
         for file in files:
@@ -160,15 +166,48 @@ def upload_file():
         createNewProject(botName)
     return "ok"
 
+
 @app.route('/download/<path:path>', methods=['GET', 'POST'])
 @crossdomain(origin='*')
 def download_file(path):
+    print("download file")
+    directory = os.getcwd() + "/bots"
     zipf = zipfile.ZipFile('{0}.zip'.format(os.path.join(os.getcwd(), "bots/" + path)), 'w', zipfile.ZIP_DEFLATED)
     for root, dirs, files in os.walk(os.path.join(os.getcwd(), "bots/" + path)):
         for filename in files:
-            zipf.write(os.path.abspath(os.path.join(root, filename)), arcname=filename)
+            relpath = os.path.relpath(os.path.join(root, filename), directory + "/path")
+            relpath = relpath[2:]
+            print(relpath)
+            zipf.write(os.path.abspath(os.path.join(root, filename)),
+                       arcname=relpath)  # os.path.abspath(os.path.join(root, filename)), arcname=filename
     zipf.close()
-    return "test"
+    print("directory: " + os.path.abspath(directory) + " path: " + path + ".zip")
+    return send_from_directory(os.path.abspath(directory), path + ".zip")
+
+
+@app.route('/newfile', methods=['POST'])
+@crossdomain(origin='*')
+def createNewFile():
+    if request.method == 'POST':
+        print(request.get_data())
+        data = str(request.get_data((), 'utf-8')).split(";")
+        new_file_name = data[0] + ".yml"
+        bot_name = data[1]
+        with io.open("bots/" + bot_name + "/flows/" + new_file_name, 'a', encoding="utf-8") as file:
+            file.close()
+        return "ok"
+
+
+@app.route('/deletefile', methods=['POST'])
+@crossdomain(origin='*')
+def deleteFile():
+    if request.method == 'POST':
+        print(request.get_data())
+        data = str(request.get_data((), 'utf-8')).split(";")
+        os.remove("bots/" + data[1] + "/flows/" + data[0])
+        os.remove("bots/" + data[1] + "/flows/" + data[0])
+        return "ok"
+
 
 # creates a new folder for a bot and copies uploaded files there
 def createNewProject(botName):
@@ -190,6 +229,7 @@ def createNewProject(botName):
     copyFolder("", path, 0)
     shutil.rmtree(tmp_path)
 
+
 def copyFolder(pathFrom, pathTo, depth):
     if depth > 2:
         return
@@ -203,12 +243,19 @@ def copyFolder(pathFrom, pathTo, depth):
             copyFolder(pathFrom + item + "/", pathTo, depth + 1)
 
 
-
 # checks if upload folder exists, creates it if not
 def checkUploadFolder():
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
 
+#creates empty folder structer for a new bot project
+def createEmptyFolderStructure(botname):
+    flowsPath = "bots/" + botname + "/flows"
+    statesPath = "bots/" + botname + "/states"
+    if not os.path.exists(flowsPath):
+        os.makedirs(flowsPath)
+    if not os.path.exists(statesPath):
+        os.makedirs(statesPath)
 
 
 app.run(
