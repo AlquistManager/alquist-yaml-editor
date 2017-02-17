@@ -1,0 +1,74 @@
+name: test_editor
+
+states: # List of states. States are executed sequentially
+  init: # Name of the state. Unique in each flow
+    type: message_text
+    properties:
+      text: "Hello."
+      
+  state3:
+    type: message_buttons
+    properties:
+        buttons:
+            - label: "Volba 1"
+              next_state: option1
+              type: something
+            - label: "Volba 2"
+              next_state: option2
+              type: something
+    transitions:
+        next_state: input
+        
+  option1:
+    type: message_text
+    properties:
+      text: "Hello."
+      
+  option1_2:
+    type: message_text
+    properties:
+      text: "How are you?"
+    transitions:
+      next_state: good_bad
+   
+  good_bad:
+    type: message_buttons
+    properties:
+        buttons:
+            - label: "Great."
+              next_state: good_response
+              type: something
+            - label: "Terrible."
+              next_state: bad_response
+              type: something
+    transitions:
+      next_state: input
+
+  good_response:
+    type: message_text
+    properties:
+      text: "That's great. I'm glad for you."
+    transitions:
+      next_state: end_state
+      
+  bad_response:
+    type: message_text
+    properties:
+      text: "I'm sorry. It will get better."
+    transitions:
+      next_state: end_state
+      
+  option2:
+    type: message_text
+    properties:
+      text: "Hi."
+   
+  end_state:
+    type: message_text
+    properties:
+      text: "Goodbye."
+
+  input:
+    type: input_user
+    properties:
+      entities:

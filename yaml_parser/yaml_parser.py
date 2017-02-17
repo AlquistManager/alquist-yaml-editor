@@ -34,6 +34,9 @@ class YamlParser:
                          if isfile(join(bot_yaml_folder, f)) if f.endswith(('.yml', '.yaml'))]
                 # load all files
                 for file_name in files:
+                    # checks if file size is not 0
+                    if os.stat(join(bot_yaml_folder, file_name)).st_size == 0:
+                        continue
                     self.load_file(bot_yaml_folder, file_name, bot_name)
                 # check if init state is present
                 self.check_init_state(state_dict.get(bot_name), bot_name)
@@ -63,6 +66,10 @@ class YamlParser:
                      if isfile(join(bot_yaml_folder, f)) if f.endswith(('.yml', '.yaml'))]
             # load all files
             for file_name in files:
+                # checks if file size is not 0
+                if os.stat(join(bot_yaml_folder, file_name)).st_size == 0:
+                    print(file_name)
+                    continue
                 self.load_file(bot_yaml_folder, file_name, bot_name)
             # check if init state is present
             self.check_init_state(state_dict.get(bot_name), bot_name)

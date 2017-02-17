@@ -1,0 +1,5 @@
+states:
+  test:
+    type: message_text
+    properties:
+      text: "Hi."

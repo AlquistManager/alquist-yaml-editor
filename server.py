@@ -1,39 +1,36 @@
-from flask import Flask, send_from_directory, send_file
-from flask import request
-from flask import redirect, url_for
-from crossdomain import *
-from werkzeug.utils import secure_filename
-from shutil import copyfile
-import json
 import io
-import main
+import json
 import os
-import zipfile
-import urllib
-import sys
 import shutil
+import sys
+import zipfile
+
+from flask import Flask, send_from_directory, send_file
+from werkzeug.utils import secure_filename
+
+import graph_generator
+from crossdomain import *
 
 app = Flask(__name__, static_url_path='/static')
 UPLOAD_FOLDER = 'temp'
 ALLOWED_EXTENSIONS = set(['zip'])
 ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
 
-port = 5000
+port = 3000
 if len(sys.argv) > 1:
     port = sys.argv[1]
 
-
+# index page with project selection
 @app.route('/', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def getIndexPage():
     return send_file('index.html')
 
-
+# static files (javascript libraries, stylesheets, themes)
 @app.route('/static/<path:path>')
 def getStaticFiles(path):
     return send_from_directory('static', path)
 
-
+# returns all static files with allowed extensions (html)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def getJsLibraries(path):
@@ -46,9 +43,8 @@ def getJsLibraries(path):
     print("Error: requested " + path)
     return "Error"
 
-
+# update graph with new yaml code
 @app.route('/update', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def update():
     if request.method == 'POST':
         data = json.loads(request.get_data().decode('UTF-8'))
@@ -56,87 +52,79 @@ def update():
         recreateGraph(data["botname"].strip())
     return "OK"
 
-
+# returns graph file for display
 @app.route('/graph', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def requestGraphFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.getGraphFile()
+    return graph_generator.getGraphFile()
 
-
+# returns file with positions of states in yaml files
 @app.route('/statepos', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def requestStatePosFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.getStatePositionsFile()
+    return graph_generator.getStatePositionsFile()
 
-
+# returns requested yaml file
 @app.route('/getfile', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def requestYamlFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.getYamlFile(str(d, 'utf-8'))
+    return graph_generator.getYamlFile(str(d, 'utf-8'))
 
-
+# returns names of available bot projects
 @app.route('/botnames', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def requestBotNames():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.getBotNames()
+    return graph_generator.getBotNames()
 
-
+# creates a new graph
 @app.route('/generate', methods=['POST', 'GET', 'OPTIONS'])
-@crossdomain(origin='*')
 def generateNewGraph():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
-    return main.createGraph(str(d, 'utf-8'))
+    return graph_generator.createGraph(str(d, 'utf-8'))
 
-
+# returns yaml filenames in a html list to be displayed by jstree
 @app.route('/filenamesHtml', methods=['POST'])
-@crossdomain(origin='*')
 def getYamlFileNamesHtml():
     if request.method == 'POST':
         projectName = str(request.get_data(), 'utf-8')
-        return main.getYamlNamesHtml(projectName)
+        return graph_generator.getYamlNamesHtml(projectName)
 
-
+# returns yaml filenames
 @app.route('/filenames', methods=['POST'])
-@crossdomain(origin='*')
 def getYamlFileNames():
     if request.method == 'POST':
         projectName = str(request.get_data(), 'utf-8')
-        return main.getYamlNames(projectName)
+        return graph_generator.getYamlNames(projectName)
 
-
+# write yaml code to file
 def writeToFile(data):
     print("writing file")
     with io.open("bots/" + data["botname"].strip() + "/flows/" + data["filename"], "w", encoding="utf-8") as file:
         file.write(data["text"])
         file.close()
 
-
+# recreate graph of given bot
 def recreateGraph(botName):
     print("recreating graph")
-    main.createGraph(botName)
+    graph_generator.createGraph(botName)
 
-
+# checks given file has allowed extension
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
+# upload files
 @app.route('/upload', methods=['GET', 'POST'])
-@crossdomain(origin='*')
 def upload_file():
     if request.method == 'POST':
         botName = request.form['botname']
@@ -166,9 +154,8 @@ def upload_file():
         createNewProject(botName)
     return "ok"
 
-
+# download bot project in a zip file
 @app.route('/download/<path:path>', methods=['GET', 'POST'])
-@crossdomain(origin='*')
 def download_file(path):
     print("download file")
     directory = os.getcwd() + "/bots"
@@ -184,9 +171,8 @@ def download_file(path):
     print("directory: " + os.path.abspath(directory) + " path: " + path + ".zip")
     return send_from_directory(os.path.abspath(directory), path + ".zip")
 
-
+# creates a new yaml file
 @app.route('/newfile', methods=['POST'])
-@crossdomain(origin='*')
 def createNewFile():
     if request.method == 'POST':
         print(request.get_data())
@@ -197,14 +183,12 @@ def createNewFile():
             file.close()
         return "ok"
 
-
+# deletes selected yaml file
 @app.route('/deletefile', methods=['POST'])
-@crossdomain(origin='*')
 def deleteFile():
     if request.method == 'POST':
         print(request.get_data())
         data = str(request.get_data((), 'utf-8')).split(";")
-        os.remove("bots/" + data[1] + "/flows/" + data[0])
         os.remove("bots/" + data[1] + "/flows/" + data[0])
         return "ok"
 
@@ -229,7 +213,7 @@ def createNewProject(botName):
     copyFolder("", path, 0)
     shutil.rmtree(tmp_path)
 
-
+# copy files from temp to bots folder
 def copyFolder(pathFrom, pathTo, depth):
     if depth > 2:
         return
@@ -257,7 +241,7 @@ def createEmptyFolderStructure(botname):
     if not os.path.exists(statesPath):
         os.makedirs(statesPath)
 
-
+# runs flask application
 app.run(
     debug=False,
     host="0.0.0.0",

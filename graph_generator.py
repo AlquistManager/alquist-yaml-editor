@@ -5,7 +5,6 @@ import io
 from os import listdir
 from os.path import isfile
 import traceback
-import zipfile
 import os
 
 #YamlParser()
@@ -107,6 +106,8 @@ def findStatePositions():
     global files
 
     for fileName in listdir(yaml_folder):
+        if os.stat(os.path.join(yaml_folder, fileName)).st_size == 0:
+            continue
         if fileName not in files:
             files.append(fileName)
         with io.open(yaml_folder + fileName, "r", encoding="utf-8") as file:
@@ -170,6 +171,7 @@ def createGraph(bot):
     except:
         print("Error parsing yaml file.")
         stack_trace = traceback.format_exc()
+        print(str(stack_trace))
         writeGraphVizJs(nodes, edges)
         if len(nodes) > 0:
             writeStatePositions(statePositions)
