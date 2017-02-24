@@ -1,4 +1,4 @@
-name: main_flow
+﻿name: main_flow
 states:
   intro:
     type: message_text

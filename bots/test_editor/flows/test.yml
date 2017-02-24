@@ -1,5 +1,6 @@
+name: test.yml
 states:
-  test:
+  something:
     type: message_text
     properties:
-      text: "Hi."
+      text: "Goodbye."

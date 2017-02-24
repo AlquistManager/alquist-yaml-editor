@@ -1,0 +1,224 @@
+2017-02-17 16:28:29,219 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: init_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '42'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-17 16:28:29,241 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: 42
+2017-02-17 16:28:29,243 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State init_2 complete.
+2017-02-17 16:28:29,243 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: state3
+2017-02-17 16:28:29,245 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:29,248 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-17 16:28:29,249 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-17 16:28:29,249 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State state3 complete.
+2017-02-17 16:28:29,250 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:30,984 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-17 16:28:30,986 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Hello.
+2017-02-17 16:28:30,987 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1 complete.
+2017-02-17 16:28:30,987 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: option1_2
+2017-02-17 16:28:30,988 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-17 16:28:30,989 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: How are you?
+2017-02-17 16:28:30,990 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1_2 complete.
+2017-02-17 16:28:30,991 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: good_bad
+2017-02-17 16:28:30,992 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:30,992 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-17 16:28:30,993 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-17 16:28:30,995 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_bad complete.
+2017-02-17 16:28:30,995 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:33,418 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_response Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "That's great. I'm glad for you."), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
+2017-02-17 16:28:33,419 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: That's great. I'm glad for you.
+2017-02-17 16:28:33,420 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_response complete.
+2017-02-17 16:28:33,420 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: end_state
+2017-02-17 16:28:33,421 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Goodbye.'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-02-17 16:28:33,421 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Goodbye.
+2017-02-17 16:28:33,422 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State end_state complete.
+2017-02-17 16:28:33,422 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:36,684 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-17 16:28:36,685 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Hello.
+2017-02-17 16:28:36,686 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1 complete.
+2017-02-17 16:28:36,686 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: option1_2
+2017-02-17 16:28:36,688 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-17 16:28:36,689 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: How are you?
+2017-02-17 16:28:36,689 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1_2 complete.
+2017-02-17 16:28:36,689 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: good_bad
+2017-02-17 16:28:36,696 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:36,697 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-17 16:28:36,698 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-17 16:28:36,698 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_bad complete.
+2017-02-17 16:28:36,698 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:38,813 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: bad_response Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "I'm sorry. It will get better."), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
+2017-02-17 16:28:38,813 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: I'm sorry. It will get better.
+2017-02-17 16:28:38,814 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State bad_response complete.
+2017-02-17 16:28:38,814 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: end_state
+2017-02-17 16:28:38,815 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Goodbye.'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-02-17 16:28:38,816 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Goodbye.
+2017-02-17 16:28:38,817 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State end_state complete.
+2017-02-17 16:28:38,817 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:40,930 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-17 16:28:40,930 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Hello.
+2017-02-17 16:28:40,931 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1 complete.
+2017-02-17 16:28:40,931 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: option1_2
+2017-02-17 16:28:40,932 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-17 16:28:40,933 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: How are you?
+2017-02-17 16:28:40,933 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1_2 complete.
+2017-02-17 16:28:40,934 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: good_bad
+2017-02-17 16:28:40,936 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:40,936 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-17 16:28:40,937 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-17 16:28:40,937 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_bad complete.
+2017-02-17 16:28:40,938 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:42,908 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'init_2'}
+2017-02-17 16:28:42,908 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Hello.
+2017-02-17 16:28:42,909 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State init complete.
+2017-02-17 16:28:42,910 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: init_2
+2017-02-17 16:28:42,911 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: init_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '42'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-17 16:28:42,912 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: 42
+2017-02-17 16:28:42,912 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State init_2 complete.
+2017-02-17 16:28:42,913 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: state3
+2017-02-17 16:28:42,914 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:42,914 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-17 16:28:42,915 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-17 16:28:42,915 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State state3 complete.
+2017-02-17 16:28:42,915 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:45,759 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-17 16:28:45,759 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Hello.
+2017-02-17 16:28:45,760 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1 complete.
+2017-02-17 16:28:45,760 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: option1_2
+2017-02-17 16:28:45,761 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-17 16:28:45,762 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: How are you?
+2017-02-17 16:28:45,763 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State option1_2 complete.
+2017-02-17 16:28:45,763 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: good_bad
+2017-02-17 16:28:45,764 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-17 16:28:45,765 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-17 16:28:45,765 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-17 16:28:45,765 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_bad complete.
+2017-02-17 16:28:45,766 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:28:50,710 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: good_response Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "That's great. I'm glad for you."), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
+2017-02-17 16:28:50,711 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: That's great. I'm glad for you.
+2017-02-17 16:28:50,711 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State good_response complete.
+2017-02-17 16:28:50,712 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: end_state
+2017-02-17 16:28:50,713 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Goodbye.'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-02-17 16:28:50,714 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Response: Goodbye.
+2017-02-17 16:28:50,714 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - State end_state complete.
+2017-02-17 16:28:50,714 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Next state: input
+2017-02-17 16:29:01,379 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', None), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': ''}
+2017-02-17 16:29:01,395 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - User message: 42
+2017-02-17 16:29:01,395 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - NLP output: {}
+2017-02-17 16:29:01,395 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Updating context...Context: {'previous_context': {'previous_context': {'previous_context': {'previous_context': {}}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'option1'}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'good_response'}, 'previous_text': '42', 'previous_payload': {}, 'previous_request': 'input'}Update: {}
+2017-02-17 16:29:06,147 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', None), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': ''}
+2017-02-17 16:29:06,147 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - User message: 5555
+2017-02-17 16:29:06,163 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - NLP output: {}
+2017-02-17 16:29:06,163 - State info - 613a2473-9508-4921-91a4-2d67e955737d - DEBUG - Updating context...Context: {'previous_context': {'previous_context': {'previous_context': {'previous_context': {}}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'option1'}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'good_response'}, 'previous_text': '5555', 'previous_payload': {}, 'previous_request': 'input'}Update: {}
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Response: Hello.
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - State init complete.
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Next state: state3
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - State state3 complete.
+2017-02-24 11:50:08,886 - State info - a0ae822f-40d9-48e2-927b-cc6418ddda4e - DEBUG - Next state: input
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Response: Hello.
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - State init complete.
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Next state: state3
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - State state3 complete.
+2017-02-24 12:41:13,808 - State info - c3bfd777-015d-4db8-80c7-5e016ef7a406 - DEBUG - Next state: input
+2017-02-24 12:45:10,109 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 12:45:10,109 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Response: Hello.
+2017-02-24 12:45:10,109 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - State init complete.
+2017-02-24 12:45:10,109 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Next state: state3
+2017-02-24 12:45:10,124 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 12:45:10,124 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 12:45:10,124 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 12:45:10,124 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - State state3 complete.
+2017-02-24 12:45:10,124 - State info - 488aaa44-4985-4b30-90e8-24ab73e21d82 - DEBUG - Next state: input
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Response: Hello.
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - State init complete.
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Next state: state3
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - State state3 complete.
+2017-02-24 12:46:13,614 - State info - 6f48e07a-8e12-490c-85a7-6f5bb9477472 - DEBUG - Next state: input
+2017-02-24 13:47:48,437 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 13:47:48,440 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Response: Hello.
+2017-02-24 13:47:48,443 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - State init complete.
+2017-02-24 13:47:48,444 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Next state: state3
+2017-02-24 13:47:48,446 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 13:47:48,446 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 13:47:48,447 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 13:47:48,448 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - State state3 complete.
+2017-02-24 13:47:48,448 - State info - 11ffed50-d9a4-4e5a-bbba-65aa106519d3 - DEBUG - Next state: input
+2017-02-24 17:00:53,017 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 17:00:53,019 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Response: Hello.
+2017-02-24 17:00:53,020 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - State init complete.
+2017-02-24 17:00:53,023 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Next state: state3
+2017-02-24 17:00:53,024 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 17:00:53,025 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 17:00:53,025 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 17:00:53,026 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - State state3 complete.
+2017-02-24 17:00:53,026 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Next state: input
+2017-02-24 17:00:58,382 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-24 17:00:58,383 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Response: Hello.
+2017-02-24 17:00:58,384 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - State option1 complete.
+2017-02-24 17:00:58,385 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Next state: option1_2
+2017-02-24 17:00:58,387 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-24 17:00:58,388 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Response: How are you?
+2017-02-24 17:00:58,389 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - State option1_2 complete.
+2017-02-24 17:00:58,389 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Next state: good_bad
+2017-02-24 17:00:58,391 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 17:00:58,392 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-24 17:00:58,392 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-24 17:00:58,393 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - State good_bad complete.
+2017-02-24 17:00:58,394 - State info - 8cb2954d-1ea7-4ca7-95de-fb126ca477dd - DEBUG - Next state: input
+2017-02-24 17:02:50,876 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Ahoj.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 17:02:50,881 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Response: Ahoj.
+2017-02-24 17:02:50,882 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - State init complete.
+2017-02-24 17:02:50,882 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Next state: state3
+2017-02-24 17:02:50,885 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 17:02:50,885 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 17:02:50,886 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 17:02:50,887 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - State state3 complete.
+2017-02-24 17:02:50,887 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Next state: input
+2017-02-24 17:44:22,629 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Executing state: option2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hi.'), ('delay', 0)]) Transitions: {'next_state': 'end_state'}
+2017-02-24 17:44:22,629 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Response: Hi.
+2017-02-24 17:44:22,629 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - State option2 complete.
+2017-02-24 17:44:22,644 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Next state: end_state
+2017-02-24 17:44:22,644 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Goodbye.'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-02-24 17:44:22,644 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Response: Goodbye.
+2017-02-24 17:44:22,644 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - State end_state complete.
+2017-02-24 17:44:22,644 - State info - 7b878585-df7b-4882-9394-0fb4f9aeac85 - DEBUG - Next state: input
+2017-02-24 17:44:33,337 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'state3'}
+2017-02-24 17:44:33,341 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Response: Hello.
+2017-02-24 17:44:33,342 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State init complete.
+2017-02-24 17:44:33,343 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: state3
+2017-02-24 17:44:33,344 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: state3 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')]), OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 17:44:33,345 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Button: OrderedDict([('label', 'Volba 1'), ('next_state', 'option1'), ('type', 'something')])
+2017-02-24 17:44:33,347 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Button: OrderedDict([('label', 'Volba 2'), ('next_state', 'option2'), ('type', 'something')])
+2017-02-24 17:44:33,348 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State state3 complete.
+2017-02-24 17:44:33,348 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: input
+2017-02-24 17:44:35,155 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: option1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello.'), ('delay', 0)]) Transitions: {'next_state': 'option1_2'}
+2017-02-24 17:44:35,156 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Response: Hello.
+2017-02-24 17:44:35,156 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State option1 complete.
+2017-02-24 17:44:35,157 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: option1_2
+2017-02-24 17:44:35,158 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: option1_2 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How are you?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'good_bad')])
+2017-02-24 17:44:35,158 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Response: How are you?
+2017-02-24 17:44:35,159 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State option1_2 complete.
+2017-02-24 17:44:35,159 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: good_bad
+2017-02-24 17:44:35,160 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: good_bad Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')]), OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-02-24 17:44:35,161 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Button: OrderedDict([('label', 'Great.'), ('next_state', 'good_response'), ('type', 'something')])
+2017-02-24 17:44:35,161 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Button: OrderedDict([('label', 'Terrible.'), ('next_state', 'bad_response'), ('type', 'something')])
+2017-02-24 17:44:35,162 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State good_bad complete.
+2017-02-24 17:44:35,162 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: input
+2017-02-24 17:44:37,705 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: good_response Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "That's great. I'm glad for you."), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
+2017-02-24 17:44:37,706 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Response: That's great. I'm glad for you.
+2017-02-24 17:44:37,707 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State good_response complete.
+2017-02-24 17:44:37,707 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: end_state
+2017-02-24 17:44:37,709 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Goodbye.'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-02-24 17:44:37,709 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Response: Goodbye.
+2017-02-24 17:44:37,710 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - State end_state complete.
+2017-02-24 17:44:37,710 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Next state: input
+2017-02-24 17:44:45,966 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', None), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': ''}
+2017-02-24 17:44:45,966 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - User message: lll
+2017-02-24 17:44:45,966 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - NLP output: {}
+2017-02-24 17:44:45,966 - State info - edcca877-08e2-4b4d-8069-7d467f05e11c - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_request': 'input', 'previous_text': 'lll', 'previous_context': {'previous_payload': {}, 'previous_request': 'good_response', 'previous_context': {'previous_payload': {}, 'previous_request': 'option1', 'previous_context': {'previous_payload': {}, 'previous_request': 'init', 'previous_context': {}, 'previous_text': ''}, 'previous_text': ''}, 'previous_text': ''}}Update: {}

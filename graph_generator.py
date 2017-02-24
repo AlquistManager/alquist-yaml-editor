@@ -178,7 +178,7 @@ def createGraph(bot):
         return str(stack_trace)
 
     global botName
-    botName = bot
+    botName = bot.lower()
 
     global states
     states = state_dict[botName]["states"].keys()
@@ -200,6 +200,8 @@ def createGraph(bot):
 
     print("Graph nodes: %d" % len(nodes))
     print("Graph edges: %d" % len(edges))
+
+    return "ok"
 
 
 #createGraph("test_editor")

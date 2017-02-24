@@ -9,12 +9,11 @@ good_response [id = 7, style=filled, color=white];
 end_state [id = 8, style=filled, color=white];
 input [id = 9, style=filled, color=white];
 bad_response [id = 10, style=filled, color=white];
-option2 [id = 11, style=filled, color=white];
 label="init_file.yml";
 style=filled;color=lightgray;}
 
 subgraph cluster_1 {
-test [id = 12, style=filled, color=red];
+something [id = 11, style=filled, color=white];
 label="test.yml";
 style=filled;color=lightgray;}
 
@@ -28,7 +27,6 @@ end_state -> input;
 good_bad -> bad_response;
 bad_response -> end_state;
 good_bad -> input;
-state3 -> option2;
-option2 -> end_state;
+state3 -> something;
 state3 -> input;
 }
