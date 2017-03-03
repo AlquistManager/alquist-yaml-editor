@@ -18,11 +18,11 @@ class YamlParser:
 
     def __init__(self, bot_name=""):
         # clear all content in dictionary with loaded states
-        state_dict.clear()
         # load only one bot if it is specified, otherwise load all bots
         if bot_name != "":
             self.initialize(bot_name)
         else:
+            state_dict.clear()
             for bot_name in self.get_immediate_subdirectories("bots"):
                 self.initialize(bot_name)
 

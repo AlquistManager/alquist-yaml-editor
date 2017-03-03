@@ -169,13 +169,18 @@ def createGraph(bot):
     try:
         YamlParser(bot)
     except:
-        print("Error parsing yaml file.")
-        stack_trace = traceback.format_exc()
-        print(str(stack_trace))
         writeGraphVizJs(nodes, edges)
         if len(nodes) > 0:
             writeStatePositions(statePositions)
-        return str(stack_trace)
+        flow_files = listdir("bots/" + bot + "/flows")
+        if len(flow_files) == 0:
+            print("No yaml files.")
+            return "No yaml files."
+        else:
+            print("Error parsing yaml file.")
+            stack_trace = traceback.format_exc()
+            print(str(stack_trace))
+            return str(stack_trace)
 
     global botName
     botName = bot.lower()

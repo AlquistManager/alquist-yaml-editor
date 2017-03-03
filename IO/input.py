@@ -10,6 +10,8 @@ from loggers import create_loggers
 from solver import process_request
 from yaml_parser.yaml_parser import YamlParser
 from editor_server import editor
+from os.path import dirname, abspath, join, isdir
+from os import listdir
 
 flask = Flask(__name__)
 cors = CORS(flask)
@@ -18,7 +20,15 @@ flask.register_blueprint(editor)
 # Load and parse yaml files
 @flask.before_first_request
 def load_yamls():
-    YamlParser()
+    #load only bots that are functional
+    folder = dirname(dirname(abspath(__file__)))
+    bots_folder = join(folder, 'bots')
+    for f in listdir(bots_folder):
+        try:
+            if isdir(join(bots_folder, f)):
+                YamlParser(f)
+        except:
+            print("Error in bot " + f + ", unable to load.")
     create_loggers()
 
 
