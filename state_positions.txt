@@ -1,11 +1,7 @@
-test_editor
-something test.yml 3 7
-init init_file.yml 4 8
-state3 init_file.yml 9 21
-good_bad init_file.yml 34 46
-good_response init_file.yml 47 53
-end_state init_file.yml 61 65
-bad_response init_file.yml 54 60
-option1 init_file.yml 22 26
-input init_file.yml 66 70
-option1_2 init_file.yml 27 33
+bot_app
+sums main.yml 34 38
+number1_context main.yml 26 33
+substraction main.yml 21 25
+input main.yml 39 43
+choice main.yml 8 20
+init main.yml 3 7

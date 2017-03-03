@@ -21,6 +21,8 @@
 <div id="panes" style="visibility: hidden;" class="split">
     <div id="file_tree" class="split split-horizontal file-tree">
         <div id="file_tree_inner"></div>
+        <button type="button" id="button_open_bot" class="btn"
+                onclick="startBot()">Start Bot</button>
     </div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
@@ -68,6 +70,8 @@
     var responseToGenerate;
     var tarea = document.getElementById("text-editor");
     var treeElement;
+    var nodes;
+    var edges;
 
     // enable Tab Override for the textarea
     tabOverride.set(tarea);
@@ -129,8 +133,8 @@
                 });
         }
 
-        var nodes = document.getElementsByClassName("node");
-        var edges = document.getElementsByClassName("edge");
+        nodes = document.getElementsByClassName("node");
+        edges = document.getElementsByClassName("edge");
 
         // displays error message when parsing fails
         if (nodes.length == 0) {
@@ -139,6 +143,7 @@
 
         jQuery.ajaxSetup({async: true});
 
+        var selectedNode;
 
         for (i = 0; i < nodes.length; i++) {
             // onclick event of graph nodes, displays yaml code in editor and highlights state name
@@ -151,38 +156,33 @@
                     currentFile = statePos[1];
                 }
                 selectTextareaLine(tarea, statePos[2]);
+
+                if (selectedNode != undefined && selectedNode == evt.currentTarget) {
+                    unhighlight(selectedNode);
+                    selectedNode = undefined;
+                } else if (selectedNode != undefined) {
+                    unhighlight(selectedNode);
+                    selectedNode = evt.currentTarget;
+                    highlight(selectedNode);
+                } else {
+                    selectedNode = evt.currentTarget;
+                    highlight(selectedNode);
+                }
+
+
             });
 
             //highlights nodes and edges on mouseover
             nodes[i].addEventListener('mouseover', function (evt) {
-                var ellipse = evt.currentTarget.children[1];
-                ellipse.style.strokeWidth = "5px";
-
-                for (i = 0; i < edges.length; i++) {
-                    var nodeName = evt.currentTarget.firstChild.firstChild.data;
-                    var title = edges[i].firstElementChild.firstChild.data;
-                    var splittedTitle = title.split("->");
-                    if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
-                        var path = edges[i].children[1];
-                        path.style.strokeWidth = "5px";
-                    }
+                if(selectedNode == undefined){
+                    highlight(evt.currentTarget);
                 }
-
             });
 
             //stops highlighting
             nodes[i].addEventListener('mouseout', function (evt) {
-                var ellipse = evt.currentTarget.children[1];
-                ellipse.style.strokeWidth = "1px";
-
-                for (i = 0; i < edges.length; i++) {
-                    var nodeName = evt.currentTarget.firstChild.firstChild.data;
-                    var title = edges[i].firstElementChild.firstChild.data;
-                    var splittedTitle = title.split("->");
-                    if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
-                        var path = edges[i].children[1];
-                        path.style.strokeWidth = "1px";
-                    }
+                if(selectedNode == undefined){
+                    unhighlight(evt.currentTarget);
                 }
             });
         }
@@ -214,6 +214,44 @@
 
     }
 
+    //highlights target node and its edges
+    function highlight(target) {
+        var ellipse = target.children[1];
+        ellipse.style.strokeWidth = "5px";
+        ellipse.style.stroke = "black";
+
+        for (i = 0; i < edges.length; i++) {
+            var nodeName = target.firstChild.firstChild.data;
+            var title = edges[i].firstElementChild.firstChild.data;
+            var splittedTitle = title.split("->");
+            if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                var path = edges[i].children[1];
+                path.style.strokeWidth = "5px";
+            }
+        }
+    }
+
+    //disables highlighting for target node and its edges
+    function unhighlight(target) {
+        var ellipse = target.children[1];
+        ellipse.style.strokeWidth = "1px";
+        ellipse.style.stroke = "white";
+
+        for (i = 0; i < edges.length; i++) {
+            var nodeName = target.firstChild.firstChild.data;
+            var title = edges[i].firstElementChild.firstChild.data;
+            var splittedTitle = title.split("->");
+            if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                var path = edges[i].children[1];
+                path.style.strokeWidth = "1px";
+            }
+        }
+    }
+
+    //open bot in a new tab
+    function startBot(){
+        window.open('../' + botName, '_blank');
+    }
 
     //finds line with position information of a state
     function findPosition(state) {

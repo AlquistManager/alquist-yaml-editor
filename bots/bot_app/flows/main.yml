@@ -1,0 +1,44 @@
+name: bot app
+states:
+  init:
+    type: message_text
+    properties:
+      text: "Hello! What would you like to practice?"
+  
+  choice:
+    type: message_buttons
+    properties:
+      buttons:
+        - label: "sums"
+          next_state: number1_context
+          type: something
+        - label: "substraction"
+          next_state: substraction
+          type: something
+    transitions:
+      next_state: input
+
+  substraction:
+    type: message_text
+    properties:
+      text: "y"
+      
+  number1_context:
+    type: change_context
+    properties:
+        update_keys:
+           number1: '42'
+    transitions:
+        next_state: sums
+      
+  sums:
+    type: message_text
+    properties:
+      text: "{{number1}}"
+      
+  input:
+    type: input_user
+    properties:
+      entities:
+    
+      

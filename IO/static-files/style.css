@@ -1,3 +1,9 @@
+#button_open_bot{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
 #graph_main {
     width: 500px;
 
@@ -161,4 +167,31 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.btn {
+  background: #edf2f5;
+  background-image: -webkit-linear-gradient(top, #edf2f5, #c2cbd1);
+  background-image: -moz-linear-gradient(top, #edf2f5, #c2cbd1);
+  background-image: -ms-linear-gradient(top, #edf2f5, #c2cbd1);
+  background-image: -o-linear-gradient(top, #edf2f5, #c2cbd1);
+  background-image: linear-gradient(to bottom, #edf2f5, #c2cbd1);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 21px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
