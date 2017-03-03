@@ -2,18 +2,21 @@ digraph G{
 subgraph cluster_0 {
 init [id = 2, style=filled, color=yellow];
 choice [id = 3, style=filled, color=white];
-number1_context [id = 4, style=filled, color=white];
-sums [id = 5, style=filled, color=white];
-input [id = 6, style=filled, color=white];
-substraction [id = 7, style=filled, color=white];
+sums [id = 4, style=filled, color=white];
+input [id = 5, style=filled, color=white];
+generate_numbers [id = 6, style=filled, color=white];
+display_task [id = 7, style=filled, color=white];
+substraction [id = 8, style=filled, color=white];
 label="main.yml";
 style=filled;color=lightgray;}
 
 init -> choice;
-choice -> number1_context;
-number1_context -> sums;
+choice -> sums;
 sums -> input;
+input -> generate_numbers;
+generate_numbers -> display_task;
+display_task -> input;
 choice -> substraction;
-substraction -> number1_context;
+substraction -> generate_numbers;
 choice -> input;
 }

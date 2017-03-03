@@ -68,3 +68,138 @@
 2017-03-03 13:12:25,423 - State info - 14c577f6-a78e-44ae-8c67-82e076cea3d1 - DEBUG - Response: 42
 2017-03-03 13:12:25,423 - State info - 14c577f6-a78e-44ae-8c67-82e076cea3d1 - DEBUG - State sums complete.
 2017-03-03 13:12:25,424 - State info - 14c577f6-a78e-44ae-8c67-82e076cea3d1 - DEBUG - Next state: input
+2017-03-03 13:26:47,382 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:26:47,385 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:26:47,386 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - State init complete.
+2017-03-03 13:26:47,386 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Next state: choice
+2017-03-03 13:26:47,388 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'number1_context'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:26:47,389 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'number1_context'), ('type', 'something')])
+2017-03-03 13:26:47,389 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:26:47,390 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - State choice complete.
+2017-03-03 13:26:47,390 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Next state: input
+2017-03-03 13:26:48,620 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:26:48,621 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Response: 42
+2017-03-03 13:26:48,622 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - State sums complete.
+2017-03-03 13:26:48,623 - State info - ed2c4c86-18c9-41c7-9dd2-c0eb026be117 - DEBUG - Next state: input
+2017-03-03 13:27:33,869 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:27:33,873 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:27:33,875 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - State init complete.
+2017-03-03 13:27:33,876 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Next state: choice
+2017-03-03 13:27:33,881 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:27:33,882 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:27:33,883 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:27:33,883 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - State choice complete.
+2017-03-03 13:27:33,884 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Next state: input
+2017-03-03 13:27:35,215 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:27:35,216 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Response: 42
+2017-03-03 13:27:35,217 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - State sums complete.
+2017-03-03 13:27:35,217 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Next state: input
+2017-03-03 13:27:39,177 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', None), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': ''}
+2017-03-03 13:27:39,178 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - User message: 
+2017-03-03 13:27:39,178 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - NLP output: {}
+2017-03-03 13:27:39,179 - State info - c2d6e8d0-34ee-4938-bb8d-ff6e745259c7 - DEBUG - Updating context...Context: {'previous_text': '', 'previous_payload': {}, 'previous_context': {'previous_payload': {}, 'previous_context': {'previous_payload': {}, 'previous_context': {}, 'previous_request': 'init', 'previous_text': ''}, 'number1': '42', 'previous_request': 'generate_numbers', 'previous_text': ''}, 'previous_request': 'input', 'number1': '42'}Update: {}
+2017-03-03 13:30:58,920 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:30:58,922 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:30:58,923 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - State init complete.
+2017-03-03 13:30:58,923 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Next state: choice
+2017-03-03 13:30:58,925 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:30:58,925 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:30:58,926 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:30:58,930 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - State choice complete.
+2017-03-03 13:30:58,930 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Next state: input
+2017-03-03 13:31:00,103 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:31:00,104 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Response: 42
+2017-03-03 13:31:00,105 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - State sums complete.
+2017-03-03 13:31:00,106 - State info - 2a2b772e-1529-4335-b13b-77171710d436 - DEBUG - Next state: input
+2017-03-03 13:31:12,101 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:31:12,104 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:31:12,105 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - State init complete.
+2017-03-03 13:31:12,105 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Next state: choice
+2017-03-03 13:31:12,107 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:31:12,107 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:31:12,108 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:31:12,108 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - State choice complete.
+2017-03-03 13:31:12,109 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Next state: input
+2017-03-03 13:31:13,352 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:31:13,353 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Response: 42
+2017-03-03 13:31:13,353 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - State sums complete.
+2017-03-03 13:31:13,354 - State info - 85d2956c-4049-44f1-8909-8c215b3ab4fa - DEBUG - Next state: input
+2017-03-03 13:36:15,406 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:36:15,411 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:36:15,411 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - State init complete.
+2017-03-03 13:36:15,413 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Next state: choice
+2017-03-03 13:36:15,416 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:36:15,417 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:36:15,419 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:36:15,420 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - State choice complete.
+2017-03-03 13:36:15,421 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Next state: input
+2017-03-03 13:36:16,892 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}} {{number2}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:36:16,892 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Response: Missing_enitiy Missing_enitiy
+2017-03-03 13:36:16,893 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - State sums complete.
+2017-03-03 13:36:16,893 - State info - a4ff133e-1eed-4823-a284-e2bb514d4b5b - DEBUG - Next state: input
+2017-03-03 13:38:25,657 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:38:25,661 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:38:25,662 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - State init complete.
+2017-03-03 13:38:25,663 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Next state: choice
+2017-03-03 13:38:25,664 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:38:25,665 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:38:25,666 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:38:25,666 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - State choice complete.
+2017-03-03 13:38:25,667 - State info - 67175217-547b-4a01-bde4-9dd2256bd989 - DEBUG - Next state: input
+2017-03-03 13:39:19,553 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:39:19,556 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:39:19,556 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - State init complete.
+2017-03-03 13:39:19,557 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Next state: choice
+2017-03-03 13:39:19,558 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:39:19,559 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'generate_numbers'), ('type', 'something')])
+2017-03-03 13:39:19,559 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:39:19,559 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - State choice complete.
+2017-03-03 13:39:19,560 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Next state: input
+2017-03-03 13:39:20,783 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Executing state: sums Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}} {{number2}}'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 13:39:20,784 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Response: 23 45
+2017-03-03 13:39:20,785 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - State sums complete.
+2017-03-03 13:39:20,786 - State info - c7891845-fd5a-4763-8955-8f442a518255 - DEBUG - Next state: input
+2017-03-03 13:51:15,848 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 13:51:15,852 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 13:51:15,852 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - State init complete.
+2017-03-03 13:51:15,853 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Next state: choice
+2017-03-03 13:51:15,856 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:51:15,857 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-03-03 13:51:15,857 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 13:51:15,858 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - State choice complete.
+2017-03-03 13:51:15,859 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Next state: input
+2017-03-03 13:51:17,933 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Executing state: display_task Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}} {{operation}} {{number2}} = ?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 13:51:17,934 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Response: 62 + 68 = ?
+2017-03-03 13:51:17,934 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - State display_task complete.
+2017-03-03 13:51:17,935 - State info - 77b65a2f-6a36-48b2-9d0c-ec30ff42b0f1 - DEBUG - Next state: input
+2017-03-03 15:00:15,872 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 15:00:15,875 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 15:00:15,877 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - State init complete.
+2017-03-03 15:00:15,877 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Next state: choice
+2017-03-03 15:00:15,879 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 15:00:15,879 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-03-03 15:00:15,880 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 15:00:15,880 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - State choice complete.
+2017-03-03 15:00:15,881 - State info - 8563f5c5-cba8-413d-90c7-d76d127d5bf0 - DEBUG - Next state: input
+2017-03-03 15:01:21,077 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 15:01:21,079 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 15:01:21,080 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - State init complete.
+2017-03-03 15:01:21,081 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Next state: choice
+2017-03-03 15:01:21,081 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 15:01:21,082 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-03-03 15:01:21,083 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 15:01:21,084 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - State choice complete.
+2017-03-03 15:01:21,084 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Next state: input
+2017-03-03 15:01:22,315 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Executing state: display_task Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '{{number1}} {{operation}} {{number2}} = ?'), ('delay', 0)]) Transitions: {'next_state': 'input'}
+2017-03-03 15:01:22,316 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Response: 38 + 35 = ?
+2017-03-03 15:01:22,317 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - State display_task complete.
+2017-03-03 15:01:22,317 - State info - 296d2996-66de-4553-8594-44a8c2b38f90 - DEBUG - Next state: input
+2017-03-03 15:05:27,326 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello! What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-03-03 15:05:27,329 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Response: Hello! What would you like to practice?
+2017-03-03 15:05:27,331 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - State init complete.
+2017-03-03 15:05:27,331 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Next state: choice
+2017-03-03 15:05:27,332 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-03-03 15:05:27,334 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-03-03 15:05:27,341 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-03-03 15:05:27,342 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - State choice complete.
+2017-03-03 15:05:27,342 - State info - 6ca5df5a-0bfe-4e58-bbd7-e9afa939e359 - DEBUG - Next state: input

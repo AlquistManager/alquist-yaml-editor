@@ -1,7 +1,8 @@
 bot_app
-sums main.yml 34 38
-number1_context main.yml 26 33
-substraction main.yml 21 25
-input main.yml 39 43
-choice main.yml 8 20
+sums main.yml 35 43
 init main.yml 3 7
+display_task main.yml 44 48
+substraction main.yml 21 28
+choice main.yml 8 20
+input main.yml 49 55
+generate_numbers main.yml 29 34

@@ -10,7 +10,7 @@ states:
     properties:
       buttons:
         - label: "sums"
-          next_state: number1_context
+          next_state: sums
           type: something
         - label: "substraction"
           next_state: substraction
@@ -19,26 +19,37 @@ states:
       next_state: input
 
   substraction:
-    type: message_text
-    properties:
-      text: "y"
-      
-  number1_context:
     type: change_context
     properties:
-        update_keys:
-           number1: '42'
+      update_keys:
+        operation: '-'
     transitions:
-        next_state: sums
+      next_state: generate_numbers
+      
+  generate_numbers:
+    type: GenerateNumbers
+    properties:
+    transitions:
+      next_state: display_task
       
   sums:
+    type: change_context
+    properties:
+      update_keys: 
+        operation: '+'
+    transitions:
+      next_state:
+        input
+
+  display_task:
     type: message_text
     properties:
-      text: "{{number1}}"
+      text: '{{number1}} {{operation}} {{number2}} = ?'
       
   input:
     type: input_user
     properties:
       entities:
-    
+    transitions:
+      next_state: generate_numbers          
       

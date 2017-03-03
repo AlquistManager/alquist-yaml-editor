@@ -22,7 +22,8 @@
     <div id="file_tree" class="split split-horizontal file-tree">
         <div id="file_tree_inner"></div>
         <button type="button" id="button_open_bot" class="btn"
-                onclick="startBot()">Start Bot</button>
+                onclick="startBot()">Start Bot
+        </button>
     </div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
@@ -112,7 +113,6 @@
             function (data, status) {
                 elemGraph.innerHTML = Viz(data, "svg");
                 console.log("get graph file: " + status);
-                console.log("graph data: " + data);
             });
 
         // get positions of states in yaml files
@@ -174,14 +174,14 @@
 
             //highlights nodes and edges on mouseover
             nodes[i].addEventListener('mouseover', function (evt) {
-                if(selectedNode == undefined){
+                if (selectedNode == undefined) {
                     highlight(evt.currentTarget);
                 }
             });
 
             //stops highlighting
             nodes[i].addEventListener('mouseout', function (evt) {
-                if(selectedNode == undefined){
+                if (selectedNode == undefined) {
                     unhighlight(evt.currentTarget);
                 }
             });
@@ -197,6 +197,15 @@
 
             //panZoomGraph.zoom(1.5);
             panZoomGraph.center();
+            /*
+            panZoomGraph.pan({x: 0, y: 0});
+            var realZoom = panZoomGraph.getSizes().realZoom;
+            panZoomGraph.pan
+            ({
+                x: (97 * realZoom),
+                y: (-394 * realZoom)
+            });*/
+            //panZoomGraph.pan({x: 97, y: -394});
         }
 
         showPage();
@@ -249,7 +258,7 @@
     }
 
     //open bot in a new tab
-    function startBot(){
+    function startBot() {
         window.open('../' + botName, '_blank');
     }
 
@@ -573,6 +582,24 @@
         }
         return false;
     }
+
+    //finds graph node by its name - not yet needed
+    function findNodeByName(nodeName) {
+        for (i = 0; i < nodes.length; i++) {
+            if (nodes[i].firstChild.firstChild.data == nodeName) {
+                return nodes[i];
+            }
+        }
+    }
+
+    /*
+    var node = findNodeByName("init");
+    var something = node.children[1].outerHTML;
+    something2 = something.split(" ");
+    for (i = 0; i < something2.length; i++) {
+
+    }//97 -394
+    console.log(node);*/
 
 </script>
 
