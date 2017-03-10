@@ -32,6 +32,9 @@ elif nlp_type == "wit":
     actions = {}
     client = Wit(access_token, actions)
 
+elif nlp_type == "empty":
+    pass
+
 
 def lemmatize(token):
     lemmas = TaggedLemmas() # container for the result
@@ -56,7 +59,7 @@ def find_entity(token):
         return "", ""
 
 
-def get_entities(text, nlp_type="lemma"):
+def get_entities(text, nlp_type="empty"): #get_entities(text, nlp_type="lemma")
     ent_out = {}
     if nlp_type=="wit":
         if not text == "":
@@ -74,6 +77,8 @@ def get_entities(text, nlp_type="lemma"):
             entity = find_entity(token)
             if entity[0] != "":
                 ent_out.update({entity[0]: entity[1]})
+    elif nlp_type=="empty":
+        ent_out.update({'raw_text': str(text)})
     return ent_out
 
 

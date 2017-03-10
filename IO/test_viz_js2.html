@@ -30,6 +30,7 @@
         <textarea class="text-editor" id="text-editor"></textarea>
         <button type="button" id="button_update">Update</button>
         <button type="button" id="button_download" onclick="download()">Download project</button>
+        <button type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
     </div>
 </div>
 
@@ -198,13 +199,13 @@
             //panZoomGraph.zoom(1.5);
             panZoomGraph.center();
             /*
-            panZoomGraph.pan({x: 0, y: 0});
-            var realZoom = panZoomGraph.getSizes().realZoom;
-            panZoomGraph.pan
-            ({
-                x: (97 * realZoom),
-                y: (-394 * realZoom)
-            });*/
+             panZoomGraph.pan({x: 0, y: 0});
+             var realZoom = panZoomGraph.getSizes().realZoom;
+             panZoomGraph.pan
+             ({
+             x: (97 * realZoom),
+             y: (-394 * realZoom)
+             });*/
             //panZoomGraph.pan({x: 97, y: -394});
         }
 
@@ -583,6 +584,12 @@
         return false;
     }
 
+    // reverts the editor text to last loaded state
+    function revertChanges() {
+        var text2 = getYamlFile(currentFile);
+        document.getElementById("text-editor").value = text2;
+    }
+
     //finds graph node by its name - not yet needed
     function findNodeByName(nodeName) {
         for (i = 0; i < nodes.length; i++) {
@@ -593,13 +600,13 @@
     }
 
     /*
-    var node = findNodeByName("init");
-    var something = node.children[1].outerHTML;
-    something2 = something.split(" ");
-    for (i = 0; i < something2.length; i++) {
+     var node = findNodeByName("init");
+     var something = node.children[1].outerHTML;
+     something2 = something.split(" ");
+     for (i = 0; i < something2.length; i++) {
 
-    }//97 -394
-    console.log(node);*/
+     }//97 -394
+     console.log(node);*/
 
 </script>
 
