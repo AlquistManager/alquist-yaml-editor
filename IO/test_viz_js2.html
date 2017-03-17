@@ -203,8 +203,17 @@
                 maxZoom: 20
             });
 
+            console.log(panZoomGraph.getSizes());
+            console.log(panZoomGraph.getSizes()['viewBox']);
+            panZoomGraph.pan({x: 0, y: 0});
+            var realZoom = panZoomGraph.getSizes().realZoom;
+            panZoomGraph.pan
+            ({
+                x: -(-4 * realZoom) + (panZoomGraph.getSizes().width / 2),
+                y: -(4 * realZoom) + (panZoomGraph.getSizes().height / 2)
+            });
             //panZoomGraph.zoom(1.5);
-            panZoomGraph.center();
+            //panZoomGraph.center();
             /*
              panZoomGraph.pan({x: 0, y: 0});
              var realZoom = panZoomGraph.getSizes().realZoom;
