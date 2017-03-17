@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dbec5222-eb93-49c3-b59d-7366dbc9b613" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/static-files/svg-pan-zoom.min.js" afterPath="$PROJECT_DIR$/IO/static-files/svg-pan-zoom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/test_viz_js2.html" afterPath="$PROJECT_DIR$/IO/test_viz_js2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out.1" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out.1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out.2" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out.2" />
@@ -67,7 +65,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,8 +113,8 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="276" column="27" lean-forward="true" selection-start-line="276" selection-start-column="27" selection-end-line="276" selection-end-column="27" />
+            <state relative-caret-position="385">
+              <caret line="270" column="48" lean-forward="true" selection-start-line="270" selection-start-column="48" selection-end-line="270" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -1032,8 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="276" column="27" lean-forward="true" selection-start-line="276" selection-start-column="27" selection-end-line="276" selection-end-column="27" />
+        <state relative-caret-position="385">
+          <caret line="270" column="48" lean-forward="true" selection-start-line="270" selection-start-column="48" selection-end-line="270" selection-end-column="48" />
           <folding />
         </state>
       </provider>
