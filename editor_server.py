@@ -25,7 +25,7 @@ if len(sys.argv) > 1:
 editor = Blueprint('editor', __name__, static_url_path='/static') #, static_url_path='/static'
 
 # index page with project selection
-@editor.route('/editor', methods=['POST', 'GET', 'OPTIONS'])
+@editor.route('/editor/', methods=['POST', 'GET', 'OPTIONS'])
 def getIndexPage():
     return send_file('index.html')
 

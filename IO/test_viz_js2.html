@@ -163,10 +163,7 @@
                     myCodeMirror = getCodeMirror(tarea);
                     currentFile = statePos[1];
                 }
-                //selectTextareaLine(tarea, statePos[2]);
-                //myCodeMirror.setSelection({statePos[2], 0})
                 myCodeMirror.setSelection({line: statePos[2] - 1, ch: 0}, {line: statePos[2] - 1, ch: 100});
-                //myCodeMirror.setCursor({line: statePos[2], ch: 0});
 
                 if (selectedNode != undefined && selectedNode == evt.currentTarget) {
                     unhighlight(selectedNode);
@@ -564,37 +561,6 @@
             }
         }
         treeElement = undefined;
-    }
-
-    //selects one line in a textarea
-    function selectTextareaLine(tarea, lineNum) {
-        lineNum--; // array starts at 0
-        var lines = tarea.value.split("\n");
-
-        // calculate start/end
-        var startPos = 0, endPos = tarea.value.length;
-        for (var x = 0; x < lines.length; x++) {
-            if (x == lineNum) {
-                break;
-            }
-            startPos += (lines[x].length + 1);
-        }
-
-        var endPos = lines[lineNum].length + startPos;
-
-        if (typeof(tarea.selectionStart) != "undefined") {
-            tarea.focus();
-
-            var lineHeight = tarea.scrollHeight / lines.length;
-            var jump = (lineNum - 10) * lineHeight;
-            tarea.scrollTop = jump;
-
-            tarea.selectionStart = startPos;
-            tarea.selectionEnd = endPos;
-            tarea.focus();
-            $.event.trigger({type: 'keypress'});
-        }
-        return false;
     }
 
     // reverts the editor text to last loaded state

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Select Project</title>
 
-    <script type="text/javascript" src="static-files/jquery-3.1.1.min.js"></script>
+    <script src="../static-files/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
     //var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/";
     var botnames;
     jQuery.ajaxSetup({async: false});
-    $.post("editor/botnames", "getBotnames", //applicationURL +
+    $.post("botnames", "getBotnames", //applicationURL +
         function (data, status) {
             botnames = data.split(";");
             console.log("get bot names: " + status);
@@ -43,7 +43,7 @@
 
     function openProject() {
         var botName = document.getElementById("projects").value;
-        window.open("editor/graphpage?bot=" + botName, "_self"); //        window.open("editor/test_viz_js2.html?bot=" + botName, "_self");
+        window.open("graphpage?bot=" + botName, "_self"); //        window.open("editor/test_viz_js2.html?bot=" + botName, "_self");
 
     }
 
@@ -55,11 +55,11 @@
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == XMLHttpRequest.DONE) {
-                window.open("editor/graphpage?bot=" + botName, "_self"); //test_viz_js2.html?bot=
+                window.open("graphpage?bot=" + botName, "_self"); //test_viz_js2.html?bot=
             }
         }
         console.log(request);
-        request.open("POST", "editor/upload");
+        request.open("POST", "upload");
         request.send(new FormData(formElement));
         //jQuery.ajaxSetup({async: true});
 
