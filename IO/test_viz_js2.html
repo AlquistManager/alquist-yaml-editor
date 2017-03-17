@@ -8,6 +8,9 @@
     <script src="../static-files/taboverride.min.js"></script>
 
 
+    <script src="../static-files/codemirror.js"></script>
+    <link rel="stylesheet" href="../static-files/codemirror.css">
+    <script src="../static-files/yaml.js"></script>
     <link rel="stylesheet" href="../static-files/jquery.highlight-within-textarea.css"/>
     <link rel="stylesheet" href="../static-files/themes/default/style.min.css"/>
     <script src="../static-files/jstree.min.js"></script>
@@ -74,6 +77,7 @@
     var treeElement;
     var nodes;
     var edges;
+    var myCodeMirror;
 
     // enable Tab Override for the textarea
     tabOverride.set(tarea);
@@ -100,6 +104,7 @@
     generateGraphForBot(botName);
     console.log("generated graph for bot: " + botName);
     loadGraph();
+    myCodeMirror = getCodeMirror(tarea);
 
     jQuery.ajaxSetup({async: true});
 
@@ -153,10 +158,15 @@
                 var statePos = findPosition(state).split(" ");
                 if (statePos[1] != currentFile) {
                     var text2 = getYamlFile(statePos[1]);
+                    myCodeMirror.toTextArea();
                     document.getElementById("text-editor").value = text2;
+                    myCodeMirror = getCodeMirror(tarea);
                     currentFile = statePos[1];
                 }
-                selectTextareaLine(tarea, statePos[2]);
+                //selectTextareaLine(tarea, statePos[2]);
+                //myCodeMirror.setSelection({statePos[2], 0})
+                myCodeMirror.setSelection({line: statePos[2] - 1, ch: 0}, {line: statePos[2] - 1, ch: 100});
+                //myCodeMirror.setCursor({line: statePos[2], ch: 0});
 
                 if (selectedNode != undefined && selectedNode == evt.currentTarget) {
                     unhighlight(selectedNode);
@@ -319,6 +329,7 @@
 
     // update graph with yaml code from editor
     function toPython(usrdata) {
+        myCodeMirror.save();
         var editor_text = document.getElementById("text-editor").value;
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
@@ -351,11 +362,13 @@
 
 
             $('#file_tree_inner')
-            // listen for event
+            // listen for event on click on file
                 .on('select_node.jstree', function (e, data) {
                     currentFile = data.instance.get_node(data.selected[0]).text;
                     var fileContent = getYamlFile(currentFile);
+                    myCodeMirror.toTextArea();
                     document.getElementById("text-editor").value = fileContent;
+                    myCodeMirror = getCodeMirror(tarea);
                 })
                 // create the instance
                 .jstree();
@@ -587,7 +600,9 @@
     // reverts the editor text to last loaded state
     function revertChanges() {
         var text2 = getYamlFile(currentFile);
+        myCodeMirror.toTextArea();
         document.getElementById("text-editor").value = text2;
+        myCodeMirror = getCodeMirror(tarea);
     }
 
     //finds graph node by its name - not yet needed
@@ -597,6 +612,18 @@
                 return nodes[i];
             }
         }
+    }
+
+    //return code mirror instance for given textarea
+    function getCodeMirror(textArea) {
+        var coMi = CodeMirror.fromTextArea(tarea, {lineNumbers: true, tabSize: 2});
+        coMi.setOption("extraKeys", {
+            Tab: function (cm) {
+                var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+                cm.replaceSelection(spaces);
+            }
+        });
+        return coMi;
     }
 
     /*

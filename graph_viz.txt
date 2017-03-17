@@ -1,30 +1,32 @@
 digraph G{
 subgraph cluster_0 {
 init [id = 2, style=filled, color=yellow];
-welcome_question [id = 3, style=filled, color=white];
-choice [id = 4, style=filled, color=white];
-sums [id = 5, style=filled, color=white];
-problem_count [id = 6, style=filled, color=white];
-count_slider [id = 7, style=filled, color=white];
-count_input_special [id = 8, style=filled, color=white];
-generate_numbers [id = 9, style=filled, color=white];
-counter [id = 10, style=filled, color=white];
-display_task [id = 11, style=filled, color=white];
-input [id = 12, style=filled, color=white];
-right_wrong [id = 13, style=filled, color=white];
-result_right [id = 14, style=filled, color=white];
-is_counter_done [id = 15, style=filled, color=white];
-again_question [id = 16, style=filled, color=white];
-again [id = 17, style=filled, color=white];
-end [id = 18, style=filled, color=white];
-wait_for_user [id = 19, style=filled, color=white];
-result_wrong [id = 20, style=filled, color=white];
-substraction [id = 21, style=filled, color=white];
-wait_for_user1 [id = 22, style=filled, color=white];
+test [id = 3, style=filled, color=white];
+welcome_question [id = 4, style=filled, color=white];
+choice [id = 5, style=filled, color=white];
+sums [id = 6, style=filled, color=white];
+problem_count [id = 7, style=filled, color=white];
+count_slider [id = 8, style=filled, color=white];
+count_input_special [id = 9, style=filled, color=white];
+generate_numbers [id = 10, style=filled, color=white];
+counter [id = 11, style=filled, color=white];
+display_task [id = 12, style=filled, color=white];
+input [id = 13, style=filled, color=white];
+right_wrong [id = 14, style=filled, color=white];
+result_right [id = 15, style=filled, color=white];
+is_counter_done [id = 16, style=filled, color=white];
+again_question [id = 17, style=filled, color=white];
+again [id = 18, style=filled, color=white];
+end [id = 19, style=filled, color=white];
+wait_for_user [id = 20, style=filled, color=white];
+result_wrong [id = 21, style=filled, color=white];
+substraction [id = 22, style=filled, color=white];
+wait_for_user1 [id = 23, style=filled, color=white];
 label="main.yml";
 style=filled;color=lightgray;}
 
-init -> welcome_question;
+init -> test;
+test -> welcome_question;
 welcome_question -> choice;
 choice -> sums;
 sums -> problem_count;

@@ -5,11 +5,16 @@ states:
     properties:
       text: "Hello!"
       
+  test:
+    type: message_text
+    properties:
+      text: "test"
+      
   welcome_question:
     type: message_text
     properties:
       text: "What would you like to practice?"
-  
+      
   choice:
     type: message_buttons
     properties:

@@ -7,6 +7,8 @@ var session = "";
 var showHideTime = 500;
 var scrollToBottomTime = 500;
 var sliderInfo = {};
+var infoTextArea;    //element for context display
+var debug = true; //if true display context
 
 //Function called right after the page is loaded
 $(document).ready(function () {
@@ -19,6 +21,10 @@ $(document).ready(function () {
     $('#submit').hide();
     //Request response of init node
     init();
+    infoTextArea = document.getElementById('info-text');
+    if(debug){
+        infoTextArea.style.display = "block";
+    }
 });
 
 //Call init state
@@ -135,6 +141,9 @@ function sendInput(text) {
 
 //Shows responses of Alquist
 function showSystemMessages(messages, input) {
+    if(infoTextArea != undefined) {
+        infoTextArea.innerHTML = JSON.stringify(context, null, 4);
+    }
     var buttons = [];
     var checkboxes = [];
     // absolute delay of showing the messages
