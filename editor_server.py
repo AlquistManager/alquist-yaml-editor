@@ -62,8 +62,8 @@ def update():
     if request.method == 'POST':
         data = json.loads(request.get_data().decode('UTF-8'))
         writeToFile(data)
-        recreateGraph(data["botname"].strip())
-    return "OK"
+        response = recreateGraph(data["botname"].strip())
+    return response;
 
 # returns graph file for display
 @editor.route('/editor/graph', methods=['POST', 'GET', 'OPTIONS'])
@@ -129,7 +129,7 @@ def writeToFile(data):
 # recreate graph of given bot
 def recreateGraph(botName):
     print("recreating graph")
-    graph_generator.createGraph(botName)
+    return graph_generator.createGraph(botName)
 
 # checks given file has allowed extension
 def allowed_file(filename):
@@ -162,7 +162,7 @@ def upload_file():
                 print(file)
                 if file and allowed_file(file.filename):
                     filename = secure_filename(file.filename)
-                    checkUploadFolder()
+                    checkUploadFolder(UPLOAD_FOLDER)
                     file.save(os.path.join(UPLOAD_FOLDER, filename))
                     print("saving file")
             createNewProject(botName)
@@ -171,18 +171,17 @@ def upload_file():
             if 'file' not in request.files:
                 print("file not in request files")
                 return "file not in request files"
-            file = request.files['file']
-
+            #file = request.files['file']
             files = request.files.getlist("file")
             for file in files:
                 print(file)
                 if file and allowed_file(file.filename):
                     filename = secure_filename(file.filename)
-                    checkUploadFolder()
-                    file.save(os.path.joint(bots + '/botname'))
+                    checkUploadFolder(UPLOAD_FOLDER)
+                    checkUploadFolder(os.path.join("bots", botName, "states"))
                     file.save(os.path.join(UPLOAD_FOLDER, filename))
+                    shutil.move(os.path.join(UPLOAD_FOLDER, filename), os.path.join("bots", botName, "states"))
                     print("saving file")
-            #createNewProject(botName)
     return "ok"
 
 # download bot project in a zip file
@@ -264,9 +263,9 @@ def copyFolder(pathFrom, pathTo, depth):
 
 
 # checks if upload folder exists, creates it if not
-def checkUploadFolder():
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.makedirs(UPLOAD_FOLDER)
+def checkUploadFolder(upload_fold):
+    if not os.path.exists(upload_fold):
+        os.makedirs(upload_fold)
 
 #creates empty folder structer for a new bot project
 def createEmptyFolderStructure(botname):

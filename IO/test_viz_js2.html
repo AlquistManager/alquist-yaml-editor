@@ -25,6 +25,7 @@
     <div id="file_tree" class="split split-horizontal file-tree">
         <div id="file_tree_inner"></div>
 
+        Upload .py state
         <form id="file-form" method="POST" enctype=multipart/form-data>
             <input type="file" id="file" name="file" multiple size="50"><br>
             <button type="button" onclick="uploadPy()">Upload</button>
@@ -149,7 +150,7 @@
         edges = document.getElementsByClassName("edge");
 
         // displays error message when parsing fails
-        if (nodes.length == 0) {
+        if (nodes.length == 0 || responseToGenerate != 'ok') {
             elemGraph.innerHTML = "Error parsing Yaml file.<br>" + responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
         }
 
@@ -340,6 +341,7 @@
         $.post("update",
             JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
             function (data, status) {
+                responseToGenerate = data;
                 loadGraph();
                 console.log(status);
             });
@@ -604,7 +606,8 @@
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == XMLHttpRequest.DONE) {
-                console.log(request);
+                $('#file_tree_inner').jstree(true).destroy();
+                generateFileTree();
             }
         }
         request.open("POST", "upload");

@@ -191,7 +191,21 @@ def createGraph(bot):
     print("Bots available: %s" % state_dict.keys())
     print("Creating graph for bot: %s" % botName)
 
-    findNextState(None, "init")
+    try:
+        findNextState(None, "init")
+    except:
+        if len(nodes) > 0:
+            writeStatePositions(statePositions)
+        flow_files = listdir("bots/" + bot + "/flows")
+        if len(flow_files) == 0:
+            print("No yaml files.")
+            return "No yaml files."
+        else:
+            print("Error parsing yaml file.")
+            stack_trace = traceback.format_exc()
+            print(str(stack_trace))
+            return str(stack_trace)
+
     findStatePositions()
     findUnreachableNodes()
 
@@ -207,6 +221,7 @@ def createGraph(bot):
     print("Graph edges: %d" % len(edges))
 
     return "ok"
+
 
 
 #createGraph("test_editor")

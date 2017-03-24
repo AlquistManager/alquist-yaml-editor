@@ -4,3 +4,9 @@ states:
     type: message_text
     properties:
       text: "Hello!"
+      
+  state1:
+    type: message_text
+    properties:
+      text: "Hello again!"
+    transitions:
