@@ -1,2 +1,9 @@
 digraph G{
+subgraph cluster_0 {
+init [id = 2, style=filled, color=yellow];
+state1 [id = 3, style=filled, color=white];
+label="test.yml";
+style=filled;color=lightgray;}
+
+init -> state1;
 }

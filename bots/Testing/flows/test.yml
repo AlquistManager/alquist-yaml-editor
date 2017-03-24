@@ -9,4 +9,3 @@ states:
     type: message_text
     properties:
       text: "Hello again!"
-    transitions:

@@ -15,6 +15,7 @@ files = []
 posCount = 0
 
 botName = None
+botFolderName = None
 states = None
 
 id = 1
@@ -100,7 +101,7 @@ def findNodeNameById(id):
 
 # finds position of states in yaml files and saves them to statePositions
 def findStatePositions():
-    yaml_folder = "bots/" + botName + "/flows/"
+    yaml_folder = "bots/" + botFolderName + "/flows/"
     global statePositions
     global posCount
     global files
@@ -184,6 +185,9 @@ def createGraph(bot):
 
     global botName
     botName = bot.lower()
+
+    global botFolderName
+    botFolderName = bot
 
     global states
     states = state_dict[botName]["states"].keys()
