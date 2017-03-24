@@ -13,7 +13,7 @@ from crossdomain import *
 
 app = Flask(__name__, static_url_path='/static') #, static_url_path='/static'
 UPLOAD_FOLDER = 'temp'
-ALLOWED_EXTENSIONS = set(['zip'])
+ALLOWED_EXTENSIONS = set(['zip','py','yml'])
 ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
 
 '''
@@ -140,31 +140,49 @@ def allowed_file(filename):
 @editor.route('/editor/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        botName = request.form['botname']
         print(request.data)
         print(request.form)
         print(request.files)
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            print("file not in request files")
-            createEmptyFolderStructure(botName)
-            return "file not in request files"
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            print("no selected file")
-            createEmptyFolderStructure(botName)
-            return "no selected file"
-        files = request.files.getlist("file")
-        for file in files:
-            print(file)
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                checkUploadFolder()
-                file.save(os.path.join(UPLOAD_FOLDER, filename))
-                print("saving file")
-        createNewProject(botName)
+        botName = request.form['botname']
+        if request.form['form'] == 'create_project':
+            # check if the post request has the file part
+            if 'file' not in request.files:
+                print("file not in request files")
+                createEmptyFolderStructure(botName)
+                return "file not in request files"
+            file = request.files['file']
+            # if user does not select file, browser also
+            # submit a empty part without filename
+            if file.filename == '':
+                print("no selected file")
+                createEmptyFolderStructure(botName)
+                return "no selected file"
+            files = request.files.getlist("file")
+            for file in files:
+                print(file)
+                if file and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    checkUploadFolder()
+                    file.save(os.path.join(UPLOAD_FOLDER, filename))
+                    print("saving file")
+            createNewProject(botName)
+        elif request.form['form'] == 'python':
+            # check if the post request has the file part
+            if 'file' not in request.files:
+                print("file not in request files")
+                return "file not in request files"
+            file = request.files['file']
+
+            files = request.files.getlist("file")
+            for file in files:
+                print(file)
+                if file and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    checkUploadFolder()
+                    file.save(os.path.joint(bots + '/botname'))
+                    file.save(os.path.join(UPLOAD_FOLDER, filename))
+                    print("saving file")
+            #createNewProject(botName)
     return "ok"
 
 # download bot project in a zip file

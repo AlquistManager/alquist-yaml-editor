@@ -60,7 +60,9 @@
         }
         console.log(request);
         request.open("POST", "upload");
-        request.send(new FormData(formElement));
+        var formData = new FormData(formElement);
+        formData.append('form', 'create_project'); //create_project or python
+        request.send(formData);
         //jQuery.ajaxSetup({async: true});
 
     }

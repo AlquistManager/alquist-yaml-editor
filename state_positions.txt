@@ -1,23 +1,2 @@
-bot_app
-count_slider main.yml 43 53
-count_input_special main.yml 54 60
-again main.yml 142 152
-problem_count main.yml 36 42
-wait_for_user main.yml 153 157
-test main.yml 8 12
-sums main.yml 81 89
-counter main.yml 75 80
-substraction main.yml 61 68
-wait_for_user1 main.yml 31 35
-is_counter_done main.yml 128 136
-end main.yml 158 162
-right_wrong main.yml 105 113
-choice main.yml 18 30
-again_question main.yml 137 141
-display_task main.yml 90 96
-init main.yml 3 7
-welcome_question main.yml 13 17
-input main.yml 97 104
-result_right main.yml 114 120
-generate_numbers main.yml 69 74
-result_wrong main.yml 121 127
+testing
+init test.yml 3 7

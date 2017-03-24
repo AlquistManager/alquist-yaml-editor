@@ -245,13 +245,20 @@ def getBotNames():
 #returns yaml file names in project in HTML list
 def getYamlNamesHtml(projectname):
     files = listdir("bots/" + projectname + "/flows")
-    fileHtml = "<ul><li data-jstree='{\"opened\":true,\"selected\":true}'>" + projectname + "<ul>"
+    fileHtml = "<ul><li data-jstree='{\"opened\":true,\"selected\":true}'>" + projectname + "<ul><li>flows<ul>"
     for i in range(len(files)):
         fileHtml += "<li>" + files[i] + "</li>"
-    fileHtml += "</ul></li></ul>"
+    fileHtml += "</ul></li><li>states<ul>"
+
+    files = listdir("bots/" + projectname + "/states")
+    for i in range(len(files)):
+        fileHtml += "<li>" + files[i] + "</li>"
+    fileHtml += "</ul></li></ul></li></ul>"
     return fileHtml
 
 #returns string containing yaml file names of a certain project
 def getYamlNames(projectname):
     files = listdir("bots/" + projectname + "/flows")
     return ";".join(files)
+
+

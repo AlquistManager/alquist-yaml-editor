@@ -24,6 +24,12 @@
 <div id="panes" style="visibility: hidden;" class="split">
     <div id="file_tree" class="split split-horizontal file-tree">
         <div id="file_tree_inner"></div>
+
+        <form id="file-form" method="POST" enctype=multipart/form-data>
+            <input type="file" id="file" name="file" multiple size="50"><br>
+            <button type="button" onclick="uploadPy()">Upload</button>
+        </form>
+
         <button type="button" id="button_open_bot" class="btn"
                 onclick="startBot()">Start Bot
         </button>
@@ -199,21 +205,13 @@
         if (nodes.length != 0) {
             var panZoomGraph = svgPanZoom(elemGraph.firstElementChild, {
                 controlIconsEnabled: true,
-                minZoom: 0.1,
-                maxZoom: 20
+                minZoom: 0.01,
+                maxZoom: 50
             });
 
-            console.log(panZoomGraph.getSizes());
-            console.log(panZoomGraph.getSizes()['viewBox']);
-            panZoomGraph.pan({x: 0, y: 0});
-            var realZoom = panZoomGraph.getSizes().realZoom;
-            panZoomGraph.pan
-            ({
-                x: -(-4 * realZoom) + (panZoomGraph.getSizes().width / 2),
-                y: -(4 * realZoom) + (panZoomGraph.getSizes().height / 2)
-            });
+
             //panZoomGraph.zoom(1.5);
-            //panZoomGraph.center();
+            panZoomGraph.center();
             /*
              panZoomGraph.pan({x: 0, y: 0});
              var realZoom = panZoomGraph.getSizes().realZoom;
@@ -599,6 +597,21 @@
             }
         });
         return coMi;
+    }
+
+    function uploadPy() {
+        var formElement = document.getElementById("file-form");
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == XMLHttpRequest.DONE) {
+                console.log(request);
+            }
+        }
+        request.open("POST", "upload");
+        var formData = new FormData(formElement);
+        formData.append('botname', botName);
+        formData.append('form', 'python'); //create_project or python
+        request.send(formData);
     }
 
     /*

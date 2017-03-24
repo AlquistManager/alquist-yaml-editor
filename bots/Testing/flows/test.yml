@@ -1,0 +1,6 @@
+name: bot app
+states:
+  init:
+    type: message_text
+    properties:
+      text: "Hello!"
