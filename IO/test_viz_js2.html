@@ -25,10 +25,25 @@
     <div id="file_tree" class="split split-horizontal file-tree">
         <div id="file_tree_inner"></div>
 
-        Upload .py state
-        <form id="file-form" method="POST" enctype=multipart/form-data>
-            <input type="file" id="file" name="file" multiple size="50"><br>
-            <button type="button" onclick="uploadPy()">Upload</button>
+        <form id="upload-form" class="box" method="post" action="upload" enctype="multipart/form-data">
+
+            <div class="box__input">
+                <svg class="box__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43">
+                    <path d="M48.4 26.5c-.9 0-1.7.7-1.7 1.7v11.6h-43.3v-11.6c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v13.2c0 .9.7 1.7 1.7 1.7h46.7c.9 0 1.7-.7 1.7-1.7v-13.2c0-1-.7-1.7-1.7-1.7zm-24.5 6.1c.3.3.8.5 1.2.5.4 0 .9-.2 1.2-.5l10-11.6c.7-.7.7-1.7 0-2.4s-1.7-.7-2.4 0l-7.1 8.3v-25.3c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v25.3l-7.1-8.3c-.7-.7-1.7-.7-2.4 0s-.7 1.7 0 2.4l10 11.6z"/>
+                </svg>
+                <input type="file" name="files[]" id="file" class="box__file"
+                       data-multiple-caption="{count} files selected" multiple/>
+                <label for="file"><strong>Choose a file</strong><span
+                        class="box__dragndrop"> or drag it here</span>.</label>
+                <button type="submit" class="box__button">Upload</button>
+            </div>
+
+            <div class="box__uploading">Uploading&hellip;</div>
+            <div class="box__success">Done! <a href="/?"
+                                               class="box__restart" role="button">Upload more?</a></div>
+            <div class="box__error">Error! <span></span>. <a
+                    href="/?" class="box__restart"
+                    role="button">Try again!</a></div>
         </form>
 
         <button type="button" id="button_open_bot" class="btn"
@@ -47,9 +62,14 @@
 
 <nav class="context-menu">
     <ul class="context-menu__items">
-        <li class="context-menu__item" onclick="onClickNewFile()">
+        <li class="context-menu__item" onclick="onClickNewYmlFile()">
             <a href="#" class="context-menu__link">
-                <i class="fa fa-add"></i> New File
+                <i class="fa fa-add"></i> New .yml File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewPyFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .py File
             </a>
         </li>
         <li class="context-menu__item" onclick="onClickDeleteFile()">
@@ -62,13 +82,26 @@
 
 <nav class="context-menu-root">
     <ul class="context-menu__items">
-        <li class="context-menu__item" onclick="onClickNewFile()">
+        <li class="context-menu__item" onclick="onClickNewYmlFile()">
             <a href="#" class="context-menu__link">
-                <i class="fa fa-add"></i> New File
+                <i class="fa fa-add"></i> New .yml File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewPyFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .py File
             </a>
         </li>
     </ul>
 </nav>
+
+
+<script>
+
+    'use strict';
+
+
+</script>
 
 <script>
     var elemGraph = document.getElementById("graph_main");
@@ -77,6 +110,7 @@
     var statePositions;
     var fileNames;
     var yamlMap = new Map();
+    var filenameMap = new Map();
     var botName;
     var currentFile;
     var responseToGenerate;
@@ -138,8 +172,8 @@
         // load yaml files
         for (i = 0; i < fileNames.length; i++) {
             if (fileNames[i] == undefined)continue;
-            var filepath = "bots/" + botName + "/flows/" + fileNames[i];
-            $.post("getfile", filepath,
+            //var filepath = "bots/" + botName + "/flows/" + fileNames[i];
+            $.post("getfile", botName + ":" + fileNames[i],
                 function (data, status) {
                     yamlMap.set(fileNames[i], data);
                     console.log("get yaml file: " + status);
@@ -541,11 +575,19 @@
         window.open("download/" + botName, "_self");
     }
 
+    function onClickNewYmlFile() {
+        newFile("yml");
+    }
+
+    function onClickNewPyFile() {
+        newFile("py");
+    }
+
     // create new yaml file
-    function onClickNewFile() {
+    function newFile(type) {
         var name = prompt("Enter name of the new file:", "");
         if (name == "" || name == null || name == undefined)return;
-        var data = name + ";" + botName;
+        var data = type + ";" + name + ";" + botName;
 
         $.post("newfile", data,
             function (data, status) {
@@ -601,21 +643,6 @@
         return coMi;
     }
 
-    function uploadPy() {
-        var formElement = document.getElementById("file-form");
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (request.readyState == XMLHttpRequest.DONE) {
-                $('#file_tree_inner').jstree(true).destroy();
-                generateFileTree();
-            }
-        }
-        request.open("POST", "upload");
-        var formData = new FormData(formElement);
-        formData.append('botname', botName);
-        formData.append('form', 'python'); //create_project or python
-        request.send(formData);
-    }
 
     /*
      var node = findNodeByName("init");
@@ -625,6 +652,164 @@
 
      }//97 -394
      console.log(node);*/
+
+    ;
+    (function ($, window, document, undefined) {
+        // feature detection for drag&drop upload
+
+        var isAdvancedUpload = function () {
+            var div = document.createElement('div');
+            return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
+        }();
+
+
+        // applying the effect for every form
+
+        $('.box').each(function () {
+            var $form = $(this),
+                $input = $form.find('input[type="file"]'),
+                $label = $form.find('label'),
+                $errorMsg = $form.find('.box__error span'),
+                $restart = $form.find('.box__restart'),
+                droppedFiles = false,
+                showFiles = function (files) {
+                    $label.text(files.length > 1 ? ( $input.attr('data-multiple-caption') || '' ).replace('{count}', files.length) : files[0].name);
+                };
+
+            // letting the server side to know we are going to make an Ajax request
+            $form.append('<input type="hidden" name="ajax" value="1" />');
+
+            // automatically submit the form on file select
+            $input.on('change', function (e) {
+                showFiles(e.target.files);
+
+
+                $form.trigger('submit');
+
+
+            });
+
+
+            // drag&drop files if the feature is available
+            if (isAdvancedUpload) {
+                $form
+                    .addClass('has-advanced-upload') // letting the CSS part to know drag&drop is supported by the browser
+                    .on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+                        // preventing the unwanted behaviours
+                        e.preventDefault();
+                        e.stopPropagation();
+                    })
+                    .on('dragover dragenter', function () //
+                    {
+                        $form.addClass('is-dragover');
+                    })
+                    .on('dragleave dragend drop', function () {
+                        $form.removeClass('is-dragover');
+                    })
+                    .on('drop', function (e) {
+                        droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
+                        showFiles(droppedFiles);
+
+
+                        $form.trigger('submit'); // automatically submit the form on file drop
+
+
+                    });
+            }
+
+
+            // if the form was submitted
+
+            $form.on('submit', function (e) {
+
+                // preventing the duplicate submissions if the current one is in progress
+                if ($form.hasClass('is-uploading')) return false;
+
+                $form.addClass('is-uploading').removeClass('is-error');
+
+                if (isAdvancedUpload) // ajax file upload for modern browsers
+                {
+                    e.preventDefault();
+
+                    // gathering the form data
+                    var ajaxData = new FormData($form.get(0));
+                    ajaxData.append('botname', botName);
+                    ajaxData.append('form', 'python'); //create_project or python
+                    if (droppedFiles) {
+                        $.each(droppedFiles, function (i, file) {
+                            ajaxData.append($input.attr('name'), file);
+                        });
+                    }
+
+                    // ajax request
+                    $.ajax(
+                        {
+                            url: $form.attr('action'),
+                            type: $form.attr('method'),
+                            data: ajaxData,
+                            dataType: 'json',
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            complete: function () {
+                                $form.removeClass('is-uploading');
+                            },
+                            success: function (data) {
+                                $form.addClass(data.success == true ? 'is-success' : 'is-error');
+                                if (!data.success) $errorMsg.text(data.error);
+                                $('#file_tree_inner').jstree(true).destroy();
+                                generateFileTree();
+
+                                generateGraphForBot(botName);
+                                loadGraph();
+                            },
+                            error: function () {
+                                alert('Error. Please, contact the webmaster!');
+                            }
+                        });
+                }
+                else // fallback Ajax solution upload for older browsers
+                {
+                    var iframeName = 'uploadiframe' + new Date().getTime(),
+                        $iframe = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
+
+                    $('body').append($iframe);
+                    $form.attr('target', iframeName);
+
+                    $iframe.one('load', function () {
+                        var data = $.parseJSON($iframe.contents().find('body').text());
+                        $form.removeClass('is-uploading').addClass(data.success == true ? 'is-success' : 'is-error').removeAttr('target');
+                        if (!data.success) $errorMsg.text(data.error);
+                        $iframe.remove();
+                        $('#file_tree_inner').jstree(true).destroy();
+                        generateFileTree();
+
+                        generateGraphForBot(botName);
+                        loadGraph();
+                    });
+                }
+            });
+
+
+            // restart the form if has a state of error/success
+
+            $restart.on('click', function (e) {
+                e.preventDefault();
+                $form.removeClass('is-error is-success');
+            });
+
+            // Firefox focus bug fix for file input
+            $input
+                .on('focus', function () {
+                    $input.addClass('has-focus');
+                })
+                .on('blur', function () {
+                    $input.removeClass('has-focus');
+                });
+        });
+
+
+    })(jQuery, window, document);
 
 </script>
 

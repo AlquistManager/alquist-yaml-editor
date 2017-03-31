@@ -245,10 +245,16 @@ def getStatePositionsFile():
         return data
 
 # returns requested file
-def getYamlFile(filepath):
+def getYamlFile(filename):
+    botName = filename.split(":")[0]
+    filename = filename.split(":")[1]
+    if os.path.splitext(filename)[1] == ".py":
+        filepath = os.path.join("bots", botName, "states", filename)
+    elif os.path.splitext(filename)[1] == ".yml":
+        filepath = os.path.join("bots", botName, "flows", filename)
+    else:
+        return ""
     with io.open(filepath, "r", encoding="utf-8") as file:
-        if "bots/" not in filepath:
-            return "Invalid Path"
         data = file.read()
         file.close()
         return data
@@ -263,21 +269,34 @@ def getBotNames():
 
 #returns yaml file names in project in HTML list
 def getYamlNamesHtml(projectname):
+    '''
     files = listdir("bots/" + projectname + "/flows")
-    fileHtml = "<ul><li data-jstree='{\"opened\":true,\"selected\":true}'>" + projectname + "<ul><li>flows<ul>"
+    fileHtml = "<ul><li data-jstree='{\"opened\":true}'>" + projectname + "<ul><li data-jstree='{\"opened\":true}'>flows<ul>"
     for i in range(len(files)):
         fileHtml += "<li>" + files[i] + "</li>"
-    fileHtml += "</ul></li><li>states<ul>"
+    fileHtml += "</ul></li><li data-jstree='{\"opened\":true}'>states<ul>"
 
-    files = listdir("bots/" + projectname + "/states")
-    for i in range(len(files)):
-        fileHtml += "<li>" + files[i] + "</li>"
+    if os.path.isdir(os.path.join(os.getcwd(), 'bots', projectname, 'states')):
+        files = listdir("bots/" + projectname + "/states")
+        for i in range(len(files)):
+            fileHtml += "<li>" + files[i] + "</li>"
     fileHtml += "</ul></li></ul></li></ul>"
+    '''
+    folders = listdir(os.path.join("bots", projectname))
+    fileHtml = "<ul><li data-jstree='{\"opened\":true}'>" + projectname + "<ul>"
+    for folder in folders:
+        fileHtml += "<li data-jstree='{\"opened\":true}'>" + folder + "<ul>"
+        files = listdir(os.path.join("bots", projectname, folder))
+        for f in files:
+            fileHtml += "<li>" + f + "</li>"
+        fileHtml += "</ul></li>"
+    fileHtml += "</ul></li></ul>"
     return fileHtml
 
 #returns string containing yaml file names of a certain project
 def getYamlNames(projectname):
     files = listdir("bots/" + projectname + "/flows")
+    files = files + listdir("bots/" + projectname + "/states")
     return ";".join(files)
 
 

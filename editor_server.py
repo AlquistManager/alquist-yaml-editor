@@ -13,7 +13,7 @@ from crossdomain import *
 
 app = Flask(__name__, static_url_path='/static') #, static_url_path='/static'
 UPLOAD_FOLDER = 'temp'
-ALLOWED_EXTENSIONS = set(['zip','py','yml'])
+ALLOWED_EXTENSIONS = set(['zip','py','yml','txt','json'])
 ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
 
 '''
@@ -122,7 +122,11 @@ def getYamlFileNames():
 # write yaml code to file
 def writeToFile(data):
     print("writing file")
-    with io.open("bots/" + data["botname"].strip() + "/flows/" + data["filename"], "w", encoding="utf-8") as file:
+    if os.path.splitext(data["filename"])[1] == ".py":
+        file_path = os.path.join("bots", data["botname"].strip(), "states", data["filename"])
+    elif os.path.splitext(data["filename"])[1] == ".yml":
+        file_path = os.path.join("bots", data["botname"].strip(), "flows", data["filename"])
+    with io.open(file_path, "w", encoding="utf-8") as file:
         file.write(data["text"])
         file.close()
 
@@ -143,6 +147,8 @@ def upload_file():
         print(request.data)
         print(request.form)
         print(request.files)
+        if 'botname' not in request.form:
+            return "request missing attributes"
         botName = request.form['botname']
         if request.form['form'] == 'create_project':
             # check if the post request has the file part
@@ -168,11 +174,10 @@ def upload_file():
             createNewProject(botName)
         elif request.form['form'] == 'python':
             # check if the post request has the file part
-            if 'file' not in request.files:
+            if 'files[]' not in request.files:
                 print("file not in request files")
                 return "file not in request files"
-            #file = request.files['file']
-            files = request.files.getlist("file")
+            files = request.files.getlist("files[]")
             for file in files:
                 print(file)
                 if file and allowed_file(file.filename):
@@ -180,11 +185,24 @@ def upload_file():
                     checkUploadFolder(UPLOAD_FOLDER)
                     checkUploadFolder(os.path.join("bots", botName, "states"))
                     file.save(os.path.join(UPLOAD_FOLDER, filename))
-                    shutil.move(os.path.join(UPLOAD_FOLDER, filename), os.path.join("bots", botName, "states"))
-                    print("saving file")
-    return "ok"
 
-# download bot project in a zip file
+                    if os.path.splitext(filename)[1] == ".py":
+                        save_path = os.path.join("bots", botName, "states")
+                    elif os.path.splitext(filename)[1] == ".yml":
+                        save_path = os.path.join("bots", botName, "flows")
+                    else:
+                        save_path = os.path.join("bots", botName, "other")
+
+                    if not os.path.exists(save_path):
+                        os.mkdir(save_path)
+
+                    if os.path.exists(os.path.join(save_path, filename)):
+                        os.remove(os.path.join(save_path, filename))
+                    shutil.move(os.path.join(UPLOAD_FOLDER, filename), save_path)
+                    print("saving file")
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
+    # download bot project in a zip file
 @editor.route('/editor/download/<path:path>', methods=['GET', 'POST'])
 def download_file(path):
     print("download file")
@@ -207,9 +225,14 @@ def createNewFile():
     if request.method == 'POST':
         print(request.get_data())
         data = str(request.get_data((), 'utf-8')).split(";")
-        new_file_name = data[0] + ".yml"
-        bot_name = data[1]
-        with io.open("bots/" + bot_name + "/flows/" + new_file_name, 'a', encoding="utf-8") as file:
+        new_file_name = data[1]
+        bot_name = data[2]
+        print(data)
+        if data[0] == "py":
+            save_path = os.path.join("bots", bot_name, "states", new_file_name + ".py")
+        elif data[0] == "yml":
+            save_path = os.path.join("bots", bot_name, "flows", new_file_name + ".yml")
+        with io.open(save_path, 'a', encoding="utf-8") as file:
             file.close()
         return "ok"
 
@@ -219,7 +242,10 @@ def deleteFile():
     if request.method == 'POST':
         print(request.get_data())
         data = str(request.get_data((), 'utf-8')).split(";")
-        os.remove("bots/" + data[1] + "/flows/" + data[0])
+        if os.path.splitext(data[0])[1] == ".py":
+            os.remove("bots/" + data[1] + "/states/" + data[0])
+        elif os.path.splitext(data[0])[1] == ".yml":
+            os.remove("bots/" + data[1] + "/flows/" + data[0])
         return "ok"
 
 @editor.route('/editor/graphpage', methods=['GET'])

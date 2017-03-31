@@ -1,3 +1,11 @@
-testing
-state1 test.yml 8 12
-init test.yml 3 7
+test_editor
+state3 init_file.yml 9 21
+option1 init_file.yml 22 26
+good_response init_file.yml 47 53
+input init_file.yml 66 70
+bad_response init_file.yml 54 60
+good_bad init_file.yml 34 46
+init init_file.yml 4 8
+something test.yml 3 7
+end_state init_file.yml 61 65
+option1_2 init_file.yml 27 33
