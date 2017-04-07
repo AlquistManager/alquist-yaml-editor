@@ -1,0 +1,41 @@
+2017-04-07 14:59:28,740 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Executing state: simple_intro_context_test_2 Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{phone_count}}'), ('value2', '0'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'no_matches'), ('notequal', 'simple_intro')])
+2017-04-07 14:59:28,757 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Comparing values: {{phone_count}}Context: {'previous_request': 'simple_intro_context', 'phone_count': 48, 'previous_context': {'previous_request': 'init', 'previous_context': {}, 'previous_payload': {}, 'previous_text': ''}, 'previous_text': '', 'phone_type': 'simple', 'previous_payload': {}}
+2017-04-07 14:59:28,761 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - FAIL
+2017-04-07 14:59:28,763 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - State simple_intro_context_test_2 complete.
+2017-04-07 14:59:28,767 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Next state: simple_intro
+2017-04-07 14:59:28,770 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Executing state: simple_intro Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Vybrali jste kategorii obyčejných levnějších telefonů. Jedná&nbsp;se&nbsp;o&nbsp;telefony nejčastěji bez&nbsp;operačního systému, s&nbsp;nízkou&nbsp;cenou a&nbsp;omezenými&nbsp;funkcemi'), ('delay', 0)]) Transitions: {'next_state': 'simple_price'}
+2017-04-07 14:59:28,772 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Response: Vybrali jste kategorii obyčejných levnějších telefonů. Jedná&nbsp;se&nbsp;o&nbsp;telefony nejčastěji bez&nbsp;operačního systému, s&nbsp;nízkou&nbsp;cenou a&nbsp;omezenými&nbsp;funkcemi
+2017-04-07 14:59:28,774 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - State simple_intro complete.
+2017-04-07 14:59:28,776 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Next state: simple_price
+2017-04-07 14:59:28,779 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Executing state: simple_price Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Prosím vyberte si z&nbsp;cenových kategorií níže, nebo&nbsp;zvolte možnost <b>PŘESKOČIT</b>, pokud&nbsp;pro&nbsp;vás&nbsp;cena není prioritou'), ('delay', 3000)]) Transitions: {'next_state': 'simple_select_price'}
+2017-04-07 14:59:28,781 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Response: Prosím vyberte si z&nbsp;cenových kategorií níže, nebo&nbsp;zvolte možnost <b>PŘESKOČIT</b>, pokud&nbsp;pro&nbsp;vás&nbsp;cena není prioritou
+2017-04-07 14:59:28,783 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - State simple_price complete.
+2017-04-07 14:59:28,785 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Next state: simple_select_price
+2017-04-07 14:59:28,787 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Executing state: simple_select_price Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Do 1000 Kč'), ('next_state', 'simple_price_1_context'), ('type', 'Main')]), OrderedDict([('label', '1000 až 2000 Kč'), ('next_state', 'simple_price_2_context'), ('type', 'Main')]), OrderedDict([('label', 'Nad 2000 Kč'), ('next_state', 'simple_price_3_context'), ('type', 'Main')]), OrderedDict([('label', 'PŘESKOČIT'), ('next_state', 's_price_out_test'), ('type', '')])]), ('delay', 0)]) Transitions: {'next_state': 'simple_slider_price'}
+2017-04-07 14:59:28,793 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Button: OrderedDict([('label', 'Do 1000 Kč'), ('next_state', 'simple_price_1_context'), ('type', 'Main')])
+2017-04-07 14:59:28,795 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Button: OrderedDict([('label', '1000 až 2000 Kč'), ('next_state', 'simple_price_2_context'), ('type', 'Main')])
+2017-04-07 14:59:28,797 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Button: OrderedDict([('label', 'Nad 2000 Kč'), ('next_state', 'simple_price_3_context'), ('type', 'Main')])
+2017-04-07 14:59:28,799 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Button: OrderedDict([('label', 'PŘESKOČIT'), ('next_state', 's_price_out_test'), ('type', '')])
+2017-04-07 14:59:28,801 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - State simple_select_price complete.
+2017-04-07 14:59:28,802 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Next state: simple_slider_price
+2017-04-07 14:59:28,805 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Executing state: simple_slider_price Type: <class 'states.message.MessageSlider'> Properties: OrderedDict([('entities', ['price_from', 'price_to']), ('max_value', 6000), ('min_value', 0), ('default_values', [0, 6000]), ('step', 100), ('connect', True), ('tooltips', True), ('tooltips_decimals', 0), ('tooltips_prefix', ''), ('tooltips_postfix', '&nbsp;Kč'), ('delay', 0)]) Transitions: {'next_state': 'simple_price_3'}
+2017-04-07 14:59:28,807 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Slider
+2017-04-07 14:59:28,809 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - State simple_slider_price complete.
+2017-04-07 14:59:28,811 - State info - 0258fca4-148c-44fd-b5a3-ca21236f3c90 - DEBUG - Next state: simple_price_3
+2017-04-07 15:08:09,214 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello!'), ('delay', 0)]) Transitions: {'next_state': 'test'}
+2017-04-07 15:08:09,218 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Response: Hello!
+2017-04-07 15:08:09,228 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - State init complete.
+2017-04-07 15:08:09,231 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Next state: test
+2017-04-07 15:08:09,237 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Executing state: test Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'test'), ('delay', 0)]) Transitions: {'next_state': 'welcome_question'}
+2017-04-07 15:08:09,241 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Response: test
+2017-04-07 15:08:09,244 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - State test complete.
+2017-04-07 15:08:09,249 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Next state: welcome_question
+2017-04-07 15:08:09,253 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Executing state: welcome_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-04-07 15:08:09,257 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Response: What would you like to practice?
+2017-04-07 15:08:09,261 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - State welcome_question complete.
+2017-04-07 15:08:09,264 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Next state: choice
+2017-04-07 15:08:09,269 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user1')])
+2017-04-07 15:08:09,274 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-04-07 15:08:09,277 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-04-07 15:08:09,282 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - State choice complete.
+2017-04-07 15:08:09,286 - State info - 2bfa2e63-062b-4c1f-831d-2a4dacdc3b38 - DEBUG - Next state: wait_for_user1

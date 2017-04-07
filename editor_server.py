@@ -4,6 +4,7 @@ import os
 import shutil
 import sys
 import zipfile
+import loggers
 
 from flask import Flask, send_from_directory, send_file, Blueprint, render_template
 from werkzeug.utils import secure_filename
@@ -122,10 +123,7 @@ def getYamlFileNames():
 # write yaml code to file
 def writeToFile(data):
     print("writing file")
-    if os.path.splitext(data["filename"])[1] == ".py":
-        file_path = os.path.join("bots", data["botname"].strip(), "states", data["filename"])
-    elif os.path.splitext(data["filename"])[1] == ".yml":
-        file_path = os.path.join("bots", data["botname"].strip(), "flows", data["filename"])
+    file_path = os.path.join("bots", data["botname"].strip(), data["folder"], data["filename"])
     with io.open(file_path, "w", encoding="utf-8") as file:
         file.write(data["text"])
         file.close()
@@ -236,22 +234,31 @@ def createNewFile():
             file.close()
         return "ok"
 
-# deletes selected yaml file
+# deletes selected file
 @editor.route('/editor/deletefile', methods=['POST'])
 def deleteFile():
     if request.method == 'POST':
         print(request.get_data())
-        data = str(request.get_data((), 'utf-8')).split(";")
-        if os.path.splitext(data[0])[1] == ".py":
-            os.remove("bots/" + data[1] + "/states/" + data[0])
-        elif os.path.splitext(data[0])[1] == ".yml":
-            os.remove("bots/" + data[1] + "/flows/" + data[0])
+        data = json.loads(request.get_data().decode('UTF-8'))
+        path = os.path.join("bots", data["botname"], data["folder"], data["filename"])
+        os.remove(path)
         return "ok"
 
 @editor.route('/editor/graphpage', methods=['GET'])
 def openGraph():
     botname = request.args.get('bot')
     return send_file('test_viz_js2.html')
+
+@editor.route('/editor/delete-project', methods=['POST'])
+def deleteProject():
+    botname = str(request.get_data(), 'utf-8')
+    try:
+        loggers.handlers.get(botname.lower()).get("db_handler").close()
+        loggers.handlers.get(botname.lower()).get("nfo_handler").close()
+    except:
+        print("no handlers")
+    shutil.rmtree(os.path.join("bots", botname))
+    return graph_generator.getBotNames()
 
 
 # creates a new folder for a bot and copies uploaded files there

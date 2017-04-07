@@ -1,0 +1,7 @@
+name: test_editor
+
+states: # List of states. States are executed sequentially
+  init: # Name of the state. Unique in each flow
+    type: message_text
+    properties:
+      text: "Hello."

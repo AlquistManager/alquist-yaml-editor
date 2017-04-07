@@ -11,6 +11,7 @@
     <script src="../static-files/codemirror.js"></script>
     <link rel="stylesheet" href="../static-files/codemirror.css">
     <script src="../static-files/yaml.js"></script>
+    <script src="../static-files/python.js"></script>
     <link rel="stylesheet" href="../static-files/jquery.highlight-within-textarea.css"/>
     <link rel="stylesheet" href="../static-files/themes/default/style.min.css"/>
     <script src="../static-files/jstree.min.js"></script>
@@ -119,6 +120,9 @@
     var nodes;
     var edges;
     var myCodeMirror;
+    var currentFolder = "";
+    var currentNodeHovered;
+    var currentMode = "yaml";
 
     // enable Tab Override for the textarea
     tabOverride.set(tarea);
@@ -145,7 +149,7 @@
     generateGraphForBot(botName);
     console.log("generated graph for bot: " + botName);
     loadGraph();
-    myCodeMirror = getCodeMirror(tarea);
+    myCodeMirror = getCodeMirror(tarea, currentMode);
 
     jQuery.ajaxSetup({async: true});
 
@@ -172,8 +176,20 @@
         // load yaml files
         for (i = 0; i < fileNames.length; i++) {
             if (fileNames[i] == undefined)continue;
-            //var filepath = "bots/" + botName + "/flows/" + fileNames[i];
-            $.post("getfile", botName + ":" + fileNames[i],
+
+            //get file extension
+            var re = /(?:\.([^.]+))?$/;
+            var ext = re.exec(fileNames[i])[1];
+
+            var folder = "";
+            if (ext == "py") {
+                folder = "states";
+            } else if (ext == "yml") {
+                folder = "flows";
+            }
+
+            //get yaml and python files from server and save them to yamlMap
+            $.post("getfile", botName + ":" + fileNames[i] + ":" + folder,
                 function (data, status) {
                     yamlMap.set(fileNames[i], data);
                     console.log("get yaml file: " + status);
@@ -198,10 +214,11 @@
                 var state = evt.currentTarget.firstChild.firstChild.data;
                 var statePos = findPosition(state).split(" ");
                 if (statePos[1] != currentFile) {
-                    var text2 = getYamlFile(statePos[1]);
+                    var text2 = getYamlFile(statePos[1], "flows");
                     myCodeMirror.toTextArea();
                     document.getElementById("text-editor").value = text2;
-                    myCodeMirror = getCodeMirror(tarea);
+                    currentMode = "yaml";
+                    myCodeMirror = getCodeMirror(tarea, currentMode);
                     currentFile = statePos[1];
                 }
                 myCodeMirror.setSelection({line: statePos[2] - 1, ch: 0}, {line: statePos[2] - 1, ch: 100});
@@ -346,9 +363,20 @@
     }
 
     //gets complete yaml file
-    function getYamlFile(file) {
-        var response = yamlMap.get(file);
-        return response;
+    function getYamlFile(file, folder) {
+        var response;
+        if (yamlMap.get(file) == undefined) {
+            jQuery.ajaxSetup({async: false});
+            $.post("getfile", botName + ":" + file + ":" + folder,
+                function (data, status) {
+                    response = data;
+                });
+            jQuery.ajaxSetup({async: true});
+            return response;
+        } else {
+            response = yamlMap.get(file);
+            return response;
+        }
     }
 
     // display page after loading
@@ -373,7 +401,7 @@
         if (editor_text.trim() == "" || currentFile == undefined)return;
 
         $.post("update",
-            JSON.stringify({botname: botName, filename: currentFile, text: editor_text}),
+            JSON.stringify({botname: botName, filename: currentFile, text: editor_text, folder: currentFolder}),
             function (data, status) {
                 responseToGenerate = data;
                 loadGraph();
@@ -398,17 +426,41 @@
     function generateFileTree() {
         $.post("filenamesHtml", botName, function (data, status) {
             document.getElementById("file_tree_inner").innerHTML = data;
-            $('#file_tree_inner').jstree();
+            $('#file_tree_inner').jstree({core: {check_callback: true}});
+
+            var tree = $('#file_tree_inner').jstree(true);
 
 
             $('#file_tree_inner')
             // listen for event on click on file
                 .on('select_node.jstree', function (e, data) {
+                    //check if node is file
+                    if(!tree.is_parent(data.instance.get_node(data.selected[0]))){
+                                            //get name of selected file
                     currentFile = data.instance.get_node(data.selected[0]).text;
-                    var fileContent = getYamlFile(currentFile);
+
+                    //get name of folder with the file
+                    var lsSelectedID = data.node.id;
+                    var loParent = $("#" + lsSelectedID);
+                    var parent = loParent.parent().parent();
+                    var folder = parent.children()[1].text;
+                    currentFolder = folder;
+
+                    //get content of the file
+                    var fileContent = getYamlFile(currentFile, folder);
                     myCodeMirror.toTextArea();
                     document.getElementById("text-editor").value = fileContent;
-                    myCodeMirror = getCodeMirror(tarea);
+                    var mode;
+                    if (folder == "states") {
+                        currentMode = "python";
+                    } else {
+                        currentMode = "yaml";
+                    }
+                    myCodeMirror = getCodeMirror(tarea, currentMode);
+                    }
+                })
+                .on('hover_node.jstree', function (e, data) {
+                    currentNodeHovered = data;
                 })
                 // create the instance
                 .jstree();
@@ -602,13 +654,25 @@
     function onClickDeleteFile() {
         if (treeElement != undefined) {
             if (confirm("Delete " + treeElement.lastChild.lastChild.data + "?")) {
-                data = treeElement.lastChild.lastChild.data + ";" + botName;
-                $.post("deletefile", data,
-                    function (data, status) {
-                        $('#file_tree_inner').jstree(true).destroy();
-                        generateFileTree();
-                        //loadGraph();
-                    });
+                //data = treeElement.lastChild.lastChild.data + ";" + botName;
+
+                //get folder of selected node
+                var lsSelectedID = currentNodeHovered.node.id;
+                var loParent = $("#" + lsSelectedID);
+                var parent = loParent.parent().parent();
+                var folder = parent.children()[1].text;
+
+                data = JSON.stringify({
+                    botname: botName, filename: treeElement.lastChild.lastChild.data,
+                    folder: folder
+                }),
+
+                    $.post("deletefile", data,
+                        function (data, status) {
+                            $('#file_tree_inner').jstree(true).destroy();
+                            generateFileTree();
+                            //loadGraph();
+                        });
             }
         }
         treeElement = undefined;
@@ -616,10 +680,10 @@
 
     // reverts the editor text to last loaded state
     function revertChanges() {
-        var text2 = getYamlFile(currentFile);
+        var text2 = getYamlFile(currentFile, currentFolder);
         myCodeMirror.toTextArea();
         document.getElementById("text-editor").value = text2;
-        myCodeMirror = getCodeMirror(tarea);
+        myCodeMirror = getCodeMirror(tarea, currentMode);
     }
 
     //finds graph node by its name - not yet needed
@@ -632,8 +696,8 @@
     }
 
     //return code mirror instance for given textarea
-    function getCodeMirror(textArea) {
-        var coMi = CodeMirror.fromTextArea(tarea, {lineNumbers: true, tabSize: 2});
+    function getCodeMirror(textArea, mode) {
+        var coMi = CodeMirror.fromTextArea(tarea, {lineNumbers: true, mode: mode, tabSize: 2});
         coMi.setOption("extraKeys", {
             Tab: function (cm) {
                 var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");

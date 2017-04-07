@@ -8,9 +8,10 @@
 </head>
 <body>
 
-<p>Choose existing project to open:</p>
+<p>Manage existing projects:</p>
 <select id="projects"></select>
 <button type="button" onclick="openProject()">Open</button>
+<button type="button" onclick="deleteProject()">Delete</button>
 <br><br><br>
 <p>Create a new project:</p>
 <form id="file-form" method="POST" enctype=multipart/form-data>
@@ -22,10 +23,9 @@
 
 
 <script type="text/javascript">
-    //var applicationURL = "http://thawing-escarpment-24517.herokuapp.com/";//"http://thawing-escarpment-24517.herokuapp.com/";
     var botnames;
     jQuery.ajaxSetup({async: false});
-    $.post("botnames", "getBotnames", //applicationURL +
+    $.post("botnames", "getBotnames",
         function (data, status) {
             botnames = data.split(";");
             console.log("get bot names: " + status);
@@ -41,9 +41,29 @@
         }
     }
 
+    //open existing project
     function openProject() {
         var botName = document.getElementById("projects").value;
-        window.open("graphpage?bot=" + botName, "_self"); //        window.open("editor/test_viz_js2.html?bot=" + botName, "_self");
+        window.open("graphpage?bot=" + botName, "_self");
+
+    }
+
+    //delete existing project
+    function deleteProject() {
+        var botName = document.getElementById("projects").value;
+        $.post("delete-project", botName,
+            function (data, status) {
+                document.getElementById("projects").innerHTML = "";
+                botnames = data.split(";");
+                for (i = 0; i < botnames.length; i++) {
+                    if (botnames[i] != "") {
+                        var opt = document.createElement("option");
+                        opt.value = botnames[i];
+                        opt.innerHTML = botnames[i];
+                        document.getElementById("projects").appendChild(opt);
+                    }
+                }
+            });
 
     }
 
@@ -55,7 +75,7 @@
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == XMLHttpRequest.DONE) {
-                window.open("graphpage?bot=" + botName, "_self"); //test_viz_js2.html?bot=
+                window.open("graphpage?bot=" + botName, "_self");
             }
         }
         console.log(request);

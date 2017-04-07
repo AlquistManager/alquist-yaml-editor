@@ -8,7 +8,7 @@ var showHideTime = 500;
 var scrollToBottomTime = 500;
 var sliderInfo = {};
 var infoTextArea;    //element for context display
-var debug = true; //if true display context
+var debug = false; //if true display context
 
 //Function called right after the page is loaded
 $(document).ready(function () {
@@ -19,12 +19,9 @@ $(document).ready(function () {
     bot = getBot();
     $('#input_field').hide();
     $('#submit').hide();
+    infoTextArea = document.getElementById('info-text');
     //Request response of init node
     init();
-    infoTextArea = document.getElementById('info-text');
-    if(debug){
-        infoTextArea.style.display = "block";
-    }
 });
 
 //Call init state
@@ -45,11 +42,16 @@ function init() {
         dataType: "json",
 
         success: function (data, textStatus, jQxhr) {
-            // save state, context and session
+            // save state, context, session and debug settings
             state = data["state"];
             context = data["context"];
             session = data["session"];
             payload = {};
+            debug = data["debug"];
+            if (debug) {
+                infoTextArea.style.display = "block";
+            }
+
             //show Alquist's response
             showSystemMessages(data["messages"], data["input"]);
         },
@@ -141,7 +143,7 @@ function sendInput(text) {
 
 //Shows responses of Alquist
 function showSystemMessages(messages, input) {
-    if(infoTextArea != undefined) {
+    if (infoTextArea != undefined) {
         infoTextArea.innerHTML = JSON.stringify(context, null, 4);
     }
     var buttons = [];
@@ -246,7 +248,7 @@ function getEndpoint() {
     var endpoint = getParameterByName("e", window.location.href);
     //Use default, if no endpoint is present
     if (endpoint == null) {
-        endpoint = window.location.protocol+"\/\/"+window.location.host+"/";
+        endpoint = window.location.protocol + "\/\/" + window.location.host + "/";
     }
     return endpoint;
 }
