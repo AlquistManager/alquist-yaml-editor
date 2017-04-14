@@ -270,6 +270,8 @@ def getYamlNamesHtml(projectname):
     folders = listdir(os.path.join("bots", projectname))
     fileHtml = "<ul><li data-jstree='{\"opened\":true}'>" + projectname + "<ul>"
     for folder in folders:
+        if not os.path.isdir(os.path.join("bots", projectname, folder)):
+            continue
         if folder == "logs":
             opened = "false"
         else:

@@ -123,6 +123,7 @@ def getYamlFileNames():
 # write yaml code to file
 def writeToFile(data):
     print("writing file")
+    print(data)
     file_path = os.path.join("bots", data["botname"].strip(), data["folder"], data["filename"])
     with io.open(file_path, "w", encoding="utf-8") as file:
         file.write(data["text"])

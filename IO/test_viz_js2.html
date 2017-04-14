@@ -54,7 +54,7 @@
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
-        <button type="button" id="button_update">Update</button>
+        <button type="button" id="button_update">Save</button>
         <button type="button" id="button_download" onclick="download()">Download project</button>
         <button type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
     </div>
@@ -201,7 +201,7 @@
 
         // displays error message when parsing fails
         if (nodes.length == 0 || responseToGenerate != 'ok') {
-            elemGraph.innerHTML = "Error parsing Yaml file.<br>" + responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            elemGraph.innerHTML = responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
         }
 
         jQuery.ajaxSetup({async: true});
@@ -220,6 +220,7 @@
                     currentMode = "yaml";
                     myCodeMirror = getCodeMirror(tarea, currentMode);
                     currentFile = statePos[1];
+                    currentFolder = "flows"
                 }
                 myCodeMirror.setSelection({line: statePos[2] - 1, ch: 0}, {line: statePos[2] - 1, ch: 100});
 
