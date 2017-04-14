@@ -2,25 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Select Project</title>
 
     <script src="../static-files/jquery-3.1.1.min.js"></script>
+    <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
+
+
 </head>
 <body>
 
-<p>Manage existing projects:</p>
-<select id="projects"></select>
-<button type="button" onclick="openProject()">Open</button>
-<button type="button" onclick="deleteProject()">Delete</button>
-<br><br><br>
-<p>Create a new project:</p>
-<form id="file-form" method="POST" enctype=multipart/form-data>
-    Bot name: <input type="text" id="newBotName" name="botname"><br>
-    Add files (.zip file containing "flows" and "states" folders):
-    <input type="file" id="file" name="file" multiple size="50"><br>
-    <button type="button" onclick="createProject()">Create Project</button>
-</form>
+<div class="container">
+    <h1>Alquist Editor</h1>
+    <label class="control-label">Manage existing projects:</label>
+    <select class="form-control" id="projects"></select>
+    <button class="btn" type="button" onclick="openProject()">Open</button>
+    <button class="btn" type="button" onclick="deleteProject()">Delete</button>
+    <br><br><br>
+</div>
+<div class="container">
+    <label class="control-label">Create a new project:</label>
+    <form id="file-form" class="form-group" method="POST" enctype=multipart/form-data>
+        Bot name: <input class="form-control" type="text" id="newBotName" name="botname"><br>
+        Import existing files (.zip file containing "flows" and "states" folders):
 
+        <div class="input-group">
+            <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input type="file" id="file" name="file" style="display: none;" multiple>
+                    </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+        </div>
+        <button class="btn" type="button" onclick="createProject()">Create Project</button>
+    </form>
+</div>
 
 <script type="text/javascript">
     var botnames;
@@ -86,6 +103,35 @@
         //jQuery.ajaxSetup({async: true});
 
     }
+
+    // file input function
+    $(function () {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function () {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready(function () {
+            $(':file').on('fileselect', function (event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+        });
+
+    });
 </script>
 
 </body>

@@ -174,7 +174,7 @@ body {
     }
 }
 
-.btn {
+.btn-bot {
     background: #edf2f5;
     background-image: -webkit-linear-gradient(top, #edf2f5, #c2cbd1);
     background-image: -moz-linear-gradient(top, #edf2f5, #c2cbd1);
@@ -191,7 +191,7 @@ body {
     text-decoration: none;
 }
 
-.btn:hover {
+.btn-bot:hover {
     background: #3cb0fd;
     background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
     background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);

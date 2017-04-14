@@ -1,5 +1,7 @@
-<html>
+
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <script src="../static-files/viz.js"></script>
     <script src="../static-files/jquery-3.1.1.min.js"></script>
     <script src="../static-files/svg-pan-zoom.min.js"></script>
@@ -15,6 +17,8 @@
     <link rel="stylesheet" href="../static-files/jquery.highlight-within-textarea.css"/>
     <link rel="stylesheet" href="../static-files/themes/default/style.min.css"/>
     <script src="../static-files/jstree.min.js"></script>
+    <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../static-files/style.css"/>
     <title>Alquist Editor</title>
 </head>
@@ -47,16 +51,16 @@
                     role="button">Try again!</a></div>
         </form>
 
-        <button type="button" id="button_open_bot" class="btn"
+        <button type="button" id="button_open_bot" class="btn-bot"
                 onclick="startBot()">Start Bot
         </button>
     </div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
-        <button type="button" id="button_update">Save</button>
-        <button type="button" id="button_download" onclick="download()">Download project</button>
-        <button type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
+        <button class="btn" type="button" id="button_update">Save</button>
+        <button class="btn" type="button" id="button_download" onclick="download()">Download project</button>
+        <button class="btn" type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
     </div>
 </div>
 
@@ -436,28 +440,28 @@
             // listen for event on click on file
                 .on('select_node.jstree', function (e, data) {
                     //check if node is file
-                    if(!tree.is_parent(data.instance.get_node(data.selected[0]))){
-                                            //get name of selected file
-                    currentFile = data.instance.get_node(data.selected[0]).text;
+                    if (!tree.is_parent(data.instance.get_node(data.selected[0]))) {
+                        //get name of selected file
+                        currentFile = data.instance.get_node(data.selected[0]).text;
 
-                    //get name of folder with the file
-                    var lsSelectedID = data.node.id;
-                    var loParent = $("#" + lsSelectedID);
-                    var parent = loParent.parent().parent();
-                    var folder = parent.children()[1].text;
-                    currentFolder = folder;
+                        //get name of folder with the file
+                        var lsSelectedID = data.node.id;
+                        var loParent = $("#" + lsSelectedID);
+                        var parent = loParent.parent().parent();
+                        var folder = parent.children()[1].text;
+                        currentFolder = folder;
 
-                    //get content of the file
-                    var fileContent = getYamlFile(currentFile, folder);
-                    myCodeMirror.toTextArea();
-                    document.getElementById("text-editor").value = fileContent;
-                    var mode;
-                    if (folder == "states") {
-                        currentMode = "python";
-                    } else {
-                        currentMode = "yaml";
-                    }
-                    myCodeMirror = getCodeMirror(tarea, currentMode);
+                        //get content of the file
+                        var fileContent = getYamlFile(currentFile, folder);
+                        myCodeMirror.toTextArea();
+                        document.getElementById("text-editor").value = fileContent;
+                        var mode;
+                        if (folder == "states") {
+                            currentMode = "python";
+                        } else {
+                            currentMode = "yaml";
+                        }
+                        myCodeMirror = getCodeMirror(tarea, currentMode);
                     }
                 })
                 .on('hover_node.jstree', function (e, data) {

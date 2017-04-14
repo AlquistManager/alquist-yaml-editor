@@ -12,7 +12,7 @@ from werkzeug.utils import secure_filename
 import graph_generator
 from crossdomain import *
 
-app = Flask(__name__, static_url_path='/static') #, static_url_path='/static'
+app = Flask(__name__, static_url_path='/static')
 UPLOAD_FOLDER = 'temp'
 ALLOWED_EXTENSIONS = set(['zip','py','yml','txt','json'])
 ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
@@ -23,7 +23,7 @@ if len(sys.argv) > 1:
     port = sys.argv[1]
 '''
 
-editor = Blueprint('editor', __name__, static_url_path='/static') #, static_url_path='/static'
+editor = Blueprint('editor', __name__, static_url_path='/static')
 
 # index page with project selection
 @editor.route('/editor/', methods=['POST', 'GET', 'OPTIONS'])
@@ -34,14 +34,23 @@ def getIndexPage():
 @editor.route('/static-files/<path:path>')
 def getStaticFiles(path):
     print("path: " + path)
-    #return "nothing here"
-    #return send_file(os.path.join(os.getcwd, 'static', path))
     return send_file(os.path.join('static-files', path))
-    #return send_from_directory('static-files', path)
 
 @editor.route('/static-files/themes/<path:path>')
 def getTheme(path):
     return send_file(os.path.join('static-files', 'themes', path))
+
+@editor.route('/static-files/bootstrap/js/<path:path>')
+def get_js(path):
+    return send_file(os.path.join('static-files', 'bootstrap', 'js', path))
+
+@editor.route('/static-files/bootstrap/fonts/<path:path>')
+def get_font(path):
+    return send_file(os.path.join('static-files', 'bootstrap', 'fonts', path))
+
+@editor.route('/static-files/bootstrap/css/<path:path>')
+def get_css(path):
+    return send_file(os.path.join('static-files', 'bootstrap', 'css', path))
 
 
 # returns all static files with allowed extensions (html)
