@@ -2,533 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbec5222-eb93-49c3-b59d-7366dbc9b613" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/HISTORY.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/LICENSE-APACHE-2.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/LICENSE-MIT" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/NOTICE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/acceptDeleteIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/addNodeIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/backIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/connectIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/cross.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/cross2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/deleteIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/downArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/editIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/leftArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/rightArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/upArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/img/network/zoomExtends.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis-graph3d.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis-network.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis-network.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis-timeline-graph2d.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis-timeline-graph2d.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/dist/vis.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/carousel.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/css/tipuesearch.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/data/dataset.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/data/dataview.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/data/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/graph2d/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/graph3d/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/arrow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/crossword.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/crosswordStrong.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/external-link-icons/external-link-icon-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/external-link-icons/external-link-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/external-link-icons/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/graph/graph.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/graph/graph120x60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/graph3d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/graph3d120x60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/timeline/timeline.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/timeline/timeline120x60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/vis_overview.odg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/img/vis_overview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/docs.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/googleAnalytics.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/ie-emulation-modes-warning.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/ie10-viewport-bug-workaround.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/jquery.highlight.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/jquery.url.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-apollo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-css.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-hs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-lisp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-lua.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-proto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-scala.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-sql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-vb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-vhdl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-wiki.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/lang-yaml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/prettify/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/smooth-scroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/tipuesearch.config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/tipuesearch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/tipuesearch.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/js/toggleTable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/configure.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/edges.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/groups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/interaction.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/layout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/manipulation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/nodes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/network/physics.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/docs/timeline/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/googleAnalytics.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/01_basic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/02_bars.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/03_groups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/04_rightAxis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/05_bothAxis.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/06_interpolation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/07_scrollingAndSorting.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/08_performance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/09_external_legend.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/10_barsSideBySide.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/11_barsSideBySideGroups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/12_customRange.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/13_localization.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/14_toggleGroups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/15_streaming_data.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/16_bothAxisTitles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/17_dynamicStyling.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/18_scatterplot.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/19_labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/20_shading.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph2d/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/01_basics.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/02_camera.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/03_filter_data.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/04_animation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/05_line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/06_moving_dots.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/07_dot_cloud_colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/08_dot_cloud_size.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/09_mobile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/10_styling.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/11_tooltips.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/12_custom_labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/csv2array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/csv2datatable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/datasource.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/datasource.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/playground.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/playground.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-apollo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-css.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-hs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-lisp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-lua.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-proto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-scala.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-sql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-vb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-vhdl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-wiki.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/lang-yaml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/graph3d/playground/prettify/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/basicUsage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/datasets.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/data/cellular_automata.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/data/computer_network.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/data/simple.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/dotLanguage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/dotPlayground.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/fsm.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/hello.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/process.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/screenshots/fsm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/screenshots/hello.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/screenshots/softmaint.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/screenshots/traffic_lights.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/siblings.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/softmaint.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/traffic_lights.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/transparency.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/twopi2.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/unix.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dotLanguage/graphvizGallery/world.gv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/dynamicData.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/importingFromGephi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/scalingCustom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/scalingNodesEdges.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/data/scalingNodesEdgesLabels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/datasources/WorldCup2014.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/datasources/WorldCup2014.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/datasources/largeHierarchicalDataset.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/arrowTypes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/arrows.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/dashes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/smooth.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/edgeStyles/smoothWorldCup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/events/interactionEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/events/physicsEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/events/renderEvents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/disassemblerExample.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/lesMiserables.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/loadingBar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/neighbourhoodHighlight.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/nodeLegend.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleApplications/worldCupPerformance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/exampleUtil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/indonesia/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-Fax-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-Laptop-1-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-Mobile-Phone-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-My-Computer-3-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-My-PDA-02-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-My-PDA-04-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-My-PDA-05-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-My-Phone-Picture-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Hardware-Printer-Blue-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Misc-Scanner-default-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Network-Drive-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Network-Internet-Connection-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/Network-Pipe-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/System-Firewall-2-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/System-Globe-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/refresh-cl/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Document-icon24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Document-icon32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Document-icon48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Email-icon24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Email-icon32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Email-icon48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Folder-icon24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Folder-icon32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Folder-icon48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Folder-icon64.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Smiley-Angry-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/Smiley-Grin-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Administrator-Blue-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Administrator-Green-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Coat-Blue-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Coat-Green-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Coat-Red-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Executive-Green-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Preppy-Blue-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/User-Preppy-Red-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/img/soft-scraps-icons/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/labels/labelAlignment.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/labels/labelBackground.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/labels/labelColorAndSize.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/labels/labelStroke.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/labels/multilineText.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/layout/hierarchicalLayout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/layout/hierarchicalLayoutMethods.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/layout/hierarchicalLayoutUserdefined.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/layout/hierarchicalLayoutWithoutPhysics.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/layout/randomSeed.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/HTMLInNodes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/circularImages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/customGroups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/groups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/icons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/images.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/imagesWithBorders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/shadows.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/shapes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/nodeStyles/shapesWithDashedBorders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/animationShowcase.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/changingClusteredEdgesNodes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/clustering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/clusteringByZoom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/clustersOfclusters.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/configuration.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/manipulation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/navigation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/performance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/other/saveAndLoad.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/network/physics/physicsConfiguration.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/basicUsage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/dataHandling/dataSerialization.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/dataHandling/loadExternalData.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/customSnappingOfItems.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/editingItems.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/editingItemsCallbacks.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/individualEditableItems.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/tooltipOnItemChange.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/editing/updateDataOnEvent.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/groups/groups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/groups/groupsEditable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/groups/groupsOrdering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/groups/subgroups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/groups/verticalItemsHide.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/animateWindow.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/clickToUse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/eventListeners.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/limitMoveAndZoom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/navigationMenu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/interaction/setSelection.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/backgroundAreas.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/backgroundAreasWithGroups.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/htmlContents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/itemOrdering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/pointItems.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/items/rangeOverflowItem.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/customTimeBars.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/dataAttributes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/dataAttributesAll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/drag&amp;drop.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/functionLabelFormats.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/groupsPerformance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/hidingPeriods.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/horizontalScroll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/localization.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/performance.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/requirejs/requirejs_example.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/requirejs/scripts/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/requirejs/scripts/require.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/rtl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/timezone.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/usingReact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/other/verticalScroll.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/data/basic.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/data/wk2014.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/Hardware-Mobile-Phone-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/attachment-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/blog-post-edit-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/comments-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/community-users-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/license_aesthetica-2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/license_refresh-cl.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/mail-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/notes-edit-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/product-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/resources/img/truck-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/styling/axisOrientation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/styling/customCss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/styling/gridStyling.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/styling/itemClassNames.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/examples/timeline/styling/itemTemplates.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/index-graph3d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/index-network.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/index-timeline-graph2d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/DOMutil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/DataSet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/DataView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/Queue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Camera.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Filter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Graph3d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Point2d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Point3d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Settings.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/Slider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/graph3d/StepNumber.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/hammerUtil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/module/hammer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/module/moment.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/module/uuid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/Images.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/Network.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/NetworkUtil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/css/network-colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/css/network-manipulation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/css/network-navigation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/css/network-tooltip.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/dotparser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/gephiParser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/acceptDeleteIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/addNodeIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/backIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/connectIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/cross.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/cross2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/deleteIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/downArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/editIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/leftArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/rightArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/upArrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/img/zoomExtends.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/Canvas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/CanvasRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/Clustering.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/EdgesHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/Groups.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/InteractionHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/KamadaKawai.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/LayoutEngine.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/ManipulationSystem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/NodesHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/PhysicsEngine.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/SelectionHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/View.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/Edge.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/NavigationHandler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/Node.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/Popup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/algorithms/FloydWarshall.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/BezierEdgeDynamic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/BezierEdgeStatic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/CubicBezierEdge.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/StraightEdge.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/util/BezierEdgeBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/util/CubicBezierEdgeBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/edges/util/EdgeBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/Cluster.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Circle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/CircularImage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Database.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Diamond.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Dot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Ellipse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Icon.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Square.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Star.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Text.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/Triangle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/shapes/TriangleDown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/util/CircleImageBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/util/NodeBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/nodes/util/ShapeBase.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/BarnesHutSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/CentralGravitySolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/FA2BasedCentralGravitySolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/FA2BasedRepulsionSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/HierarchicalRepulsionSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/HierarchicalSpringSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/RepulsionSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/physics/SpringSolver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/modules/components/shared/Label.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/options.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/network/shapes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/Activator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/ColorPicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/Configurator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/Validator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/activator.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/shared/configuration.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/Core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/DateUtil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/Graph2d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/Range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/Stack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/TimeStep.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/Timeline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/BackgroundGroup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/Component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/CurrentTime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/CustomTime.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/DataAxis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/DataScale.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/GraphGroup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/Group.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/ItemSet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/Legend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/LineGraph.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/TimeAxis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/animation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/currenttime.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/customtime.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/dataaxis.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/item.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/itemset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/labelset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/panel.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/pathStyles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/timeaxis.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/css/timeline.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/graph2d_types/bar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/graph2d_types/line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/graph2d_types/points.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/item/BackgroundItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/item/BoxItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/item/Item.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/item/PointItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/component/item/RangeItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/optionsGraph2d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/timeline/optionsTimeline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/lib/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/misc/how_to_help.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/misc/how_to_publish.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/misc/we_need_help.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/misc/we_need_help.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/IO/static-files/vis-4.17.0/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/flows/test.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/logs/dm_log.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/logs/full_log.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/logs/full_log.out.1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/states/Counter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/Testing/states/PrintData.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/flkdsjfkljk/logs/dm_log.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/flkdsjfkljk/logs/full_log.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/new_project/flows/test.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/new_project/logs/dm_log.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/new_project/logs/full_log.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.4" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/index.html" afterPath="$PROJECT_DIR$/IO/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/static-files/style.css" afterPath="$PROJECT_DIR$/IO/static-files/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/static-files/themes/default/style.css" afterPath="$PROJECT_DIR$/IO/static-files/themes/default/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/static-files/themes/default/style.min.css" afterPath="$PROJECT_DIR$/IO/static-files/themes/default/style.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/test_viz_js2.html" afterPath="$PROJECT_DIR$/IO/test_viz_js2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editor_server.py" afterPath="$PROJECT_DIR$/editor_server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz.txt" afterPath="$PROJECT_DIR$/graph_viz.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -539,7 +64,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1492178197616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1492812451052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -550,8 +75,28 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1908">
-              <caret line="224" column="69" lean-forward="false" selection-start-line="224" selection-start-column="69" selection-end-line="224" selection-end-column="69" />
+            <state relative-caret-position="88">
+              <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IO/static-files/themes/proton/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="1078" column="5" lean-forward="false" selection-start-line="1078" selection-start-column="1" selection-end-line="1078" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nlp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -560,7 +105,7 @@
       <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="5830">
               <caret line="272" column="70" lean-forward="false" selection-start-line="272" selection-start-column="70" selection-end-line="272" selection-end-column="70" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -572,7 +117,7 @@
       <file leaf-file-name="editor_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
+            <state relative-caret-position="1122">
               <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -591,43 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/solver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IO/input.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="44">
+              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -636,12 +149,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IO/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="418">
               <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="e#1282#1290#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#label#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -649,8 +159,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IO/static-files/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="131" column="14" lean-forward="false" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+            <state relative-caret-position="126">
+              <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -667,9 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loselec</find>
-      <find>yamlmap</find>
-      <find>getfile</find>
       <find>update</find>
       <find>currentfolder</find>
       <find>treeelement</find>
@@ -682,7 +189,6 @@
       <find>delete</find>
       <find>projectna</find>
       <find>loggers</find>
-      <find>jstree</find>
       <find>deleteP</find>
       <find>getyamlnames</find>
       <find>error parsin</find>
@@ -694,9 +200,13 @@
       <find>yamlfi</find>
       <find>click</find>
       <find>button</find>
-      <find>btn</find>
       <find>text-editor</find>
       <find>codemirror</find>
+      <find>revert changes</find>
+      <find>btn</find>
+      <find>jstree</find>
+      <find>font</find>
+      <find>times</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -762,6 +272,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -880,10 +391,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static-files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alquist-yaml-editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IO" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static-files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1159,14 +717,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28218883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28969958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14496036" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22989808" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
@@ -1179,6 +736,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1193,21 +751,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11000">
-          <caret line="500" column="26" lean-forward="false" selection-start-line="500" selection-start-column="26" selection-end-line="500" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yaml_parser/yaml_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/editor_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2772">
@@ -1386,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.py" />
     <entry file="file://$PROJECT_DIR$/sc.py" />
     <entry file="file://$PROJECT_DIR$/neighbours.py" />
@@ -1418,19 +953,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1460,17 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IO/static-files/bootstrap-3.3.7-dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/IO/static-files/bootstrap-3.3.7-dist/css/bootstrap.css" />
     <entry file="file://$PROJECT_DIR$/graph_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="5830">
           <caret line="272" column="70" lean-forward="false" selection-start-line="272" selection-start-column="70" selection-end-line="272" selection-end-column="70" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
@@ -1478,9 +997,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IO/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IO/static-files/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/editor_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
+        <state relative-caret-position="1122">
           <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -1488,29 +1039,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IO/index.html">
+    <entry file="file://$PROJECT_DIR$/IO/static-files/themes/proton/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#1282#1290#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#label#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="1078" column="5" lean-forward="false" selection-start-line="1078" selection-start-column="1" selection-end-line="1078" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IO/static-files/style.css">
+    <entry file="file://$PROJECT_DIR$/IO/static-files/viz.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="131" column="14" lean-forward="false" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+        <state relative-caret-position="191">
+          <caret line="1062" column="225" lean-forward="false" selection-start-line="1062" selection-start-column="220" selection-end-line="1062" selection-end-column="225" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1908">
-          <caret line="224" column="69" lean-forward="false" selection-start-line="224" selection-start-column="69" selection-end-line="224" selection-end-column="69" />
+        <state relative-caret-position="88">
+          <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>

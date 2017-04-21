@@ -15,7 +15,7 @@
     <script src="../static-files/yaml.js"></script>
     <script src="../static-files/python.js"></script>
     <link rel="stylesheet" href="../static-files/jquery.highlight-within-textarea.css"/>
-    <link rel="stylesheet" href="../static-files/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="../static-files/themes/proton/style.min.css"/>
     <script src="../static-files/jstree.min.js"></script>
     <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
@@ -51,14 +51,14 @@
                     role="button">Try again!</a></div>
         </form>
 
-        <button type="button" id="button_open_bot" class="btn-bot"
+        <button type="button" id="button_open_bot" class="btn btn-primary"
                 onclick="startBot()">Start Bot
         </button>
     </div>
     <div id="graph_main" class="split split-horizontal"></div>
     <div id="editor" class="split split-horizontal">
         <textarea class="text-editor" id="text-editor"></textarea>
-        <button class="btn" type="button" id="button_update">Save</button>
+        <button class="btn btn-primary" type="button" id="button_update">Save</button>
         <button class="btn" type="button" id="button_download" onclick="download()">Download project</button>
         <button class="btn" type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
     </div>
@@ -431,7 +431,7 @@
     function generateFileTree() {
         $.post("filenamesHtml", botName, function (data, status) {
             document.getElementById("file_tree_inner").innerHTML = data;
-            $('#file_tree_inner').jstree({core: {check_callback: true}});
+            $('#file_tree_inner').jstree({core: {check_callback: true, 'themes': {'name':'proton'}}});
 
             var tree = $('#file_tree_inner').jstree(true);
 
