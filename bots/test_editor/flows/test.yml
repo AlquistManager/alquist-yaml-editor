@@ -4,3 +4,20 @@ states:
     type: message_text
     properties:
       text: "Goodbye."
+
+  another:
+    type: message_text
+    properties:
+      text: "hello."
+      
+  another52:
+    type: message_text
+    properties:
+      text: "hello."
+
+  another3:
+    type: message_text
+    properties:
+      text: "hello."
+    transitions:
+      next_state: blblbl
