@@ -1,6 +1,0 @@
-name: anofsdk.yml
-states:
-  blblbl:
-    type: message_text
-    properties:
-      text: "Goodbye."

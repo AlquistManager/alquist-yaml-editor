@@ -7,7 +7,7 @@ from os.path import isfile
 import traceback
 import os
 
-#YamlParser()
+# YamlParser()
 
 statePositions = {}
 unreachableNodes = []
@@ -21,6 +21,7 @@ states = None
 id = 1
 nodes = collections.OrderedDict()
 edges = []
+
 
 # recursive method for graph construction
 def findNextState(current_state, next_state):
@@ -53,14 +54,15 @@ def findNextState(current_state, next_state):
             findNextState(current_state, next_state)
     else:
         for state in transitions.values():
-                findNextState(current_state, state)
+            findNextState(current_state, state)
+
 
 # creates a file to be displayed by viz.js
 def writeGraphVizJs(nodes, edges):
     file = open("graph_viz.txt", "w")
     file.write("digraph G{\n")
 
-    #displays nodes in clusters according to yaml files
+    # displays nodes in clusters according to yaml files
     clusterNum = 0
     for f in files:
         file.write("subgraph cluster_%d {\n" % (clusterNum))
@@ -84,7 +86,7 @@ def writeGraphVizJs(nodes, edges):
     file.write("\n");
     '''
 
-    #list of edges
+    # list of edges
     for e in edges:
         file.write("%s -> %s;\n" % (findNodeNameById(e[0]), findNodeNameById(e[1])))
 
@@ -93,13 +95,15 @@ def writeGraphVizJs(nodes, edges):
     file.truncate()
     file.close()
 
+
 # searches for a node by its ID
 def findNodeNameById(id):
     for n in nodes:
         if nodes[n]["id"] == id:
             return n
 
-# finds position of states in yaml files and saves them to statePositions
+
+# finds positions of states in yaml files and saves them to statePositions
 def findStatePositions():
     yaml_folder = "bots/" + botFolderName + "/flows/"
     global statePositions
@@ -118,33 +122,58 @@ def findStatePositions():
                 line = file.readline()
                 lineNum += 1
 
+            space_count = 0
+            line = file.readline()
+            lineNum += 1
+            last_state = None
             while line:
-                line = file.readline()
-                if not line:
-                    break
-                line = line.strip()
-                if not line:
-                    line += "\n"
+                if space_count == 0:
+                    # get number of spaces used in indentation and save position of first state
+                    for c in line:
+                        if c == ' ':
+                            space_count += 1
+                        else:
+                            state_read = line.split(":")[0].strip()
+                            last_state = state_read
+                            state_start = lineNum
+                            state_end = 0
+                            statePositions[state_read] = [fileName, state_start, state_end]
+                            posCount += 1
+                            break
+                else:
+                    # lines with same indentation as in space_count contain names of states
+                    space_curr = 0
+                    for c in line:
+                        if c == ' ':
+                            space_curr += 1
+                        else:
+                            if space_curr == space_count:
+                                state_read = line.split(":")[0].strip()
+                                state_start = lineNum
+                                state_end = 0
+                                statePositions[state_read] = [fileName, state_start, state_end]
+                                posCount += 1
+                                # set end of previous state to the previous line
+                                if last_state is not None:
+                                    statePositions[last_state][2] = lineNum - 1
+                                last_state = state_read
+                            break
                 lineNum += 1
-                stateRead = line.split(":")[0].strip()
-                stateStart = lineNum
-                while line not in ['\n', '\r\n'] and line:
-                    line = file.readline().strip()
-                    lineNum += 1
-                    if not line:
-                        line += "\n"
-                stateEnd = lineNum
-                if stateStart != stateEnd:
-                    statePositions[stateRead] = [fileName, stateStart, stateEnd]
-                    posCount += 1
+                line = file.readline()
+            # set end of last state after loop finish
+            if last_state is not None:
+                statePositions[last_state][2] = lineNum - 1
+
 
 # creates a file with positions of states in yaml files
 def writeStatePositions(statePositions):
     with io.open("state_positions.txt", "w", encoding="utf-8") as file:
         file.write(botName + "\n")
         for state in statePositions:
-            file.write("%s %s %d %d\n" % (state, statePositions[state][0], statePositions[state][1], statePositions[state][2]))
+            file.write(
+                "%s %s %d %d\n" % (state, statePositions[state][0], statePositions[state][1], statePositions[state][2]))
         file.close()
+
 
 # finds unreachable nodes and saves them to unreachableNodes
 def findUnreachableNodes():
@@ -152,6 +181,7 @@ def findUnreachableNodes():
     for state in statePositions:
         if state not in nodes:
             unreachableNodes.append(state)
+
 
 # create a graph for chosen bot
 def createGraph(bot):
@@ -227,8 +257,7 @@ def createGraph(bot):
     return "ok"
 
 
-
-#createGraph("test_editor")
+# createGraph("test_editor")
 
 # returns graph_viz.txt file
 def getGraphFile():
@@ -237,12 +266,14 @@ def getGraphFile():
         file.close()
         return data
 
+
 # returns state_positions.txt file
 def getStatePositionsFile():
     with io.open("state_positions.txt", "r", encoding="utf-8") as file:
         data = file.read()
         file.close()
         return data
+
 
 # returns requested file
 def getYamlFile(request_data):
@@ -257,13 +288,15 @@ def getYamlFile(request_data):
         file.close()
         return data
 
-#returns names of bot projects
+
+# returns names of bot projects
 def getBotNames():
     botnames = ""
     for f in listdir("bots/"):
         if not isfile("bots/" + f):
             botnames += f + ";"
     return botnames
+
 
 # returns yaml file names in project in HTML list
 def getYamlNamesHtml(projectname):
@@ -284,11 +317,10 @@ def getYamlNamesHtml(projectname):
     fileHtml += "</ul></li></ul>"
     return fileHtml
 
+
 # returns string containing yaml file names of a certain project
 def getYamlNames(projectname):
     files = listdir("bots/" + projectname + "/flows")
     if os.path.isdir(os.path.join("bots", projectname, "states")):
         files = files + listdir("bots/" + projectname + "/states")
     return ";".join(files)
-
-

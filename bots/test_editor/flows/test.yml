@@ -14,10 +14,3 @@ states:
     type: message_text
     properties:
       text: "hello."
-
-  another3:
-    type: message_text
-    properties:
-      text: "hello."
-    transitions:
-      next_state: blblbl

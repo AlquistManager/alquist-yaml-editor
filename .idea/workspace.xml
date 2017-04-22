@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbec5222-eb93-49c3-b59d-7366dbc9b613" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/test_editor/flows/anofsdk.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/test_viz_js2.html" afterPath="$PROJECT_DIR$/IO/test_viz_js2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/flows/test.yml" afterPath="$PROJECT_DIR$/bots/test_editor/flows/test.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_generator.py" afterPath="$PROJECT_DIR$/graph_generator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz.txt" afterPath="$PROJECT_DIR$/graph_viz.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
     </list>
@@ -16,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1492858688345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1492886362051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -24,7 +25,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="973">
@@ -54,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-968">
-              <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="-726">
+              <caret line="159" column="33" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="33" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -157,8 +158,8 @@
       <find>times</find>
       <find>panzoom</find>
       <find>zoom</find>
-      <find>loadgraph</find>
       <find>write</find>
+      <find>loadgraph</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,11 +190,11 @@
         <option value="$PROJECT_DIR$/IO/input.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/loggers.py" />
-        <option value="$PROJECT_DIR$/graph_generator.py" />
         <option value="$PROJECT_DIR$/editor_server.py" />
         <option value="$PROJECT_DIR$/IO/index.html" />
         <option value="$PROJECT_DIR$/IO/static-files/style.css" />
         <option value="$PROJECT_DIR$/IO/test_viz_js2.html" />
+        <option value="$PROJECT_DIR$/graph_generator.py" />
       </list>
     </option>
   </component>
@@ -997,21 +998,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-968">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="973">
           <caret line="300" column="65" lean-forward="false" selection-start-line="300" selection-start-column="65" selection-end-line="300" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="159" column="33" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

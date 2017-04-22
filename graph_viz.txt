@@ -1,10 +1,5 @@
 digraph G{
 subgraph cluster_0 {
-blblbl [id = 15, style=filled, color=white];
-label="anofsdk.yml";
-style=filled;color=lightgray;}
-
-subgraph cluster_1 {
 init [id = 2, style=filled, color=yellow];
 state3 [id = 3, style=filled, color=white];
 option1 [id = 4, style=filled, color=white];
@@ -17,11 +12,10 @@ bad_response [id = 10, style=filled, color=white];
 label="init_file.yml";
 style=filled;color=lightgray;}
 
-subgraph cluster_2 {
+subgraph cluster_1 {
 something [id = 11, style=filled, color=white];
 another [id = 12, style=filled, color=white];
 another52 [id = 13, style=filled, color=white];
-another3 [id = 14, style=filled, color=white];
 label="test.yml";
 style=filled;color=lightgray;}
 
@@ -38,7 +32,5 @@ good_bad -> input;
 state3 -> something;
 something -> another;
 another -> another52;
-another52 -> another3;
-another3 -> blblbl;
 state3 -> input;
 }
