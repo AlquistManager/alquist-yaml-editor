@@ -312,6 +312,8 @@ def getYamlNamesHtml(projectname):
         fileHtml += "<li data-jstree='{\"opened\":" + opened + "}'>" + folder + "<ul>"
         files = listdir(os.path.join("bots", projectname, folder))
         for f in files:
+            if f == "__pycache__":
+                continue
             fileHtml += "<li>" + f + "</li>"
         fileHtml += "</ul></li>"
     fileHtml += "</ul></li></ul>"
@@ -323,4 +325,8 @@ def getYamlNames(projectname):
     files = listdir("bots/" + projectname + "/flows")
     if os.path.isdir(os.path.join("bots", projectname, "states")):
         files = files + listdir("bots/" + projectname + "/states")
+    for f in files:
+        if f == "__pycache__":
+            files.remove(f)
+            break
     return ";".join(files)

@@ -114,6 +114,7 @@
     var statePositions;
     var fileNames;
     var yamlMap = new Map();
+    var filesNewMap = new Map();
     var filenameMap = new Map();
     var botName;
     var currentFile;
@@ -154,6 +155,7 @@
     console.log("generated graph for bot: " + botName);
     loadGraph();
     myCodeMirror = getCodeMirror(tarea, currentMode);
+    myCodeMirror.setOption("readOnly", "nocursor");
 
     jQuery.ajaxSetup({async: true});
 
@@ -196,6 +198,7 @@
             $.post("getfile", botName + ":" + fileNames[i] + ":" + folder,
                 function (data, status) {
                     yamlMap.set(fileNames[i], data);
+                    filesNewMap.set(fileNames[i], undefined);
                     console.log("get yaml file: " + status);
                 });
         }
@@ -205,7 +208,11 @@
 
         // displays error message when parsing fails
         if (nodes.length == 0 || responseToGenerate != 'ok') {
-            elemGraph.innerHTML = responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            if(responseToGenerate == undefined){
+                responseToGenerate == "ERROR";
+            }else {
+                elemGraph.innerHTML = responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            }
         }
 
         jQuery.ajaxSetup({async: true});
@@ -218,6 +225,10 @@
                 var state = evt.currentTarget.firstChild.firstChild.data;
                 var statePos = findPosition(state).split(" ");
                 if (statePos[1] != currentFile) {
+                    myCodeMirror.save();
+                    var editor_text = document.getElementById("text-editor").value;
+                    filesNewMap.set(currentFile, editor_text);
+
                     var text2 = getYamlFile(statePos[1], "flows");
                     myCodeMirror.toTextArea();
                     document.getElementById("text-editor").value = text2;
@@ -405,6 +416,9 @@
                 });
             jQuery.ajaxSetup({async: true});
             return response;
+        }
+        if (filesNewMap.get(file) != undefined) {
+            return filesNewMap.get(file);
         } else {
             response = yamlMap.get(file);
             return response;
@@ -428,6 +442,9 @@
 
     // update graph with yaml code from editor
     function toPython(usrdata) {
+        if (currentFile == undefined){
+            return;
+        }
         myCodeMirror.save();
         var editor_text = document.getElementById("text-editor").value;
         if (editor_text.trim() == "" || currentFile == undefined)return;
@@ -468,18 +485,32 @@
                 .on('select_node.jstree', function (e, data) {
                     //check if node is file
                     if (!tree.is_parent(data.instance.get_node(data.selected[0]))) {
+                        // save current state of text in editor
+                        if (currentFile != undefined) {
+                            myCodeMirror.save();
+                            var editor_text = document.getElementById("text-editor").value;
+                            filesNewMap.set(currentFile, editor_text);
+                        }
+
                         //get name of selected file
-                        currentFile = data.instance.get_node(data.selected[0]).text;
+                        var fileToOpen = data.instance.get_node(data.selected[0]).text;
 
                         //get name of folder with the file
                         var lsSelectedID = data.node.id;
                         var loParent = $("#" + lsSelectedID);
                         var parent = loParent.parent().parent();
                         var folder = parent.children()[1].text;
-                        currentFolder = folder;
+                        var folderToOpen = folder;
 
                         //get content of the file
-                        var fileContent = getYamlFile(currentFile, folder);
+                        var fileContent = getYamlFile(fileToOpen,folderToOpen);
+                        if (fileContent == undefined){
+                            return;
+                        }
+
+                        currentFile = fileToOpen;
+                        currentFolder = folderToOpen;
+
                         myCodeMirror.toTextArea();
                         document.getElementById("text-editor").value = fileContent;
                         var mode;
@@ -703,7 +734,8 @@
                         function (data, status) {
                             $('#file_tree_inner').jstree(true).destroy();
                             generateFileTree();
-                            //loadGraph();
+                            generateGraphForBot(botName);
+                            loadGraph();
                         });
             }
         }
@@ -712,6 +744,7 @@
 
     // reverts the editor text to last loaded state
     function revertChanges() {
+        filesNewMap.set(currentFile,undefined);
         var text2 = getYamlFile(currentFile, currentFolder);
         myCodeMirror.toTextArea();
         document.getElementById("text-editor").value = text2;

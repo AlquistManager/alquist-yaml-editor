@@ -14,8 +14,6 @@ style=filled;color=lightgray;}
 
 subgraph cluster_1 {
 something [id = 11, style=filled, color=white];
-another [id = 12, style=filled, color=white];
-another52 [id = 13, style=filled, color=white];
 label="test.yml";
 style=filled;color=lightgray;}
 
@@ -30,7 +28,5 @@ good_bad -> bad_response;
 bad_response -> end_state;
 good_bad -> input;
 state3 -> something;
-something -> another;
-another -> another52;
 state3 -> input;
 }

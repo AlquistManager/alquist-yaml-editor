@@ -1,0 +1,80 @@
+name: Working Time
+states:
+  init:
+    type: message_text
+    properties:
+      text: "Hello. What's your name?"
+      
+  input_name:
+    type: input_user
+    properties:
+      entities:
+        username: raw_text
+    transitions:
+      next_state: user_to_spreadsheet
+      
+  user_to_spreadsheet:
+    type: spreadsheet_set_user
+    transitions:
+      next_state: check_user_found
+    
+  check_user_found:
+    type: conditional_exists
+    properties:
+        key: '{{user_found}}'
+    transitions: 
+        exists: text_found
+        notexists: text_not_found
+      
+  text_found:
+    type: message_text
+    properties:
+      text: "Welcome back {{username}}. What would you like to do (start/end)?"
+    transitions:
+      next_state: input_action
+
+  text_not_found:
+    type: message_text
+    properties:
+      text: "Nice to meet you {{username}}. What would you like to do (start/end)?"
+    transitions:
+      next_state: input_action
+
+  input_action:
+    type: input_user
+    properties:
+      entities:
+        action: raw_text
+        
+  time_to_spreadsheet:
+    type: spreadsheet_add_time
+
+  check_input_correct:
+    type: conditional_exists
+    properties:
+        key: '{{error}}'
+    transitions: 
+        exists: error_text
+        notexists: end_text
+        
+  error_text:
+    type: message_text
+    properties:
+      text: "Sorry, I don't understand you. Type 'start' or 'end'."
+    transitions:
+      next_state: delete_error_context
+      
+  delete_error_context:
+    type: change_context
+    properties:
+        del_keys:
+            - error
+    transitions:
+        next_state: input_action
+    
+  end_text:
+    type: message_text
+    properties:
+      text: "Great. Thanks for letting me know."
+    transitions:
+      next_state: init
