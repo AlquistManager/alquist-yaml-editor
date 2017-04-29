@@ -12,7 +12,7 @@ try:
     import argparse
 
     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except ImportError:
+except Exception:  #ImportError
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets'

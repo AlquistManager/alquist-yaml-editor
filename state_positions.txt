@@ -1,11 +1,13 @@
-test_editor
-end_state init_file.yml 61 65
-something test.yml 2 5
-option1 init_file.yml 22 26
-good_response init_file.yml 47 53
-input init_file.yml 66 69
-init init_file.yml 4 8
-good_bad init_file.yml 34 46
-state3 init_file.yml 9 21
-bad_response init_file.yml 54 60
-option1_2 init_file.yml 27 33
+working_time
+end_text main.yml 75 80
+delete_error_context main.yml 67 74
+time_to_spreadsheet main.yml 49 51
+text_found main.yml 29 35
+init main.yml 3 7
+user_to_spreadsheet main.yml 16 20
+error_text main.yml 60 66
+input_name main.yml 8 15
+input_action main.yml 43 48
+check_input_correct main.yml 52 59
+text_not_found main.yml 36 42
+check_user_found main.yml 21 28
