@@ -8,12 +8,15 @@ from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
 
+'''
 try:
     import argparse
 
     flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
-except Exception:  #ImportError
+except ImportError:
     flags = None
+'''
+flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets'
 CLIENT_SECRET_FILE = 'client_secret.json'
