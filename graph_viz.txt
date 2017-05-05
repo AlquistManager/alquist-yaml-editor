@@ -2,31 +2,27 @@ digraph G{
 subgraph cluster_0 {
 init [id = 2, style=filled, color=yellow];
 input_name [id = 3, style=filled, color=white];
-user_to_spreadsheet [id = 4, style=filled, color=white];
-check_user_found [id = 5, style=filled, color=white];
-text_found [id = 6, style=filled, color=white];
-input_action [id = 7, style=filled, color=white];
-time_to_spreadsheet [id = 8, style=filled, color=white];
-check_input_correct [id = 9, style=filled, color=white];
-error_text [id = 10, style=filled, color=white];
-delete_error_context [id = 11, style=filled, color=white];
-end_text [id = 12, style=filled, color=white];
-text_not_found [id = 13, style=filled, color=white];
+breaking_news [id = 4, style=filled, color=lawngreen];
+end_state [id = 5, style=filled, color=white];
+joke [id = 6, style=filled, color=lawngreen];
+read_article [id = 7, style=filled, color=lawngreen];
+sports [id = 8, style=filled, color=lawngreen];
+help [id = 9, style=filled, color=lawngreen];
+repeat [id = 10, style=filled, color=lawngreen];
+fun_fact [id = 11, style=filled, color=lawngreen];
+topic_news [id = 12, style=filled, color=lawngreen];
 label="main.yml";
 style=filled;color=lightgray;}
 
 init -> input_name;
-input_name -> user_to_spreadsheet;
-user_to_spreadsheet -> check_user_found;
-check_user_found -> text_found;
-text_found -> input_action;
-input_action -> time_to_spreadsheet;
-time_to_spreadsheet -> check_input_correct;
-check_input_correct -> error_text;
-error_text -> delete_error_context;
-delete_error_context -> input_action;
-check_input_correct -> end_text;
-end_text -> init;
-check_user_found -> text_not_found;
-text_not_found -> input_action;
+input_name -> breaking_news;
+breaking_news -> end_state;
+end_state -> init;
+joke -> end_state;
+read_article -> end_state;
+sports -> end_state;
+help -> end_state;
+repeat -> end_state;
+fun_fact -> end_state;
+topic_news -> end_state;
 }

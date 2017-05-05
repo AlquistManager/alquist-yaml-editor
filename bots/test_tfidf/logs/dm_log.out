@@ -1,0 +1,105 @@
+2017-05-05 15:23:35,274 - Main logger - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': "Hello. What's your name?"}, 'delay': 0}]
+2017-05-05 15:23:39,978 - Main logger - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - INFO - USER SAYS: test
+2017-05-05 15:24:25,067 - Main logger - ef01b614-5bad-4884-87ce-7b758b39bb01 - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 15:24:27,928 - Main logger - ef01b614-5bad-4884-87ce-7b758b39bb01 - INFO - USER SAYS: test
+2017-05-05 15:25:02,998 - Main logger - 83495343-2be9-4819-9d90-32756ad5a080 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:25:05,900 - Main logger - 83495343-2be9-4819-9d90-32756ad5a080 - INFO - USER SAYS: test
+2017-05-05 15:25:06,111 - Main logger - 83495343-2be9-4819-9d90-32756ad5a080 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:25:06,113 - Main logger - 83495343-2be9-4819-9d90-32756ad5a080 - INFO - ===== SESSION END =====
+2017-05-05 15:25:50,870 - Main logger - 016d8694-68a4-402b-a3a4-6084165e6972 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:25:53,402 - Main logger - 016d8694-68a4-402b-a3a4-6084165e6972 - INFO - USER SAYS: test
+2017-05-05 15:25:53,462 - Main logger - 016d8694-68a4-402b-a3a4-6084165e6972 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'sport'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:25:53,470 - Main logger - 016d8694-68a4-402b-a3a4-6084165e6972 - INFO - ===== SESSION END =====
+2017-05-05 15:27:07,485 - Main logger - c26c3296-1440-4f78-8eb8-b692df79d9b3 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:27:10,524 - Main logger - c26c3296-1440-4f78-8eb8-b692df79d9b3 - INFO - USER SAYS: test
+2017-05-05 15:27:10,563 - Main logger - c26c3296-1440-4f78-8eb8-b692df79d9b3 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'sport'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:27:10,566 - Main logger - c26c3296-1440-4f78-8eb8-b692df79d9b3 - INFO - ===== SESSION END =====
+2017-05-05 15:29:34,387 - Main logger - 33aafb5b-7589-44a7-8669-908e181c0347 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:29:37,836 - Main logger - 33aafb5b-7589-44a7-8669-908e181c0347 - INFO - USER SAYS: test
+2017-05-05 15:29:37,892 - Main logger - 33aafb5b-7589-44a7-8669-908e181c0347 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'sport'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}]
+2017-05-05 15:29:37,894 - Main logger - 33aafb5b-7589-44a7-8669-908e181c0347 - INFO - ===== SESSION END =====
+2017-05-05 15:36:23,883 - Main logger - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:36:26,695 - Main logger - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - INFO - USER SAYS: test
+2017-05-05 15:36:26,739 - Main logger - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'sport'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:36:26,741 - Main logger - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - INFO - ===== SESSION END =====
+2017-05-05 15:38:52,885 - Main logger - 5b24727c-ea95-420d-b64e-401f3f12e38d - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'delay': 0, 'type': 'text'}]
+2017-05-05 15:38:56,919 - Main logger - 5b24727c-ea95-420d-b64e-401f3f12e38d - INFO - USER SAYS: test
+2017-05-05 15:38:56,958 - Main logger - 5b24727c-ea95-420d-b64e-401f3f12e38d - INFO - BOT SAYS: [{'payload': {'text': 'sport'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'END'}, 'delay': 0, 'type': 'text'}]
+2017-05-05 15:38:56,961 - Main logger - 5b24727c-ea95-420d-b64e-401f3f12e38d - INFO - ===== SESSION END =====
+2017-05-05 15:42:15,266 - Main logger - 30f2236a-9704-43bb-9655-f315369d80d6 - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'delay': 0, 'type': 'text'}]
+2017-05-05 15:42:22,673 - Main logger - 30f2236a-9704-43bb-9655-f315369d80d6 - INFO - USER SAYS: test
+2017-05-05 15:42:22,712 - Main logger - 30f2236a-9704-43bb-9655-f315369d80d6 - INFO - BOT SAYS: [{'payload': {'text': 'sport'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'END'}, 'delay': 0, 'type': 'text'}]
+2017-05-05 15:42:22,713 - Main logger - 30f2236a-9704-43bb-9655-f315369d80d6 - INFO - ===== SESSION END =====
+2017-05-05 15:45:48,137 - Main logger - 51bc3ad1-3636-4c10-959f-11261fd6b2ac - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:45:52,050 - Main logger - 51bc3ad1-3636-4c10-959f-11261fd6b2ac - INFO - USER SAYS: test
+2017-05-05 15:45:52,091 - Main logger - 51bc3ad1-3636-4c10-959f-11261fd6b2ac - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'sport'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}]
+2017-05-05 15:45:52,093 - Main logger - 51bc3ad1-3636-4c10-959f-11261fd6b2ac - INFO - ===== SESSION END =====
+2017-05-05 15:46:48,098 - Main logger - f3fc162b-a0bd-4b99-b9f1-72f9b45e59a9 - INFO - BOT SAYS: [{'delay': 0, 'payload': {'text': "Hello. What's your name?"}, 'type': 'text'}]
+2017-05-05 15:46:51,135 - Main logger - f3fc162b-a0bd-4b99-b9f1-72f9b45e59a9 - INFO - USER SAYS: test
+2017-05-05 15:47:14,991 - Main logger - 4df789ba-b515-494c-b7d9-c91faf3f6cb6 - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': "Hello. What's your name?"}, 'delay': 0}]
+2017-05-05 15:47:17,263 - Main logger - 4df789ba-b515-494c-b7d9-c91faf3f6cb6 - INFO - USER SAYS: test
+2017-05-05 15:47:17,306 - Main logger - 4df789ba-b515-494c-b7d9-c91faf3f6cb6 - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': 'sport'}, 'delay': 0}, {'type': 'text', 'payload': {'text': 'END'}, 'delay': 0}]
+2017-05-05 15:47:17,310 - Main logger - 4df789ba-b515-494c-b7d9-c91faf3f6cb6 - INFO - ===== SESSION END =====
+2017-05-05 15:50:00,477 - Main logger - b3696d27-de92-414a-8c96-6b7f0d0781e6 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:50:03,454 - Main logger - b3696d27-de92-414a-8c96-6b7f0d0781e6 - INFO - USER SAYS: test
+2017-05-05 15:50:03,491 - Main logger - b3696d27-de92-414a-8c96-6b7f0d0781e6 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'weather'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:50:03,494 - Main logger - b3696d27-de92-414a-8c96-6b7f0d0781e6 - INFO - ===== SESSION END =====
+2017-05-05 15:51:01,543 - Main logger - 85f86a83-b611-41c5-8b80-242cf154a88f - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': "Hello. What's your name?"}, 'delay': 0}]
+2017-05-05 15:51:04,238 - Main logger - 85f86a83-b611-41c5-8b80-242cf154a88f - INFO - USER SAYS: test
+2017-05-05 15:51:04,275 - Main logger - 85f86a83-b611-41c5-8b80-242cf154a88f - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': 'weather'}, 'delay': 0}, {'type': 'text', 'payload': {'text': 'END'}, 'delay': 0}]
+2017-05-05 15:51:04,277 - Main logger - 85f86a83-b611-41c5-8b80-242cf154a88f - INFO - ===== SESSION END =====
+2017-05-05 15:51:25,432 - Main logger - 6902833a-8692-4909-929f-155f115f01d1 - INFO - BOT SAYS: [{'delay': 0, 'payload': {'text': "Hello. What's your name?"}, 'type': 'text'}]
+2017-05-05 15:51:28,969 - Main logger - 6902833a-8692-4909-929f-155f115f01d1 - INFO - USER SAYS: test
+2017-05-05 15:51:29,009 - Main logger - 6902833a-8692-4909-929f-155f115f01d1 - INFO - BOT SAYS: [{'delay': 0, 'payload': {'text': 'games'}, 'type': 'text'}, {'delay': 0, 'payload': {'text': 'END'}, 'type': 'text'}]
+2017-05-05 15:51:29,011 - Main logger - 6902833a-8692-4909-929f-155f115f01d1 - INFO - ===== SESSION END =====
+2017-05-05 15:55:30,500 - Main logger - ee72821e-6883-4ec0-9d4b-4e4384d7b0a6 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:55:39,573 - Main logger - ee72821e-6883-4ec0-9d4b-4e4384d7b0a6 - INFO - USER SAYS: test
+2017-05-05 15:55:39,618 - Main logger - ee72821e-6883-4ec0-9d4b-4e4384d7b0a6 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'games'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:55:39,620 - Main logger - ee72821e-6883-4ec0-9d4b-4e4384d7b0a6 - INFO - ===== SESSION END =====
+2017-05-05 15:57:36,262 - Main logger - 3829bd1c-fd27-4f86-964e-a16a7173c1e7 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:57:38,796 - Main logger - 3829bd1c-fd27-4f86-964e-a16a7173c1e7 - INFO - USER SAYS: test
+2017-05-05 15:57:38,840 - Main logger - 3829bd1c-fd27-4f86-964e-a16a7173c1e7 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'games'}}, {'type': 'text', 'delay': 0, 'payload': {'text': 'END'}}]
+2017-05-05 15:57:38,842 - Main logger - 3829bd1c-fd27-4f86-964e-a16a7173c1e7 - INFO - ===== SESSION END =====
+2017-05-05 15:58:04,059 - Main logger - f733f7fb-c94c-4ab2-b07d-d7d69eaccd0e - INFO - BOT SAYS: [{'delay': 0, 'payload': {'text': "Hello. What's your name?"}, 'type': 'text'}]
+2017-05-05 15:58:06,227 - Main logger - f733f7fb-c94c-4ab2-b07d-d7d69eaccd0e - INFO - USER SAYS: test
+2017-05-05 15:58:06,271 - Main logger - f733f7fb-c94c-4ab2-b07d-d7d69eaccd0e - INFO - BOT SAYS: [{'delay': 0, 'payload': {'text': 'games'}, 'type': 'text'}, {'delay': 0, 'payload': {'text': 'END'}, 'type': 'text'}]
+2017-05-05 15:58:06,273 - Main logger - f733f7fb-c94c-4ab2-b07d-d7d69eaccd0e - INFO - ===== SESSION END =====
+2017-05-05 15:58:53,673 - Main logger - 722f8917-e5b6-4a68-8191-91e122f5f5f5 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 15:59:02,198 - Main logger - 722f8917-e5b6-4a68-8191-91e122f5f5f5 - INFO - USER SAYS: test
+2017-05-05 15:59:02,242 - Main logger - 722f8917-e5b6-4a68-8191-91e122f5f5f5 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'games'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}]
+2017-05-05 15:59:02,244 - Main logger - 722f8917-e5b6-4a68-8191-91e122f5f5f5 - INFO - ===== SESSION END =====
+2017-05-05 16:05:08,252 - Main logger - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 16:05:25,596 - Main logger - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - INFO - USER SAYS: tell me breaking news
+2017-05-05 16:05:25,654 - Main logger - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'breaking news'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}]
+2017-05-05 16:05:25,655 - Main logger - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - INFO - ===== SESSION END =====
+2017-05-05 16:06:34,211 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:07:02,464 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: tell me world news
+2017-05-05 16:07:02,537 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'topic news'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:07:40,877 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: read the article
+2017-05-05 16:07:40,971 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'read article'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:07:44,265 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: tell me joke
+2017-05-05 16:07:44,322 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'joke'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:08:07,722 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: tell me about sports
+2017-05-05 16:08:07,781 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'sports'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:08:09,486 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: help
+2017-05-05 16:08:09,554 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'help'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:11:54,420 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: news
+2017-05-05 16:11:54,526 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'breaking news'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:11:56,707 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: sports
+2017-05-05 16:11:56,789 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'topic news'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:12:03,972 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: joke
+2017-05-05 16:12:04,037 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'joke'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:12:06,693 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: repeat
+2017-05-05 16:12:06,740 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'repeat'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:12:09,953 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: help
+2017-05-05 16:12:09,996 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'help'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:12:25,583 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: article
+2017-05-05 16:12:25,636 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'read article'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:14:16,466 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: new
+2017-05-05 16:14:16,544 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'delay': 0, 'type': 'text', 'payload': {'text': 'breaking news'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'END'}}, {'delay': 0, 'type': 'text', 'payload': {'text': 'What do you want to know?'}}]
+2017-05-05 16:48:14,794 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: tell me about sports
+2017-05-05 16:48:14,929 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'payload': {'text': 'sports'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'END'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'What do you want to know?'}, 'delay': 0, 'type': 'text'}]
+2017-05-05 16:48:34,968 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: tell me neww
+2017-05-05 16:48:35,026 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'payload': {'text': 'read article'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'END'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'What do you want to know?'}, 'delay': 0, 'type': 'text'}]
+2017-05-05 16:48:51,451 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - USER SAYS: i'd like to know something about news
+2017-05-05 16:48:51,517 - Main logger - 72017ae7-a08f-454c-8bdc-735cdf984691 - INFO - BOT SAYS: [{'payload': {'text': 'sports'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'END'}, 'delay': 0, 'type': 'text'}, {'payload': {'text': 'What do you want to know?'}, 'delay': 0, 'type': 'text'}]

@@ -11,6 +11,7 @@ import os
 
 statePositions = {}
 unreachableNodes = []
+transition_targets = []
 files = []
 posCount = 0
 
@@ -68,8 +69,10 @@ def writeGraphVizJs(nodes, edges):
         file.write("subgraph cluster_%d {\n" % (clusterNum))
         for n in nodes:
             if statePositions[n][0] == f:
-                if n in unreachableNodes:
+                if n in unreachableNodes and n not in transition_targets:
                     file.write("%s [id = %s, style=filled, color=red];\n" % (n, nodes[n]["id"]))
+                elif n in transition_targets:
+                    file.write("%s [id = %s, style=filled, color=lawngreen];\n" % (n, nodes[n]["id"]))
                 elif n is "init":
                     file.write("%s [id = %s, style=filled, color=yellow];\n" % (n, nodes[n]["id"]))
                 else:
@@ -240,6 +243,7 @@ def createGraph(bot):
             print(str(stack_trace))
             return str(stack_trace)
 
+    findIntentTransitions(bot)
     findStatePositions()
     findUnreachableNodes()
 
@@ -255,6 +259,11 @@ def createGraph(bot):
     print("Graph edges: %d" % len(edges))
 
     return "ok"
+
+def findIntentTransitions(botname):
+    transition_targets.clear()
+    for transition in intent_transitions[botname]:
+        transition_targets.append(intent_transitions[botname][transition])
 
 
 # createGraph("test_editor")

@@ -21,8 +21,12 @@ class InputUser(State):
 
         # Switch intent according to user response
         response_intent = response.get('intent', False)
+        #print(response_intent)
+        #print(intent_transitions)
+        intents_project = intent_transitions[self.bot]
+        #print(intents_project)
         if response_intent:
-            if intent_transitions.get(response_intent, False) and response_intent != request_data['context'].get(
+            if intents_project.get(response_intent, False) and response_intent != request_data['context'].get(
                     'intent', False):
                 loggers.get(self.bot).get("state_logger").debug('Switching intent: current intent: ' + str(
                     request_data['context'].get('intent', False)) + ', user intent: ' + str(response_intent),
@@ -30,7 +34,7 @@ class InputUser(State):
                 loggers.get(self.bot).get("state_logger").debug('State ' + self.name + ' complete.',
                                                                 extra={'uid': request_data.get('session', False)})
                 request_data['context'].update(response)
-                request_data.update({'next_state': intent_transitions.get(response_intent, False)})
+                request_data.update({'next_state': intents_project.get(response_intent, False)})
 
                 loggers.get(self.bot).get("state_logger").debug('Next state: ' + str(request_data.get('next_state')),
                                                                 extra={'uid': request_data.get('session', False)})

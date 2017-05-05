@@ -1,4 +1,5 @@
 from config import config
+import requests
 
 nlp_type = config["nlp_type"]
 
@@ -59,7 +60,7 @@ def find_entity(token):
         return "", ""
 
 
-def get_entities(text, nlp_type="empty"): #get_entities(text, nlp_type="lemma")
+def get_entities(text, nlp_type="tfidf"): #get_entities(text, nlp_type="lemma")
     ent_out = {}
     if nlp_type=="wit":
         if not text == "":
@@ -79,6 +80,10 @@ def get_entities(text, nlp_type="empty"): #get_entities(text, nlp_type="lemma")
                 ent_out.update({entity[0]: entity[1]})
     elif nlp_type=="empty":
         ent_out.update({'raw_text': str(text)})
+    elif nlp_type=="tfidf":
+        req = requests.post("http://127.0.0.1:5678/", json={'text': text})
+        print(req.json()['command'])
+        ent_out.update({'intent': req.json()['command']})
     return ent_out
 
 
