@@ -19,6 +19,7 @@
     <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../static-files/style.css"/>
+    <script src="../static-files/bootbox.min.js"></script>
     <title>Alquist Editor</title>
 </head>
 <body>
@@ -208,9 +209,9 @@
 
         // displays error message when parsing fails
         if (nodes.length == 0 || responseToGenerate != 'ok') {
-            if(responseToGenerate == undefined){
+            if (responseToGenerate == undefined) {
                 responseToGenerate == "ERROR";
-            }else {
+            } else {
                 elemGraph.innerHTML = responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
             }
         }
@@ -442,7 +443,7 @@
 
     // update graph with yaml code from editor
     function toPython(usrdata) {
-        if (currentFile == undefined){
+        if (currentFile == undefined) {
             return;
         }
         myCodeMirror.save();
@@ -503,8 +504,8 @@
                         var folderToOpen = folder;
 
                         //get content of the file
-                        var fileContent = getYamlFile(fileToOpen,folderToOpen);
-                        if (fileContent == undefined){
+                        var fileContent = getYamlFile(fileToOpen, folderToOpen);
+                        if (fileContent == undefined) {
                             return;
                         }
 
@@ -700,51 +701,66 @@
 
     // create new yaml file
     function newFile(type) {
-        var name = prompt("Enter name of the new file:", "");
-        if (name == "" || name == null || name == undefined)return;
-        var data = type + ";" + name + ";" + botName;
+        bootbox.prompt("Enter name of the new file:", function (name) {
+            if (name == "" || name == null || name == undefined)return;
+            var data = type + ";" + name + ";" + botName;
 
-        $.post("newfile", data,
-            function (data, status) {
-                console.log("create new file: " + status);
-                $('#file_tree_inner').jstree(true).destroy();
-                generateFileTree();
-                //loadGraph();
-            });
+            $.post("newfile", data,
+                function (data, status) {
+                    console.log("create new file: " + status);
+                    $('#file_tree_inner').jstree(true).destroy();
+                    generateFileTree();
+                    //loadGraph();
+                });
+        });
+
     }
 
     // delete selected file
     function onClickDeleteFile() {
         if (treeElement != undefined) {
-            if (confirm("Delete " + treeElement.lastChild.lastChild.data + "?")) {
-                //data = treeElement.lastChild.lastChild.data + ";" + botName;
+            var treeElement2 = treeElement;
+            bootbox.confirm({
+                title: "Delete file?",
+                message: "Do you really want to delete " + treeElement2.lastChild.lastChild.data + "?",
+                buttons: {
+                    cancel: {
+                        label: 'Cancel'
+                    },
+                    confirm: {
+                        label: 'Confirm'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        //get folder of selected node
+                        var lsSelectedID = currentNodeHovered.node.id;
+                        var loParent = $("#" + lsSelectedID);
+                        var parent = loParent.parent().parent();
+                        var folder = parent.children()[1].text;
 
-                //get folder of selected node
-                var lsSelectedID = currentNodeHovered.node.id;
-                var loParent = $("#" + lsSelectedID);
-                var parent = loParent.parent().parent();
-                var folder = parent.children()[1].text;
+                        data = JSON.stringify({
+                            botname: botName, filename: treeElement2.lastChild.lastChild.data,
+                            folder: folder
+                        }),
 
-                data = JSON.stringify({
-                    botname: botName, filename: treeElement.lastChild.lastChild.data,
-                    folder: folder
-                }),
-
-                    $.post("deletefile", data,
-                        function (data, status) {
-                            $('#file_tree_inner').jstree(true).destroy();
-                            generateFileTree();
-                            generateGraphForBot(botName);
-                            loadGraph();
-                        });
-            }
+                            $.post("deletefile", data,
+                                function (data, status) {
+                                    $('#file_tree_inner').jstree(true).destroy();
+                                    generateFileTree();
+                                    generateGraphForBot(botName);
+                                    loadGraph();
+                                });
+                    }
+                }
+            });
         }
         treeElement = undefined;
     }
 
     // reverts the editor text to last loaded state
     function revertChanges() {
-        filesNewMap.set(currentFile,undefined);
+        filesNewMap.set(currentFile, undefined);
         var text2 = getYamlFile(currentFile, currentFolder);
         myCodeMirror.toTextArea();
         document.getElementById("text-editor").value = text2;

@@ -8,8 +8,7 @@
     <script src="../static-files/jquery-3.1.1.min.js"></script>
     <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
-
-
+    <script src="../static-files/bootbox.min.js"></script>
 </head>
 <body>
 
@@ -67,20 +66,37 @@
 
     //delete existing project
     function deleteProject() {
-        var botName = document.getElementById("projects").value;
-        $.post("delete-project", botName,
-            function (data, status) {
-                document.getElementById("projects").innerHTML = "";
-                botnames = data.split(";");
-                for (i = 0; i < botnames.length; i++) {
-                    if (botnames[i] != "") {
-                        var opt = document.createElement("option");
-                        opt.value = botnames[i];
-                        opt.innerHTML = botnames[i];
-                        document.getElementById("projects").appendChild(opt);
-                    }
+        bootbox.confirm({
+            title: "Delete project?",
+            message: "Do you really want to delete this project?",
+            buttons: {
+                cancel: {
+                    label: 'Cancel'
+                },
+                confirm: {
+                    label: 'Confirm'
                 }
-            });
+            },
+            callback: function (result) {
+                if (result) {
+                    var botName = document.getElementById("projects").value;
+                    $.post("delete-project", botName,
+                        function (data, status) {
+                            document.getElementById("projects").innerHTML = "";
+                            botnames = data.split(";");
+                            for (i = 0; i < botnames.length; i++) {
+                                if (botnames[i] != "") {
+                                    var opt = document.createElement("option");
+                                    opt.value = botnames[i];
+                                    opt.innerHTML = botnames[i];
+                                    document.getElementById("projects").appendChild(opt);
+                                }
+                            }
+                        });
+                }
+            }
+        });
+
 
     }
 

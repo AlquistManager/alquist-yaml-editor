@@ -183,3 +183,32 @@
 2017-04-29 21:23:56,715 - Main logger - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - INFO - USER SAYS: test
 2017-04-29 21:23:59,246 - Main logger - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - INFO - BOT SAYS: [{'type': 'text', 'payload': {'text': 'Welcome back test. What would you like to do (start/end)?'}, 'delay': 0}]
 2017-04-29 21:24:01,252 - Main logger - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - INFO - USER SAYS: end
+2017-05-05 10:46:27,300 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 10:47:36,114 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - USER SAYS: test
+2017-05-05 10:47:38,762 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - BOT SAYS: [{'payload': {'text': 'Welcome back test. What would you like to do (start/end)?'}, 'type': 'text', 'delay': 0}]
+2017-05-05 10:48:01,543 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - USER SAYS: start
+2017-05-05 10:48:04,209 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - BOT SAYS: [{'payload': {'text': 'Great. Thanks for letting me know.'}, 'type': 'text', 'delay': 0}, {'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 10:48:10,629 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - RESET
+2017-05-05 10:48:10,631 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - GOTO: init
+2017-05-05 10:48:10,640 - Main logger - 7d951009-ea35-421f-b220-5d201ce14e81 - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 12:15:22,229 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - BOT SAYS: [{'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 12:15:29,296 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - USER SAYS: vaclav
+2017-05-05 12:15:33,320 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - BOT SAYS: [{'payload': {'text': 'Nice to meet you vaclav. What would you like to do (start/end)?'}, 'type': 'text', 'delay': 0}]
+2017-05-05 12:15:36,020 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - BOT SAYS: [{'payload': {'text': 'Nice to meet you . What would you like to do (start/end)?'}, 'type': 'text', 'delay': 0}]
+2017-05-05 12:16:58,977 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - USER SAYS: start
+2017-05-05 12:17:24,322 - Main logger - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - INFO - BOT SAYS: [{'payload': {'text': 'Great. Thanks for letting me know.'}, 'type': 'text', 'delay': 0}, {'payload': {'text': "Hello. What's your name?"}, 'type': 'text', 'delay': 0}]
+2017-05-05 13:25:08,570 - Main logger - fd066c1a-d5cb-47be-8731-0cc92b5db2e4 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 13:29:07,452 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 13:29:25,046 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - USER SAYS: test
+2017-05-05 13:29:27,890 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Welcome back test. What would you like to do (start/end)?'}}]
+2017-05-05 13:29:31,546 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - USER SAYS: start
+2017-05-05 13:29:33,437 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Great. Thanks for letting me know.'}}, {'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 13:29:55,781 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - USER SAYS: vaclav
+2017-05-05 13:29:56,656 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Welcome back vaclav. What would you like to do (start/end)?'}}]
+2017-05-05 13:29:58,969 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - USER SAYS: start
+2017-05-05 13:30:00,594 - Main logger - 25b92ca1-f05e-4ba6-8c8f-b7bbc1c1e039 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Great. Thanks for letting me know.'}}, {'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 13:30:25,035 - Main logger - 3990c5c2-a254-4acb-a9ee-b00d00350c95 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]
+2017-05-05 13:30:27,379 - Main logger - 3990c5c2-a254-4acb-a9ee-b00d00350c95 - INFO - USER SAYS: test
+2017-05-05 13:30:28,801 - Main logger - 3990c5c2-a254-4acb-a9ee-b00d00350c95 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Welcome back test. What would you like to do (start/end)?'}}]
+2017-05-05 13:30:30,426 - Main logger - 3990c5c2-a254-4acb-a9ee-b00d00350c95 - INFO - USER SAYS: start
+2017-05-05 13:30:31,629 - Main logger - 3990c5c2-a254-4acb-a9ee-b00d00350c95 - INFO - BOT SAYS: [{'type': 'text', 'delay': 0, 'payload': {'text': 'Great. Thanks for letting me know.'}}, {'type': 'text', 'delay': 0, 'payload': {'text': "Hello. What's your name?"}}]

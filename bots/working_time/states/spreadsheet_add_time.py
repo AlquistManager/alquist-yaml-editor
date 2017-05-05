@@ -45,7 +45,7 @@ class spreadsheet_add_time(State):
 
         error = False
         if action == "start":
-            range_name = username + '!A1'
+            range_name = username + '!B12'
         elif action == "end":
             range_name = username + '!B1'
         else:

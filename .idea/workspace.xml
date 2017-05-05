@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbec5222-eb93-49c3-b59d-7366dbc9b613" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.credentials/sheets.googleapis.com-python-working-time.json" afterPath="$PROJECT_DIR$/.credentials/sheets.googleapis.com-python-working-time.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/index.html" afterPath="$PROJECT_DIR$/IO/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/test_viz_js2.html" afterPath="$PROJECT_DIR$/IO/test_viz_js2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/working_time/logs/dm_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py" afterPath="$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/states/spreadsheet_set_user.py" afterPath="$PROJECT_DIR$/bots/working_time/states/spreadsheet_set_user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime.txt" afterPath="$PROJECT_DIR$/runtime.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +38,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1493496599689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1493983736319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -25,8 +49,8 @@
       <file leaf-file-name="test_viz_js2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="505" column="77" lean-forward="false" selection-start-line="505" selection-start-column="77" selection-end-line="505" selection-end-column="77" />
+            <state relative-caret-position="16060">
+              <caret line="730" column="32" lean-forward="false" selection-start-line="730" selection-start-column="32" selection-end-line="730" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -35,8 +59,8 @@
       <file leaf-file-name="spreadsheet_set_user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bots/working_time/states/spreadsheet_set_user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="858">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -47,8 +71,8 @@
       <file leaf-file-name="spreadsheet_add_time.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="748">
+              <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -81,7 +105,7 @@
       <file leaf-file-name="editor_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1249">
+            <state relative-caret-position="2640">
               <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="15" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -113,8 +137,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IO/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="1672">
+              <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -141,8 +165,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>split</find>
-      <find>yam</find>
       <find>yamlfi</find>
       <find>click</find>
       <find>button</find>
@@ -158,7 +180,6 @@
       <find>write</find>
       <find>load</find>
       <find>loadgraph</find>
-      <find>delete</find>
       <find>filename</find>
       <find>yamlname</find>
       <find>yamlnames</find>
@@ -171,6 +192,9 @@
       <find>getfile</find>
       <find>getyamlfile</find>
       <find>flags</find>
+      <find>treeelement</find>
+      <find>delete</find>
+      <find>confirm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,11 +226,11 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/loggers.py" />
         <option value="$PROJECT_DIR$/editor_server.py" />
-        <option value="$PROJECT_DIR$/IO/index.html" />
         <option value="$PROJECT_DIR$/IO/static-files/style.css" />
         <option value="$PROJECT_DIR$/graph_generator.py" />
-        <option value="$PROJECT_DIR$/IO/test_viz_js2.html" />
         <option value="$PROJECT_DIR$/bots/working_time/states/spreadsheet_set_user.py" />
+        <option value="$PROJECT_DIR$/IO/index.html" />
+        <option value="$PROJECT_DIR$/IO/test_viz_js2.html" />
         <option value="$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py" />
       </list>
     </option>
@@ -448,7 +472,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../command-recognizer" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -722,24 +746,24 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2972103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31008583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14496036" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21970555" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21970555" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -967,14 +991,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IO/static-files/bootstrap-3.3.7-dist/css/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/IO/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1760">
@@ -1025,7 +1041,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1249">
+        <state relative-caret-position="2640">
           <caret line="132" column="15" lean-forward="false" selection-start-line="132" selection-start-column="4" selection-end-line="132" selection-end-column="15" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -1037,22 +1053,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IO/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IO/test_viz_js2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="505" column="77" lean-forward="false" selection-start-line="505" selection-start-column="77" selection-end-line="505" selection-end-column="77" />
+        <state relative-caret-position="16060">
+          <caret line="730" column="32" lean-forward="false" selection-start-line="730" selection-start-column="32" selection-end-line="730" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bots/working_time/states/spreadsheet_set_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="858">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -1061,8 +1084,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="748">
+          <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
