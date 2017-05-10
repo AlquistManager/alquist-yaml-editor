@@ -137,6 +137,8 @@ def findStatePositions():
                             space_count += 1
                         else:
                             state_read = line.split(":")[0].strip()
+                            if state_read == "":
+                                break
                             last_state = state_read
                             state_start = lineNum
                             state_end = 0
@@ -152,6 +154,8 @@ def findStatePositions():
                         else:
                             if space_curr == space_count:
                                 state_read = line.split(":")[0].strip()
+                                if state_read == "":
+                                    break
                                 state_start = lineNum
                                 state_end = 0
                                 statePositions[state_read] = [fileName, state_start, state_end]
@@ -247,6 +251,8 @@ def createGraph(bot):
     findStatePositions()
     findUnreachableNodes()
 
+    print(statePositions)
+
     # adds unreachable nodes to the graph
     for pos in statePositions:
         if pos not in nodes.keys():
@@ -261,6 +267,7 @@ def createGraph(bot):
     return "ok"
 
 def findIntentTransitions(botname):
+    botname = botname.lower()
     transition_targets.clear()
     for transition in intent_transitions[botname]:
         transition_targets.append(intent_transitions[botname][transition])

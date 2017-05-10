@@ -1,0 +1,87 @@
+name: Main
+states:
+  init:
+    type: message_text
+    properties:
+      text: 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'
+    transitions: 
+        next_state: play_or_pay
+        
+        
+        
+  play_or_pay:
+    type: message_text
+    properties:
+      text: 'Chces hrat nebo naucit bota mestam? '
+    transitions: 
+        next_state: choose2
+        
+  choose2:
+    type: message_buttons
+    properties:
+        buttons:
+            - label: 'Hrat'
+              next_state: state1
+              type: Main
+            - label: 'Naucit'
+              next_state: teach_bot
+              type: Main
+              
+              
+              
+  wait2:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: state1     
+        
+        
+        
+  state1:
+    type: message_text
+    properties:
+      text: 'Chces kontrolu tvych mest? '
+    transitions: 
+        next_state: choose_your_destiny
+        
+  choose_your_destiny:
+    type: message_buttons
+    properties:
+        buttons:
+            - label: 'Ano'
+              next_state: ano_state
+              type: Main
+            - label: 'Ne'
+              next_state: ne_state
+              type: Main
+              
+              
+              
+  wait:
+    type: input_special
+    properties:
+      show_input: none
+    transitions:
+      next_state: state2
+  
+        
+  ano_state:
+    type: change_context
+    properties:
+        del_keys:
+            - control
+        update_keys:
+           control: 'True'
+    transitions:
+        next_state: state2
+        
+  ne_state:
+    type: change_context
+    properties:
+        del_keys:
+            - control
+        update_keys:
+           control: 'False'
+    transitions:
+        next_state: state2

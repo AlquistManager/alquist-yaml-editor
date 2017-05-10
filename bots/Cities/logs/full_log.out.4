@@ -1,0 +1,267 @@
+2017-04-07 13:28:24,515 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - State state2 complete.
+2017-04-07 13:28:24,525 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Next state: changeA
+2017-04-07 13:28:26,904 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 13:28:26,905 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 13:28:26,907 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - State init complete.
+2017-04-07 13:28:26,907 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Next state: play_or_pay
+2017-04-07 13:28:26,909 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 13:28:26,911 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 13:28:26,912 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - State play_or_pay complete.
+2017-04-07 13:28:26,913 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Next state: choose2
+2017-04-07 13:28:26,915 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 13:28:26,916 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 13:28:26,917 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 13:28:26,918 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - State choose2 complete.
+2017-04-07 13:28:26,919 - State info - e06b18f6-0ce7-48f4-ab24-c48abf008727 - DEBUG - Next state: wait2
+2017-04-07 13:58:14,686 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 13:58:14,687 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 13:58:14,689 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - State init complete.
+2017-04-07 13:58:14,692 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Next state: play_or_pay
+2017-04-07 13:58:14,693 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 13:58:14,694 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 13:58:14,695 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - State play_or_pay complete.
+2017-04-07 13:58:14,695 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Next state: choose2
+2017-04-07 13:58:14,697 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 13:58:14,697 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 13:58:14,698 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 13:58:14,699 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - State choose2 complete.
+2017-04-07 13:58:14,699 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Next state: wait2
+2017-04-07 13:58:16,987 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'pass')])
+2017-04-07 13:58:16,988 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 13:58:16,989 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - State teach_bot complete.
+2017-04-07 13:58:16,990 - State info - 51629e04-62f9-4b82-b818-b8cd0e9042b5 - DEBUG - Next state: pass
+2017-04-07 13:58:38,220 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 13:58:38,222 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 13:58:38,223 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - State init complete.
+2017-04-07 13:58:38,227 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Next state: play_or_pay
+2017-04-07 13:58:38,228 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 13:58:38,229 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 13:58:38,229 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - State play_or_pay complete.
+2017-04-07 13:58:38,230 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Next state: choose2
+2017-04-07 13:58:38,231 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 13:58:38,232 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 13:58:38,233 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 13:58:38,234 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - State choose2 complete.
+2017-04-07 13:58:38,234 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Next state: wait2
+2017-04-07 13:58:39,506 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'pass')])
+2017-04-07 13:58:39,506 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 13:58:39,507 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - State teach_bot complete.
+2017-04-07 13:58:39,508 - State info - ae1057dd-fd75-4f0d-b0f4-af27e4f58f76 - DEBUG - Next state: pass
+2017-04-07 14:00:58,978 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 14:00:58,981 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 14:00:58,982 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State init complete.
+2017-04-07 14:00:58,983 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: play_or_pay
+2017-04-07 14:00:58,985 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 14:00:58,986 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 14:00:58,987 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State play_or_pay complete.
+2017-04-07 14:00:58,988 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose2
+2017-04-07 14:00:58,991 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 14:00:58,992 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 14:00:58,993 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 14:00:58,994 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose2 complete.
+2017-04-07 14:00:58,995 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait2
+2017-04-07 14:01:00,612 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_pass')])
+2017-04-07 14:01:00,613 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 14:01:00,613 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State teach_bot complete.
+2017-04-07 14:01:00,614 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: set_pass
+2017-04-07 14:01:04,914 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: input_pass Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('user_pass', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'test_pass')])
+2017-04-07 14:01:04,915 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - User message: 1337
+2017-04-07 14:01:04,916 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - NLP output: {'raw_text': '1337'}
+2017-04-07 14:01:04,917 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Updating context...Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337'}Update: {'raw_text': '1337'}
+2017-04-07 14:01:04,918 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State input_pass complete.
+2017-04-07 14:01:04,919 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: test_pass
+2017-04-07 14:01:04,921 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: test_pass Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{user_pass}}'), ('value2', '{{pass}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'continue'), ('notequal', '')])
+2017-04-07 14:01:04,922 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Comparing values: {{user_pass}}Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337', 'user_pass': '1337'}
+2017-04-07 14:01:04,922 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - PASS
+2017-04-07 14:01:04,923 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State test_pass complete.
+2017-04-07 14:01:04,924 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: continue
+2017-04-07 14:01:04,925 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: continue Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Zadejte, prosim, spravny nazev mesta v anglictine'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_city')])
+2017-04-07 14:01:04,926 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Zadejte, prosim, spravny nazev mesta v anglictine
+2017-04-07 14:01:04,927 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State continue complete.
+2017-04-07 14:01:04,927 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: set_city
+2017-04-07 14:01:09,786 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 14:01:09,787 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 14:01:09,788 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State init complete.
+2017-04-07 14:01:09,789 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: play_or_pay
+2017-04-07 14:01:09,792 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 14:01:09,792 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 14:01:09,794 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State play_or_pay complete.
+2017-04-07 14:01:09,795 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose2
+2017-04-07 14:01:09,796 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 14:01:09,797 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 14:01:09,798 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 14:01:09,799 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose2 complete.
+2017-04-07 14:01:09,799 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait2
+2017-04-07 14:01:11,040 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: state1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces kontrolu tvych mest? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose_your_destiny')])
+2017-04-07 14:01:11,042 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces kontrolu tvych mest? 
+2017-04-07 14:01:11,042 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State state1 complete.
+2017-04-07 14:01:11,043 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose_your_destiny
+2017-04-07 14:01:11,045 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose_your_destiny Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Ano'), ('next_state', 'ano_state'), ('type', 'Main')]), OrderedDict([('label', 'Ne'), ('next_state', 'ne_state'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait'}
+2017-04-07 14:01:11,046 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Ano'), ('next_state', 'ano_state'), ('type', 'Main')])
+2017-04-07 14:01:11,047 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Ne'), ('next_state', 'ne_state'), ('type', 'Main')])
+2017-04-07 14:01:11,047 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose_your_destiny complete.
+2017-04-07 14:01:11,048 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait
+2017-04-07 14:01:13,419 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 14:01:13,420 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 14:01:13,422 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State init complete.
+2017-04-07 14:01:13,423 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: play_or_pay
+2017-04-07 14:01:13,426 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 14:01:13,427 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 14:01:13,428 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State play_or_pay complete.
+2017-04-07 14:01:13,429 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose2
+2017-04-07 14:01:13,431 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 14:01:13,433 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 14:01:13,434 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 14:01:13,435 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose2 complete.
+2017-04-07 14:01:13,436 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait2
+2017-04-07 14:08:49,317 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 14:08:49,318 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 14:08:49,319 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State init complete.
+2017-04-07 14:08:49,320 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: play_or_pay
+2017-04-07 14:08:49,322 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 14:08:49,323 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 14:08:49,324 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State play_or_pay complete.
+2017-04-07 14:08:49,325 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose2
+2017-04-07 14:08:49,329 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 14:08:49,330 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 14:08:49,331 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 14:08:49,332 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose2 complete.
+2017-04-07 14:08:49,333 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait2
+2017-04-07 14:08:54,212 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: state1 Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces kontrolu tvych mest? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose_your_destiny')])
+2017-04-07 14:08:54,217 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces kontrolu tvych mest? 
+2017-04-07 14:08:54,218 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State state1 complete.
+2017-04-07 14:08:54,225 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose_your_destiny
+2017-04-07 14:08:54,228 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose_your_destiny Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Ano'), ('next_state', 'ano_state'), ('type', 'Main')]), OrderedDict([('label', 'Ne'), ('next_state', 'ne_state'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait'}
+2017-04-07 14:08:54,229 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Ano'), ('next_state', 'ano_state'), ('type', 'Main')])
+2017-04-07 14:08:54,232 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Ne'), ('next_state', 'ne_state'), ('type', 'Main')])
+2017-04-07 14:08:54,233 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose_your_destiny complete.
+2017-04-07 14:08:54,234 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait
+2017-04-07 14:11:35,150 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 14:11:35,151 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 14:11:35,152 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State init complete.
+2017-04-07 14:11:35,153 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: play_or_pay
+2017-04-07 14:11:35,156 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 14:11:35,157 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 14:11:35,158 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State play_or_pay complete.
+2017-04-07 14:11:35,159 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: choose2
+2017-04-07 14:11:35,161 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 14:11:35,164 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 14:11:35,165 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 14:11:35,166 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State choose2 complete.
+2017-04-07 14:11:35,166 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: wait2
+2017-04-07 14:11:45,280 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_pass')])
+2017-04-07 14:11:45,284 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 14:11:45,285 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State teach_bot complete.
+2017-04-07 14:11:45,287 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: set_pass
+2017-04-07 14:33:19,446 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: input_pass Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('user_pass', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'test_pass')])
+2017-04-07 14:33:19,447 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - User message: 1337
+2017-04-07 14:33:19,447 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - NLP output: {'raw_text': '1337'}
+2017-04-07 14:33:19,448 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Updating context...Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {'previous_context': {'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}}}}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337'}Update: {'raw_text': '1337'}
+2017-04-07 14:33:19,468 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State input_pass complete.
+2017-04-07 14:33:19,470 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: test_pass
+2017-04-07 14:33:19,482 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: test_pass Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{user_pass}}'), ('value2', '{{pass}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'continue'), ('notequal', '')])
+2017-04-07 14:33:19,483 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Comparing values: {{user_pass}}Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {'previous_context': {'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}}}}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337', 'user_pass': '1337'}
+2017-04-07 14:33:19,484 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - PASS
+2017-04-07 14:33:19,485 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State test_pass complete.
+2017-04-07 14:33:19,486 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: continue
+2017-04-07 14:33:19,491 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Executing state: continue Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Zadejte, prosim, spravny nazev mesta v anglictine'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_city')])
+2017-04-07 14:33:19,492 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Response: Zadejte, prosim, spravny nazev mesta v anglictine
+2017-04-07 14:33:19,493 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - State continue complete.
+2017-04-07 14:33:19,494 - State info - bda36802-7767-4707-8bbd-5334d6a8ccaf - DEBUG - Next state: set_city
+2017-04-07 15:03:49,901 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 15:03:49,908 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 15:03:49,908 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State init complete.
+2017-04-07 15:03:49,909 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: play_or_pay
+2017-04-07 15:03:49,911 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 15:03:49,912 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 15:03:49,913 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State play_or_pay complete.
+2017-04-07 15:03:49,914 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: choose2
+2017-04-07 15:03:49,920 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 15:03:49,921 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 15:03:49,922 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 15:03:49,922 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State choose2 complete.
+2017-04-07 15:03:49,923 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: wait2
+2017-04-07 15:03:51,532 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_pass')])
+2017-04-07 15:03:51,534 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 15:03:51,535 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State teach_bot complete.
+2017-04-07 15:03:51,535 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: set_pass
+2017-04-07 15:03:54,577 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: input_pass Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('user_pass', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'test_pass')])
+2017-04-07 15:03:54,578 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - User message: 52542523
+2017-04-07 15:03:54,580 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - NLP output: {'raw_text': '52542523'}
+2017-04-07 15:03:54,581 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Updating context...Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '52542523'}Update: {'raw_text': '52542523'}
+2017-04-07 15:03:54,582 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State input_pass complete.
+2017-04-07 15:03:54,583 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: test_pass
+2017-04-07 15:03:54,585 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: test_pass Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{user_pass}}'), ('value2', '{{pass}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'continue'), ('notequal', '')])
+2017-04-07 15:03:54,586 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Comparing values: {{user_pass}}Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '52542523', 'user_pass': '52542523'}
+2017-04-07 15:03:54,588 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - FAIL
+2017-04-07 15:03:54,589 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State test_pass complete.
+2017-04-07 15:03:54,590 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: 
+2017-04-07 15:03:58,002 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 15:03:58,003 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 15:03:58,004 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State init complete.
+2017-04-07 15:03:58,004 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: play_or_pay
+2017-04-07 15:03:58,006 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 15:03:58,007 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 15:03:58,008 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State play_or_pay complete.
+2017-04-07 15:03:58,009 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: choose2
+2017-04-07 15:03:58,011 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 15:03:58,012 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 15:03:58,013 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 15:03:58,013 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - State choose2 complete.
+2017-04-07 15:03:58,014 - State info - 90ad0168-6d54-40c5-b9b5-f58f1aaa9cad - DEBUG - Next state: wait2
+2017-04-07 15:11:11,617 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 15:11:11,620 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 15:11:11,623 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State init complete.
+2017-04-07 15:11:11,624 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: play_or_pay
+2017-04-07 15:11:11,625 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 15:11:11,626 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 15:11:11,627 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State play_or_pay complete.
+2017-04-07 15:11:11,627 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: choose2
+2017-04-07 15:11:11,629 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 15:11:11,629 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 15:11:11,629 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 15:11:11,629 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State choose2 complete.
+2017-04-07 15:11:11,629 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: wait2
+2017-04-07 15:11:16,605 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_pass')])
+2017-04-07 15:11:16,609 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 15:11:16,610 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State teach_bot complete.
+2017-04-07 15:11:16,611 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: set_pass
+2017-04-07 15:11:20,411 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: input_pass Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('user_pass', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'test_pass')])
+2017-04-07 15:11:20,428 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - User message: 1234
+2017-04-07 15:11:20,429 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - NLP output: {'raw_text': '1234'}
+2017-04-07 15:11:20,429 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Updating context...Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1234'}Update: {'raw_text': '1234'}
+2017-04-07 15:11:20,449 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State input_pass complete.
+2017-04-07 15:11:20,449 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: test_pass
+2017-04-07 15:11:20,451 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: test_pass Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{user_pass}}'), ('value2', '{{pass}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'continue'), ('notequal', '')])
+2017-04-07 15:11:20,452 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Comparing values: {{user_pass}}Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1234', 'user_pass': '1234'}
+2017-04-07 15:11:20,453 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - FAIL
+2017-04-07 15:11:20,453 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State test_pass complete.
+2017-04-07 15:11:20,453 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: 
+2017-04-07 15:11:22,269 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
+2017-04-07 15:11:22,271 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
+2017-04-07 15:11:22,272 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State init complete.
+2017-04-07 15:11:22,273 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: play_or_pay
+2017-04-07 15:11:22,276 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
+2017-04-07 15:11:22,277 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
+2017-04-07 15:11:22,279 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State play_or_pay complete.
+2017-04-07 15:11:22,280 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: choose2
+2017-04-07 15:11:22,283 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
+2017-04-07 15:11:22,284 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
+2017-04-07 15:11:22,284 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
+2017-04-07 15:11:22,285 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State choose2 complete.
+2017-04-07 15:11:22,286 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: wait2
+2017-04-07 15:11:23,452 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: teach_bot Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Pro dalsi postup musite napsat heslo.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'set_pass')])
+2017-04-07 15:11:23,453 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Response: Pro dalsi postup musite napsat heslo.
+2017-04-07 15:11:23,454 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State teach_bot complete.
+2017-04-07 15:11:23,454 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: set_pass
+2017-04-07 15:11:27,445 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: input_pass Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('user_pass', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'test_pass')])
+2017-04-07 15:11:27,446 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - User message: 1337
+2017-04-07 15:11:27,447 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - NLP output: {'raw_text': '1337'}
+2017-04-07 15:11:27,448 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Updating context...Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337'}Update: {'raw_text': '1337'}
+2017-04-07 15:11:27,450 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State input_pass complete.
+2017-04-07 15:11:27,451 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: test_pass
+2017-04-07 15:11:27,454 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Executing state: test_pass Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{user_pass}}'), ('value2', '{{pass}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'continue'), ('notequal', '')])
+2017-04-07 15:11:27,455 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Comparing values: {{user_pass}}Context: {'pass': '1337', 'previous_context': {'pass': '1337', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_request': 'init', 'previous_text': ''}}, 'previous_payload': {}, 'previous_request': 'teach_bot', 'previous_text': ''}, 'previous_payload': {}, 'previous_request': 'input_pass', 'previous_text': '1337', 'user_pass': '1337'}
+2017-04-07 15:11:27,456 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - PASS
+2017-04-07 15:11:27,457 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - State test_pass complete.
+2017-04-07 15:11:27,457 - State info - 275e7255-55d5-475f-ac13-741b10e527f0 - DEBUG - Next state: continue
