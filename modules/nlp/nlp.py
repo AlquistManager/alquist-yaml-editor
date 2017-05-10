@@ -60,7 +60,7 @@ def find_entity(token):
         return "", ""
 
 
-def get_entities(text, nlp_type="tfidf"): #get_entities(text, nlp_type="lemma")
+def get_entities(text, nlp_type="empty"): #get_entities(text, nlp_type="lemma")
     ent_out = {}
     if nlp_type=="wit":
         if not text == "":

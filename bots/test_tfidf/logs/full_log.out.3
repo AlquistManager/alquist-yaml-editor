@@ -1,3 +1,7 @@
+2017-05-05 15:23:35,264 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
+2017-05-05 15:23:35,268 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - Response: Hello. What's your name?
+2017-05-05 15:23:35,271 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - State init complete.
+2017-05-05 15:23:35,272 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - Next state: input_name
 2017-05-05 15:23:39,989 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
 2017-05-05 15:23:40,000 - State info - b70882d0-bef6-4aac-aed8-42f44fc0f3b6 - DEBUG - User message: test
 2017-05-05 15:24:25,057 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
@@ -315,7 +319,3 @@
 2017-05-05 16:05:25,636 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - Response: breaking news
 2017-05-05 16:05:25,638 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - State breaking_news complete.
 2017-05-05 16:05:25,639 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - Next state: end_state
-2017-05-05 16:05:25,649 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 16:05:25,652 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - Response: END
-2017-05-05 16:05:25,653 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - State end_state complete.
-2017-05-05 16:05:25,654 - State info - e69b540a-a0ec-49c6-bbf9-60725fa181e3 - DEBUG - Next state: 

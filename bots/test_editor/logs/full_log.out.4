@@ -1,3 +1,75 @@
+2017-04-29 21:21:55,569 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Response: Hello. What's your name?
+2017-04-29 21:21:55,576 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - State init complete.
+2017-04-29 21:21:55,577 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Next state: input_name
+2017-04-29 21:23:56,719 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('username', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'user_to_spreadsheet')])
+2017-04-29 21:23:56,724 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - User message: test
+2017-04-29 21:23:56,725 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - NLP output: {'raw_text': 'test'}
+2017-04-29 21:23:56,726 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Updating context...Context: {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'start', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'start', 'username': 'test', 'previous_text': 'start', 'previous_context': {'previous_request': 'input_action', 'action': 'kfldsjklfs', 'username': 'test', 'previous_text': 'kfldsjklfs', 'previous_context': {'previous_request': 'input_name', 'username': 'test', 'previous_text': 'test', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'init', 'previous_payload': {}, 'previous_context': {}, 'previous_text': ''}}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}}Update: {'raw_text': 'test'}
+2017-04-29 21:23:56,726 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - State input_name complete.
+2017-04-29 21:23:56,760 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Next state: user_to_spreadsheet
+2017-04-29 21:23:59,236 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Executing state: check_user_found Type: <class 'states.cond.ConditionalExists'> Properties: OrderedDict([('key', '{{user_found}}'), ('delay', 0)]) Transitions: OrderedDict([('exists', 'text_found'), ('notexists', 'text_not_found')])
+2017-04-29 21:23:59,237 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Checking keyuser_foundContext: {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'start', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'start', 'username': 'test', 'previous_text': 'start', 'previous_context': {'previous_request': 'input_action', 'action': 'kfldsjklfs', 'username': 'test', 'previous_text': 'kfldsjklfs', 'previous_context': {'previous_request': 'input_name', 'username': 'test', 'previous_text': 'test', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'init', 'previous_payload': {}, 'previous_context': {}, 'previous_text': ''}}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}}
+2017-04-29 21:23:59,240 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - State check_user_found complete.
+2017-04-29 21:23:59,241 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Next state: text_found
+2017-04-29 21:23:59,243 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Executing state: text_found Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Welcome back {{username}}. What would you like to do (start/end)?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input_action')])
+2017-04-29 21:23:59,243 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Response: Welcome back test. What would you like to do (start/end)?
+2017-04-29 21:23:59,244 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - State text_found complete.
+2017-04-29 21:23:59,245 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Next state: input_action
+2017-04-29 21:24:01,254 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Executing state: input_action Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('action', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'time_to_spreadsheet'}
+2017-04-29 21:24:01,255 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - User message: end
+2017-04-29 21:24:01,256 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - NLP output: {'raw_text': 'end'}
+2017-04-29 21:24:01,257 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Updating context...Context: {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'end', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'end', 'username': 'test', 'previous_text': 'end', 'previous_context': {'previous_request': 'input_name', 'action': 'start', 'username': 'test', 'previous_text': 'test', 'previous_context': {'previous_request': 'input_action', 'action': 'start', 'username': 'test', 'previous_text': 'start', 'previous_context': {'previous_request': 'input_action', 'action': 'kfldsjklfs', 'username': 'test', 'previous_text': 'kfldsjklfs', 'previous_context': {'previous_request': 'input_name', 'username': 'test', 'previous_text': 'test', 'user_found': True, 'previous_payload': {}, 'previous_context': {'previous_request': 'init', 'previous_payload': {}, 'previous_context': {}, 'previous_text': ''}}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}, 'previous_payload': {}, 'user_found': True}}Update: {'raw_text': 'end'}
+2017-04-29 21:24:01,259 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - State input_action complete.
+2017-04-29 21:24:01,259 - State info - 300e8fdd-0d07-4ef1-9b88-abbd69c0309e - DEBUG - Next state: time_to_spreadsheet
+2017-05-05 10:46:27,197 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
+2017-05-05 10:46:27,299 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Response: Hello. What's your name?
+2017-05-05 10:46:27,299 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State init complete.
+2017-05-05 10:46:27,300 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: input_name
+2017-05-05 10:47:36,124 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('username', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'user_to_spreadsheet')])
+2017-05-05 10:47:36,125 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - User message: test
+2017-05-05 10:47:36,126 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - NLP output: {'raw_text': 'test'}
+2017-05-05 10:47:36,127 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_text': 'test', 'previous_request': 'input_name', 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_request': 'init', 'previous_context': {}}}Update: {'raw_text': 'test'}
+2017-05-05 10:47:36,128 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State input_name complete.
+2017-05-05 10:47:36,129 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: user_to_spreadsheet
+2017-05-05 10:47:38,756 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: check_user_found Type: <class 'states.cond.ConditionalExists'> Properties: OrderedDict([('key', '{{user_found}}'), ('delay', 0)]) Transitions: OrderedDict([('exists', 'text_found'), ('notexists', 'text_not_found')])
+2017-05-05 10:47:38,757 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Checking keyuser_foundContext: {'previous_payload': {}, 'previous_text': 'test', 'previous_request': 'input_name', 'username': 'test', 'user_found': True, 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_request': 'init', 'previous_context': {}}}
+2017-05-05 10:47:38,758 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State check_user_found complete.
+2017-05-05 10:47:38,758 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: text_found
+2017-05-05 10:47:38,760 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: text_found Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Welcome back {{username}}. What would you like to do (start/end)?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input_action')])
+2017-05-05 10:47:38,761 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Response: Welcome back test. What would you like to do (start/end)?
+2017-05-05 10:47:38,761 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State text_found complete.
+2017-05-05 10:47:38,762 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: input_action
+2017-05-05 10:48:01,554 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: input_action Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('action', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'time_to_spreadsheet'}
+2017-05-05 10:48:01,554 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - User message: start
+2017-05-05 10:48:01,555 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - NLP output: {'raw_text': 'start'}
+2017-05-05 10:48:01,556 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Updating context...Context: {'previous_text': 'start', 'previous_request': 'input_action', 'username': 'test', 'previous_payload': {}, 'user_found': True, 'previous_context': {'previous_text': 'test', 'previous_request': 'input_name', 'username': 'test', 'previous_payload': {}, 'user_found': True, 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_request': 'init', 'previous_context': {}}}}Update: {'raw_text': 'start'}
+2017-05-05 10:48:01,558 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State input_action complete.
+2017-05-05 10:48:01,559 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: time_to_spreadsheet
+2017-05-05 10:48:04,199 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: check_input_correct Type: <class 'states.cond.ConditionalExists'> Properties: OrderedDict([('key', '{{error}}'), ('delay', 0)]) Transitions: OrderedDict([('exists', 'error_text'), ('notexists', 'end_text')])
+2017-05-05 10:48:04,199 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Checking keyerrorContext: {'previous_text': 'start', 'previous_request': 'input_action', 'username': 'test', 'previous_payload': {}, 'user_found': True, 'previous_context': {'previous_text': 'test', 'previous_request': 'input_name', 'username': 'test', 'previous_payload': {}, 'user_found': True, 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_request': 'init', 'previous_context': {}}}, 'action': 'start'}
+2017-05-05 10:48:04,200 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State check_input_correct complete.
+2017-05-05 10:48:04,201 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: end_text
+2017-05-05 10:48:04,203 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: end_text Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Great. Thanks for letting me know.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'init')])
+2017-05-05 10:48:04,204 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Response: Great. Thanks for letting me know.
+2017-05-05 10:48:04,204 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State end_text complete.
+2017-05-05 10:48:04,205 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: init
+2017-05-05 10:48:04,206 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
+2017-05-05 10:48:04,207 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Response: Hello. What's your name?
+2017-05-05 10:48:04,208 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State init complete.
+2017-05-05 10:48:04,208 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: input_name
+2017-05-05 10:48:10,634 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
+2017-05-05 10:48:10,636 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Response: Hello. What's your name?
+2017-05-05 10:48:10,637 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - State init complete.
+2017-05-05 10:48:10,638 - State info - 7d951009-ea35-421f-b220-5d201ce14e81 - DEBUG - Next state: input_name
+2017-05-05 12:15:22,219 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
+2017-05-05 12:15:22,227 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Response: Hello. What's your name?
+2017-05-05 12:15:22,228 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - State init complete.
+2017-05-05 12:15:22,229 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Next state: input_name
+2017-05-05 12:15:29,302 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('username', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'user_to_spreadsheet')])
+2017-05-05 12:15:29,303 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - User message: vaclav
+2017-05-05 12:15:29,303 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - NLP output: {'raw_text': 'vaclav'}
+2017-05-05 12:15:29,304 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_text': 'vaclav', 'previous_request': 'input_name', 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_request': 'init', 'previous_context': {}}}Update: {'raw_text': 'vaclav'}
+2017-05-05 12:15:29,304 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - State input_name complete.
 2017-05-05 12:15:29,305 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Next state: user_to_spreadsheet
 2017-05-05 12:15:32,978 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('username', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'user_to_spreadsheet')])
 2017-05-05 12:15:32,979 - State info - 9b8ed7b9-c721-4da4-86dd-a5438866f1d3 - DEBUG - User message: 
@@ -157,116 +229,3 @@
 2017-05-05 15:24:25,061 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - Response: Hello. What's your name?
 2017-05-05 15:24:25,065 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - State init complete.
 2017-05-05 15:24:25,066 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - Next state: input_name
-2017-05-05 15:24:27,932 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:24:27,942 - State info - ef01b614-5bad-4884-87ce-7b758b39bb01 - DEBUG - User message: test
-2017-05-05 15:25:02,989 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:25:02,994 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:25:02,996 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - State init complete.
-2017-05-05 15:25:02,997 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Next state: input_name
-2017-05-05 15:25:05,902 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:25:05,904 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - User message: test
-2017-05-05 15:25:06,026 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - NLP output: {'intent': 'weather'}
-2017-05-05 15:25:06,027 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_request': 'input_name', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_text': '', 'previous_request': 'init'}, 'previous_text': 'test'}Update: {'intent': 'weather'}
-2017-05-05 15:25:06,028 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - State input_name complete.
-2017-05-05 15:25:06,029 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Next state: sport
-2017-05-05 15:25:06,031 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:25:06,033 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:25:06,034 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - State sport complete.
-2017-05-05 15:25:06,035 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Next state: end_state
-2017-05-05 15:25:06,037 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:25:06,104 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Response: END
-2017-05-05 15:25:06,106 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - State end_state complete.
-2017-05-05 15:25:06,109 - State info - 83495343-2be9-4819-9d90-32756ad5a080 - DEBUG - Next state: 
-2017-05-05 15:25:50,836 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:25:50,868 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:25:50,869 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - State init complete.
-2017-05-05 15:25:50,869 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Next state: input_name
-2017-05-05 15:25:53,413 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:25:53,415 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - User message: test
-2017-05-05 15:25:53,437 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - NLP output: {'intent': 'weather'}
-2017-05-05 15:25:53,439 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_request': 'input_name', 'previous_context': {'previous_context': {}, 'previous_payload': {}, 'previous_text': '', 'previous_request': 'init'}, 'previous_text': 'test'}Update: {'intent': 'weather'}
-2017-05-05 15:25:53,440 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - State input_name complete.
-2017-05-05 15:25:53,441 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Next state: sport
-2017-05-05 15:25:53,445 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'sport'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:25:53,446 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Response: sport
-2017-05-05 15:25:53,447 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - State sport complete.
-2017-05-05 15:25:53,449 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Next state: end_state
-2017-05-05 15:25:53,452 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:25:53,454 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Response: END
-2017-05-05 15:25:53,456 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - State end_state complete.
-2017-05-05 15:25:53,460 - State info - 016d8694-68a4-402b-a3a4-6084165e6972 - DEBUG - Next state: 
-2017-05-05 15:27:07,475 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:27:07,479 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:27:07,483 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - State init complete.
-2017-05-05 15:27:07,484 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Next state: input_name
-2017-05-05 15:27:10,527 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:27:10,529 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - User message: test
-2017-05-05 15:27:10,542 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - NLP output: {'intent': 'int_weather'}
-2017-05-05 15:27:10,544 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_context': {'previous_context': {}, 'previous_request': 'init', 'previous_payload': {}, 'previous_text': ''}, 'previous_request': 'input_name', 'previous_text': 'test'}Update: {'intent': 'int_weather'}
-2017-05-05 15:27:10,545 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - State input_name complete.
-2017-05-05 15:27:10,547 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Next state: sport
-2017-05-05 15:27:10,552 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'sport'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:27:10,554 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Response: sport
-2017-05-05 15:27:10,555 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - State sport complete.
-2017-05-05 15:27:10,556 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Next state: end_state
-2017-05-05 15:27:10,559 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:27:10,560 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Response: END
-2017-05-05 15:27:10,561 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - State end_state complete.
-2017-05-05 15:27:10,562 - State info - c26c3296-1440-4f78-8eb8-b692df79d9b3 - DEBUG - Next state: 
-2017-05-05 15:29:34,378 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:29:34,385 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:29:34,386 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - State init complete.
-2017-05-05 15:29:34,386 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Next state: input_name
-2017-05-05 15:29:37,847 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:29:37,850 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - User message: test
-2017-05-05 15:29:37,872 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - NLP output: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:29:37,873 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Updating context...Context: {'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_context': {}, 'previous_request': 'init'}, 'previous_request': 'input_name', 'previous_text': 'test', 'previous_payload': {}}Update: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:29:37,874 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - State input_name complete.
-2017-05-05 15:29:37,875 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Next state: sport
-2017-05-05 15:29:37,878 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'sport'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:29:37,880 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Response: sport
-2017-05-05 15:29:37,882 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - State sport complete.
-2017-05-05 15:29:37,883 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Next state: end_state
-2017-05-05 15:29:37,886 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:29:37,887 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Response: END
-2017-05-05 15:29:37,888 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - State end_state complete.
-2017-05-05 15:29:37,890 - State info - 33aafb5b-7589-44a7-8669-908e181c0347 - DEBUG - Next state: 
-2017-05-05 15:36:23,874 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:36:23,876 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:36:23,880 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - State init complete.
-2017-05-05 15:36:23,882 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Next state: input_name
-2017-05-05 15:36:26,700 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:36:26,701 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - User message: test
-2017-05-05 15:36:26,716 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - NLP output: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:36:26,717 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_text': 'test', 'previous_request': 'input_name', 'previous_context': {'previous_payload': {}, 'previous_text': '', 'previous_context': {}, 'previous_request': 'init'}}Update: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:36:26,718 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - State input_name complete.
-2017-05-05 15:36:26,719 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Next state: sport
-2017-05-05 15:36:26,723 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'sport'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:36:26,725 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Response: sport
-2017-05-05 15:36:26,727 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - State sport complete.
-2017-05-05 15:36:26,728 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Next state: end_state
-2017-05-05 15:36:26,732 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:36:26,734 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Response: END
-2017-05-05 15:36:26,735 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - State end_state complete.
-2017-05-05 15:36:26,736 - State info - 6e298a6e-42ca-4877-8fd3-a8f4d01c001f - DEBUG - Next state: 
-2017-05-05 15:38:52,872 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:38:52,880 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:38:52,882 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - State init complete.
-2017-05-05 15:38:52,884 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Next state: input_name
-2017-05-05 15:38:56,922 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Executing state: input_name Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('intent', 'whatever')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: {'next_state': 'sport'}
-2017-05-05 15:38:56,923 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - User message: test
-2017-05-05 15:38:56,938 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - NLP output: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:38:56,939 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Updating context...Context: {'previous_payload': {}, 'previous_text': 'test', 'previous_request': 'input_name', 'previous_context': {'previous_payload': {}, 'previous_request': 'init', 'previous_context': {}, 'previous_text': ''}}Update: {'whatever': 'int_weather', 'intent': 'int_weather'}
-2017-05-05 15:38:56,940 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - State input_name complete.
-2017-05-05 15:38:56,941 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Next state: sport
-2017-05-05 15:38:56,947 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Executing state: sport Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'sport'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'end_state')])
-2017-05-05 15:38:56,948 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Response: sport
-2017-05-05 15:38:56,949 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - State sport complete.
-2017-05-05 15:38:56,950 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Next state: end_state
-2017-05-05 15:38:56,953 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Executing state: end_state Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'END'), ('delay', 0)]) Transitions: {'next_state': ''}
-2017-05-05 15:38:56,955 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Response: END
-2017-05-05 15:38:56,956 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - State end_state complete.
-2017-05-05 15:38:56,957 - State info - 5b24727c-ea95-420d-b64e-401f3f12e38d - DEBUG - Next state: 
-2017-05-05 15:42:15,233 - State info - 30f2236a-9704-43bb-9655-f315369d80d6 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Hello. What's your name?"), ('delay', 0)]) Transitions: {'next_state': 'input_name'}
-2017-05-05 15:42:15,239 - State info - 30f2236a-9704-43bb-9655-f315369d80d6 - DEBUG - Response: Hello. What's your name?
-2017-05-05 15:42:15,244 - State info - 30f2236a-9704-43bb-9655-f315369d80d6 - DEBUG - State init complete.
