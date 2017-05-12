@@ -356,6 +356,7 @@ Example:
 	[name]:
         type: input_user
         properties:
+            nlp_type: empty
             entities:
                 entity1: [nlp_entity_name]
             log_json: true
@@ -363,6 +364,8 @@ Example:
         transitions:
             match: state1
             notmatch: state2
+
+``nlp_type`` specifies what NLP algorithm should be used to process user input
 
 ``entities`` this field contains entities to save to context, **REQUIRED**
 
@@ -380,7 +383,7 @@ Example:
 
 
 Default property values:
-
+* ``nlp_type``: *empty*
 * ``log_json``: *false*
 * ``require_match``: *false*
 
