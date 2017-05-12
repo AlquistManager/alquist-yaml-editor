@@ -232,17 +232,16 @@ def download_file(path):
 def createNewFile():
     if request.method == 'POST':
         print(request.get_data())
-        data = str(request.get_data((), 'utf-8')).split(";")
-        new_file_name = data[1]
-        bot_name = data[2]
+        data = json.loads(request.get_data().decode('UTF-8'))
         print(data)
-        if data[0] == "folder":
-            os.mkdir(os.path.join("bots", bot_name, new_file_name))
+        if data['type'] == "folder":
+            os.mkdir(os.path.join("bots", data['botname'], data['name']))
             return "ok"
-        elif data[0] == "py":
-            save_path = os.path.join("bots", bot_name, "states", new_file_name + ".py")
-        elif data[0] == "yml":
-            save_path = os.path.join("bots", bot_name, "flows", new_file_name + ".yml")
+        else:
+            save_dir = save_path = os.path.join("bots", data['botname'], data['folder'])
+            save_path = os.path.join("bots", data['botname'], data['folder'], data['name'])
+            if not os.path.exists(save_dir):
+                os.mkdir(save_dir)
         with io.open(save_path, 'a', encoding="utf-8") as file:
             file.close()
         return "ok"

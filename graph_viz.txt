@@ -1,27 +1,2 @@
 digraph G{
-subgraph cluster_0 {
-init [id = 2, style=filled, color=yellow];
-state3 [id = 3, style=filled, color=white];
-option1 [id = 4, style=filled, color=white];
-option1_2 [id = 5, style=filled, color=white];
-good_bad [id = 6, style=filled, color=white];
-good_response [id = 7, style=filled, color=white];
-end_state [id = 8, style=filled, color=white];
-input [id = 9, style=filled, color=white];
-bad_response [id = 10, style=filled, color=white];
-label="init_file.yml";
-style=filled;color=lightgray;}
-
-init -> state3;
-state3 -> option1;
-option1 -> option1_2;
-option1_2 -> good_bad;
-good_bad -> good_response;
-good_response -> end_state;
-end_state -> input;
-good_bad -> bad_response;
-bad_response -> end_state;
-good_bad -> input;
-state3 -> option1;
-state3 -> input;
 }

@@ -77,6 +77,11 @@
                 <i class="fa fa-add"></i> New .py File
             </a>
         </li>
+        <li class="context-menu__item" onclick="onClickNewFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New File
+            </a>
+        </li>
         <li class="context-menu__item" onclick="onClickNewFolder()">
             <a href="#" class="context-menu__link">
                 <i class="fa fa-add"></i> New Folder
@@ -100,6 +105,11 @@
         <li class="context-menu__item" onclick="onClickNewPyFile()">
             <a href="#" class="context-menu__link">
                 <i class="fa fa-add"></i> New .py File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New File
             </a>
         </li>
         <li class="context-menu__item" onclick="onClickNewFolder()">
@@ -709,10 +719,16 @@
         newFile("py");
     }
 
+    function onClickNewFile() {
+        newFile("");
+    }
+
     function onClickNewFolder() {
         bootbox.prompt("Enter name of the new folder:", function (name) {
             if (name == "" || name == null || name == undefined)return;
-            var data = 'folder' + ";" + name + ";" + botName;
+            //var data = 'folder' + ";" + name + ";" + botName;
+            var data = JSON.stringify({botname: botName, name: name, folder: "", type: 'folder'});
+
 
             $.post("newfile", data,
                 function (data, status) {
@@ -727,15 +743,42 @@
     function newFile(type) {
         bootbox.prompt("Enter name of the new file:", function (name) {
             if (name == "" || name == null || name == undefined)return;
-            var data = type + ";" + name + ";" + botName;
+            if (treeElement != undefined) {
+                var lsSelectedID = currentNodeHovered.node.id;
+                var loParent = $("#" + lsSelectedID);
+                var parent = loParent.parent().parent();
+                if (parent.children()[1] == undefined) {
+                    if (type == 'py') {
+                        folder = 'states';
+                    } else if (type == 'yml') {
+                        folder = 'flows';
+                    } else {
+                        folder = 'other';
+                    }
+                } else {
+                    var folder = parent.children()[1].text;
+                }
 
-            $.post("newfile", data,
-                function (data, status) {
-                    console.log("create new file: " + status);
-                    $('#file_tree_inner').jstree(true).destroy();
-                    generateFileTree();
-                    //loadGraph();
-                });
+                var label = currentNodeHovered.node.text;
+
+                if (folder == botName) {
+                    var data = JSON.stringify({botname: botName, name: name + '.' + type, folder: label, type: 'file'});
+                } else if (parent != undefined) {
+                    var data = JSON.stringify({
+                        botname: botName,
+                        name: name + '.' + type,
+                        folder: folder,
+                        type: 'file'
+                    });
+                }
+                console.log(data);
+                $.post("newfile", data,
+                    function (data, status) {
+                        console.log("create new file: " + status);
+                        $('#file_tree_inner').jstree(true).destroy();
+                        generateFileTree();
+                    });
+            }
         });
 
     }
