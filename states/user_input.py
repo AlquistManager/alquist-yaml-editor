@@ -11,7 +11,13 @@ class InputUser(State):
         loggers.get(self.bot).get("state_logger").debug('User message: ' + request_data['text'],
                                                         extra={'uid': request_data.get('session', False)})
 
-        response = get_entities(request_data['text'], self.bot)
+        # Get nlp type to use for processing input
+        if 'nlp_type' in self.properties:
+            nlp_type = self.properties['nlp_type']
+        else:
+            nlp_type = None
+
+        response = get_entities(request_data['text'], nlp_type)
         loggers.get(self.bot).get("state_logger").debug('NLP output: ' + str(response),
                                                         extra={'uid': request_data.get('session', False)})
 
@@ -21,10 +27,7 @@ class InputUser(State):
 
         # Switch intent according to user response
         response_intent = response.get('intent', False)
-        #print(response_intent)
-        #print(intent_transitions)
         intents_project = intent_transitions[self.bot]
-        #print(intents_project)
         if response_intent:
             if intents_project.get(response_intent, False) and response_intent != request_data['context'].get(
                     'intent', False):

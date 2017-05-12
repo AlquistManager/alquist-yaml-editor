@@ -1,22 +1,14 @@
 from config import config
 import requests
-import importlib
 
-nlp_type = config["nlp_type"]
 wit_client = None
 lemma_class = None
 
 
-def get_entities(text, botname): #get_entities(text, nlp_type="lemma")
-    module_name = 'bots.' + botname + '.config.config'
-    try:
-        temp = importlib.import_module(module_name, package=None)
-        importlib.reload(temp)
-        nlp_type = temp.config["nlp_type"]
-    except ImportError:
+def get_entities(text, nlp_type): #get_entities(text, nlp_type="lemma")
+    if nlp_type is None:
         nlp_type = "empty"
 
-    print(nlp_type)
     ent_out = {}
     if nlp_type == "wit":
         global wit_client

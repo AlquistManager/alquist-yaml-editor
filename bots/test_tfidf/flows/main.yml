@@ -17,6 +17,7 @@ states:
   input_name:
     type: input_user
     properties:
+      nlp_type: tfidf
       entities:
         intent: whatever
         

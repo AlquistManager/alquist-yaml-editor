@@ -2,35 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbec5222-eb93-49c3-b59d-7366dbc9b613" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IO/test_viz_js2.html" afterPath="$PROJECT_DIR$/IO/test_viz_js2.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bots/bot_app/config/config.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/How to write your bot.md" afterPath="$PROJECT_DIR$/How to write your bot.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/Cities/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/Cities/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/X3000_ask_wiki/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.1" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.2" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.3" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.4" afterPath="$PROJECT_DIR$/bots/bot_app/logs/dm_log.out.4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/bot_app/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/comics/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/comics/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/demo_tel/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/demo_tel_EN/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/test/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/test_editor/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/flows/main.yml" afterPath="$PROJECT_DIR$/bots/test_tfidf/flows/main.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/test_tfidf/logs/full_log.out.5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/dm_log.out" afterPath="$PROJECT_DIR$/bots/working_time/logs/dm_log.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editor_server.py" afterPath="$PROJECT_DIR$/editor_server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.1" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.2" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.3" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.4" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.5" afterPath="$PROJECT_DIR$/bots/working_time/logs/full_log.out.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_viz.txt" afterPath="$PROJECT_DIR$/graph_viz.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/nlp/nlp.py" afterPath="$PROJECT_DIR$/modules/nlp/nlp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/state_positions.txt" afterPath="$PROJECT_DIR$/state_positions.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/states/user_input.py" afterPath="$PROJECT_DIR$/states/user_input.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +93,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1494597261671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/alquist-yaml-editor$main.coverage" NAME="main Coverage Results" MODIFIED="1494599143205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -61,8 +114,8 @@
       <file leaf-file-name="nlp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -70,21 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bots/bot_app/config/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user_input.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/states/user_input.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1175">
-              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="418">
+              <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -95,7 +138,7 @@
       <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="244">
               <caret line="148" column="42" lean-forward="false" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -112,7 +155,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editor_server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="How to write your bot.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/How to write your bot.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="385" column="14" lean-forward="false" selection-start-line="385" selection-start-column="14" selection-end-line="385" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor_server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
@@ -127,8 +180,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="22">
+              <caret line="1" column="58" lean-forward="false" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -155,8 +208,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yamlnames</find>
-      <find>responseto</find>
       <find>botname</find>
       <find>yamlmap</find>
       <find>writetofile</find>
@@ -182,9 +233,11 @@
       <find>treeelement</find>
       <find>newfile</find>
       <find>newfil</find>
-      <find>context-menu-root</find>
       <find>json</find>
+      <find>config</find>
+      <find>execute</find>
       <find>delete</find>
+      <find>context-menu-root</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,13 +271,15 @@
         <option value="$PROJECT_DIR$/IO/index.html" />
         <option value="$PROJECT_DIR$/bots/working_time/states/spreadsheet_add_time.py" />
         <option value="$PROJECT_DIR$/graph_generator.py" />
-        <option value="$PROJECT_DIR$/states/user_input.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/modules/nlp/wit_client.py" />
-        <option value="$PROJECT_DIR$/modules/nlp/nlp.py" />
         <option value="$PROJECT_DIR$/bots/bot_app/config/config.py" />
         <option value="$PROJECT_DIR$/IO/test_viz_js2.html" />
         <option value="$PROJECT_DIR$/editor_server.py" />
+        <option value="$PROJECT_DIR$/modules/nlp/nlp.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/states/user_input.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/How to write your bot.md" />
       </list>
     </option>
   </component>
@@ -441,28 +496,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bot_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alquist-yaml-editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alquist-yaml-editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bots" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bot_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,7 +801,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21970555" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21970555" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -814,20 +847,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/yaml_parser/yaml_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bots/demo_tel_EN/states/Carousel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bots/demo_tel_EN/states/CountPhonesZbozi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1099,37 +1118,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/editor_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="243" column="33" lean-forward="false" selection-start-line="243" selection-start-column="33" selection-end-line="243" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/nlp/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="58" lean-forward="false" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/states/user_input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1175">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="418">
+          <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="220">
+          <caret line="10" column="145" lean-forward="false" selection-start-line="10" selection-start-column="145" selection-end-line="10" selection-end-column="145" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graph_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="244">
           <caret line="148" column="42" lean-forward="false" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
@@ -1145,13 +1182,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/editor_server.py">
+    <entry file="file://$PROJECT_DIR$/How to write your bot.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="243" column="33" lean-forward="false" selection-start-line="243" selection-start-column="33" selection-end-line="243" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="436">
+          <caret line="385" column="14" lean-forward="false" selection-start-line="385" selection-start-column="14" selection-end-line="385" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

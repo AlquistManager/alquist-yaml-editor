@@ -8,7 +8,7 @@ You can test current demo at https://alquistmanager.github.io/alquist-client/?e=
 
 You can use HTML client https://github.com/konrajak/alquist-client for workig with Alquist.
 
-All information about writing your bot is here https://github.com/AlquistManager/alquist/blob/master/How%20to%20write%20your%20bot.md
+All information about writing your bot is here https://github.com/AlquistManager/alquist-yaml-editor/blob/master/How%20to%20write%20your%20bot.md
 
 ## Installation
 You need Python 3. 

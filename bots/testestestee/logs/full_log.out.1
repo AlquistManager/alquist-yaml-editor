@@ -1,95 +1,3 @@
-2017-05-12 13:01:53,380 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Executing state: result_wrong Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'That is a wrong answer. The correct answer was {{result}}.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'is_counter_done')])
-2017-05-12 13:01:53,386 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Response: That is a wrong answer. The correct answer was 118.
-2017-05-12 13:01:53,387 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - State result_wrong complete.
-2017-05-12 13:01:53,387 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Next state: is_counter_done
-2017-05-12 13:01:53,390 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Executing state: is_counter_done Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{counter}}'), ('value2', '{{maxcount}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'again_question'), ('notequal', 'generate_numbers')])
-2017-05-12 13:01:53,391 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Comparing values: {{counter}}Context: {'counter': 1, 'result': '118', 'previous_text': '0', 'previous_payload': {'maxcount': 1}, 'number2': '34', 'operation': '+', 'previous_request': 'input', 'previous_context': {'number2': '34', 'counter': 1, 'previous_request': 'count_input_special', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'init'}, 'previous_text': '', 'operation': '+', 'previous_payload': {}, 'previous_request': 'sums'}, 'operation': '+', 'maxcount': 1, 'previous_text': '', 'number1': '84', 'previous_payload': {'maxcount': 1}, 'result': '118'}, 'maxcount': 1, 'number1': '84'}
-2017-05-12 13:01:53,392 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - PASS
-2017-05-12 13:01:53,393 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - State is_counter_done complete.
-2017-05-12 13:01:53,394 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Next state: again_question
-2017-05-12 13:01:53,395 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Executing state: again_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Do you want to keep on practicing?'), ('delay', 0)]) Transitions: {'next_state': 'again'}
-2017-05-12 13:01:53,396 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Response: Do you want to keep on practicing?
-2017-05-12 13:01:53,396 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - State again_question complete.
-2017-05-12 13:01:53,397 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Next state: again
-2017-05-12 13:01:53,398 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Executing state: again Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')]), OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user')])
-2017-05-12 13:01:53,399 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Button: OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')])
-2017-05-12 13:01:53,400 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Button: OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])
-2017-05-12 13:01:53,401 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - State again complete.
-2017-05-12 13:01:53,401 - State info - 46123003-61a4-41f3-824b-b626f4d9fc46 - DEBUG - Next state: wait_for_user
-2017-05-12 13:02:08,300 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello!'), ('delay', 0)]) Transitions: {'next_state': 'test'}
-2017-05-12 13:02:08,302 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: Hello!
-2017-05-12 13:02:08,303 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State init complete.
-2017-05-12 13:02:08,305 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: test
-2017-05-12 13:02:08,308 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: test Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'test'), ('delay', 0)]) Transitions: {'next_state': 'welcome_question'}
-2017-05-12 13:02:08,310 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: test
-2017-05-12 13:02:08,311 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State test complete.
-2017-05-12 13:02:08,312 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: welcome_question
-2017-05-12 13:02:08,315 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: welcome_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
-2017-05-12 13:02:08,316 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: What would you like to practice?
-2017-05-12 13:02:08,317 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State welcome_question complete.
-2017-05-12 13:02:08,320 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: choice
-2017-05-12 13:02:08,324 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user1')])
-2017-05-12 13:02:08,325 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
-2017-05-12 13:02:08,327 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
-2017-05-12 13:02:08,329 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State choice complete.
-2017-05-12 13:02:08,331 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: wait_for_user1
-2017-05-12 13:02:09,681 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: problem_count Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How many questions?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_slider')])
-2017-05-12 13:02:09,682 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: How many questions?
-2017-05-12 13:02:09,683 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State problem_count complete.
-2017-05-12 13:02:09,684 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: count_slider
-2017-05-12 13:02:09,686 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: count_slider Type: <class 'states.message.MessageSlider'> Properties: OrderedDict([('entities', ['maxcount']), ('max_value', 50), ('min_value', 1), ('tooltips', True), ('default_values', [0]), ('step', 1), ('connect', True), ('tooltips_decimals', 0), ('tooltips_prefix', ''), ('tooltips_postfix', ''), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_input_special')])
-2017-05-12 13:02:09,687 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Slider
-2017-05-12 13:02:09,687 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State count_slider complete.
-2017-05-12 13:02:09,688 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: count_input_special
-2017-05-12 13:02:11,300 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: count_input_special Type: <class 'states.user_input.InputSpecial'> Properties: OrderedDict([('show_input', 'button'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'generate_numbers')])
-2017-05-12 13:02:11,301 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State count_input_special complete.
-2017-05-12 13:02:11,302 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: generate_numbers
-2017-05-12 13:02:11,306 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: display_task Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '#{{counter}}: {{number1}} {{operation}} {{number2}} = ?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
-2017-05-12 13:02:11,307 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: #1: 36 + 23 = ?
-2017-05-12 13:02:11,309 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State display_task complete.
-2017-05-12 13:02:11,310 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: input
-2017-05-12 13:02:14,331 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('result_user', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'right_wrong')])
-2017-05-12 13:02:14,332 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - User message: fsd
-2017-05-12 13:02:14,338 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - NLP output: {'raw_text': 'fsd'}
-2017-05-12 13:02:14,339 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Updating context...Context: {'counter': 1, 'result': '59', 'previous_text': 'fsd', 'previous_payload': {'maxcount': 1}, 'number2': '23', 'operation': '+', 'previous_request': 'input', 'previous_context': {'number2': '23', 'counter': 1, 'previous_request': 'count_input_special', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'init'}, 'previous_text': '', 'operation': '+', 'previous_payload': {}, 'previous_request': 'sums'}, 'operation': '+', 'maxcount': 1, 'previous_text': '', 'number1': '36', 'previous_payload': {'maxcount': 1}, 'result': '59'}, 'maxcount': 1, 'number1': '36'}Update: {'raw_text': 'fsd'}
-2017-05-12 13:02:14,342 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State input complete.
-2017-05-12 13:02:14,343 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: right_wrong
-2017-05-12 13:02:14,345 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: right_wrong Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{result_user}}'), ('value2', '{{result}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'result_right'), ('notequal', 'result_wrong')])
-2017-05-12 13:02:14,346 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Comparing values: {{result_user}}Context: {'counter': 1, 'result': '59', 'previous_text': 'fsd', 'previous_payload': {'maxcount': 1}, 'result_user': 'fsd', 'number2': '23', 'operation': '+', 'previous_request': 'input', 'previous_context': {'number2': '23', 'counter': 1, 'previous_request': 'count_input_special', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'init'}, 'previous_text': '', 'operation': '+', 'previous_payload': {}, 'previous_request': 'sums'}, 'operation': '+', 'maxcount': 1, 'previous_text': '', 'number1': '36', 'previous_payload': {'maxcount': 1}, 'result': '59'}, 'maxcount': 1, 'number1': '36'}
-2017-05-12 13:02:14,347 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - FAIL
-2017-05-12 13:02:14,348 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State right_wrong complete.
-2017-05-12 13:02:14,349 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: result_wrong
-2017-05-12 13:02:14,350 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: result_wrong Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'That is a wrong answer. The correct answer was {{result}}.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'is_counter_done')])
-2017-05-12 13:02:14,351 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: That is a wrong answer. The correct answer was 59.
-2017-05-12 13:02:14,351 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State result_wrong complete.
-2017-05-12 13:02:14,352 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: is_counter_done
-2017-05-12 13:02:14,353 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: is_counter_done Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{counter}}'), ('value2', '{{maxcount}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'again_question'), ('notequal', 'generate_numbers')])
-2017-05-12 13:02:14,354 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Comparing values: {{counter}}Context: {'counter': 1, 'result': '59', 'previous_text': 'fsd', 'previous_payload': {'maxcount': 1}, 'result_user': 'fsd', 'number2': '23', 'operation': '+', 'previous_request': 'input', 'previous_context': {'number2': '23', 'counter': 1, 'previous_request': 'count_input_special', 'previous_context': {'previous_context': {'previous_context': {}, 'previous_text': '', 'previous_payload': {}, 'previous_request': 'init'}, 'previous_text': '', 'operation': '+', 'previous_payload': {}, 'previous_request': 'sums'}, 'operation': '+', 'maxcount': 1, 'previous_text': '', 'number1': '36', 'previous_payload': {'maxcount': 1}, 'result': '59'}, 'maxcount': 1, 'number1': '36'}
-2017-05-12 13:02:14,355 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - PASS
-2017-05-12 13:02:14,355 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State is_counter_done complete.
-2017-05-12 13:02:14,356 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: again_question
-2017-05-12 13:02:14,359 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: again_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Do you want to keep on practicing?'), ('delay', 0)]) Transitions: {'next_state': 'again'}
-2017-05-12 13:02:14,361 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Response: Do you want to keep on practicing?
-2017-05-12 13:02:14,361 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State again_question complete.
-2017-05-12 13:02:14,362 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: again
-2017-05-12 13:02:14,363 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Executing state: again Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')]), OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user')])
-2017-05-12 13:02:14,364 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Button: OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')])
-2017-05-12 13:02:14,365 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Button: OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])
-2017-05-12 13:02:14,365 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - State again complete.
-2017-05-12 13:02:14,366 - State info - 4a610dd2-552e-4b5f-a88f-803fa95c67da - DEBUG - Next state: wait_for_user
-2017-05-12 15:05:25,467 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'play_or_pay')])
-2017-05-12 15:05:25,471 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Response: Hrajeme hru Mesta, mas napsat existujici mesto, ktere se zacina stejnym pismenem, kterym konci posledni napsane.
-2017-05-12 15:05:25,480 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - State init complete.
-2017-05-12 15:05:25,481 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Next state: play_or_pay
-2017-05-12 15:05:25,483 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Executing state: play_or_pay Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Chces hrat nebo naucit bota mestam? '), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'choose2')])
-2017-05-12 15:05:25,484 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Response: Chces hrat nebo naucit bota mestam? 
-2017-05-12 15:05:25,485 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - State play_or_pay complete.
-2017-05-12 15:05:25,486 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Next state: choose2
-2017-05-12 15:05:25,488 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Executing state: choose2 Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')]), OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])]), ('delay', 0)]) Transitions: {'next_state': 'wait2'}
-2017-05-12 15:05:25,491 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Button: OrderedDict([('label', 'Hrat'), ('next_state', 'state1'), ('type', 'Main')])
-2017-05-12 15:05:25,492 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Button: OrderedDict([('label', 'Naucit'), ('next_state', 'teach_bot'), ('type', 'Main')])
-2017-05-12 15:05:25,493 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - State choose2 complete.
-2017-05-12 15:05:25,494 - State info - b8816ef3-4a8f-49a0-9ed2-d79dc266a9ff - DEBUG - Next state: wait2
 2017-05-12 16:17:20,577 - State info - 3b42b94f-81cc-42e8-9a4f-579e7b1a1f47 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello!'), ('delay', 0)]) Transitions: {'next_state': 'test'}
 2017-05-12 16:17:20,585 - State info - 3b42b94f-81cc-42e8-9a4f-579e7b1a1f47 - DEBUG - Response: Hello!
 2017-05-12 16:17:20,586 - State info - 3b42b94f-81cc-42e8-9a4f-579e7b1a1f47 - DEBUG - State init complete.
@@ -259,3 +167,103 @@
 2017-05-12 16:22:46,595 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State input complete.
 2017-05-12 16:22:46,596 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: right_wrong
 2017-05-12 16:22:46,599 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: right_wrong Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{result_user}}'), ('value2', '{{result}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'result_right'), ('notequal', 'result_wrong')])
+2017-05-12 16:22:46,600 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Comparing values: {{result_user}}Context: {'counter': 1, 'result_user': '78', 'previous_request': 'input', 'maxcount': 1, 'previous_context': {'counter': 1, 'number1': '31', 'previous_text': '', 'previous_request': 'count_input_special', 'maxcount': 1, 'number2': '47', 'previous_payload': {'maxcount': 1}, 'previous_context': {'previous_request': 'sums', 'previous_payload': {}, 'previous_text': '', 'operation': '+', 'previous_context': {'previous_request': 'init', 'previous_payload': {}, 'previous_context': {}, 'previous_text': ''}}, 'operation': '+', 'result': '78'}, 'previous_text': '78', 'number1': '31', 'number2': '47', 'previous_payload': {'maxcount': 1}, 'operation': '+', 'result': '78'}
+2017-05-12 16:22:46,609 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - PASS
+2017-05-12 16:22:46,610 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State right_wrong complete.
+2017-05-12 16:22:46,611 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: result_right
+2017-05-12 16:22:46,614 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: result_right Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', "Great! That's right!"), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'is_counter_done')])
+2017-05-12 16:22:46,614 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Response: Great! That's right!
+2017-05-12 16:22:46,615 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State result_right complete.
+2017-05-12 16:22:46,616 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: is_counter_done
+2017-05-12 16:22:46,618 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: is_counter_done Type: <class 'states.cond.ConditionalEquals'> Properties: OrderedDict([('value1', '{{counter}}'), ('value2', '{{maxcount}}'), ('delay', 0)]) Transitions: OrderedDict([('equal', 'again_question'), ('notequal', 'generate_numbers')])
+2017-05-12 16:22:46,619 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Comparing values: {{counter}}Context: {'counter': 1, 'result_user': '78', 'previous_request': 'input', 'maxcount': 1, 'previous_context': {'counter': 1, 'number1': '31', 'previous_text': '', 'previous_request': 'count_input_special', 'maxcount': 1, 'number2': '47', 'previous_payload': {'maxcount': 1}, 'previous_context': {'previous_request': 'sums', 'previous_payload': {}, 'previous_text': '', 'operation': '+', 'previous_context': {'previous_request': 'init', 'previous_payload': {}, 'previous_context': {}, 'previous_text': ''}}, 'operation': '+', 'result': '78'}, 'previous_text': '78', 'number1': '31', 'number2': '47', 'previous_payload': {'maxcount': 1}, 'operation': '+', 'result': '78'}
+2017-05-12 16:22:46,620 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - PASS
+2017-05-12 16:22:46,621 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State is_counter_done complete.
+2017-05-12 16:22:46,621 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: again_question
+2017-05-12 16:22:46,623 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: again_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Do you want to keep on practicing?'), ('delay', 0)]) Transitions: {'next_state': 'again'}
+2017-05-12 16:22:46,624 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Response: Do you want to keep on practicing?
+2017-05-12 16:22:46,625 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State again_question complete.
+2017-05-12 16:22:46,626 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: again
+2017-05-12 16:22:46,627 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: again Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')]), OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user')])
+2017-05-12 16:22:46,629 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Button: OrderedDict([('label', 'Yes'), ('next_state', 'welcome_question'), ('type', '')])
+2017-05-12 16:22:46,631 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Button: OrderedDict([('label', 'No'), ('next_state', 'end'), ('type', '')])
+2017-05-12 16:22:46,632 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State again complete.
+2017-05-12 16:22:46,633 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: wait_for_user
+2017-05-12 16:22:49,056 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: welcome_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-05-12 16:22:49,057 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Response: What would you like to practice?
+2017-05-12 16:22:49,058 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State welcome_question complete.
+2017-05-12 16:22:49,060 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: choice
+2017-05-12 16:22:49,062 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user1')])
+2017-05-12 16:22:49,064 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-05-12 16:22:49,065 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-05-12 16:22:49,066 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - State choice complete.
+2017-05-12 16:22:49,067 - State info - 3ba27a88-6f0d-441c-91c9-32c353f87c5c - DEBUG - Next state: wait_for_user1
+2017-05-12 16:25:12,302 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello!'), ('delay', 0)]) Transitions: {'next_state': 'test'}
+2017-05-12 16:25:12,305 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Response: Hello!
+2017-05-12 16:25:12,307 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State init complete.
+2017-05-12 16:25:12,308 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: test
+2017-05-12 16:25:12,311 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: test Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'test'), ('delay', 0)]) Transitions: {'next_state': 'welcome_question'}
+2017-05-12 16:25:12,312 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Response: test
+2017-05-12 16:25:12,313 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State test complete.
+2017-05-12 16:25:12,314 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: welcome_question
+2017-05-12 16:25:12,316 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: welcome_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-05-12 16:25:12,317 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Response: What would you like to practice?
+2017-05-12 16:25:12,318 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State welcome_question complete.
+2017-05-12 16:25:12,319 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: choice
+2017-05-12 16:25:12,338 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user1')])
+2017-05-12 16:25:12,348 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-05-12 16:25:12,348 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-05-12 16:25:12,349 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State choice complete.
+2017-05-12 16:25:12,350 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: wait_for_user1
+2017-05-12 16:25:13,817 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: problem_count Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How many questions?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_slider')])
+2017-05-12 16:25:13,818 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Response: How many questions?
+2017-05-12 16:25:13,820 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State problem_count complete.
+2017-05-12 16:25:13,821 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: count_slider
+2017-05-12 16:25:13,824 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: count_slider Type: <class 'states.message.MessageSlider'> Properties: OrderedDict([('entities', ['maxcount']), ('max_value', 50), ('min_value', 1), ('tooltips', True), ('default_values', [0]), ('step', 1), ('connect', True), ('tooltips_decimals', 0), ('tooltips_prefix', ''), ('tooltips_postfix', ''), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_input_special')])
+2017-05-12 16:25:13,825 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Slider
+2017-05-12 16:25:13,826 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State count_slider complete.
+2017-05-12 16:25:13,828 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: count_input_special
+2017-05-12 16:25:15,759 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: count_input_special Type: <class 'states.user_input.InputSpecial'> Properties: OrderedDict([('show_input', 'button'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'generate_numbers')])
+2017-05-12 16:25:15,760 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State count_input_special complete.
+2017-05-12 16:25:15,761 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: generate_numbers
+2017-05-12 16:25:15,765 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: display_task Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '#{{counter}}: {{number1}} {{operation}} {{number2}} = ?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-05-12 16:25:15,767 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Response: #1: 18 + 79 = ?
+2017-05-12 16:25:15,769 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - State display_task complete.
+2017-05-12 16:25:15,770 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Next state: input
+2017-05-12 16:25:21,268 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('result_user', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'right_wrong')])
+2017-05-12 16:25:21,269 - State info - a1c84c2a-1f73-4bad-b177-5a35d0b172a7 - DEBUG - User message: 97
+2017-05-12 16:25:48,713 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: init Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'Hello!'), ('delay', 0)]) Transitions: {'next_state': 'test'}
+2017-05-12 16:25:48,721 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Response: Hello!
+2017-05-12 16:25:48,723 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State init complete.
+2017-05-12 16:25:48,724 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: test
+2017-05-12 16:25:48,731 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: test Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'test'), ('delay', 0)]) Transitions: {'next_state': 'welcome_question'}
+2017-05-12 16:25:48,732 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Response: test
+2017-05-12 16:25:48,734 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State test complete.
+2017-05-12 16:25:48,735 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: welcome_question
+2017-05-12 16:25:48,737 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: welcome_question Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'What would you like to practice?'), ('delay', 0)]) Transitions: {'next_state': 'choice'}
+2017-05-12 16:25:48,738 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Response: What would you like to practice?
+2017-05-12 16:25:48,739 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State welcome_question complete.
+2017-05-12 16:25:48,739 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: choice
+2017-05-12 16:25:48,758 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: choice Type: <class 'states.message.MessageButtons'> Properties: OrderedDict([('buttons', [OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')]), OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])]), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'wait_for_user1')])
+2017-05-12 16:25:48,768 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Button: OrderedDict([('label', 'sums'), ('next_state', 'sums'), ('type', 'something')])
+2017-05-12 16:25:48,768 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Button: OrderedDict([('label', 'substraction'), ('next_state', 'substraction'), ('type', 'something')])
+2017-05-12 16:25:48,769 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State choice complete.
+2017-05-12 16:25:48,770 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: wait_for_user1
+2017-05-12 16:25:50,041 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: problem_count Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', 'How many questions?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_slider')])
+2017-05-12 16:25:50,042 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Response: How many questions?
+2017-05-12 16:25:50,044 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State problem_count complete.
+2017-05-12 16:25:50,045 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: count_slider
+2017-05-12 16:25:50,047 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: count_slider Type: <class 'states.message.MessageSlider'> Properties: OrderedDict([('entities', ['maxcount']), ('max_value', 50), ('min_value', 1), ('tooltips', True), ('default_values', [0]), ('step', 1), ('connect', True), ('tooltips_decimals', 0), ('tooltips_prefix', ''), ('tooltips_postfix', ''), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'count_input_special')])
+2017-05-12 16:25:50,048 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Slider
+2017-05-12 16:25:50,049 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State count_slider complete.
+2017-05-12 16:25:50,049 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: count_input_special
+2017-05-12 16:25:51,728 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: count_input_special Type: <class 'states.user_input.InputSpecial'> Properties: OrderedDict([('show_input', 'button'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'generate_numbers')])
+2017-05-12 16:25:51,729 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State count_input_special complete.
+2017-05-12 16:25:51,730 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: generate_numbers
+2017-05-12 16:25:51,734 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: display_task Type: <class 'states.message.MessageText'> Properties: OrderedDict([('text', '#{{counter}}: {{number1}} {{operation}} {{number2}} = ?'), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'input')])
+2017-05-12 16:25:51,736 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Response: #1: 3 + 54 = ?
+2017-05-12 16:25:51,737 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - State display_task complete.
+2017-05-12 16:25:51,738 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Next state: input
+2017-05-12 16:25:54,402 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - Executing state: input Type: <class 'states.user_input.InputUser'> Properties: OrderedDict([('entities', OrderedDict([('result_user', 'raw_text')])), ('log_json', False), ('require_match', False), ('delay', 0)]) Transitions: OrderedDict([('next_state', 'right_wrong')])
+2017-05-12 16:25:54,403 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - User message: 57
+2017-05-12 16:25:54,405 - State info - 68e1dc3c-fcbd-41be-89ca-fb5311c2c85c - DEBUG - NLP output: {'raw_text': '57'}
