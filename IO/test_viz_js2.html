@@ -77,9 +77,14 @@
                 <i class="fa fa-add"></i> New .py File
             </a>
         </li>
+        <li class="context-menu__item" onclick="onClickNewFolder()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New Folder
+            </a>
+        </li>
         <li class="context-menu__item" onclick="onClickDeleteFile()">
             <a href="#" class="context-menu__link">
-                <i class="fa fa-edit"></i> Delete File
+                <i class="fa fa-edit"></i> Delete
             </a>
         </li>
     </ul>
@@ -95,6 +100,11 @@
         <li class="context-menu__item" onclick="onClickNewPyFile()">
             <a href="#" class="context-menu__link">
                 <i class="fa fa-add"></i> New .py File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFolder()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New Folder
             </a>
         </li>
     </ul>
@@ -697,6 +707,20 @@
 
     function onClickNewPyFile() {
         newFile("py");
+    }
+
+    function onClickNewFolder() {
+        bootbox.prompt("Enter name of the new folder:", function (name) {
+            if (name == "" || name == null || name == undefined)return;
+            var data = 'folder' + ";" + name + ";" + botName;
+
+            $.post("newfile", data,
+                function (data, status) {
+                    console.log("create new folder: " + status);
+                    $('#file_tree_inner').jstree(true).destroy();
+                    generateFileTree();
+                });
+        });
     }
 
     // create new yaml file

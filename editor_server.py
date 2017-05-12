@@ -236,7 +236,10 @@ def createNewFile():
         new_file_name = data[1]
         bot_name = data[2]
         print(data)
-        if data[0] == "py":
+        if data[0] == "folder":
+            os.mkdir(os.path.join("bots", bot_name, new_file_name))
+            return "ok"
+        elif data[0] == "py":
             save_path = os.path.join("bots", bot_name, "states", new_file_name + ".py")
         elif data[0] == "yml":
             save_path = os.path.join("bots", bot_name, "flows", new_file_name + ".yml")
@@ -250,8 +253,12 @@ def deleteFile():
     if request.method == 'POST':
         print(request.get_data())
         data = json.loads(request.get_data().decode('UTF-8'))
-        path = os.path.join("bots", data["botname"], data["folder"], data["filename"])
-        os.remove(path)
+        if data["botname"] == data["folder"]:
+            path = os.path.join("bots", data["folder"], data["filename"])
+            shutil.rmtree(path)
+        else:
+            path = os.path.join("bots", data["botname"], data["folder"], data["filename"])
+            os.remove(path)
         return "ok"
 
 @editor.route('/editor/graphpage', methods=['GET'])

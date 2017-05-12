@@ -1,5 +1,0 @@
-states: # List of states. States are executed sequentially
-  something: # Name of the state. Unique in each flow
-    type: message_text
-    properties:
-      text: "Hello."

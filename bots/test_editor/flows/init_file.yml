@@ -14,7 +14,7 @@ states: # List of states. States are executed sequentially
               next_state: option1
               type: something
             - label: "Volba 2"
-              next_state: something
+              next_state: option1
               type: something
     transitions:
         next_state: input
