@@ -11,7 +11,7 @@ class InputUser(State):
         loggers.get(self.bot).get("state_logger").debug('User message: ' + request_data['text'],
                                                         extra={'uid': request_data.get('session', False)})
 
-        response = get_entities(request_data['text'])
+        response = get_entities(request_data['text'], self.bot)
         loggers.get(self.bot).get("state_logger").debug('NLP output: ' + str(response),
                                                         extra={'uid': request_data.get('session', False)})
 
