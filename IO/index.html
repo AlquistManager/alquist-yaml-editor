@@ -39,6 +39,8 @@
 </div>
 
 <script type="text/javascript">
+
+    // get names of bot projects available and display them
     var botnames;
     jQuery.ajaxSetup({async: false});
     $.post("botnames", "getBotnames",
@@ -96,14 +98,12 @@
                 }
             }
         });
-
-
     }
 
+    // create new project
     function createProject() {
         console.log("creating new project");
         var botName = document.getElementById("newBotName").value;
-        //jQuery.ajaxSetup({async: false});
         var formElement = document.getElementById("file-form");
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -114,10 +114,8 @@
         console.log(request);
         request.open("POST", "upload");
         var formData = new FormData(formElement);
-        formData.append('form', 'create_project'); //create_project or python
+        formData.append('form', 'create_project');
         request.send(formData);
-        //jQuery.ajaxSetup({async: true});
-
     }
 
     // file input function

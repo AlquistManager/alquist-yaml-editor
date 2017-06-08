@@ -1,13 +1,12 @@
-from yaml_parser.yaml_parser import YamlParser
-from loaded_states import state_dict, intent_transitions
 import collections
-import io
+import os
+import traceback
 from os import listdir
 from os.path import isfile
-import traceback
-import os
 
-# YamlParser()
+import io
+from loaded_states import state_dict, intent_transitions
+from yaml_parser.yaml_parser import YamlParser
 
 statePositions = {}
 unreachableNodes = []
@@ -26,36 +25,48 @@ edges = []
 
 # recursive method for graph construction
 def findNextState(current_state, next_state):
+    # add new edge from current state to next if next state was already visited
     if current_state is not None and next_state in nodes.keys():
         edges.append((nodes[current_state]["id"], nodes[next_state]["id"]))
         return
     global id
     id += 1
 
+    # create a new node and edge leading to it for next_state
     nodes[next_state] = {"id": id}
-
     if current_state is not None:
         edges.append((nodes[current_state]["id"], nodes[next_state]["id"]))
 
     current_state = next_state
 
-    transitions = state_dict[botName]["states"][current_state]["transitions"]
-    properties = state_dict[botName]["states"][current_state]["properties"]
-
-    if "buttons" in properties.keys():
-        for button in properties["buttons"]:
-            if "next_state" in button.keys():
-                next_state = button["next_state"]
-                if next_state != "":
-                    findNextState(current_state, next_state)
-
-    if "next_state" in transitions.keys():
-        next_state = transitions["next_state"]
-        if next_state != "":
-            findNextState(current_state, next_state)
+    if 'transitions' in state_dict[botName]['states'][current_state]:
+        transitions = state_dict[botName]["states"][current_state]["transitions"]
     else:
-        for state in transitions.values():
-            findNextState(current_state, state)
+        transitions = None
+
+    if 'properties' in state_dict[botName]['states'][current_state]:
+        properties = state_dict[botName]["states"][current_state]["properties"]
+    else:
+        properties = None
+
+    # get next state for buttons from properties dictionary
+    if properties is not None:
+        if "buttons" in properties.keys():
+            for button in properties["buttons"]:
+                if "next_state" in button.keys():
+                    next_state = button["next_state"]
+                    if next_state != "":
+                        findNextState(current_state, next_state)
+
+    # get next state from transitions dictionary
+    if transitions is not None:
+        if "next_state" in transitions.keys():
+            next_state = transitions["next_state"]
+            if next_state != "":
+                findNextState(current_state, next_state)
+        else:
+            for state in transitions.values():
+                findNextState(current_state, state)
 
 
 # creates a file to be displayed by viz.js
@@ -69,6 +80,7 @@ def writeGraphVizJs(nodes, edges):
         file.write("subgraph cluster_%d {\n" % (clusterNum))
         for n in nodes:
             if statePositions[n][0] == f:
+                # display nodes in different colors (unreachable, intent transition targets, initial state...)
                 if n in unreachableNodes and n not in transition_targets:
                     file.write("%s [id = %s, style=filled, color=red];\n" % (n, nodes[n]["id"]))
                 elif n in transition_targets:
@@ -83,16 +95,9 @@ def writeGraphVizJs(nodes, edges):
         file.write("}\n\n")
         clusterNum += 1
 
-    '''
-    for n in nodes:
-        file.write("%s [id = %s]\n" % (n, nodes[n]["id"]));
-    file.write("\n");
-    '''
-
     # list of edges
     for e in edges:
         file.write("%s -> %s;\n" % (findNodeNameById(e[0]), findNodeNameById(e[1])))
-
     file.write("}")
 
     file.truncate()
@@ -107,13 +112,16 @@ def findNodeNameById(id):
 
 
 # finds positions of states in yaml files and saves them to statePositions
+# detects states according to indentation in files
 def findStatePositions():
     yaml_folder = "bots/" + botFolderName + "/flows/"
     global statePositions
     global posCount
     global files
 
+    # go through all flows files
     for fileName in listdir(yaml_folder):
+        # skip empty files
         if os.stat(os.path.join(yaml_folder, fileName)).st_size == 0:
             continue
         if fileName not in files:
@@ -182,7 +190,7 @@ def writeStatePositions(statePositions):
         file.close()
 
 
-# finds unreachable nodes and saves them to unreachableNodes
+# finds unreachable nodes and saves them to unreachableNodes array
 def findUnreachableNodes():
     global unreachableNodes
     for state in statePositions:
@@ -204,6 +212,7 @@ def createGraph(bot):
     nodes.clear()
     edges.clear()
 
+    # try to parse yaml files into state_dict ant intent_transitions
     try:
         YamlParser(bot)
     except:
@@ -251,8 +260,6 @@ def createGraph(bot):
     findStatePositions()
     findUnreachableNodes()
 
-    print(statePositions)
-
     # adds unreachable nodes to the graph
     for pos in statePositions:
         if pos not in nodes.keys():
@@ -266,14 +273,14 @@ def createGraph(bot):
 
     return "ok"
 
+
+# find intent transitions targets for chosen bot
 def findIntentTransitions(botname):
     botname = botname.lower()
     transition_targets.clear()
     for transition in intent_transitions[botname]:
         transition_targets.append(intent_transitions[botname][transition])
 
-
-# createGraph("test_editor")
 
 # returns graph_viz.txt file
 def getGraphFile():
@@ -314,7 +321,7 @@ def getBotNames():
     return botnames
 
 
-# returns yaml file names in project in HTML list
+# returns yaml file names in project in HTML list to be used by FileTree javascript library
 def getYamlNamesHtml(projectname):
     folders = listdir(os.path.join("bots", projectname))
     fileHtml = "<ul><li data-jstree='{\"opened\":true}'>" + projectname + "<ul>"
@@ -336,7 +343,7 @@ def getYamlNamesHtml(projectname):
     return fileHtml
 
 
-# returns string containing yaml file names of a certain project
+# returns string containing yaml file names of a certain project, file names are separated by ';'
 def getYamlNames(projectname):
     files = listdir("bots/" + projectname + "/flows")
     if os.path.isdir(os.path.join("bots", projectname, "states")):

@@ -1,34 +1,29 @@
-import io
 import json
 import os
 import shutil
-import sys
 import zipfile
-import loggers
 
-from flask import Flask, send_from_directory, send_file, Blueprint, render_template
+from flask import Flask, send_from_directory, send_file, Blueprint
 from werkzeug.utils import secure_filename
 
 import graph_generator
+import io
+import loggers
 from crossdomain import *
 
 app = Flask(__name__, static_url_path='/static')
 UPLOAD_FOLDER = 'temp'
-ALLOWED_EXTENSIONS = set(['zip','py','yml','txt','json'])
+ALLOWED_EXTENSIONS = set(['zip', 'py', 'yml', 'txt', 'json'])
 ALLOWED_EXTENSIONS_TO_LOAD = set(['html'])
-
-'''
-port = 3000
-if len(sys.argv) > 1:
-    port = sys.argv[1]
-'''
 
 editor = Blueprint('editor', __name__, static_url_path='/static')
 
+
 # index page with project selection
-@editor.route('/editor/', methods=['POST', 'GET', 'OPTIONS'])
+@editor.route('/editor/')
 def getIndexPage():
     return send_file('index.html')
+
 
 # static files (javascript libraries, stylesheets, themes)
 @editor.route('/static-files/<path:path>')
@@ -36,24 +31,28 @@ def getStaticFiles(path):
     print("path: " + path)
     return send_file(os.path.join('static-files', path))
 
+
 @editor.route('/static-files/themes/<path:path>')
 def getTheme(path):
     return send_file(os.path.join('static-files', 'themes', path))
+
 
 @editor.route('/static-files/bootstrap/js/<path:path>')
 def get_js(path):
     return send_file(os.path.join('static-files', 'bootstrap', 'js', path))
 
+
 @editor.route('/static-files/bootstrap/fonts/<path:path>')
 def get_font(path):
     return send_file(os.path.join('static-files', 'bootstrap', 'fonts', path))
+
 
 @editor.route('/static-files/bootstrap/css/<path:path>')
 def get_css(path):
     return send_file(os.path.join('static-files', 'bootstrap', 'css', path))
 
 
-# returns all static files with allowed extensions (html)
+# returns all static files from root folder with allowed extensions (html)
 @editor.route('/', defaults={'path': ''})
 @editor.route('/<path:path>')
 def getJsLibraries(path):
@@ -66,8 +65,9 @@ def getJsLibraries(path):
     print("Error: requested " + path)
     return "Error"
 
-# update graph with new yaml code
-@editor.route('/editor/update', methods=['POST', 'GET', 'OPTIONS'])
+
+# receives updated yaml code in POST request, generates new graph
+@editor.route('/editor/update', methods=['POST'])
 def update():
     if request.method == 'POST':
         data = json.loads(request.get_data().decode('UTF-8'))
@@ -75,45 +75,48 @@ def update():
         response = recreateGraph(data["botname"].strip())
     return response;
 
-# returns graph file for display
-@editor.route('/editor/graph', methods=['POST', 'GET', 'OPTIONS'])
+
+# returns graph file to display
+@editor.route('/editor/graph', methods=['POST'])
 def requestGraphFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
     return graph_generator.getGraphFile()
 
+
 # returns file with positions of states in yaml files
-@editor.route('/editor/statepos', methods=['POST', 'GET', 'OPTIONS'])
+@editor.route('/editor/statepos', methods=['POST'])
 def requestStatePosFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
     return graph_generator.getStatePositionsFile()
 
+
 # returns requested yaml file
-@editor.route('/editor/getfile', methods=['POST', 'GET', 'OPTIONS'])
+@editor.route('/editor/getfile', methods=['POST'])
 def requestYamlFile():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
     return graph_generator.getYamlFile(str(d, 'utf-8'))
 
+
 # returns names of available bot projects
-@editor.route('/editor/botnames', methods=['POST', 'GET', 'OPTIONS'])
+@editor.route('/editor/botnames', methods=['POST'])
 def requestBotNames():
-    if request.method == 'POST':
-        d = request.get_data()
-        print(d)
     return graph_generator.getBotNames()
 
-# creates a new graph
-@editor.route('/editor/generate', methods=['POST', 'GET', 'OPTIONS'])
+
+# creates a new graph for bot specified in POST request data
+@editor.route('/editor/generate', methods=['POST'])
 def generateNewGraph():
     if request.method == 'POST':
         d = request.get_data()
         print(d)
     return graph_generator.createGraph(str(d, 'utf-8'))
+
 
 # returns yaml filenames in a html list to be displayed by jstree
 @editor.route('/editor/filenamesHtml', methods=['POST'])
@@ -122,12 +125,14 @@ def getYamlFileNamesHtml():
         projectName = str(request.get_data(), 'utf-8')
         return graph_generator.getYamlNamesHtml(projectName)
 
+
 # returns yaml filenames
 @editor.route('/editor/filenames', methods=['POST'])
 def getYamlFileNames():
     if request.method == 'POST':
         projectName = str(request.get_data(), 'utf-8')
         return graph_generator.getYamlNames(projectName)
+
 
 # write yaml code to file
 def writeToFile(data):
@@ -138,15 +143,18 @@ def writeToFile(data):
         file.write(data["text"])
         file.close()
 
+
 # recreate graph of given bot
 def recreateGraph(botName):
     print("recreating graph")
     return graph_generator.createGraph(botName)
 
-# checks given file has allowed extension
+
+# checks whether given file has allowed extension
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 # upload files
 @editor.route('/editor/upload', methods=['GET', 'POST'])
@@ -210,7 +218,8 @@ def upload_file():
                     print("saving file")
     return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
-    # download bot project in a zip file
+
+# download bot project in a zip file
 @editor.route('/editor/download/<path:path>', methods=['GET', 'POST'])
 def download_file(path):
     print("download file")
@@ -221,13 +230,13 @@ def download_file(path):
             relpath = os.path.relpath(os.path.join(root, filename), directory + "/path")
             relpath = relpath[2:]
             print(relpath)
-            zipf.write(os.path.abspath(os.path.join(root, filename)),
-                       arcname=relpath)  # os.path.abspath(os.path.join(root, filename)), arcname=filename
+            zipf.write(os.path.abspath(os.path.join(root, filename)), arcname=relpath)
     zipf.close()
     print("directory: " + os.path.abspath(directory) + " path: " + path + ".zip")
     return send_from_directory(os.path.abspath(directory), path + ".zip")
 
-# creates a new yaml file
+
+# creates a new file or folder
 @editor.route('/editor/newfile', methods=['POST'])
 def createNewFile():
     if request.method == 'POST':
@@ -246,7 +255,8 @@ def createNewFile():
             file.close()
         return "ok"
 
-# deletes selected file
+
+# deletes selected file or folder
 @editor.route('/editor/deletefile', methods=['POST'])
 def deleteFile():
     if request.method == 'POST':
@@ -260,11 +270,15 @@ def deleteFile():
             os.remove(path)
         return "ok"
 
+
+# returns html page with graph and code editor
 @editor.route('/editor/graphpage', methods=['GET'])
 def openGraph():
     botname = request.args.get('bot')
-    return send_file('test_viz_js2.html')
+    return send_file('editor.html')
 
+
+# deletes specified bot project
 @editor.route('/editor/delete-project', methods=['POST'])
 def deleteProject():
     botname = str(request.get_data(), 'utf-8')
@@ -277,7 +291,7 @@ def deleteProject():
     return graph_generator.getBotNames()
 
 
-# creates a new folder for a bot and copies uploaded files there
+# creates a new folder for a bot and copies uploaded files in there
 def createNewProject(botName):
     path = "bots/" + botName + "/"
     if not os.path.exists(path):
@@ -297,6 +311,7 @@ def createNewProject(botName):
     copyFolder("", path, 0)
     shutil.rmtree(tmp_path)
 
+
 # copy files from temp to bots folder
 def copyFolder(pathFrom, pathTo, depth):
     if depth > 2:
@@ -311,12 +326,13 @@ def copyFolder(pathFrom, pathTo, depth):
             copyFolder(pathFrom + item + "/", pathTo, depth + 1)
 
 
-# checks if upload folder exists, creates it if not
+# checks if upload folder exists, creates it if doesn't
 def checkUploadFolder(upload_fold):
     if not os.path.exists(upload_fold):
         os.makedirs(upload_fold)
 
-#creates empty folder structer for a new bot project
+
+# creates empty folder structure for a new bot project (flows and states folders)
 def createEmptyFolderStructure(botname):
     flowsPath = "bots/" + botname + "/flows"
     statesPath = "bots/" + botname + "/states"
@@ -324,12 +340,3 @@ def createEmptyFolderStructure(botname):
         os.makedirs(flowsPath)
     if not os.path.exists(statesPath):
         os.makedirs(statesPath)
-
-'''
-# runs flask application
-app.run(
-    debug=False,
-    host="0.0.0.0",
-    port=port
-)
-'''

@@ -18,10 +18,8 @@ is_counter_done [id = 16, style=filled, color=white];
 again_question [id = 17, style=filled, color=white];
 again [id = 18, style=filled, color=white];
 end [id = 19, style=filled, color=white];
-wait_for_user [id = 20, style=filled, color=white];
-result_wrong [id = 21, style=filled, color=white];
-substraction [id = 22, style=filled, color=white];
-wait_for_user1 [id = 23, style=filled, color=white];
+result_wrong [id = 20, style=filled, color=white];
+substraction [id = 21, style=filled, color=white];
 label="main.yml";
 style=filled;color=lightgray;}
 
@@ -43,13 +41,9 @@ is_counter_done -> again_question;
 again_question -> again;
 again -> welcome_question;
 again -> end;
-again -> wait_for_user;
-wait_for_user -> end;
 is_counter_done -> generate_numbers;
 right_wrong -> result_wrong;
 result_wrong -> is_counter_done;
 choice -> substraction;
 substraction -> problem_count;
-choice -> wait_for_user1;
-wait_for_user1 -> problem_count;
 }

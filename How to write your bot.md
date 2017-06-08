@@ -200,7 +200,7 @@ Example:
 
 ``next_state_from_button1`` state to transition to from button 1
 
-``next_state`` field contains name of the next state
+``next_state`` field contains name of the next state, **transitions field is optional**
 
 
 ### message_checkboxes
@@ -387,6 +387,8 @@ Default property values:
 * ``log_json``: *false*
 * ``require_match``: *false*
 
+Example of input_user which uses default `nlp_type: empty` (loads raw input) can be found in *math_practice* example project. 
+
 
 ### input_context
 input_context from the last user response saved to context via ``log_json: true`` and loads its entities.
@@ -465,5 +467,23 @@ Example:
 
 ### UserDefinedState
 You can define our own state. Keep in mind, that the name of your state type should be the same as name of your class, defining the state.
-Place your states to ``states.user`` directory https://github.com/AlquistManager/alquist/tree/master/states/user. Each state has to be placed
-in the separate file named the same as the state type name. There is example of HelloWorld state here.
+Place your states to ``states`` directory in bot project directory. Each state has to be placed
+in the separate file named the same as the state type name.
+
+Example HelloWorld state:
+```
+class HelloWorld(State):
+    # execute state
+    def execute(self, request_data) -> dict:
+        # test if there are some answers from previous states already
+        old_response = request_data.get('response', False)
+        # add response of this state to list of responses
+        if old_response:
+            old_response.append("Hello world2")
+        else:
+            old_response = ["Hello world2"]
+        # make dictionary with responses and name of next state of dialogue
+        request_data.update({'response': old_response, 'next_state': self.transitions.get('next_state', False)})
+        return request_data
+```
+

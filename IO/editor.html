@@ -1,0 +1,983 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../static-files/viz.js"></script>
+    <script src="../static-files/jquery-3.1.1.min.js"></script>
+    <script src="../static-files/svg-pan-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.2.0/split.min.js"></script>
+    <script src="../static-files/taboverride.min.js"></script>
+
+
+    <script src="../static-files/codemirror.js"></script>
+    <link rel="stylesheet" href="../static-files/codemirror.css">
+    <script src="../static-files/yaml.js"></script>
+    <script src="../static-files/python.js"></script>
+    <link rel="stylesheet" href="../static-files/themes/proton/style.min.css"/>
+    <script src="../static-files/jstree.min.js"></script>
+    <script src="../static-files/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static-files/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../static-files/style.css"/>
+    <script src="../static-files/bootbox.min.js"></script>
+    <title>Alquist Editor</title>
+</head>
+<body>
+
+
+<div id="loader"></div>
+<div id="panes" style="visibility: hidden;" class="split">
+    <div id="file_tree" class="split split-horizontal file-tree">
+        <div id="file_tree_inner"></div>
+
+        <form id="upload-form" class="box" method="post" action="upload" enctype="multipart/form-data">
+
+            <div class="box__input">
+                <svg class="box__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43">
+                    <path d="M48.4 26.5c-.9 0-1.7.7-1.7 1.7v11.6h-43.3v-11.6c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v13.2c0 .9.7 1.7 1.7 1.7h46.7c.9 0 1.7-.7 1.7-1.7v-13.2c0-1-.7-1.7-1.7-1.7zm-24.5 6.1c.3.3.8.5 1.2.5.4 0 .9-.2 1.2-.5l10-11.6c.7-.7.7-1.7 0-2.4s-1.7-.7-2.4 0l-7.1 8.3v-25.3c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v25.3l-7.1-8.3c-.7-.7-1.7-.7-2.4 0s-.7 1.7 0 2.4l10 11.6z"/>
+                </svg>
+                <input type="file" name="files[]" id="file" class="box__file"
+                       data-multiple-caption="{count} files selected" multiple/>
+                <label for="file"><strong>Choose a file</strong><span
+                        class="box__dragndrop"> or drag it here</span>.</label>
+                <button type="submit" class="box__button">Upload</button>
+            </div>
+
+            <div class="box__uploading">Uploading&hellip;</div>
+            <div class="box__success">Done! <a href="/?"
+                                               class="box__restart" role="button">Upload more?</a></div>
+            <div class="box__error">Error! <span></span>. <a
+                    href="/?" class="box__restart"
+                    role="button">Try again!</a></div>
+        </form>
+
+        <button type="button" id="button_open_bot" class="btn btn-primary"
+                onclick="startBot()">Start Bot
+        </button>
+    </div>
+    <div id="graph_main" class="split split-horizontal"></div>
+    <div id="editor" class="split split-horizontal">
+        <textarea class="text-editor" id="text-editor"></textarea>
+        <button class="btn btn-primary" type="button" id="button_update">Save</button>
+        <button class="btn" type="button" id="button_download" onclick="download()">Download project</button>
+        <button class="btn" type="button" id="button_revert" onclick="revertChanges()">Revert changes</button>
+    </div>
+</div>
+
+
+<nav class="context-menu">
+    <ul class="context-menu__items">
+        <li class="context-menu__item" onclick="onClickNewYmlFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .yml File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewPyFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .py File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFolder()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New Folder
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickDeleteFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-edit"></i> Delete
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="context-menu-root">
+    <ul class="context-menu__items">
+        <li class="context-menu__item" onclick="onClickNewYmlFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .yml File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewPyFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New .py File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFile()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New File
+            </a>
+        </li>
+        <li class="context-menu__item" onclick="onClickNewFolder()">
+            <a href="#" class="context-menu__link">
+                <i class="fa fa-add"></i> New Folder
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    var elemGraph = document.getElementById("graph_main");
+    var i;
+
+    var statePositions;
+    var fileNames;
+    var yamlMap = new Map();
+    var filesNewMap = new Map();
+    var botName;
+    var currentFile;
+    var responseToGenerate;
+    var tarea = document.getElementById("text-editor");
+    var treeElement;
+    var nodes;
+    var edges;
+    var myCodeMirror;
+    var currentFolder = "";
+    var currentNodeHovered;
+    var currentMode = "yaml";
+    var panZoomGraph = undefined;
+
+    // enable Tab Override for the textarea
+    tabOverride.set(tarea);
+    // set tab size to 2 spaces
+    tabOverride.tabSize(2);
+
+    // clear text area
+    document.getElementById("text-editor").value = "";
+
+    // initialize split panes
+    Split(['#file_tree', '#graph_main', '#editor'], {
+        sizes: [20, 55, 24.5],
+        direction: 'horizontal',
+        gutterSize: 8,
+        cursor: 'col-resize'
+    });
+
+    //find bot name
+    botName = findGetParameter("bot");
+
+    jQuery.ajaxSetup({async: false});
+
+    generateGraphForBot(botName);
+    console.log("generated graph for bot: " + botName);
+    loadGraph();
+    myCodeMirror = getCodeMirror(tarea, currentMode);
+    myCodeMirror.setOption("readOnly", "nocursor");
+
+    jQuery.ajaxSetup({async: true});
+
+    //loads and displays graph
+    function loadGraph() {
+
+        jQuery.ajaxSetup({async: false});
+        findFileNames();
+
+        // get graph data and display it using Graphviz
+        $.post("graph", "getGraph",
+            function (data, status) {
+                elemGraph.innerHTML = Viz(data, "svg");
+                console.log("get graph file: " + status);
+            });
+
+        // get positions of states in yaml files
+        $.post("statepos", "getStatePositions",
+            function (data, status) {
+                statePositions = data;
+                console.log("get state positions: " + status);
+            });
+
+        // load yaml files
+        for (i = 0; i < fileNames.length; i++) {
+            if (fileNames[i] == undefined)continue;
+
+            //get file extension
+            var re = /(?:\.([^.]+))?$/;
+            var ext = re.exec(fileNames[i])[1];
+
+            var folder = "";
+            if (ext == "py") {
+                folder = "states";
+            } else if (ext == "yml") {
+                folder = "flows";
+            }
+
+            //get yaml and python files from server and save them to yamlMap
+            $.post("getfile", botName + ":" + fileNames[i] + ":" + folder,
+                function (data, status) {
+                    yamlMap.set(fileNames[i], data);
+                    filesNewMap.set(fileNames[i], undefined);
+                    console.log("get yaml file: " + status);
+                });
+        }
+
+        nodes = document.getElementsByClassName("node");
+        edges = document.getElementsByClassName("edge");
+
+        // displays error message when parsing fails
+        if (nodes.length == 0 || responseToGenerate != 'ok') {
+            if (responseToGenerate == undefined) {
+                responseToGenerate == "ERROR";
+            } else {
+                elemGraph.innerHTML = responseToGenerate.replace(/(?:\r\n|\r|\n)/g, '<br />');
+            }
+        }
+
+        jQuery.ajaxSetup({async: true});
+
+        var selectedNode;
+
+        for (i = 0; i < nodes.length; i++) {
+            // onclick event of graph nodes, displays yaml code in editor and highlights state name
+            nodes[i].addEventListener('click', function (evt) {
+                var state = evt.currentTarget.firstChild.firstChild.data;
+                var statePos = findPosition(state).split(" ");
+                if (statePos[1] != currentFile) {
+                    myCodeMirror.save();
+                    var editor_text = document.getElementById("text-editor").value;
+                    filesNewMap.set(currentFile, editor_text);
+
+                    var text2 = getYamlFile(statePos[1], "flows");
+                    myCodeMirror.toTextArea();
+                    document.getElementById("text-editor").value = text2;
+                    currentMode = "yaml";
+                    myCodeMirror = getCodeMirror(tarea, currentMode);
+                    currentFile = statePos[1];
+                    currentFolder = "flows"
+                }
+                myCodeMirror.setSelection({line: statePos[2] - 1, ch: 0}, {line: statePos[2] - 1, ch: 100});
+
+                if (selectedNode != undefined && selectedNode == evt.currentTarget) {
+                    unhighlight(selectedNode);
+                    selectedNode = undefined;
+                } else if (selectedNode != undefined) {
+                    unhighlight(selectedNode);
+                    selectedNode = evt.currentTarget;
+                    highlight(selectedNode);
+                } else {
+                    selectedNode = evt.currentTarget;
+                    highlight(selectedNode);
+                }
+
+
+            });
+
+            //highlights nodes and edges on mouseover
+            nodes[i].addEventListener('mouseover', function (evt) {
+                if (selectedNode == undefined) {
+                    highlight(evt.currentTarget);
+                }
+            });
+
+            //stops highlighting
+            nodes[i].addEventListener('mouseout', function (evt) {
+                if (selectedNode == undefined) {
+                    unhighlight(evt.currentTarget);
+                }
+            });
+        }
+
+        if (nodes.length != 0) {
+            // initialize PanZoom library and set values
+            var lastZoom = undefined;
+            var lastPan = undefined;
+            if (panZoomGraph != undefined) {
+                lastZoom = panZoomGraph.getZoom();
+                lastPan = panZoomGraph.getPan();
+            }
+            panZoomGraph = svgPanZoom(elemGraph.firstElementChild, {
+                controlIconsEnabled: true,
+                minZoom: 0.01,
+                maxZoom: 50
+            });
+
+            // set zoom to fit graph to screen and pan it to the center
+            var resetZoom = function () {
+                var paneWidth = document.getElementById("graph_main").offsetWidth;
+                var paneHeight = document.getElementById("graph_main").offsetHeight;
+                var sizes = panZoomGraph.getSizes();
+
+                var zoomX = paneWidth / sizes.width;
+                var zoomY = paneHeight / sizes.height;
+                var zoom;
+                if (zoomX < zoomY) {
+                    zoom = zoomX;
+                } else {
+                    zoom = zoomY;
+                }
+                if (zoom > 1) zoom = 1;
+                panZoomGraph.zoom(zoom);
+
+                panZoomGraph.pan({
+                    x: paneWidth / 2 - (sizes.width / 2) * zoom,
+                    y: paneHeight / 2 - (sizes.height / 2) * zoom
+                });
+            };
+
+            // override default reset function
+            panZoomGraph.reset = resetZoom;
+
+            // set zoom and pan to last values or starting values
+            if (lastZoom == undefined) {
+                panZoomGraph.reset();
+            } else {
+                panZoomGraph.zoom(lastZoom);
+                panZoomGraph.pan(lastPan);
+            }
+        }
+
+        showPage();
+
+        if (nodes.length != 0) {
+            setSvgSizeToParent();
+        }
+
+        // set position for zoom controls
+        var zoomControls = document.getElementById("svg-pan-zoom-controls");
+        if (zoomControls != undefined) {
+            var zoomControlsY = elemGraph.firstElementChild.parentNode.clientHeight - 100;
+            zoomControls.setAttribute("transform", "translate(10 " + zoomControlsY + ")");
+        }
+
+    }
+
+    //highlights target node and its edges
+    function highlight(target) {
+        var ellipse = target.children[1];
+        ellipse.style.strokeWidth = "5px";
+        ellipse.style.stroke = "black";
+
+        for (i = 0; i < edges.length; i++) {
+            var nodeName = target.firstChild.firstChild.data;
+            var title = edges[i].firstElementChild.firstChild.data;
+            var splittedTitle = title.split("->");
+            if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                var path = edges[i].children[1];
+                path.style.strokeWidth = "5px";
+            }
+        }
+    }
+
+    //disables highlighting for target node and its edges
+    function unhighlight(target) {
+        var ellipse = target.children[1];
+        ellipse.style.strokeWidth = "1px";
+        ellipse.style.stroke = "white";
+
+        for (i = 0; i < edges.length; i++) {
+            var nodeName = target.firstChild.firstChild.data;
+            var title = edges[i].firstElementChild.firstChild.data;
+            var splittedTitle = title.split("->");
+            if (splittedTitle[0] == nodeName || splittedTitle[1] == nodeName) {
+                var path = edges[i].children[1];
+                path.style.strokeWidth = "1px";
+            }
+        }
+    }
+
+    //open bot in a new tab
+    function startBot() {
+        window.open('../' + botName, '_blank');
+    }
+
+    //finds line with information about position of a state in yaml code
+    function findPosition(state) {
+        var lines = statePositions.split("\n");
+        for (i = 0; i < lines.length; i++) {
+            var line = lines [i];
+            var splittedLine = line.split(" ");
+            if (state == splittedLine[0]) {
+                return line;
+            }
+        }
+    }
+
+    //finds file names of yaml files
+    function findFileNames() {
+        $.post("filenames", botName, function (data, status) {
+            files = data.split(";");
+            fileNames = files;
+        });
+    }
+
+    //gets yaml code from a chosen file from startLine to endLine
+    function getYamlCode(file, startLine, endLine) {
+        var code = "";
+        var response = yamlMap.get(file);
+        var lines = response.split("\n");
+        var startL = parseInt(startLine);
+        var endL = parseInt(endLine);
+        for (var i = startL; i < endL; i++) {
+            code += lines[i] + "\n";
+        }
+        return code;
+    }
+
+    //gets complete yaml file
+    function getYamlFile(file, folder) {
+        var response;
+        if (yamlMap.get(file) == undefined) {
+            jQuery.ajaxSetup({async: false});
+            $.post("getfile", botName + ":" + file + ":" + folder,
+                function (data, status) {
+                    response = data;
+                });
+            jQuery.ajaxSetup({async: true});
+            return response;
+        }
+        if (filesNewMap.get(file) != undefined) {
+            return filesNewMap.get(file);
+        } else {
+            response = yamlMap.get(file);
+            return response;
+        }
+    }
+
+    // display page after loading
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("panes").style.visibility = "visible";
+    }
+
+    // request to generate a new graph
+    function generateGraphForBot(botname) {
+        $.post("generate", botname,
+            function (data, status) {
+                console.log("generate graph for bot: " + status);
+                responseToGenerate = data;
+            });
+    }
+
+    // update graph with code from editor
+    function toPython(usrdata) {
+        if (currentFile == undefined) {
+            return;
+        }
+        myCodeMirror.save();
+        var editor_text = document.getElementById("text-editor").value;
+        if (editor_text.trim() == "" || currentFile == undefined)return;
+
+        $.post("update",
+            JSON.stringify({botname: botName, filename: currentFile, text: editor_text, folder: currentFolder}),
+            function (data, status) {
+                responseToGenerate = data;
+                loadGraph();
+                console.log(status);
+            });
+    }
+
+    // update button - send updated code to python
+    document.getElementById("button_update").addEventListener("click", function (evt) {
+        toPython(botName);
+    });
+
+    //  sets size of graph SVG to match parent
+    function setSvgSizeToParent() {
+        var newWidth = elemGraph.firstElementChild.parentNode.clientWidth;
+        var newHeight = elemGraph.firstElementChild.parentNode.clientHeight;
+        elemGraph.firstElementChild.setAttribute("width", newWidth + document.getElementById('panes').clientWidth);
+        elemGraph.firstElementChild.setAttribute("height", newHeight);
+    }
+
+    // request file data and generate corresponding file tree
+    function generateFileTree() {
+        $.post("filenamesHtml", botName, function (data, status) {
+            document.getElementById("file_tree_inner").innerHTML = data;
+            $('#file_tree_inner').jstree({core: {check_callback: true, 'themes': {'name': 'proton'}}});
+
+            var tree = $('#file_tree_inner').jstree(true);
+
+
+            $('#file_tree_inner')
+            // listen for event on click on file
+                .on('select_node.jstree', function (e, data) {
+                    //check if node is file
+                    if (!tree.is_parent(data.instance.get_node(data.selected[0]))) {
+                        // save current state of text in editor
+                        if (currentFile != undefined) {
+                            myCodeMirror.save();
+                            var editor_text = document.getElementById("text-editor").value;
+                            filesNewMap.set(currentFile, editor_text);
+                        }
+
+                        //get name of selected file
+                        var fileToOpen = data.instance.get_node(data.selected[0]).text;
+
+                        //get name of folder with the file
+                        var lsSelectedID = data.node.id;
+                        var loParent = $("#" + lsSelectedID);
+                        var parent = loParent.parent().parent();
+                        var folder = parent.children()[1].text;
+                        var folderToOpen = folder;
+
+                        //get content of the file
+                        var fileContent = getYamlFile(fileToOpen, folderToOpen);
+                        if (fileContent == undefined) {
+                            return;
+                        }
+
+                        currentFile = fileToOpen;
+                        currentFolder = folderToOpen;
+
+                        myCodeMirror.toTextArea();
+                        document.getElementById("text-editor").value = fileContent;
+                        var mode;
+                        if (folder == "states") {
+                            currentMode = "python";
+                        } else {
+                            currentMode = "yaml";
+                        }
+                        myCodeMirror = getCodeMirror(tarea, currentMode);
+                    }
+                })
+                .on('hover_node.jstree', function (e, data) {
+                    currentNodeHovered = data;
+                })
+                // create the instance
+                .jstree();
+
+            addNodeListeners("jstree-leaf", "context-menu");
+            addNodeListeners("jstree-anchor", "context-menu-root");
+        });
+    }
+
+    generateFileTree();
+
+    // adds listeners for custom context menu in filetree
+    function addNodeListeners(itemClassName, contextMenuName) {
+        var taskItemClassName = itemClassName;
+        var menu = document.getElementsByClassName(contextMenuName)[0];
+        var menuState = 0;
+        var activeClassName = "context-menu--active";
+        var menuPosition;
+        var menuPositionX;
+        var menuPositionY;
+
+        // get position of right click event
+        function getPosition(e) {
+            var posx = 0;
+            var posy = 0;
+
+            if (!e) var e = window.event;
+
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            } else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.body.scrollLeft +
+                    document.documentElement.scrollLeft;
+                posy = e.clientY + document.body.scrollTop +
+                    document.documentElement.scrollTop;
+            }
+
+            return {
+                x: posx,
+                y: posy
+            }
+        }
+
+        // place context menu to position of click event
+        function positionMenu(e) {
+            menuPosition = getPosition(e);
+            menuPositionX = menuPosition.x + "px";
+            menuPositionY = menuPosition.y + "px";
+
+            menu.style.left = menuPositionX;
+            menu.style.top = menuPositionY;
+        }
+
+        // return element which was clicked on
+        function clickInsideElement(e, className) {
+            var el = e.srcElement || e.target;
+
+            if (contextMenuName == "context-menu-root") {
+                el1 = el;
+                while (el1 = el1.parentNode) {
+                    if (el1.classList && el1.classList.contains("jstree-leaf")) {
+                        return false;
+                    }
+                }
+            }
+
+            if (el.classList.contains(className)) {
+                return el;
+            } else {
+                while (el = el.parentNode) {
+                    if (el.classList && el.classList.contains(className)) {
+                        return el;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /**
+         * Initialise our application's code.
+         */
+        function init() {
+            contextListener();
+            clickListener();
+            keyupListener();
+        }
+
+        /**
+         * Listens for contextmenu events.
+         */
+        function contextListener() {
+            document.addEventListener("contextmenu", function (e) {
+                if (treeElementTemp = clickInsideElement(e, taskItemClassName)) {
+                    treeElement = treeElementTemp;
+                    e.preventDefault();
+                    toggleMenuOn();
+                    positionMenu(e);
+                } else {
+                    toggleMenuOff();
+                }
+            });
+        }
+
+        // disable context menu
+        function toggleMenuOff() {
+            if (menuState !== 0) {
+                menuState = 0;
+                menu.classList.remove(activeClassName);
+            }
+        }
+
+        /**
+         * Listens for click events.
+         */
+        function clickListener() {
+            document.addEventListener("click", function (e) {
+                var button = e.which || e.button;
+                if (button === 1) {
+                    toggleMenuOff();
+                }
+            });
+        }
+
+        /**
+         * Listens for keyup events.
+         */
+        function keyupListener() {
+            window.onkeyup = function (e) {
+                if (e.keyCode === 27) {
+                    toggleMenuOff();
+                }
+            }
+        }
+
+        /**
+         * Turns the custom context menu on.
+         */
+        function toggleMenuOn() {
+            if (menuState !== 1) {
+                menuState = 1;
+                menu.classList.add(activeClassName);
+            }
+        }
+
+        /**
+         * Run the app.
+         */
+        init();
+
+    }
+
+    // find bot name passed by GET method
+    function findGetParameter(parameterName) {
+        var result = null,
+            tmp = [];
+        var items = location.search.substr(1).split("&");
+        for (var index = 0; index < items.length; index++) {
+            tmp = items[index].split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        }
+        return result;
+    }
+
+    // download project code
+    function download() {
+        window.open("download/" + botName, "_self");
+    }
+
+    // new yaml file selected in context menu
+    function onClickNewYmlFile() {
+        newFile("yml");
+    }
+
+    // new .py file selected in context menu
+    function onClickNewPyFile() {
+        newFile("py");
+    }
+
+    // new file selected in context menu
+    function onClickNewFile() {
+        newFile("");
+    }
+
+    // new folder selected in context menu
+    function onClickNewFolder() {
+        bootbox.prompt("Enter name of the new folder:", function (name) {
+            if (name == "" || name == null || name == undefined)return;
+            var data = JSON.stringify({botname: botName, name: name, folder: "", type: 'folder'});
+
+            $.post("newfile", data,
+                function (data, status) {
+                    console.log("create new folder: " + status);
+                    $('#file_tree_inner').jstree(true).destroy();
+                    generateFileTree();
+                });
+        });
+    }
+
+    // create new file of given type
+    function newFile(type) {
+        bootbox.prompt("Enter name of the new file:", function (name) {
+            if (name == "" || name == null || name == undefined)return;
+            if (treeElement != undefined) {
+                // get folder where new file should be saved
+                var lsSelectedID = currentNodeHovered.node.id;
+                var loParent = $("#" + lsSelectedID);
+                var parent = loParent.parent().parent();
+                if (parent.children()[1] == undefined) {
+                    if (type == 'py') {
+                        folder = 'states';
+                    } else if (type == 'yml') {
+                        folder = 'flows';
+                    } else {
+                        folder = 'other';
+                    }
+                } else {
+                    var folder = parent.children()[1].text;
+                }
+
+                var label = currentNodeHovered.node.text;
+
+                if (folder == botName) {
+                    var data = JSON.stringify({botname: botName, name: name + '.' + type, folder: label, type: 'file'});
+                } else if (parent != undefined) {
+                    var data = JSON.stringify({
+                        botname: botName,
+                        name: name + '.' + type,
+                        folder: folder,
+                        type: 'file'
+                    });
+                }
+                console.log(data);
+                $.post("newfile", data,
+                    function (data, status) {
+                        console.log("create new file: " + status);
+                        $('#file_tree_inner').jstree(true).destroy();
+                        generateFileTree();
+                    });
+            }
+        });
+    }
+
+    // delete selected file
+    function onClickDeleteFile() {
+        if (treeElement != undefined) {
+            var treeElement2 = treeElement;
+            bootbox.confirm({
+                title: "Delete file?",
+                message: "Do you really want to delete " + treeElement2.lastChild.lastChild.data + "?",
+                buttons: {
+                    cancel: {
+                        label: 'Cancel'
+                    },
+                    confirm: {
+                        label: 'Confirm'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        //get folder of selected node
+                        var lsSelectedID = currentNodeHovered.node.id;
+                        var loParent = $("#" + lsSelectedID);
+                        var parent = loParent.parent().parent();
+                        var folder = parent.children()[1].text;
+
+                        data = JSON.stringify({
+                            botname: botName, filename: treeElement2.lastChild.lastChild.data,
+                            folder: folder
+                        }),
+
+                            $.post("deletefile", data,
+                                function (data, status) {
+                                    $('#file_tree_inner').jstree(true).destroy();
+                                    generateFileTree();
+                                    generateGraphForBot(botName);
+                                    loadGraph();
+                                });
+                    }
+                }
+            });
+        }
+        treeElement = undefined;
+    }
+
+    // reverts the editor text to last loaded state
+    function revertChanges() {
+        filesNewMap.set(currentFile, undefined);
+        var text2 = getYamlFile(currentFile, currentFolder);
+        myCodeMirror.toTextArea();
+        document.getElementById("text-editor").value = text2;
+        myCodeMirror = getCodeMirror(tarea, currentMode);
+    }
+
+    //return code mirror instance for given textarea
+    function getCodeMirror(textArea, mode) {
+        var coMi = CodeMirror.fromTextArea(tarea, {lineNumbers: true, mode: mode, tabSize: 2});
+        coMi.setOption("extraKeys", {
+            Tab: function (cm) {
+                var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+                cm.replaceSelection(spaces);
+            }
+        });
+        return coMi;
+    }
+
+    (function ($, window, document, undefined) {
+        // feature detection for drag&drop upload
+        var isAdvancedUpload = function () {
+            var div = document.createElement('div');
+            return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
+        }();
+
+        // applying the effect for every form
+        $('.box').each(function () {
+            var $form = $(this),
+                $input = $form.find('input[type="file"]'),
+                $label = $form.find('label'),
+                $errorMsg = $form.find('.box__error span'),
+                $restart = $form.find('.box__restart'),
+                droppedFiles = false,
+                showFiles = function (files) {
+                    $label.text(files.length > 1 ? ( $input.attr('data-multiple-caption') || '' ).replace('{count}', files.length) : files[0].name);
+                };
+
+            // letting the server side to know we are going to make an Ajax request
+            $form.append('<input type="hidden" name="ajax" value="1" />');
+
+            // automatically submit the form on file select
+            $input.on('change', function (e) {
+                showFiles(e.target.files);
+                $form.trigger('submit');
+            });
+
+            // drag&drop files if the feature is available
+            if (isAdvancedUpload) {
+                $form
+                    .addClass('has-advanced-upload') // letting the CSS part to know drag&drop is supported by the browser
+                    .on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+                        // preventing the unwanted behaviours
+                        e.preventDefault();
+                        e.stopPropagation();
+                    })
+                    .on('dragover dragenter', function () //
+                    {
+                        $form.addClass('is-dragover');
+                    })
+                    .on('dragleave dragend drop', function () {
+                        $form.removeClass('is-dragover');
+                    })
+                    .on('drop', function (e) {
+                        droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
+                        showFiles(droppedFiles);
+                        $form.trigger('submit'); // automatically submit the form on file drop
+                    });
+            }
+
+            // if the form was submitted
+            $form.on('submit', function (e) {
+                // preventing the duplicate submissions if the current one is in progress
+                if ($form.hasClass('is-uploading')) return false;
+                $form.addClass('is-uploading').removeClass('is-error');
+                if (isAdvancedUpload) // ajax file upload for modern browsers
+                {
+                    e.preventDefault();
+
+                    // gathering the form data
+                    var ajaxData = new FormData($form.get(0));
+                    ajaxData.append('botname', botName);
+                    ajaxData.append('form', 'python');
+                    if (droppedFiles) {
+                        $.each(droppedFiles, function (i, file) {
+                            ajaxData.append($input.attr('name'), file);
+                        });
+                    }
+
+                    // ajax request
+                    $.ajax(
+                        {
+                            url: $form.attr('action'),
+                            type: $form.attr('method'),
+                            data: ajaxData,
+                            dataType: 'json',
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            complete: function () {
+                                $form.removeClass('is-uploading');
+                            },
+                            success: function (data) {
+                                $form.addClass(data.success == true ? 'is-success' : 'is-error');
+                                if (!data.success) $errorMsg.text(data.error);
+                                $('#file_tree_inner').jstree(true).destroy();
+                                generateFileTree();
+
+                                generateGraphForBot(botName);
+                                loadGraph();
+                            },
+                            error: function () {
+                                alert('Error. Please, contact the webmaster!');
+                            }
+                        });
+                }
+                else // fallback Ajax solution upload for older browsers
+                {
+                    var iframeName = 'uploadiframe' + new Date().getTime(),
+                        $iframe = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
+
+                    $('body').append($iframe);
+                    $form.attr('target', iframeName);
+
+                    $iframe.one('load', function () {
+                        var data = $.parseJSON($iframe.contents().find('body').text());
+                        $form.removeClass('is-uploading').addClass(data.success == true ? 'is-success' : 'is-error').removeAttr('target');
+                        if (!data.success) $errorMsg.text(data.error);
+                        $iframe.remove();
+                        $('#file_tree_inner').jstree(true).destroy();
+                        generateFileTree();
+
+                        generateGraphForBot(botName);
+                        loadGraph();
+                    });
+                }
+            });
+
+            // restart the form if it has a state of error/success
+            $restart.on('click', function (e) {
+                e.preventDefault();
+                $form.removeClass('is-error is-success');
+            });
+
+            // Firefox focus bug fix for file input
+            $input
+                .on('focus', function () {
+                    $input.addClass('has-focus');
+                })
+                .on('blur', function () {
+                    $input.removeClass('has-focus');
+                });
+        });
+    })(jQuery, window, document);
+
+</script>
+
+
+</body>
+</html>

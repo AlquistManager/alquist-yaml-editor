@@ -22,7 +22,7 @@ We use Flask-Cors. You need to install it by
 
     pip install -U flask-cors
     
-We currently use WIT.ai as our npl service so you will need to install WIT as well
+We currently use WIT.ai as our nlp service so you will need to install WIT as well
 
 	pip install wit
 	
@@ -41,18 +41,15 @@ You can change Alquist's parameters. They are stored in the ``config.py``.
 
 ``port`` field defines the port on which the Alquist will run.
 
-``nlp_type`` defines which type of nlp would you like to run (either ``wit`` for Wit.ai or ``lemma`` for MorphoDiTa)
-
 ``wit_token`` defines which Wit.ai app will you use. For our demo use ``NXOFXMBCIA6YAIXNNWYXJIJPC22AK35V``
 
-``yaml_files_path`` path to folder, where yaml files are located.
+``debug`` displays contents of context while bot is running, useful for debugging, values ``True`` or ``False``
 
 For example:
 
 	config = {"port": 5000,
-          "nlp_type": "wit",
           "wit_token": "NXOFXMBCIA6YAIXNNWYXJIJPC22AK35V",
-          "yaml_files_path": "yaml\demo"}
+          "debug": True}
 
 ## API
 
