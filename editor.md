@@ -7,7 +7,8 @@ It consists of a javascript client that displays graph of dialogue's states and 
 
 Editor can be accesed on /editor/ url, for example http://127.0.0.1:5000/editor/
 
-###Used javascript libraries
+**Used javascript libraries**
+
 **Viz.js** https://github.com/mdaines/viz.js/  - used for displaying graph of dialogue states 
 
 **JQuery** https://jquery.com
@@ -27,4 +28,3 @@ Editor can be accesed on /editor/ url, for example http://127.0.0.1:5000/editor/
 **Bootstrap** http://getbootstrap.com - javascript framework
 
 **Bootbox** http://bootboxjs.com - provides programmatic dialogue boxes for Bootstrap
-    <script src="../static-files/bootbox.min.js"></script>
