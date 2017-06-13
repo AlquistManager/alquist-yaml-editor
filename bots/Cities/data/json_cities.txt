@@ -1,1 +1,0 @@
-{"cities": [{"country": "Czech Republic", "name": "Prague", "synonyms": "Praha, Praag"}, {"country": "Madagascar", "name": "Antananarivo"}, {"country": "Russian Federation", "name": "Moscow"}]}
