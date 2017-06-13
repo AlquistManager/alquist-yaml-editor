@@ -5,21 +5,21 @@ Alquist Editor provides a quick way to see the structure of dialogues created fo
 
 It consists of a javascript client that displays graph of dialogue's states and contains a simple user interface and python server which generates graph nodes and edges from yaml codes and provides basic file management. 
 
-Editor can be accesed on /editor/ url, for example http://127.0.0.1:5000/editor/
+Editor can be accessed on /editor/ url, for example http://127.0.0.1:5000/editor/
 
-##Installation
+## Installation
 Python 3 is required to run the Alquist Editor. You can install all the needed requirements using pip command in project's root directory.
 
 `pip install -r requirements.txt`
 
 Should you have any problems with installation you can also check out installation instructions here: https://github.com/AlquistManager/alquist
 
-##Run
+## Run
 To run Alquist editor use the same command you would use to run Alquist dialogue manager.
 
 `py -3 main.py`
 
-##How to use
+## How to use
 **Main page**
 
 On the main page of the editor you can select an existing project or create a new one. New project can either be created empty or from existing files uploaded in a zip folder.
@@ -37,7 +37,7 @@ Nodes of the graph structure represent various states of the dialogue and orient
 
 Code editor highlighting supports python and yaml syntax. It also supports autoindent, line numbers etc.
 
-##Editor structure
+## Editor structure
 Here is a list of the main files which are a part of the editor. The rest of the files in this project belong to the dialogue manager the editor is based on.
 
 - **graph_generator.py** - contains methods for graph creation from dictionary of all states and related operations
@@ -46,7 +46,7 @@ Here is a list of the main files which are a part of the editor. The rest of the
 - **IO/editor.html** - main part of client, contains file manager, graph display and code editor
 - **IO/static-files** - contains all static files such as stylesheetes, themes, javascript libraries etc.
 
-##Used javascript libraries
+## Used javascript libraries
 
 **Viz.js** https://github.com/mdaines/viz.js/  - used for displaying graph of dialogue states 
 
